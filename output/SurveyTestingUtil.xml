@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="SurveyTestingUtil.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="2 KB">
+<class name="SurveyTestingUtil" sharing="with" implements="" isenum="false" lineno="1" modifiers="public">
+<classbody>
+<varDeclaration name="surveyId" scope="instancevar" location="SurveyTestingUtil" type="string" lineno="2" />
+<VariableProperties name="surveyId">
+<getterMethod name="surveyId" returntype="string" modifiers="" lineno="2">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="surveyId" modifiers="" lineno="2">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="questionIds" scope="instancevar" location="SurveyTestingUtil" type="List&amp;lt;string&amp;gt;" lineno="3" />
+<VariableProperties name="questionIds">
+<getterMethod name="questionIds" returntype="List&amp;lt;string&amp;gt;" modifiers="" lineno="3">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="questionIds" modifiers="" lineno="3">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="contactId" scope="instancevar" location="SurveyTestingUtil" type="string" lineno="4" />
+<VariableProperties name="contactId">
+<getterMethod name="contactId" returntype="string" modifiers="" lineno="4">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="contactId" modifiers="" lineno="4">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="surveyTakerId" scope="instancevar" location="SurveyTestingUtil" type="string" lineno="5" />
+<VariableProperties name="surveyTakerId">
+<getterMethod name="surveyTakerId" returntype="string" modifiers="" lineno="5">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="surveyTakerId" modifiers="" lineno="5">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="contactId2" scope="instancevar" location="SurveyTestingUtil" type="string" lineno="6" />
+<VariableProperties name="contactId2">
+<getterMethod name="contactId2" returntype="string" modifiers="" lineno="6">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="contactId2" modifiers="" lineno="6">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<method returntype="" name="SurveyTestingUtil" parameters="" isTestMethod="false" lineno="9" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<methodInvoke name="List&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2187" lineno="10" />
+<assignHeap name="questionIds" scope="" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;()" lineno="10" />
+</AssignmentStatement>
+<methodInvoke name="createTestSurvey" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2188" lineno="11" />
+<methodInvoke name="createTestQuestions" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2189" lineno="12" />
+<methodInvoke name="createTestContact" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2190" lineno="13" />
+<methodInvoke name="createSurveyTaker" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2191" lineno="14" />
+<methodInvoke name="createTestResponses" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2192" lineno="15" />
+<methodendline lineno="17"/>
+</body>
+</method>
+<method returntype="void" name="testConstructor" parameters="" isTestMethod="true" lineno="19" throws="" modifiers="private,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SurveyTestingUtil" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2193" lineno="20" />
+<varDeclaration name="tu" scope="methodvar" location="SurveyTestingUtil" type="SurveyTestingUtil" lineno="20" />
+<assignHeap name="tu" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyTestingUtil()" lineno="20" />
+</VariableDeclaration>
+<ExpressionStatement expression="tu.surveyId!=null" key="assert" lineno="21"/>
+<methodendline lineno="22"/>
+</body>
+</method>
+<method returntype="void" name="createSurveyTaker" parameters="" isTestMethod="false" lineno="24" throws="" modifiers="private">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SurveyTaker__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2194" lineno="25" />
+<varDeclaration name="st" scope="methodvar" location="SurveyTestingUtil" type="SurveyTaker__c" lineno="25" />
+<assignHeap name="st" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyTaker__c()" lineno="25" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="st.Contact__c" scope="" type="" rhsType="methodinvoke" rhs="contactId" lineno="26" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="st.Survey__c" scope="" type="" rhsType="variable" rhs="surveyId" lineno="27" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="st.Taken__c" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="28" />
+</AssignmentStatement>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="st" returnloc="" lineno="29" />
+<AssignmentStatement>
+<assignHeap name="surveyTakerId" scope="" type="" rhsType="variable" rhs="st.Id" lineno="30" />
+</AssignmentStatement>
+<methodendline lineno="31"/>
+</body>
+</method>
+<method returntype="void" name="createTestSurvey" parameters="" isTestMethod="false" lineno="33" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="Survey__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2195" lineno="34" />
+<varDeclaration name="s" scope="methodvar" location="SurveyTestingUtil" type="Survey__c" lineno="34" />
+<assignHeap name="s" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurvey__c()" lineno="34" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="s.Name" scope="" type="" rhsType="methodinvoke" rhs="&apos;Testing Survey&apos;" lineno="35" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="s.Submit_Response__c" scope="" type="" rhsType="value" rhs="&apos;empty&apos;" lineno="36" />
+</AssignmentStatement>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="s" returnloc="" lineno="37" />
+<AssignmentStatement>
+<assignHeap name="surveyId" scope="" type="" rhsType="variable" rhs="s.Id" lineno="38" />
+</AssignmentStatement>
+<methodendline lineno="39"/>
+</body>
+</method>
+<method returntype="void" name="createTestQuestions" parameters="" isTestMethod="false" lineno="41" throws="" modifiers="public">
+<body>
+<methodInvoke name="createQuestion" methodtype="normalmethod" returntype="String" parameters="0" returnloc="#temp2196" lineno="42" />
+<methodInvoke name="questionIds.add" methodtype="normalmethod" returntype="String" parameters="createQuestion(0)" returnloc="#temp2197" lineno="42" />
+<methodInvoke name="createQuestion" methodtype="normalmethod" returntype="String" parameters="1" returnloc="#temp2198" lineno="43" />
+<methodInvoke name="questionIds.add" methodtype="normalmethod" returntype="String" parameters="createQuestion(1)" returnloc="#temp2199" lineno="43" />
+<methodInvoke name="createQuestion" methodtype="normalmethod" returntype="String" parameters="2" returnloc="#temp2200" lineno="44" />
+<methodInvoke name="questionIds.add" methodtype="normalmethod" returntype="String" parameters="createQuestion(2)" returnloc="#temp2201" lineno="44" />
+<methodInvoke name="createQuestion" methodtype="normalmethod" returntype="String" parameters="3" returnloc="#temp2202" lineno="45" />
+<methodInvoke name="questionIds.add" methodtype="normalmethod" returntype="String" parameters="createQuestion(3)" returnloc="#temp2203" lineno="45" />
+<methodendline lineno="46"/>
+</body>
+</method>
+<method returntype="string" name="createQuestion" parameters="i:integer" isTestMethod="false" lineno="48" throws="" modifiers="private">
+<body>
+<VariableDeclaration>
+<methodInvoke name="Survey_Question__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2204" lineno="49" />
+<varDeclaration name="q" scope="methodvar" location="SurveyTestingUtil" type="Survey_Question__c" lineno="49" />
+<assignHeap name="q" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurvey_Question__c()" lineno="49" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="q.Name" scope="" type="" rhsType="methodinvoke" rhs="&apos;Testing Question&apos;" lineno="50" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="q.Survey__c" scope="" type="" rhsType="variable" rhs="surveyId" lineno="51" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="getType" methodtype="normalmethod" returntype="String" parameters="i" returnloc="#temp2205" lineno="52" />
+<assignHeap name="q.Type__c" scope="" type="" rhsType="methodinvoke" rhs="getType(i)" lineno="52" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="getChoices" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2206" lineno="53" />
+<assignHeap name="q.Choices__c" scope="" type="" rhsType="methodinvoke" rhs="getChoices()" lineno="53" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="q.Question__c" scope="" type="" rhsType="value" rhs="&apos;Testing Question question&apos;" lineno="54" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="q.OrderNumber__c" scope="" type="" rhsType="variable" rhs="i" lineno="55" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="q.Required__c" scope="" type="" rhsType="value" rhs="true" lineno="56" />
+</AssignmentStatement>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="q" returnloc="" lineno="57" />
+<ReturnBlock>
+<return expression="q.id" expressiontype="@alias" lineno="58" />
+</ReturnBlock>
+<methodendline lineno="59"/>
+</body>
+</method>
+<method returntype="void" name="createTestContact" parameters="" isTestMethod="false" lineno="62" throws="" modifiers="private">
+<body>
+<VariableDeclaration>
+<methodInvoke name="Contact" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2207" lineno="63" />
+<varDeclaration name="c" scope="methodvar" location="SurveyTestingUtil" type="Contact" lineno="63" />
+<assignHeap name="c" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newContact()" lineno="63" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="c.LastName" scope="" type="" rhsType="methodinvoke" rhs="&apos;Doe&apos;" lineno="64" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="c.FirstName" scope="" type="" rhsType="value" rhs="&apos;John&apos;" lineno="65" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="c.Email" scope="" type="" rhsType="value" rhs="&apos;surveyAppUser@hotmail.com&apos;" lineno="66" />
+</AssignmentStatement>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="c" returnloc="" lineno="67" />
+<AssignmentStatement>
+<assignHeap name="contactId" scope="" type="" rhsType="variable" rhs="c.Id" lineno="68" />
+</AssignmentStatement>
+<VariableDeclaration>
+<methodInvoke name="Contact" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2208" lineno="70" />
+<varDeclaration name="c2" scope="methodvar" location="SurveyTestingUtil" type="Contact" lineno="70" />
+<assignHeap name="c2" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newContact()" lineno="70" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="c2.LastName" scope="" type="" rhsType="methodinvoke" rhs="&apos;Doe2&apos;" lineno="71" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="c2.FirstName" scope="" type="" rhsType="value" rhs="&apos;John2&apos;" lineno="72" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="c2.Email" scope="" type="" rhsType="value" rhs="&apos;surveyAppUser2@hotmail.com&apos;" lineno="73" />
+</AssignmentStatement>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="c2" returnloc="" lineno="74" />
+<AssignmentStatement>
+<assignHeap name="contactId2" scope="" type="" rhsType="variable" rhs="c2.Id" lineno="75" />
+</AssignmentStatement>
+<methodendline lineno="76"/>
+</body>
+</method>
+<method returntype="string" name="createTestResponses" parameters="" isTestMethod="false" lineno="78" throws="" modifiers="private">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SurveyQuestionResponse__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2209" lineno="79" />
+<varDeclaration name="r" scope="methodvar" location="SurveyTestingUtil" type="SurveyQuestionResponse__c" lineno="79" />
+<assignHeap name="r" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyQuestionResponse__c()" lineno="79" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="r.Response__c" scope="" type="" rhsType="methodinvoke" rhs="&apos;two&apos;" lineno="80" />
+</AssignmentStatement>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id from Survey_Question__c where id=: questionIds(1) limit 1]" returnloc="#temp2210" lineno="81" />
+<varDeclaration name="sq" scope="methodvar" location="SurveyTestingUtil" type="Survey_Question__c" lineno="81" />
+<assignHeap name="sq" scope="methodvar" type="Survey_Question__c" rhsType="query" rhs="[select id from Survey_Question__c where id=: questionIds(1) limit 1]" lineno="81" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="r.Survey_Question__c" scope="" type="" rhsType="variable" rhs="sq.id" lineno="82" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="r.SurveyTaker__c" scope="" type="" rhsType="variable" rhs="surveyTakerId" lineno="83" />
+</AssignmentStatement>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="r" returnloc="" lineno="84" />
+<ReturnBlock>
+<return expression="&apos;true&apos;" expressiontype="@value" lineno="85" />
+</ReturnBlock>
+<methodendline lineno="86"/>
+</body>
+</method>
+<method returntype="string" name="getType" parameters="i:integer" isTestMethod="false" lineno="88" throws="" modifiers="private">
+<body>
+<if type="simpleif" lineno="89">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="i" RHStype="" RHS="1" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "i==1"/>
+<true>
+<body>
+<ReturnBlock>
+<return expression="&apos;Multi-select--Vertical&apos;" expressiontype="@value" lineno="90" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="91">
+<body>
+<if type="elseif" lineno="91">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="i" RHStype="" RHS="2" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "i==2"/>
+<true>
+<body>
+<ReturnBlock>
+<return expression="&apos;Single select--Vertical&apos;" expressiontype="@value" lineno="92" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="93">
+<body>
+<if type="elseif" lineno="93">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="i" RHStype="" RHS="3" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "i==3"/>
+<true>
+<body>
+<ReturnBlock>
+<return expression="&apos;Free Text&apos;" expressiontype="@value" lineno="94" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="95">
+<body>
+<ReturnBlock>
+<return expression="&apos;Single select--Horizontal&apos;" expressiontype="@value" lineno="96" />
+</ReturnBlock>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+<methodendline lineno="97"/>
+</body>
+</method>
+<method returntype="string" name="getChoices" parameters="" isTestMethod="false" lineno="98" throws="" modifiers="private">
+<body>
+<ReturnBlock>
+<return expression="&apos;one\ntwo\nthree\n&apos;" expressiontype="@value" lineno="99" />
+</ReturnBlock>
+<methodendline lineno="100"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[]" multi="[]" empty="[7, 8, 16, 18, 23, 32, 40, 47, 60, 61, 69, 77, 87, 101]" singlebrace="[17, 22, 31, 39, 46, 59, 76, 86, 97, 100, 102]"/>
+</stac>

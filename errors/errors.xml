@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  <errors>
+    <file name ="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes\BatchCaseCRMJourney_SM2.cls" nameonly="BatchCaseCRMJourney_SM2.cls">
+      <error linenumber="9" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="9" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="10" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="10" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="11" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="11" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="12" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="12" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="13" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="13" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="14" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="14" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="32" description="no viable alternative at input &apos;public&apos;"/>
+      <error linenumber="32" description="no viable alternative at input &apos;Database&apos;"/>
+      <error linenumber="32" description="no viable alternative at input &apos;querylocator&apos;"/>
+      <error linenumber="32" description="no viable alternative at input &apos;start&apos;"/>
+      <error linenumber="32" description="no viable alternative at input &apos;Database&apos;"/>
+      <error linenumber="32" description="no viable alternative at input &apos;batchablecontext&apos;"/>
+      <error linenumber="32" description="no viable alternative at input &apos;BC&apos;"/>
+      <error linenumber="37" description="mismatched input &apos;return&apos; expecting RBRACE"/>
+      <error linenumber="37" description="no viable alternative at input &apos;Database&apos;"/>
+      <error linenumber="37" description="no viable alternative at input &apos;getquerylocator&apos;"/>
+      <error linenumber="37" description="no viable alternative at input &apos;query&apos;"/>
+      <error linenumber="39" description="no viable alternative at input &apos;public&apos;"/>
+      <error linenumber="39" description="no viable alternative at input &apos;execute&apos;"/>
+      <error linenumber="39" description="no viable alternative at input &apos;Database&apos;"/>
+      <error linenumber="39" description="no viable alternative at input &apos;batchablecontext&apos;"/>
+      <error linenumber="39" description="no viable alternative at input &apos;BC&apos;"/>
+      <error linenumber="39" description="no viable alternative at input &apos;list&apos;"/>
+      <error linenumber="39" description="no viable alternative at input &apos;scope&apos;"/>
+    </file>
+    <file name ="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes\BatchCaseCRMJourney_SM3.cls" nameonly="BatchCaseCRMJourney_SM3.cls">
+      <error linenumber="9" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="9" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="10" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="10" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="11" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="11" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="12" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="12" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="13" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="13" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="14" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="14" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="15" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="15" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="79" description="no viable alternative at input &apos;public&apos;"/>
+      <error linenumber="79" description="no viable alternative at input &apos;Database&apos;"/>
+      <error linenumber="79" description="no viable alternative at input &apos;querylocator&apos;"/>
+      <error linenumber="79" description="no viable alternative at input &apos;start&apos;"/>
+      <error linenumber="79" description="no viable alternative at input &apos;Database&apos;"/>
+      <error linenumber="79" description="no viable alternative at input &apos;batchablecontext&apos;"/>
+      <error linenumber="79" description="no viable alternative at input &apos;BC&apos;"/>
+      <error linenumber="83" description="mismatched input &apos;return&apos; expecting RBRACE"/>
+      <error linenumber="83" description="no viable alternative at input &apos;Database&apos;"/>
+      <error linenumber="83" description="no viable alternative at input &apos;getquerylocator&apos;"/>
+      <error linenumber="83" description="no viable alternative at input &apos;query&apos;"/>
+      <error linenumber="86" description="no viable alternative at input &apos;public&apos;"/>
+      <error linenumber="86" description="no viable alternative at input &apos;execute&apos;"/>
+      <error linenumber="86" description="no viable alternative at input &apos;Database&apos;"/>
+      <error linenumber="86" description="no viable alternative at input &apos;batchablecontext&apos;"/>
+      <error linenumber="86" description="no viable alternative at input &apos;BC&apos;"/>
+      <error linenumber="86" description="no viable alternative at input &apos;list&apos;"/>
+      <error linenumber="86" description="no viable alternative at input &apos;scope&apos;"/>
+      <error linenumber="91" description="mismatched input &apos;for&apos; expecting RBRACE"/>
+      <error linenumber="91" description="no viable alternative at input &apos;Case&apos;"/>
+      <error linenumber="91" description="no viable alternative at input &apos;caseObj&apos;"/>
+      <error linenumber="91" description="no viable alternative at input &apos;scope&apos;"/>
+      <error linenumber="96" description="mismatched input &apos;for&apos; expecting RBRACE"/>
+      <error linenumber="0" description="XML IS NOT WELL-FORMED DUE TO PARSER ERROR."/>
+    </file>
+    <file name ="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes\BatchCaseCRMJourney_StackChart.cls" nameonly="BatchCaseCRMJourney_StackChart.cls">
+      <error linenumber="9" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="9" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="10" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="10" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="11" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="11" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="12" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="12" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="13" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="13" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="14" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="14" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="15" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="15" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="24" description="no viable alternative at input &apos;public&apos;"/>
+      <error linenumber="24" description="no viable alternative at input &apos;Set&apos;"/>
+      <error linenumber="24" description="no viable alternative at input &apos;originPickList&apos;"/>
+      <error linenumber="26" description="no viable alternative at input &apos;get&apos;"/>
+      <error linenumber="31" description="mismatched input &apos;for&apos; expecting RBRACE"/>
+      <error linenumber="31" description="no viable alternative at input &apos;Schema&apos;"/>
+      <error linenumber="31" description="no viable alternative at input &apos;PicklistEntry&apos;"/>
+      <error linenumber="31" description="no viable alternative at input &apos;a&apos;"/>
+      <error linenumber="31" description="no viable alternative at input &apos;values&apos;"/>
+      <error linenumber="33" description="no viable alternative at input &apos;originPickList&apos;"/>
+      <error linenumber="38" description="mismatched input &apos;else&apos; expecting RBRACE"/>
+      <error linenumber="0" description="XML IS NOT WELL-FORMED DUE TO PARSER ERROR."/>
+    </file>
+    <file name ="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes\BatchLeadMetrics.cls" nameonly="BatchLeadMetrics.cls">
+      <error linenumber="40" description="no viable alternative at input &apos;Database&apos;"/>
+      <error linenumber="40" description="no viable alternative at input &apos;Database&apos;"/>
+      <error linenumber="40" description="no viable alternative at input &apos;querylocator&apos;"/>
+      <error linenumber="40" description="no viable alternative at input &apos;start&apos;"/>
+      <error linenumber="40" description="no viable alternative at input &apos;Database&apos;"/>
+      <error linenumber="40" description="no viable alternative at input &apos;batchablecontext&apos;"/>
+      <error linenumber="40" description="no viable alternative at input &apos;BC&apos;"/>
+      <error linenumber="48" description="no viable alternative at input &apos;countMap&apos;"/>
+      <error linenumber="48" description="no viable alternative at input &apos;countMap&apos;"/>
+      <error linenumber="48" description="no viable alternative at input &apos;put&apos;"/>
+      <error linenumber="48" description="no viable alternative at input &apos;put&apos;"/>
+      <error linenumber="48" description="mismatched input &apos;1&apos; expecting RPAREN"/>
+      <error linenumber="48" description="mismatched input &apos;]&apos; expecting SEMI"/>
+      <error linenumber="48" description="no viable alternative at input &apos;n&apos;"/>
+      <error linenumber="48" description="no viable alternative at input &apos;n&apos;"/>
+    </file>
+    <file name ="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes\BatchOpportunityMetric.cls" nameonly="BatchOpportunityMetric.cls">
+      <error linenumber="19" description="missing INTERFACE at &apos;TestVisible&apos;"/>
+      <error linenumber="19" description="missing LBRACE at &apos;string&apos;"/>
+      <error linenumber="30" description="missing INTERFACE at &apos;TestVisible&apos;"/>
+      <error linenumber="30" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="31" description="missing INTERFACE at &apos;TestVisible&apos;"/>
+      <error linenumber="31" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="32" description="missing INTERFACE at &apos;TestVisible&apos;"/>
+      <error linenumber="32" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="33" description="missing INTERFACE at &apos;TestVisible&apos;"/>
+      <error linenumber="33" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="34" description="missing INTERFACE at &apos;TestVisible&apos;"/>
+      <error linenumber="34" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="35" description="missing INTERFACE at &apos;TestVisible&apos;"/>
+      <error linenumber="35" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="36" description="missing INTERFACE at &apos;TestVisible&apos;"/>
+      <error linenumber="36" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="69" description="no viable alternative at input &apos;public&apos;"/>
+      <error linenumber="69" description="no viable alternative at input &apos;Database&apos;"/>
+      <error linenumber="69" description="no viable alternative at input &apos;querylocator&apos;"/>
+      <error linenumber="69" description="no viable alternative at input &apos;start&apos;"/>
+      <error linenumber="69" description="no viable alternative at input &apos;Database&apos;"/>
+      <error linenumber="69" description="no viable alternative at input &apos;batchablecontext&apos;"/>
+      <error linenumber="69" description="no viable alternative at input &apos;BC&apos;"/>
+      <error linenumber="71" description="no viable alternative at input &apos;date&apos;"/>
+      <error linenumber="71" description="no viable alternative at input &apos;currentDate&apos;"/>
+      <error linenumber="71" description="no viable alternative at input &apos;quarters&apos;"/>
+      <error linenumber="75" description="no viable alternative at input &apos;countMap&apos;"/>
+      <error linenumber="75" description="no viable alternative at input &apos;put&apos;"/>
+      <error linenumber="75" description="no viable alternative at input &apos;currentDate&apos;"/>
+      <error linenumber="75" description="no viable alternative at input &apos;n&apos;"/>
+      <error linenumber="76" description="no viable alternative at input &apos;winOpp&apos;"/>
+      <error linenumber="76" description="no viable alternative at input &apos;put&apos;"/>
+      <error linenumber="76" description="no viable alternative at input &apos;currentDate&apos;"/>
+      <error linenumber="77" description="no viable alternative at input &apos;lossOpp&apos;"/>
+      <error linenumber="77" description="no viable alternative at input &apos;put&apos;"/>
+      <error linenumber="77" description="no viable alternative at input &apos;currentDate&apos;"/>
+      <error linenumber="79" description="mismatched input &apos;catch&apos; expecting RBRACE"/>
+      <error linenumber="0" description="XML IS NOT WELL-FORMED DUE TO PARSER ERROR."/>
+    </file>
+    <file name ="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes\Batch_VolumeMetric_Data_Completeness.cls" nameonly="Batch_VolumeMetric_Data_Completeness.cls">
+      <error linenumber="14" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="14" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="15" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="15" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="16" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="16" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="17" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="17" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="18" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="18" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="19" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="19" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="56" description="no viable alternative at input &apos;global&apos;"/>
+      <error linenumber="56" description="no viable alternative at input &apos;Map&apos;"/>
+      <error linenumber="56" description="no viable alternative at input &apos;finalMasterMap&apos;"/>
+      <error linenumber="58" description="no viable alternative at input &apos;ObjMap&apos;"/>
+      <error linenumber="58" description="no viable alternative at input &apos;finalMasterMap&apos;"/>
+      <error linenumber="59" description="no viable alternative at input &apos;processingList&apos;"/>
+      <error linenumber="59" description="no viable alternative at input &apos;finalMasterMap&apos;"/>
+      <error linenumber="59" description="no viable alternative at input &apos;keySet&apos;"/>
+      <error linenumber="60" description="no viable alternative at input &apos;objectsList&apos;"/>
+      <error linenumber="60" description="no viable alternative at input &apos;addAll&apos;"/>
+      <error linenumber="60" description="no viable alternative at input &apos;finalMasterMap&apos;"/>
+      <error linenumber="60" description="no viable alternative at input &apos;keySet&apos;"/>
+      <error linenumber="61" description="no viable alternative at input &apos;objectName&apos;"/>
+      <error linenumber="61" description="no viable alternative at input &apos;objectsList&apos;"/>
+      <error linenumber="62" description="mismatched input &apos;catch&apos; expecting RBRACE"/>
+      <error linenumber="62" description="no viable alternative at input &apos;Exception&apos;"/>
+      <error linenumber="62" description="no viable alternative at input &apos;e&apos;"/>
+      <error linenumber="66" description="no viable alternative at input &apos;totalRecords&apos;"/>
+      <error linenumber="66" description="no viable alternative at input &apos;nullFieldsCount&apos;"/>
+      <error linenumber="66" description="no viable alternative at input &apos;complete&apos;"/>
+      <error linenumber="66" description="no viable alternative at input &apos;aboveAverage&apos;"/>
+      <error linenumber="66" description="no viable alternative at input &apos;average&apos;"/>
+      <error linenumber="66" description="no viable alternative at input &apos;belowAverage&apos;"/>
+      <error linenumber="66" description="no viable alternative at input &apos;lastMonthCount&apos;"/>
+      <error linenumber="66" description="no viable alternative at input &apos;secondLastMonthCount&apos;"/>
+      <error linenumber="66" description="no viable alternative at input &apos;thirdLastMonthCount&apos;"/>
+      <error linenumber="67" description="no viable alternative at input &apos;objectLevelNullFieldsCount&apos;"/>
+      <error linenumber="67" description="no viable alternative at input &apos;ModifiedOneMonthAgo&apos;"/>
+      <error linenumber="67" description="no viable alternative at input &apos;ModifiedTwoMonthAgo&apos;"/>
+      <error linenumber="67" description="no viable alternative at input &apos;ModifiedThreeMonthAgo&apos;"/>
+      <error linenumber="70" description="no viable alternative at input &apos;Database&apos;"/>
+    </file>
+    <file name ="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes\GettingStartedController.cls" nameonly="GettingStartedController.cls">
+      <error linenumber="99" description="no viable alternative at input &apos;void&apos;"/>
+      <error linenumber="131" description="no viable alternative at input &apos;Survey_Question__c&apos;"/>
+      <error linenumber="131" description="no viable alternative at input &apos;Survey_Question__c&apos;"/>
+      <error linenumber="131" description="no viable alternative at input &apos;sq&apos;"/>
+      <error linenumber="131" description="no viable alternative at input &apos;limit&apos;"/>
+      <error linenumber="131" description="extraneous input &apos;]&apos; expecting SEMI"/>
+    </file>
+    <file name ="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes\PDC_BatchCaseCRMJourney_SM6.cls" nameonly="PDC_BatchCaseCRMJourney_SM6.cls">
+      <error linenumber="3" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="3" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="4" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="4" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="5" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="5" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="6" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="6" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="7" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="7" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="8" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="8" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="9" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="9" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="19" description="no viable alternative at input &apos;public&apos;"/>
+      <error linenumber="19" description="no viable alternative at input &apos;Database&apos;"/>
+      <error linenumber="19" description="no viable alternative at input &apos;querylocator&apos;"/>
+      <error linenumber="19" description="no viable alternative at input &apos;start&apos;"/>
+      <error linenumber="19" description="no viable alternative at input &apos;Database&apos;"/>
+      <error linenumber="19" description="no viable alternative at input &apos;batchablecontext&apos;"/>
+      <error linenumber="19" description="no viable alternative at input &apos;BC&apos;"/>
+      <error linenumber="23" description="mismatched input &apos;return&apos; expecting RBRACE"/>
+      <error linenumber="23" description="no viable alternative at input &apos;Database&apos;"/>
+      <error linenumber="23" description="no viable alternative at input &apos;getquerylocator&apos;"/>
+      <error linenumber="23" description="no viable alternative at input &apos;query&apos;"/>
+      <error linenumber="25" description="no viable alternative at input &apos;public&apos;"/>
+      <error linenumber="25" description="no viable alternative at input &apos;execute&apos;"/>
+      <error linenumber="25" description="no viable alternative at input &apos;Database&apos;"/>
+      <error linenumber="25" description="no viable alternative at input &apos;batchablecontext&apos;"/>
+      <error linenumber="25" description="no viable alternative at input &apos;BC&apos;"/>
+      <error linenumber="25" description="no viable alternative at input &apos;list&apos;"/>
+      <error linenumber="25" description="no viable alternative at input &apos;scope&apos;"/>
+      <error linenumber="72" description="mismatched input &apos;catch&apos; expecting RBRACE"/>
+      <error linenumber="0" description="XML IS NOT WELL-FORMED DUE TO PARSER ERROR."/>
+    </file>
+    <file name ="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes\Test_BatchCaseCRMJourney_StackChart1.cls" nameonly="Test_BatchCaseCRMJourney_StackChart1.cls">
+      <error linenumber="9" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="9" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="10" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="10" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="11" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="11" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="12" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="12" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="13" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="13" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="14" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="14" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="15" description="missing INTERFACE at &apos;TESTVISIBLE&apos;"/>
+      <error linenumber="15" description="missing LBRACE at &apos;date&apos;"/>
+      <error linenumber="21" description="no viable alternative at input &apos;public&apos;"/>
+      <error linenumber="21" description="no viable alternative at input &apos;Set&apos;"/>
+      <error linenumber="21" description="no viable alternative at input &apos;originPickList&apos;"/>
+      <error linenumber="23" description="no viable alternative at input &apos;get&apos;"/>
+      <error linenumber="28" description="mismatched input &apos;for&apos; expecting RBRACE"/>
+      <error linenumber="28" description="no viable alternative at input &apos;Schema&apos;"/>
+      <error linenumber="28" description="no viable alternative at input &apos;PicklistEntry&apos;"/>
+      <error linenumber="28" description="no viable alternative at input &apos;a&apos;"/>
+      <error linenumber="28" description="no viable alternative at input &apos;values&apos;"/>
+      <error linenumber="30" description="no viable alternative at input &apos;originPickList&apos;"/>
+      <error linenumber="35" description="mismatched input &apos;else&apos; expecting RBRACE"/>
+      <error linenumber="0" description="XML IS NOT WELL-FORMED DUE TO PARSER ERROR."/>
+    </file>
+  </errors>

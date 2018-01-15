@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="effortdetails_Nova_Test.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="383 bytes">
+<class name="effortdetails_Nova_Test" sharing="default" implements="" isenum="false" lineno="10" modifiers="private">
+<classbody>
+<Annotation name="isTest" lineno ="9"/>
+</classbody>
+</class>
+<comments single="[]" multi="[1-8]" empty="[11]" singlebrace="[12]"/>
+</stac>

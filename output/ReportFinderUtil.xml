@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="ReportFinderUtil.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="249 bytes">
+<class name="ReportFinderUtil" sharing="with" implements="" isenum="false" lineno="1" modifiers="public">
+<classbody>
+<method returntype="" name="ReportFinderUtil" parameters="" isTestMethod="false" lineno="3" throws="" modifiers="public">
+<body>
+<methodendline lineno="3"/>
+</body>
+</method>
+<method returntype="string" name="findReportId" parameters="reportName:string" isTestMethod="false" lineno="5" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Id,Name from Report where Name=:reportName]" returnloc="#temp1445" lineno="7" />
+<varDeclaration name="myReport" scope="methodvar" location="ReportFinderUtil" type="sobject" lineno="7" />
+<assignHeap name="myReport" scope="methodvar" type="sobject" rhsType="query" rhs="[select Id,Name from Report where Name=:reportName]" lineno="7" />
+</VariableDeclaration>
+<ReturnBlock>
+<return expression="myReport.Id" expressiontype="@alias" lineno="8" />
+</ReturnBlock>
+<methodendline lineno="10"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[]" multi="[]" empty="[2, 4, 6, 9, 11, 12]" singlebrace="[10, 13]"/>
+</stac>

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="JSONDataGenerator.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="5 KB">
+<class name="JSONDataGenerator" sharing="default" implements="" isenum="false" lineno="7" modifiers="global">
+<classbody>
+<class name="JSONClass" sharing="default" implements="" isenum="false" lineno="9" modifiers="public">
+<classbody>
+<varDeclaration name="data" scope="instancevar" location="JSONClass" type="List&amp;lt;List&amp;lt;object&amp;gt;&amp;gt;" lineno="11" />
+<VariableProperties name="data">
+<getterMethod name="data" returntype="List&amp;lt;List&amp;lt;object&amp;gt;&amp;gt;" modifiers="" lineno="11">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="data" modifiers="" lineno="11">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="title" scope="instancevar" location="JSONClass" type="string" lineno="13" />
+<VariableProperties name="title">
+<getterMethod name="title" returntype="string" modifiers="" lineno="13">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="title" modifiers="" lineno="13">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<method returntype="" name="JSONClass" parameters="" isTestMethod="false" lineno="14" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<methodInvoke name="List&lt;List&lt;object&gt;&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1228" lineno="15" />
+<assignHeap name="Data" scope="" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;List&lt;object&gt;&gt;()" lineno="15" />
+</AssignmentStatement>
+<methodendline lineno="16"/>
+</body>
+</method>
+</classbody>
+</class>
+<varDeclaration name="output" scope="instancevar" location="JSONClass" type="string" lineno="20" />
+<VariableProperties name="output">
+<getterMethod name="output" returntype="string" modifiers="" lineno="20">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="output" modifiers="" lineno="20">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="categories" scope="instancevar" location="JSONClass" type="string" lineno="21" />
+<VariableProperties name="categories">
+<getterMethod name="categories" returntype="string" modifiers="" lineno="21">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="categories" modifiers="" lineno="21">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="categories" scope="" type="" rhsType="value" rhs="&apos;&apos;" lineno="24" />
+</AssignmentStatement>
+<VariableDeclaration>
+<varDeclaration name="vfPageUrl" scope="methodvar" location="JSONClass" type="string" lineno="26" />
+<assignHeap name="vfPageUrl" scope="methodvar" type="string" rhsType="value" rhs="&apos;Sales Metrics&apos;" lineno="26" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="ApexPages.currentPage" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1229" lineno="27" />
+<methodInvoke name="ApexPages.currentPage(.getParameters" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1230" lineno="27" />
+<methodInvoke name="ApexPages.currentPage(.getParameters(.get" methodtype="normalmethod" returntype="String" parameters="&apos;type&apos;" returnloc="#temp1231" lineno="27" />
+<varDeclaration name="reportType" scope="methodvar" location="JSONClass" type="string" lineno="27" />
+<assignHeap name="reportType" scope="methodvar" type="string" rhsType="methodinvoke" rhs="ApexPages.currentPage().getParameters().get(&apos;type&apos;)" lineno="27" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1231.currentPage" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1232" lineno="28" />
+<methodInvoke name="#temp1232.getParameters" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1233" lineno="28" />
+<methodInvoke name="#temp1233.get" methodtype="normalmethod" returntype="String" parameters="&apos;id&apos;" returnloc="#temp1234" lineno="28" />
+<varDeclaration name="portfolioID" scope="methodvar" location="JSONClass" type="string" lineno="28" />
+<assignHeap name="portfolioID" scope="methodvar" type="string" rhsType="methodinvoke" rhs="ApexPages.currentPage().getParameters().get(&apos;id&apos;)" lineno="28" />
+</VariableDeclaration>
+<if type="simpleif" lineno="32">
+<conditionalExpr>
+<methodInvoke name="#temp1234.isBlank" methodtype="normalmethod" returntype="String" parameters="reportType" returnloc="#temp1235" lineno="32" />
+</conditionalExpr>
+<ifcondition expression= "string.isBlank(reportType)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="33">
+<conditionalExpr>
+<methodInvoke name="#temp1235.contains" methodtype="normalmethod" returntype="String" parameters="&apos;Application+Effective+Usage&apos;" returnloc="#temp1236" lineno="33" />
+</conditionalExpr>
+<ifcondition expression= "vfPageUrl.contains(&apos;Application+Effective+Usage&apos;)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="reportType" scope="" type="" rhsType="methodinvoke" rhs="&apos;AEU&apos;" lineno="34" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="36">
+<body>
+<if type="elseif" lineno="36">
+<conditionalExpr>
+<methodInvoke name="vfPageUrl.contains" methodtype="normalmethod" returntype="String" parameters="&apos;bootScatterChartReportAndDashboardUsage&apos;" returnloc="#temp1237" lineno="36" />
+</conditionalExpr>
+<ifcondition expression= "vfPageUrl.contains(&apos;bootScatterChartReportAndDashboardUsage&apos;)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="reportType" scope="" type="" rhsType="methodinvoke" rhs="&apos;AEU&apos;" lineno="37" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="39">
+<body>
+<if type="elseif" lineno="39">
+<conditionalExpr>
+<methodInvoke name="vfPageUrl.contains" methodtype="normalmethod" returntype="String" parameters="&apos;User+Adoption&apos;" returnloc="#temp1238" lineno="39" />
+</conditionalExpr>
+<ifcondition expression= "vfPageUrl.contains(&apos;User+Adoption&apos;)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="reportType" scope="" type="" rhsType="methodinvoke" rhs="&apos;UA&apos;" lineno="40" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="42">
+<body>
+<if type="elseif" lineno="42">
+<conditionalExpr>
+<methodInvoke name="vfPageUrl.contains" methodtype="normalmethod" returntype="String" parameters="&apos;Sales+Metrics&apos;" returnloc="#temp1239" lineno="42" />
+</conditionalExpr>
+<ifcondition expression= "vfPageUrl.contains(&apos;Sales+Metrics&apos;)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="reportType" scope="" type="" rhsType="methodinvoke" rhs="&apos;OPP&apos;" lineno="43" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="45">
+<body>
+<if type="elseif" lineno="45">
+<conditionalExpr>
+<methodInvoke name="vfPageUrl.contains" methodtype="normalmethod" returntype="String" parameters="&apos;Marketing+Metrics&apos;" returnloc="#temp1240" lineno="45" />
+</conditionalExpr>
+<ifcondition expression= "vfPageUrl.contains(&apos;Marketing+Metrics&apos;)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="reportType" scope="" type="" rhsType="methodinvoke" rhs="&apos;SAM&apos;" lineno="46" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+</body>
+</true>
+</if>
+<VariableDeclaration>
+<varDeclaration name="Reports" scope="methodvar" location="JSONClass" type="string" lineno="49" />
+<assignHeap name="Reports" scope="methodvar" type="string" rhsType="value" rhs="&apos;&apos;" lineno="49" />
+</VariableDeclaration>
+<if type="simpleif" lineno="50">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="reportType" RHStype="" RHS="&apos;UA&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "reportType==&apos;UA&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="Reports" scope="" type="" rhsType="value" rhs="&apos;PSM_User_Login_Percentage:PSM_Salesforce_User_Login:PSM_Chatter_User_Login:PSM_Partner_Login:PSM_Force_Login&apos;" lineno="52" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="55">
+<body>
+<if type="elseif" lineno="55">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="reportType" RHStype="" RHS="&apos;OPP&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "reportType==&apos;OPP&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="Reports" scope="" type="" rhsType="value" rhs="&apos;BSM_Total_Opportunities:BSM_Won_Opportunity:BSM_Lost_Opportunity:BSM_Win_Rate:BSM_Win_Rate_Improvement&apos;" lineno="57" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="59">
+<body>
+<if type="elseif" lineno="59">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="reportType" RHStype="" RHS="&apos;SAM&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "reportType==&apos;SAM&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="Reports" scope="" type="" rhsType="value" rhs="&apos;BP_Lead_count:BP_Lead_Conversion_rate:BP_Opp_Won_Lead_Source&apos;" lineno="61" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="63">
+<body>
+<if type="elseif" lineno="63">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="reportType" RHStype="" RHS="&apos;AEU&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "reportType==&apos;AEU&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="Reports" scope="" type="" rhsType="value" rhs="&apos;AEU_User_Creating_Account:AEU_User_Creating_Contact:AEU_User_Creating_Lead:AEU_User_Creating_Opportunity:AEU_User_Creating_Cases&apos;" lineno="65" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="68">
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="Reports" scope="" type="" rhsType="value" rhs="&apos;BP_Case_Aging_Trend:BP_Lead_Aging_Trend:BP_Opportunity_Aging_Trend&apos;" lineno="70" />
+</AssignmentStatement>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+<VariableDeclaration>
+<methodInvoke name="Reports.Split" methodtype="normalmethod" returntype="String" parameters="&apos;:&apos;" returnloc="#temp1241" lineno="73" />
+<varDeclaration name="lstOfReports" scope="methodvar" location="JSONClass" type="string[]" lineno="73" />
+<assignHeap name="lstOfReports" scope="methodvar" type="string[]" rhsType="methodinvoke" rhs="Reports.Split(&apos;:&apos;)" lineno="73" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="list&lt;JSONClass&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1242" lineno="74" />
+<varDeclaration name="lst" scope="methodvar" location="JSONClass" type="list&amp;lt;JSONClass&amp;gt;" lineno="74" />
+<assignHeap name="lst" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newlist&lt;JSONClass&gt;()" lineno="74" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="Set&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1243" lineno="75" />
+<varDeclaration name="categorySet" scope="methodvar" location="JSONClass" type="Set&amp;lt;string&amp;gt;" lineno="75" />
+<assignHeap name="categorySet" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSet&lt;string&gt;()" lineno="75" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="map&lt;decimal,string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1244" lineno="76" />
+<varDeclaration name="categoryMap" scope="methodvar" location="JSONClass" type="map&amp;lt;decimal,string&amp;gt;" lineno="76" />
+<assignHeap name="categoryMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newmap&lt;decimal,string&gt;()" lineno="76" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="list&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1245" lineno="77" />
+<varDeclaration name="orderSet" scope="methodvar" location="JSONClass" type="list&amp;lt;string&amp;gt;" lineno="77" />
+<assignHeap name="orderSet" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newlist&lt;string&gt;()" lineno="77" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="sortOrder" scope="methodvar" location="JSONClass" type="integer" lineno="78" />
+<assignHeap name="sortOrder" scope="methodvar" type="integer" rhsType="value" rhs="1" lineno="78" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="isTrue" scope="methodvar" location="JSONClass" type="boolean" lineno="79" />
+</VariableDeclaration>
+<loop type="simplefor" lineno="80">
+<initialExpr>
+<VariableDeclaration>
+<varDeclaration name="i" scope="methodvar" location="JSONClass" type="integer" lineno="80" />
+<assignHeap name="i" scope="methodvar" type="integer" rhsType="value" rhs="1" lineno="80" />
+</VariableDeclaration>
+</initialExpr>
+<conditionalExpr>
+<methodInvoke name="#temp1245.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1246" lineno="80" />
+<ConditionalStatement LHStype="" LHS="i" RHStype="" RHS="lstOfReports.size()" Operator="&lt;="/>
+</conditionalExpr>
+<incrementExpr>
+</incrementExpr>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Id, AIES_ACCENTURE__Title__c, AIES_ACCENTURE__Label_X__c, AIES_ACCENTURE__Label_Y__c, (select AIES_ACCENTURE__Key__c, AIES_ACCENTURE__Value__c,AIES_ACCENTURE__SortOrder__c, AIES_ACCENTURE__Portfolio__c from AIES_ACCENTURE__AIESMetricData__r where AIES_ACCENTURE__Portfolio__c = :portfolioID order by AIES_ACCENTURE__SortOrder__c asc) from AIES_ACCENTURE__AIESMetricMaster__c where Name=:ReportName limit 1 ]" returnloc="#temp1247" lineno="85" />
+<varDeclaration name="report" scope="methodvar" location="JSONClass" type="List&amp;lt;AIES_ACCENTURE__AIESMetricMaster__c&amp;gt;" lineno="85" />
+<assignHeap name="report" scope="methodvar" type="List&amp;lt;AIES_ACCENTURE__AIESMetricMaster__c&amp;gt;" rhsType="query" rhs="[select Id, AIES_ACCENTURE__Title__c, AIES_ACCENTURE__Label_X__c, AIES_ACCENTURE__Label_Y__c, (select AIES_ACCENTURE__Key__c, AIES_ACCENTURE__Value__c,AIES_ACCENTURE__SortOrder__c, AIES_ACCENTURE__Portfolio__c from AIES_ACCENTURE__AIESMetricData__r where AIES_ACCENTURE__Portfolio__c = :portfolioID order by AIES_ACCENTURE__SortOrder__c asc) from AIES_ACCENTURE__AIESMetricMaster__c where Name=:ReportName limit 1 ]" lineno="85" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="JSONClass" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1248" lineno="87" />
+<varDeclaration name="j" scope="methodvar" location="JSONClass" type="JSONClass" lineno="87" />
+<assignHeap name="j" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newJSONClass()" lineno="87" />
+</VariableDeclaration>
+<TryStatement lineno="88">
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="j.title" scope="" type="" rhsType="methodinvoke" rhs="report[0].AIES_ACCENTURE__Title__c" lineno="90" />
+</AssignmentStatement>
+<VariableDeclaration>
+<varDeclaration name="metricdata" scope="methodvar" location="JSONClass" type="List&amp;lt;AIES_ACCENTURE__AIESMetricData__c&amp;gt;" lineno="91" />
+<assignHeap name="metricdata" scope="methodvar" type="List&amp;lt;AIES_ACCENTURE__AIESMetricData__c&amp;gt;" rhsType="variable" rhs="report[0].AIES_ACCENTURE__AIESMetricData__r" lineno="91" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="93">
+<Iterator type="AIES_ACCENTURE__AIESMetricData__c" name="rData" on="metricdata">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="List&lt;object&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1251" lineno="95" />
+<varDeclaration name="a" scope="methodvar" location="JSONClass" type="List&amp;lt;object&amp;gt;" lineno="95" />
+<assignHeap name="a" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;object&gt;()" lineno="95" />
+</VariableDeclaration>
+<methodInvoke name="a.add" methodtype="normalmethod" returntype="String" parameters="rData.AIES_ACCENTURE__Key__c" returnloc="#temp1252" lineno="96" />
+<methodInvoke name="a.add" methodtype="normalmethod" returntype="String" parameters="rData.AIES_ACCENTURE__Value__c" returnloc="#temp1253" lineno="97" />
+<methodInvoke name="" methodtype="normalmethod" returntype="String" parameters=".add(a" returnloc="#temp1254" lineno="98" />
+<methodInvoke name="categorySet.add" methodtype="normalmethod" returntype="String" parameters="rData.AIES_ACCENTURE__Key__c" returnloc="#temp1255" lineno="102" />
+<methodInvoke name="categoryMap.put" methodtype="normalmethod" returntype="String" parameters="rData.AIES_ACCENTURE__SortOrder__c,rData.AIES_ACCENTURE__Key__c" returnloc="#temp1256" lineno="103" />
+</body>
+</loop>
+<methodInvoke name="lst.add" methodtype="normalmethod" returntype="String" parameters="j" returnloc="#temp1257" lineno="105" />
+</body>
+<CatchStatement type="exception" name="e" lineno="109">
+<body>
+<curlybrace exists="true"/>
+</body>
+</CatchStatement>
+</TryStatement>
+</body>
+</loop>
+<ExpressionStatement expression="&apos;Category set is &apos;+categorySet" key="debug" lineno="113"/>
+<loop type="advancedfor" lineno="114">
+<Iterator type="string" name="setVal" on="categorySet">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="orderSet.add" methodtype="normalmethod" returntype="String" parameters="setVal" returnloc="#temp1258" lineno="115" />
+</body>
+</loop>
+<if type="simpleif" lineno="118">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="categories" RHStype="" RHS="&apos;&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "categories==&apos;&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;inside if&apos;" key="debug" lineno="120"/>
+<methodInvoke name="orderSet.sort" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1259" lineno="121" />
+<ExpressionStatement expression="&apos;OrderSet is &apos;+orderSet" key="debug" lineno="122"/>
+<loop type="advancedfor" lineno="123">
+<Iterator type="string" name="s" on="orderSet">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;S is &apos;+s" key="debug" lineno="124"/>
+<VariableDeclaration>
+<methodInvoke name="categoryMap.get" methodtype="normalmethod" returntype="String" parameters="sortOrder" returnloc="#temp1260" lineno="125" />
+<varDeclaration name="mapval" scope="methodvar" location="JSONClass" type="string" lineno="125" />
+<assignHeap name="mapval" scope="methodvar" type="string" rhsType="variable" rhs="categoryMap.get(sortOrder)" lineno="125" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="&apos;\&apos;&apos;" returnloc="#temp1261" lineno="126" />
+<assignHeap name="categories" scope="" type="" rhsType="stradd" rhs="(categories==&apos;&apos;?&apos;&apos;:&apos;,&apos;)+&apos;\&apos;&apos;+mapval+&apos;\&apos;&apos;" lineno="126" />
+</AssignmentStatement>
+<ExpressionStatement expression="&apos;Categories is&apos;+categories" key="debug" lineno="128"/>
+</body>
+</loop>
+</body>
+</true>
+</if>
+<ExpressionStatement expression="&apos;Output is &apos;+lst" key="debug" lineno="131"/>
+<AssignmentStatement>
+<methodInvoke name="JSON.serializePretty" methodtype="normalmethod" returntype="String" parameters="lst" returnloc="#temp1262" lineno="132" />
+<assignHeap name="output" scope="" type="" rhsType="methodinvoke" rhs="JSON.serializePretty(lst)" lineno="132" />
+</AssignmentStatement>
+</classbody>
+</class>
+<comments single="[25, 53, 66, 71, 100, 101]" multi="[1-6, 29-31]" empty="[8, 12, 17, 19, 23, 82, 84, 86, 92, 99, 106, 108, 117]" singlebrace="[10, 16, 18, 35, 38, 41, 44, 47, 48, 51, 54, 56, 58, 60, 62, 64, 67, 69, 72, 81, 89, 94, 104, 107, 110, 111, 112, 116, 119, 129, 130, 133, 134]"/>
+</stac>

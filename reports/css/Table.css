@@ -1,0 +1,37 @@
+body{font-family:Verdana;font-size: 12px;}
+a{text-decoration:none;color:blue; font-size: 12px; font-style:bold;text-decoration: underline;}
+
+img {border:none;}
+p{font-size:12px;}
+ol{font:Times, serif;font-size:12px;}
+.tr1{background-color:#F0F4F5;color:black;font-size: 12px}
+.tr0{background-color:#f1f1f1;color:black;font-size: 12px}
+.tr2{background-color:#ffffff;color:black;font-size: 12px}
+.th1{background-color:#9D9E9E;color:black;font-size: 12px}
+.th2{background-color:white;color:black;font-size: 12px}
+.th3{background-color:#35586C;color:black;font-size: 12px}
+.th4{background-color:#ebccb8;color:black;font-size: 14px font-weight:bold;}
+.thinside{background-color:#9D9E9E;color:black;font-size: 12px;font-weight: bold;}
+.Highlight1{background-color:#9D9E9E}
+.tableWithBorder{border-left:1px solid #35586C;border-top:1px solid #35586C;width:80%;padding:0;cell-spacing:0;border-collapse: collapse;}
+.tableForHTML{border-left:1px solid #35586C;border-top:1px solid #35586C;width:30%;padding:0;cell-spacing:0;border-collapse: collapse;}
+.tdRightBottomC{border-right:1px solid #35586C;border-bottom:1px solid #35586C;text-align:center;}
+.tdRightBottom{border-right:1px solid #35586C;border-bottom:1px solid #35586C;text-align:left;}
+.tdBottom{border-bottom:1px solid #35586C;}
+.tdRight{border-right:1px solid #35586C;}
+.tableWithoutBorder{width:80%;}
+.LinkAFSelect{width:100%;color:#FFFFFF;background-color:#383E40;}
+.LinkBFSelect{color:#000000}
+.cdiTable{border-left:1px solid #000000;border-top:1px solid #000000;width:60%;padding:0;cell-spacing:0;border-collapse: collapse;}
+.tdCdiRightBottom{border-right:1px solid #000000;border-bottom:1px solid #000000;text-align:center;font-size:12px;}
+.tdCdiRightBottomR{border-right:1px solid #000000;border-bottom:1px solid #000000;text-align:center;font-size:12px;background-color:#ff0000;}
+.tdCdiRightBottomY{border-right:1px solid #000000;border-bottom:1px solid #000000;text-align:center;font-size:12px;background-color:#f8ff1f;}
+.tdCdiRightBottomG{border-right:1px solid #000000;border-bottom:1px solid #000000;text-align:center;font-size:12px;background-color:#00ff00;}
+.thCdiRightBottom{border-right:1px solid #000000;border-bottom:1px solid #000000;text-align:center;font-size:12px;font-weight:bold;}
+.tdCDIRight{border-right:1px solid #000000;text-align:center;font-size:12px;}
+.tdCDIBottom{border-bottom:1px solid #000000;text-align:center;font-size:12px;}
+.cdiInnerTable{width:100%;padding:0;cell-spacing:0;border-collapse: collapse;}
+.tdRightBottomRed{border-right:1px solid #eabcb8;border-bottom:1px solid #eabcb8;text-align:left;background-color:#ff0000;}
+.tdRightBottomGreen{border-right:1px solid #eabcb8;border-bottom:1px solid #eabcb8;text-align:left;background-color:#00ff00;}
+.tdRightBottomAmber{border-right:1px solid #eabcb8;border-bottom:1px solid #eabcb8;text-align:left;background-color:#f8ff1f;}
+.trheight{background-color:#fafbdc;color:black;font-size: 12px;height:30px;}

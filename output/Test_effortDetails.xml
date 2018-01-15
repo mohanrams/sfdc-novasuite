@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="Test_effortDetails.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="2 KB">
+<class name="Test_effortDetails" sharing="default" implements="" isenum="false" lineno="15" modifiers="private">
+<classbody>
+<Annotation name="isTest" lineno ="14"/>
+<method returntype="void" name="testEffortDetails" parameters="" isTestMethod="true" lineno="28" throws="" modifiers="public,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="List&lt;Request__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2226" lineno="31" />
+<varDeclaration name="requestList" scope="methodvar" location="Test_effortDetails" type="List&amp;lt;Request__c&amp;gt;" lineno="31" />
+<assignHeap name="requestList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;Request__c&gt;()" lineno="31" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp2226.insertReleaseForRequest" methodtype="normalmethod" returntype="String" parameters="&apos;Test Release&apos;+1" returnloc="#temp2227" lineno="34" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="#temp2227" returnloc="#temp2228" lineno="34" />
+<varDeclaration name="release" scope="methodvar" location="Test_effortDetails" type="Release__c" lineno="34" />
+<assignHeap name="release" scope="methodvar" type="Release__c" rhsType="value" rhs="PMODataUnitHelper.insertReleaseForRequest(&apos;Test Release&apos;+1)" lineno="34" />
+</VariableDeclaration>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="release" returnloc="" lineno="37" />
+<loop type="simplefor" lineno="40">
+<initialExpr>
+<VariableDeclaration>
+<varDeclaration name="countRequest" scope="methodvar" location="Test_effortDetails" type="integer" lineno="40" />
+<assignHeap name="countRequest" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="40" />
+</VariableDeclaration>
+</initialExpr>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="countRequest" RHStype="" RHS="200" Operator="&lt;"/>
+</conditionalExpr>
+<incrementExpr>
+</incrementExpr>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="PMODataUnitHelper.insertRequest" methodtype="normalmethod" returntype="String" parameters="&apos;Test Request&apos;+countRequest,release.Id" returnloc="#temp2229" lineno="42" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="#temp2229" returnloc="#temp2230" lineno="42" />
+<varDeclaration name="currentRequest" scope="methodvar" location="Test_effortDetails" type="Request__c" lineno="42" />
+<assignHeap name="currentRequest" scope="methodvar" type="Request__c" rhsType="variable" rhs="PMODataUnitHelper.insertRequest(&apos;Test Request&apos;+countRequest,release.Id)" lineno="42" />
+</VariableDeclaration>
+<methodInvoke name="requestList.add" methodtype="normalmethod" returntype="String" parameters="currentRequest" returnloc="#temp2231" lineno="43" />
+</body>
+</loop>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2232" lineno="47" />
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="requestList" returnloc="" lineno="50" />
+<VariableDeclaration>
+<methodInvoke name="ApexPages.StandardController" methodtype="constructormethod" returntype="newobject" parameters="release" returnloc="#temp2233" lineno="53" />
+<varDeclaration name="stdCont" scope="methodvar" location="Test_effortDetails" type="ApexPages.StandardController" lineno="53" />
+<assignHeap name="stdCont" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.StandardController(release)" lineno="53" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="effortdetails" methodtype="constructormethod" returntype="newobject" parameters="stdCont" returnloc="#temp2234" lineno="54" />
+<varDeclaration name="controller" scope="methodvar" location="Test_effortDetails" type="effortdetails" lineno="54" />
+<assignHeap name="controller" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="neweffortdetails(stdCont)" lineno="54" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2235" lineno="57" />
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select TotEst__c
+                      						from Request__c
+                      						where Id in: requestList]" returnloc="#temp2236" lineno="59" />
+<varDeclaration name="insertedRequest" scope="methodvar" location="Test_effortDetails" type="List&amp;lt;Request__c&amp;gt;" lineno="59" />
+<assignHeap name="insertedRequest" scope="methodvar" type="List&amp;lt;Request__c&amp;gt;" rhsType="query" rhs="[select TotEst__c
+                      						from Request__c
+                      						where Id in: requestList]" lineno="59" />
+</VariableDeclaration>
+<ExpressionStatement expression="requestList.size(),200,&apos;Number of request record returned is incorrect.The result has &apos;+requestList.size()+&apos; records-Expected 200&apos;" key="assertequals" lineno="64"/>
+<methodendline lineno="67"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[30, 33, 36, 39, 46, 49, 52, 56, 63]" multi="[1-13, 17-27]" empty="[3, 5, 7, 9, 11, 16, 32, 35, 38, 45, 48, 51, 55, 58, 62, 66, 68]" singlebrace="[29, 41, 44, 67, 69]"/>
+</stac>

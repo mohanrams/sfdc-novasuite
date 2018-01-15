@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="BatchLeadMetrics_v1.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="7 KB">
+<class name="BatchLeadMetrics_v1" sharing="default" implements="Database.batchable&lt;sobject&gt;,Database.stateful" isenum="false" lineno="16" modifiers="global">
+<classbody>
+<VariableDeclaration>
+<varDeclaration name="totLeads" scope="methodvar" location="BatchLeadMetrics_v1" type="string" lineno="18" />
+<assignHeap name="totLeads" scope="methodvar" type="string" rhsType="value" rhs="&apos;totLeads&apos;" lineno="18" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="closureRate" scope="methodvar" location="BatchLeadMetrics_v1" type="string" lineno="19" />
+<assignHeap name="closureRate" scope="methodvar" type="string" rhsType="value" rhs="&apos;closureRate&apos;" lineno="19" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="aging" scope="methodvar" location="BatchLeadMetrics_v1" type="string" lineno="20" />
+<assignHeap name="aging" scope="methodvar" type="string" rhsType="value" rhs="&apos;aging&apos;" lineno="20" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="currentQuarterCounter" scope="methodvar" location="BatchLeadMetrics_v1" type="decimal" lineno="21" />
+<assignHeap name="currentQuarterCounter" scope="methodvar" type="decimal" rhsType="value" rhs="0" lineno="21" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="previousQuarterCounter" scope="methodvar" location="BatchLeadMetrics_v1" type="decimal" lineno="22" />
+<assignHeap name="previousQuarterCounter" scope="methodvar" type="decimal" rhsType="value" rhs="0" lineno="22" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="map&lt;string,integer&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp749" lineno="24" />
+<varDeclaration name="countbyLeadsource" scope="methodvar" location="BatchLeadMetrics_v1" type="map&amp;lt;string,integer&amp;gt;" lineno="24" />
+<assignHeap name="countbyLeadsource" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newmap&lt;string,integer&gt;()" lineno="24" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="map&lt;string,integer&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp750" lineno="25" />
+<varDeclaration name="convertedCountbyLeadsource" scope="methodvar" location="BatchLeadMetrics_v1" type="map&amp;lt;string,integer&amp;gt;" lineno="25" />
+<assignHeap name="convertedCountbyLeadsource" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newmap&lt;string,integer&gt;()" lineno="25" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="map&lt;date,map&lt;string,integer&gt;&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp751" lineno="26" />
+<varDeclaration name="countMap" scope="methodvar" location="BatchLeadMetrics_v1" type="map&amp;lt;date,map&amp;lt;string,integer&amp;gt;&amp;gt;" lineno="26" />
+<assignHeap name="countMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newmap&lt;date,map&lt;string,integer&gt;&gt;()" lineno="26" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;sobject&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp752" lineno="27" />
+<varDeclaration name="oppCloseList" scope="methodvar" location="BatchLeadMetrics_v1" type="List&amp;lt;sobject&amp;gt;" lineno="27" />
+<assignHeap name="oppCloseList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;sobject&gt;()" lineno="27" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d0" scope="methodvar" location="BatchLeadMetrics_v1" type="date" lineno="29" />
+<assignHeap name="d0" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="Util.d00" lineno="29" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d1" scope="methodvar" location="BatchLeadMetrics_v1" type="date" lineno="30" />
+<assignHeap name="d1" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="Util.d01" lineno="30" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d2" scope="methodvar" location="BatchLeadMetrics_v1" type="date" lineno="31" />
+<assignHeap name="d2" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="Util.d02" lineno="31" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d3" scope="methodvar" location="BatchLeadMetrics_v1" type="date" lineno="32" />
+<assignHeap name="d3" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="Util.d03" lineno="32" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d4" scope="methodvar" location="BatchLeadMetrics_v1" type="date" lineno="33" />
+<assignHeap name="d4" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="Util.d04" lineno="33" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d5" scope="methodvar" location="BatchLeadMetrics_v1" type="date" lineno="34" />
+<assignHeap name="d5" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="Util.d05" lineno="34" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d6" scope="methodvar" location="BatchLeadMetrics_v1" type="date" lineno="35" />
+<assignHeap name="d6" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="Util.d06" lineno="35" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="months" scope="methodvar" location="BatchLeadMetrics_v1" type="List&amp;lt;date&amp;gt;" lineno="37" />
+<assignHeap name="months" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;date&gt;{d1,d2,d3,d4,d5,d6}" lineno="37" />
+</VariableDeclaration>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="currentQuarterCounter" scope="" type="" rhsType="methodinvoke" rhs="previousQuarterCounter=0" lineno="43" />
+</AssignmentStatement>
+</AssignmentStatement>
+<TryStatement lineno="44">
+<body>
+<curlybrace exists="true"/>
+<loop type="simplefor" lineno="45">
+<initialExpr>
+<VariableDeclaration>
+<varDeclaration name="i" scope="methodvar" location="BatchLeadMetrics_v1" type="integer" lineno="45" />
+<assignHeap name="i" scope="methodvar" type="integer" rhsType="value" rhs="1" lineno="45" />
+</VariableDeclaration>
+</initialExpr>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="i" RHStype="" RHS="6" Operator="&lt;="/>
+</conditionalExpr>
+<incrementExpr>
+</incrementExpr>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<varDeclaration name="n" scope="methodvar" location="BatchLeadMetrics_v1" type="Map&amp;lt;string,integer&amp;gt;" lineno="47" />
+<assignHeap name="n" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;string,integer&gt;{totLeads=&gt;0,aging=&gt;0}" lineno="47" />
+</VariableDeclaration>
+</body>
+</loop>
+<loop type="advancedfor" lineno="50">
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select count(id), LeadSource from opportunity where iswon = true and isclosed = true and createddate = LAST_N_Months:6 and leadsource !=null group by LeadSource]" returnloc="#temp755" lineno="50" />
+<Iterator type="sobject" name="s" on="[select count(id), LeadSource from opportunity where iswon = true and isclosed = true and createddate = LAST_N_Months:6 and leadsource !=null group by LeadSource]">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="oppCloseList.add" methodtype="normalmethod" returntype="String" parameters="s" returnloc="#temp756" lineno="51" />
+</body>
+</loop>
+</body>
+<CatchStatement type="Exception" name="e" lineno="53">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="util.ExceptionHandler" methodtype="normalmethod" returntype="String" parameters="e,&apos;BatchLeadMetrics&apos;,&apos;start&apos;" returnloc="#temp757" lineno="54" />
+</body>
+</CatchStatement>
+</TryStatement>
+<ReturnBlock>
+<methodInvoke name="Database.getquerylocator" methodtype="normalmethod" returntype="String" parameters="&apos;select leadsource, createddate, ConvertedDate, isconverted from lead where ConvertedDate &gt;= :d6 and ConvertedDate &lt;: d0&apos;" returnloc="#temp758" lineno="56" />
+<return expression="Database.getquerylocator(&apos;select leadsource, createddate, ConvertedDate, isconverted from lead where ConvertedDate &gt;= :d6 and ConvertedDate &lt;: d0&apos;)" expressiontype="@methodinvoke" lineno="56" />
+</ReturnBlock>
+<method returntype="void" name="execute" parameters="BC:Database.batchablecontext,scope:List&amp;lt;Lead&amp;gt;" isTestMethod="false" lineno="60" throws="" modifiers="public">
+<body>
+<TryStatement lineno="61">
+<body>
+<curlybrace exists="true"/>
+<loop type="advancedfor" lineno="62">
+<Iterator type="Lead" name="s" on="scope">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="64">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.LeadSource" RHStype="" RHS="null" Operator="!="/>
+</conditionalExpr>
+<ifcondition expression= "s.LeadSource!=null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="66">
+<conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "s.isConverted"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="68">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.ConvertedDate" RHStype="" RHS="d3" Operator="&gt;="/>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.ConvertedDate" RHStype="" RHS="d0" Operator="&lt;"/>
+<ConditionalStatement LHStype="variable" LHS="#temp758.d0" RHStype="s.ConvertedDate&lt;d0" RHS="s.ConvertedDate&lt;d0" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "s.ConvertedDate&gt;=d3&amp;&amp;s.ConvertedDate&lt;d0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="71">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.ConvertedDate" RHStype="" RHS="d3" Operator="&lt;"/>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.ConvertedDate" RHStype="" RHS="d6" Operator="&gt;="/>
+<ConditionalStatement LHStype="variable" LHS="d6" RHStype="s.ConvertedDate&gt;=d6" RHS="s.ConvertedDate&gt;=d6" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "s.ConvertedDate&lt;d3&amp;&amp;s.ConvertedDate&gt;=d6"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+</body>
+</true>
+</if>
+</body>
+</true>
+</if>
+</body>
+</true>
+</if>
+<ExpressionStatement expression="&apos;currentQuarterCounter --&gt;&apos;+currentQuarterCounter" key="debug" lineno="76"/>
+<ExpressionStatement expression="&apos;previousQuarterCounter--&gt;&apos;+previousQuarterCounter" key="debug" lineno="77"/>
+</body>
+</loop>
+</body>
+<CatchStatement type="Exception" name="e" lineno="97">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="util.ExceptionHandler" methodtype="normalmethod" returntype="String" parameters="e,&apos;BatchLeadMetrics&apos;,&apos;execute&apos;" returnloc="#temp759" lineno="98" />
+</body>
+</CatchStatement>
+</TryStatement>
+<methodendline lineno="100"/>
+</body>
+</method>
+<method returntype="void" name="finish" parameters="BC:Database.batchablecontext" isTestMethod="false" lineno="103" throws="" modifiers="public">
+<body>
+<TryStatement lineno="104">
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="List&lt;AIES_ACCENTURE__AIESMetricData__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp760" lineno="107" />
+<varDeclaration name="obj" scope="methodvar" location="BatchLeadMetrics_v1" type="AIES_ACCENTURE__AIESMetricData__c[]" lineno="107" />
+<assignHeap name="obj" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_ACCENTURE__AIESMetricData__c&gt;()" lineno="107" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp760.getMetricMaster" methodtype="normalmethod" returntype="String" parameters="&apos;SM_BulletLeadConversion&apos;" returnloc="#temp761" lineno="134" />
+<varDeclaration name="m4" scope="methodvar" location="BatchLeadMetrics_v1" type="AIES_ACCENTURE__AIESMetricMaster__c" lineno="134" />
+<assignHeap name="m4" scope="methodvar" type="AIES_ACCENTURE__AIESMetricMaster__c" rhsType="methodinvoke" rhs="Util.getMetricMaster(&apos;SM_BulletLeadConversion&apos;)" lineno="134" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="cal" scope="methodvar" location="BatchLeadMetrics_v1" type="decimal" lineno="135" />
+<assignHeap name="cal" scope="methodvar" type="decimal" rhsType="value" rhs="0" lineno="135" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Finish currentQuarterCounter --&gt;&apos;+currentQuarterCounter" key="debug" lineno="136"/>
+<ExpressionStatement expression="&apos;Finish previousQuarterCounter--&gt;&apos;+previousQuarterCounter" key="debug" lineno="137"/>
+<if type="simpleif" lineno="138">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="previousQuarterCounter" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "previousQuarterCounter&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="cal" scope="" type="" rhsType="value" rhs="100" lineno="139" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+<methodInvoke name="Util.createMetricData" methodtype="normalmethod" returntype="String" parameters="&apos;Key&apos;,cal,m4" returnloc="#temp762" lineno="141" />
+<methodInvoke name="obj.add" methodtype="normalmethod" returntype="String" parameters="Util.createMetricData(&apos;Key&apos;,cal,m4)" returnloc="#temp763" lineno="141" />
+<methodInvoke name="lib.dml.upsert" methodtype="" returntype="" parameters="obj" returnloc="" lineno="154" />
+</body>
+<CatchStatement type="exception" name="e" lineno="156">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="util.exceptionHandler" methodtype="normalmethod" returntype="String" parameters="e,&apos;BatchLeadMetrics&apos;,&apos;finish&apos;" returnloc="#temp764" lineno="158" />
+</body>
+</CatchStatement>
+</TryStatement>
+<methodendline lineno="161"/>
+</body>
+</method>
+<method returntype="void" name="calc" parameters="s:Lead,d:date" isTestMethod="false" lineno="163" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="countmap.get" methodtype="normalmethod" returntype="String" parameters="d" returnloc="#temp765" lineno="165" />
+<varDeclaration name="monthRec" scope="methodvar" location="BatchLeadMetrics_v1" type="map&amp;lt;string,integer&amp;gt;" lineno="165" />
+<assignHeap name="monthRec" scope="methodvar" type="map&amp;lt;string,integer&amp;gt;" rhsType="variable" rhs="countmap.get(d)" lineno="165" />
+</VariableDeclaration>
+<methodInvoke name="monthRec.get" methodtype="normalmethod" returntype="String" parameters="totLeads" returnloc="#temp766" lineno="166" />
+<methodInvoke name="monthRec.put" methodtype="normalmethod" returntype="String" parameters="totLeads,monthRec.get(totLeads)+1" returnloc="#temp767" lineno="166" />
+<if type="simpleif" lineno="167">
+<conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "s.isConverted"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="monthRec.get" methodtype="normalmethod" returntype="String" parameters="aging" returnloc="#temp768" lineno="168" />
+<methodInvoke name="" methodtype="normalmethod" returntype="String" parameters=".date(" returnloc="#temp769" lineno="168" />
+<methodInvoke name="#temp769.daysbetween" methodtype="normalmethod" returntype="String" parameters="s.ConvertedDate" returnloc="#temp770" lineno="168" />
+<methodInvoke name="#temp768.createddate" methodtype="normalmethod" returntype="String" parameters="aging,monthRec.get(aging)+s.createddate.date().daysbetween(s.ConvertedDate)" returnloc="#temp771" lineno="168" />
+</body>
+</true>
+</if>
+<methodInvoke name="countMap.put" methodtype="normalmethod" returntype="String" parameters="d,monthRec" returnloc="#temp772" lineno="171" />
+<methodendline lineno="173"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[170]" multi="[1-14, 78-92, 108-133, 142-153]" empty="[13, 15, 17, 23, 28, 36, 38, 39, 41, 42, 46, 57, 59, 63, 65, 67, 93, 94, 95, 101, 102, 106, 115, 122, 129, 159, 162, 164, 172]" singlebrace="[49, 52, 55, 58, 70, 73, 74, 75, 91, 96, 99, 100, 105, 114, 121, 128, 140, 147, 151, 152, 155, 157, 160, 161, 169, 173, 174]"/>
+</stac>

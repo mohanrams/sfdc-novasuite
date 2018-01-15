@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="AggregateResultIterable.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="181 bytes">
+<class name="AggregateResultIterable" sharing="default" implements="Iterable&lt;AggregateResult&gt;" isenum="false" lineno="1" modifiers="global">
+<classbody>
+<method returntype="Iterator&amp;lt;AggregateResult&amp;gt;" name="Iterator" parameters="" isTestMethod="false" lineno="2" throws="" modifiers="global">
+<body>
+<ReturnBlock>
+<methodInvoke name="AggregateResultIterator" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1" lineno="3" />
+<return expression="newAggregateResultIterator()" expressiontype="@newobject" lineno="0" />
+</ReturnBlock>
+<methodendline lineno="4"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[]" multi="[]" empty="[]" singlebrace="[4, 5]"/>
+</stac>

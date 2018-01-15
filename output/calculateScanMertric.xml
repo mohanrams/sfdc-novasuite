@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="calculateScanMertric.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="3 KB">
+<class name="calculateScanMertric" sharing="default" implements="" isenum="false" lineno="6" modifiers="public">
+<classbody>
+<VariableDeclaration>
+<varDeclaration name="metricListToScan" scope="methodvar" location="calculateScanMertric" type="List&amp;lt;AIES_ACCENTURE__AIESMetricMaster__c&amp;gt;" lineno="8" modifiers="public" />
+</VariableDeclaration>
+<method returntype="void" name="retrieveDataFromScanMetrics" parameters="" isTestMethod="false" lineno="10" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Id,Scan_Metric_Formula__c from AIES_ACCENTURE__AIESMetricMaster__c where Scan_Metric_Formula__c != null]" returnloc="#temp1031" lineno="12" />
+<assignHeap name="metricListToScan" scope="" type="" rhsType="soqlquery" rhs="[select Id,Scan_Metric_Formula__c from AIES_ACCENTURE__AIESMetricMaster__c where Scan_Metric_Formula__c != null]" lineno="12" />
+</AssignmentStatement>
+<ExpressionStatement expression="&apos;Scan metric &apos;+metricListToScan" key="debug" lineno="13"/>
+<loop type="advancedfor" lineno="15">
+<Iterator type="AIES_ACCENTURE__AIESMetricMaster__c" name="metricmaster" on="metricListToScan">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="doProcess" methodtype="normalmethod" returntype="String" parameters="metricmaster.Scan_Metric_Formula__c,metricmaster.name" returnloc="#temp1032" lineno="16" />
+</body>
+</loop>
+<methodendline lineno="19"/>
+</body>
+</method>
+<method returntype="void" name="doProcess" parameters="formula:string,metricName:string" isTestMethod="false" lineno="21" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<varDeclaration name="getFormula" scope="methodvar" location="calculateScanMertric" type="string" lineno="22" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="granularScanMetricData" scope="methodvar" location="calculateScanMertric" type="map&amp;lt;string,map&amp;lt;string,decimal&amp;gt;&amp;gt;" lineno="23" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="keyvalue" scope="methodvar" location="calculateScanMertric" type="map&amp;lt;string,decimal&amp;gt;" lineno="24" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="numeratorValue" scope="methodvar" location="calculateScanMertric" type="decimal" lineno="25" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="denominatorValue" scope="methodvar" location="calculateScanMertric" type="decimal" lineno="25" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="result" scope="methodvar" location="calculateScanMertric" type="decimal" lineno="25" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="keys" scope="methodvar" location="calculateScanMertric" type="list&amp;lt;list&amp;lt;string&amp;gt;&amp;gt;" lineno="28" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="inputPattern" scope="methodvar" location="calculateScanMertric" type="string" lineno="31" />
+<assignHeap name="inputPattern" scope="methodvar" type="string" rhsType="value" rhs="&apos;\\{\\d\\}&apos;" lineno="31" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="pattern.compile" methodtype="normalmethod" returntype="String" parameters="inputPattern" returnloc="#temp1033" lineno="32" />
+<varDeclaration name="myPattern" scope="methodvar" location="calculateScanMertric" type="pattern" lineno="32" />
+<assignHeap name="myPattern" scope="methodvar" type="pattern" rhsType="variable" rhs="pattern.compile(inputPattern)" lineno="32" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1033.matcher" methodtype="normalmethod" returntype="String" parameters="formula" returnloc="#temp1034" lineno="33" />
+<varDeclaration name="myMatcher" scope="methodvar" location="calculateScanMertric" type="matcher" lineno="33" />
+<assignHeap name="myMatcher" scope="methodvar" type="matcher" rhsType="variable" rhs="myPattern.matcher(formula)" lineno="33" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="loopcount" scope="methodvar" location="calculateScanMertric" type="integer" lineno="34" />
+</VariableDeclaration>
+<loop type="while" lineno="37">
+<conditionalExpr>
+<methodInvoke name="#temp1034.find" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1035" lineno="37" />
+</conditionalExpr>
+<whilecondition expression= "myMatcher.find()" lineno="37"/>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="myMatcher.group(0)" key="debug" lineno="38"/>
+<AssignmentStatement>
+<assignHeap name="loopcount" scope="" type="" rhsType="value" rhs="0" lineno="41" />
+</AssignmentStatement>
+<if type="simpleif" lineno="43">
+<conditionalExpr>
+<methodInvoke name="myMatcher.group" methodtype="normalmethod" returntype="String" parameters="0" returnloc="#temp1036" lineno="43" />
+<methodInvoke name="0.length" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1037" lineno="43" />
+<ConditionalStatement LHStype="" LHS="myMatcher.group(0).length()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "myMatcher.group(0).length()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="#temp1037.group" methodtype="normalmethod" returntype="String" parameters="0" returnloc="#temp1038" lineno="44" />
+<methodInvoke name="#temp1038.substring" methodtype="normalmethod" returntype="String" parameters="1,2" returnloc="#temp1039" lineno="44" />
+<varDeclaration name="index" scope="methodvar" location="calculateScanMertric" type="string" lineno="44" />
+<assignHeap name="index" scope="methodvar" type="string" rhsType="methodinvoke" rhs="myMatcher.group(0).substring(1,2)" lineno="44" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Id,Key__c,Metric_Master__c,Value__c from Scan_Metric_Data__c where Metric_Master__r.name = :metricName+&apos;_&apos;+index ORDER BY Sort_Order__c ASC]" returnloc="#temp1040" lineno="45" />
+<varDeclaration name="ScanMetricData" scope="methodvar" location="calculateScanMertric" type="list&amp;lt;Scan_Metric_Data__c&amp;gt;" lineno="45" />
+<assignHeap name="ScanMetricData" scope="methodvar" type="list&amp;lt;Scan_Metric_Data__c&amp;gt;" rhsType="query" rhs="[select Id,Key__c,Metric_Master__c,Value__c from Scan_Metric_Data__c where Metric_Master__r.name = :metricName+&apos;_&apos;+index ORDER BY Sort_Order__c ASC]" lineno="45" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="46">
+<Iterator type="Scan_Metric_Data__c" name="metricdata" on="ScanMetricData">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="keyvalue.put" methodtype="normalmethod" returntype="String" parameters="metricdata.Key__c,metricdata.Value__c" returnloc="#temp1041" lineno="47" />
+</body>
+</loop>
+<methodInvoke name="#temp1042.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1043" lineno="51" />
+<methodInvoke name="loopcount.addAll" methodtype="normalmethod" returntype="String" parameters="keyvalue.keySet()" returnloc="#temp1044" lineno="51" />
+<methodInvoke name="granularScanMetricData.put" methodtype="normalmethod" returntype="String" parameters="index,keyvalue" returnloc="#temp1045" lineno="53" />
+<methodInvoke name="keyvalue.clear" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1046" lineno="54" />
+</body>
+</true>
+</if>
+</body>
+</loop>
+<VariableDeclaration>
+<varDeclaration name="finalKeySet" scope="methodvar" location="calculateScanMertric" type="List&amp;lt;string&amp;gt;" lineno="59" />
+</VariableDeclaration>
+<methodInvoke name="uniqueKeySet" methodtype="normalmethod" returntype="String" parameters="keys" returnloc="#temp1047" lineno="62" />
+<methodInvoke name="finalKeySet.addAll" methodtype="normalmethod" returntype="String" parameters="uniqueKeySet(keys)" returnloc="#temp1048" lineno="62" />
+<VariableDeclaration>
+<varDeclaration name="formulaForEachKey" scope="methodvar" location="calculateScanMertric" type="List&amp;lt;string&amp;gt;" lineno="64" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="66">
+<Iterator type="string" name="key" on="finalKeySet">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<varDeclaration name="tempFormula" scope="methodvar" location="calculateScanMertric" type="string" lineno="67" />
+<assignHeap name="tempFormula" scope="methodvar" type="string" rhsType="variable" rhs="formula" lineno="67" />
+</VariableDeclaration>
+</body>
+</loop>
+<methodendline lineno="73"/>
+</body>
+</method>
+<method returntype="Set&amp;lt;string&amp;gt;" name="uniqueKeySet" parameters="MasterKeySet:List&amp;lt;List&amp;lt;string&amp;gt;&amp;gt;" isTestMethod="false" lineno="77" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<varDeclaration name="uniqueKeySet" scope="methodvar" location="calculateScanMertric" type="Set&amp;lt;string&amp;gt;" lineno="79" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="80">
+<Iterator type="List&lt;string&gt;" name="keySet" on="MasterKeySet">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="uniqueKeySet.retainAll" methodtype="normalmethod" returntype="String" parameters="keySet" returnloc="#temp1049" lineno="81" />
+</body>
+</loop>
+<ReturnBlock>
+<return expression="uniqueKeySet" expressiontype="@alias" lineno="84" />
+</ReturnBlock>
+<methodendline lineno="85"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[27, 30, 36, 40, 50, 61, 68, 69, 76]" multi="[1-4]" empty="[5, 9, 11, 14, 18, 20, 26, 29, 35, 39, 42, 49, 52, 58, 60, 63, 65, 70, 72, 74, 75, 78, 83, 86, 87]" singlebrace="[7, 17, 19, 48, 56, 57, 71, 73, 82, 85, 88]"/>
+</stac>

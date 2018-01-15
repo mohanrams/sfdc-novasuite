@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="PMODataUnitHelper.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="3 KB">
+<class name="PMODataUnitHelper" sharing="default" implements="" isenum="false" lineno="15" modifiers="public">
+<classbody>
+<Annotation name="isTest" lineno ="14"/>
+<method returntype="IDC_Task__c" name="createTask" parameters="taskType:string,Userid:string,RequestId:string" isTestMethod="false" lineno="29" throws="" modifiers="public,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="IDC_Task__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1263" lineno="32" />
+<varDeclaration name="idctask" scope="methodvar" location="PMODataUnitHelper" type="IDC_Task__c" lineno="32" />
+<assignHeap name="idctask" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newIDC_Task__c()" lineno="32" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="idcTask.Task_Type__c" scope="" type="" rhsType="methodinvoke" rhs="taskType" lineno="35" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="idcTask.Defect_Found__c" scope="" type="" rhsType="value" rhs="true" lineno="36" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="idcTask.Defect_Description__c" scope="" type="" rhsType="value" rhs="&apos;Test Description&apos;" lineno="37" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="idcTask.Planned_LOE__c" scope="" type="" rhsType="value" rhs="1.00" lineno="38" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="idcTask.OwnerId" scope="" type="" rhsType="variable" rhs="Userid" lineno="39" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="idcTask.Request__c" scope="" type="" rhsType="variable" rhs="RequestId" lineno="40" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="system.today" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1264" lineno="41" />
+<assignHeap name="idcTask.Start_Date__c" scope="" type="" rhsType="methodinvoke" rhs="system.today()-2" lineno="41" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="idcTask.status__c" scope="" type="" rhsType="value" rhs="&apos;in Progress&apos;" lineno="42" />
+</AssignmentStatement>
+<ReturnBlock>
+<return expression="idctask" expressiontype="@alias" lineno="45" />
+</ReturnBlock>
+<methodendline lineno="46"/>
+</body>
+</method>
+<method returntype="IDC_Task__c" name="updateTask" parameters="task:IDC_Task__c" isTestMethod="false" lineno="60" throws="" modifiers="public,static">
+<body>
+<AssignmentStatement>
+<assignHeap name="task.status__c" scope="" type="" rhsType="value" rhs="&apos;Completed&apos;" lineno="63" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="task.Actual_LOE__c" scope="" type="" rhsType="value" rhs="1.00" lineno="64" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="system.today" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1265" lineno="65" />
+<assignHeap name="task.End_Date__c" scope="" type="" rhsType="methodinvoke" rhs="system.today()" lineno="65" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="task.comments__c" scope="" type="" rhsType="value" rhs="&apos;Complete&apos;" lineno="66" />
+</AssignmentStatement>
+<ReturnBlock>
+<return expression="(task)" expressiontype="@alias" lineno="69" />
+</ReturnBlock>
+<methodendline lineno="70"/>
+</body>
+</method>
+<method returntype="Request__c" name="insertRequest" parameters="requestName:string,releaseID:Id" isTestMethod="false" lineno="85" throws="" modifiers="public,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="Request__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1266" lineno="89" />
+<varDeclaration name="request" scope="methodvar" location="PMODataUnitHelper" type="Request__c" lineno="89" />
+<assignHeap name="request" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newRequest__c()" lineno="89" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="requestName" returnloc="#temp1267" lineno="92" />
+<assignHeap name="request.Request_Title__c" scope="" type="" rhsType="stradd" rhs="&apos;Test Release &apos;+requestName" lineno="92" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="request.Request_Type__c" scope="" type="" rhsType="value" rhs="&apos;Configuration&apos;" lineno="93" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="request.Request_Description__c" scope="" type="" rhsType="value" rhs="&apos;Test&apos;" lineno="94" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="request.Req__c" scope="" type="" rhsType="value" rhs="1.0" lineno="95" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="request.SIT__c" scope="" type="" rhsType="value" rhs="1.0" lineno="96" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="request.BUT__c" scope="" type="" rhsType="value" rhs="1.0" lineno="97" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="request.UAT__c" scope="" type="" rhsType="value" rhs="1.0" lineno="98" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="request.Des__c" scope="" type="" rhsType="value" rhs="1.0" lineno="99" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="request.TrnDep__c" scope="" type="" rhsType="value" rhs="1.0" lineno="100" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="request.Adapt__c" scope="" type="" rhsType="value" rhs="1.0" lineno="101" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="request.Release__c" scope="" type="" rhsType="variable" rhs="releaseID" lineno="102" />
+</AssignmentStatement>
+<ReturnBlock>
+<return expression="(request)" expressiontype="@alias" lineno="105" />
+</ReturnBlock>
+<methodendline lineno="106"/>
+</body>
+</method>
+<method returntype="Release__c" name="insertReleaseForRequest" parameters="releaseName:string" isTestMethod="false" lineno="120" throws="" modifiers="public,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="Release__c" methodtype="constructormethod" returntype="newobject" parameters="Name=&apos;Test Release &apos;+releaseName" returnloc="#temp1268" lineno="124" />
+<methodInvoke name="lib.stradd" methodtype="constructormethod" returntype="String" parameters="newRelease__c(Name=&apos;Test Release &apos;+releaseName)" returnloc="#temp1269" lineno="124" />
+<varDeclaration name="release" scope="methodvar" location="PMODataUnitHelper" type="Release__c" lineno="124" />
+<assignHeap name="release" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newRelease__c(Name=&apos;Test Release &apos;+releaseName)" lineno="124" />
+</VariableDeclaration>
+<ReturnBlock>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="(release)" returnloc="#temp1270" lineno="127" />
+<return expression="(release)" expressiontype="@stradd" lineno="127" />
+</ReturnBlock>
+<methodendline lineno="128"/>
+</body>
+</method>
+<method returntype="Request__c" name="updateRequest" parameters="request:Request__c" isTestMethod="false" lineno="142" throws="" modifiers="public,static">
+<body>
+<AssignmentStatement>
+<assignHeap name="request.Req__c" scope="" type="" rhsType="methodinvoke" rhs="2.0" lineno="145" />
+</AssignmentStatement>
+<ReturnBlock>
+<return expression="(request)" expressiontype="@alias" lineno="148" />
+</ReturnBlock>
+<methodendline lineno="149"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[31, 34, 44, 62, 68, 88, 91, 104, 123, 126, 144, 147]" multi="[1-13, 17-28, 49-59, 73-84, 109-119, 131-141]" empty="[3, 5, 7, 9, 11, 33, 43, 47, 48, 67, 71, 72, 87, 90, 103, 107, 108, 122, 125, 129, 130, 146]" singlebrace="[16, 30, 46, 61, 70, 86, 106, 121, 128, 143, 149, 150]"/>
+</stac>

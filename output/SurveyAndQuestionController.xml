@@ -1,0 +1,2343 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="SurveyAndQuestionController.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="27 KB">
+<class name="SurveyAndQuestionController" sharing="with" implements="" isenum="false" lineno="1" modifiers="global,virtual">
+<classbody>
+<varDeclaration name="questionTypeOptions" scope="instancevar" location="SurveyAndQuestionController" type="List&amp;lt;SelectOption&amp;gt;" lineno="3" />
+<VariableProperties name="questionTypeOptions">
+<getterMethod name="questionTypeOptions" returntype="List&amp;lt;SelectOption&amp;gt;" modifiers="" lineno="3">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="questionTypeOptions" modifiers="" lineno="3">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="showBasicValues" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="4" />
+<VariableProperties name="showBasicValues">
+<getterMethod name="showBasicValues" returntype="string" modifiers="" lineno="4">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="showBasicValues" modifiers="" lineno="4">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="showSingleSelect" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="5" />
+<VariableProperties name="showSingleSelect">
+<getterMethod name="showSingleSelect" returntype="string" modifiers="" lineno="5">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="showSingleSelect" modifiers="" lineno="5">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="showSingleSelectPreview" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="6" />
+<VariableProperties name="showSingleSelectPreview">
+<getterMethod name="showSingleSelectPreview" returntype="string" modifiers="" lineno="6">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="showSingleSelectPreview" modifiers="" lineno="6">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="showMultiSelect" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="7" />
+<VariableProperties name="showMultiSelect">
+<getterMethod name="showMultiSelect" returntype="string" modifiers="" lineno="7">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="showMultiSelect" modifiers="" lineno="7">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="showMultiSelectPreview" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="8" />
+<VariableProperties name="showMultiSelectPreview">
+<getterMethod name="showMultiSelectPreview" returntype="string" modifiers="" lineno="8">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="showMultiSelectPreview" modifiers="" lineno="8">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="showFreeText" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="9" />
+<VariableProperties name="showFreeText">
+<getterMethod name="showFreeText" returntype="string" modifiers="" lineno="9">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="showFreeText" modifiers="" lineno="9">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="showFreeTextPreview" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="10" />
+<VariableProperties name="showFreeTextPreview">
+<getterMethod name="showFreeTextPreview" returntype="string" modifiers="" lineno="10">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="showFreeTextPreview" modifiers="" lineno="10">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="showRowQuestion" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="11" />
+<VariableProperties name="showRowQuestion">
+<getterMethod name="showRowQuestion" returntype="string" modifiers="" lineno="11">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="showRowQuestion" modifiers="" lineno="11">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="showRowQuestionPreview" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="12" />
+<VariableProperties name="showRowQuestionPreview">
+<getterMethod name="showRowQuestionPreview" returntype="string" modifiers="" lineno="12">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="showRowQuestionPreview" modifiers="" lineno="12">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="showSelectQuestionType" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="13" />
+<VariableProperties name="showSelectQuestionType">
+<getterMethod name="showSelectQuestionType" returntype="string" modifiers="" lineno="13">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="showSelectQuestionType" modifiers="" lineno="13">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="singleOptions" scope="instancevar" location="SurveyAndQuestionController" type="List&amp;lt;SelectOption&amp;gt;" lineno="14" />
+<VariableProperties name="singleOptions">
+<getterMethod name="singleOptions" returntype="List&amp;lt;SelectOption&amp;gt;" modifiers="" lineno="14">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="singleOptions" modifiers="" lineno="14">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="multiOptions" scope="instancevar" location="SurveyAndQuestionController" type="List&amp;lt;SelectOption&amp;gt;" lineno="15" />
+<VariableProperties name="multiOptions">
+<getterMethod name="multiOptions" returntype="List&amp;lt;SelectOption&amp;gt;" modifiers="" lineno="15">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="multiOptions" modifiers="" lineno="15">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="rowOptions" scope="instancevar" location="SurveyAndQuestionController" type="List&amp;lt;SelectOption&amp;gt;" lineno="16" />
+<VariableProperties name="rowOptions">
+<getterMethod name="rowOptions" returntype="List&amp;lt;SelectOption&amp;gt;" modifiers="" lineno="16">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="rowOptions" modifiers="" lineno="16">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="questionReference" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="17" />
+<VariableProperties name="questionReference">
+<getterMethod name="questionReference" returntype="string" modifiers="" lineno="17">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="questionReference" modifiers="" lineno="17">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="reportId" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="18" />
+<VariableProperties name="reportId">
+<getterMethod name="reportId" returntype="string" modifiers="" lineno="18">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="reportId" modifiers="" lineno="18">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<VariableDeclaration>
+<varDeclaration name="saveAndNew" scope="methodvar" location="SurveyAndQuestionController" type="boolean" lineno="19" modifiers="private" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="surveyRef" scope="methodvar" location="SurveyAndQuestionController" type="string" lineno="20" modifiers="private" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="surveyOrderNumber" scope="methodvar" location="SurveyAndQuestionController" type="string" lineno="21" modifiers="private" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="questionToUpdate" scope="methodvar" location="SurveyAndQuestionController" type="Survey_Question__c" lineno="22" modifiers="private" />
+</VariableDeclaration>
+<varDeclaration name="qQuestion" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="24" />
+<VariableProperties name="qQuestion">
+<getterMethod name="qQuestion" returntype="string" modifiers="" lineno="24">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="qQuestion" modifiers="" lineno="24">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="qRequired" scope="instancevar" location="SurveyAndQuestionController" type="boolean" lineno="25" />
+<VariableProperties name="qRequired">
+<getterMethod name="qRequired" returntype="boolean" modifiers="" lineno="25">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="qRequired" modifiers="" lineno="25">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="qChoices" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="26" />
+<VariableProperties name="qChoices">
+<getterMethod name="qChoices" returntype="string" modifiers="" lineno="26">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="qChoices" modifiers="" lineno="26">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="surveyName" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="27" />
+<VariableProperties name="surveyName">
+<getterMethod name="surveyName" returntype="string" modifiers="" lineno="27">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="surveyName" modifiers="" lineno="27">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="surveyHeader" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="28" />
+<VariableProperties name="surveyHeader">
+<getterMethod name="surveyHeader" returntype="string" modifiers="" lineno="28">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="surveyHeader" modifiers="" lineno="28">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="surveyId" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="29" />
+<VariableProperties name="surveyId">
+<getterMethod name="surveyId" returntype="string" modifiers="" lineno="29">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="surveyId" modifiers="" lineno="29">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="renderSurveyPreview" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="30" />
+<VariableProperties name="renderSurveyPreview">
+<getterMethod name="renderSurveyPreview" returntype="string" modifiers="" lineno="30">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="renderSurveyPreview" modifiers="" lineno="30">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="questionName" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="31" />
+<VariableProperties name="questionName">
+<getterMethod name="questionName" returntype="string" modifiers="" lineno="31">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="questionName" modifiers="" lineno="31">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="questionType" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="32" />
+<VariableProperties name="questionType">
+<getterMethod name="questionType" returntype="string" modifiers="" lineno="32">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="questionType" modifiers="" lineno="32">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="questionRequired" scope="instancevar" location="SurveyAndQuestionController" type="boolean" lineno="33" />
+<VariableProperties name="questionRequired">
+<getterMethod name="questionRequired" returntype="boolean" modifiers="" lineno="33">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="questionRequired" modifiers="" lineno="33">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="allQuestions" scope="instancevar" location="SurveyAndQuestionController" type="List&amp;lt;question&amp;gt;" lineno="34" />
+<VariableProperties name="allQuestions">
+<getterMethod name="allQuestions" returntype="List&amp;lt;question&amp;gt;" modifiers="" lineno="34">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="allQuestions" modifiers="" lineno="34">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="responses" scope="instancevar" location="SurveyAndQuestionController" type="List&amp;lt;string&amp;gt;" lineno="35" />
+<VariableProperties name="responses">
+<getterMethod name="responses" returntype="List&amp;lt;string&amp;gt;" modifiers="" lineno="35">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="responses" modifiers="" lineno="35">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="allQuestionsSize" scope="instancevar" location="SurveyAndQuestionController" type="integer" lineno="36" />
+<VariableProperties name="allQuestionsSize">
+<getterMethod name="allQuestionsSize" returntype="integer" modifiers="" lineno="36">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="allQuestionsSize" modifiers="" lineno="36">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="templateURL" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="37" />
+<VariableProperties name="templateURL">
+<getterMethod name="templateURL" returntype="string" modifiers="" lineno="37">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="templateURL" modifiers="" lineno="37">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="surveyThankYouText" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="38" />
+<VariableProperties name="surveyThankYouText">
+<getterMethod name="surveyThankYouText" returntype="string" modifiers="" lineno="38">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="surveyThankYouText" modifiers="" lineno="38">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="surveyThankYouURL" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="39" />
+<VariableProperties name="surveyThankYouURL">
+<getterMethod name="surveyThankYouURL" returntype="string" modifiers="" lineno="39">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="surveyThankYouURL" modifiers="" lineno="39">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="caseId" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="40" />
+<VariableProperties name="caseId">
+<getterMethod name="caseId" returntype="string" modifiers="" lineno="40">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="caseId" modifiers="" lineno="40">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="newOrder" scope="instancevar" location="SurveyAndQuestionController" type="List&amp;lt;string&amp;gt;" lineno="41" />
+<VariableProperties name="newOrder">
+<getterMethod name="newOrder" returntype="List&amp;lt;string&amp;gt;" modifiers="" lineno="41">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="newOrder" modifiers="" lineno="41">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="newOrderW" scope="instancevar" location="SurveyAndQuestionController" type="string" lineno="42" />
+<VariableProperties name="newOrderW">
+<getterMethod name="newOrderW" returntype="string" modifiers="" lineno="42">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="newOrderW" modifiers="" lineno="42">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<method returntype="" name="SurveyAndQuestionController" parameters="stdController:ApexPages.StandardController" isTestMethod="false" lineno="45" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<methodInvoke name="Apexpages.currentPage" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1823" lineno="48" />
+<methodInvoke name="#temp1823.getParameters" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1824" lineno="48" />
+<methodInvoke name="#temp1824.get" methodtype="normalmethod" returntype="String" parameters="&apos;id&apos;" returnloc="#temp1825" lineno="48" />
+<assignHeap name="surveyId" scope="" type="" rhsType="methodinvoke" rhs="Apexpages.currentPage().getParameters().get(&apos;id&apos;)" lineno="48" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="Apexpages.currentPage" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1826" lineno="49" />
+<methodInvoke name="#temp1826.getParameters" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1827" lineno="49" />
+<methodInvoke name="#temp1827.get" methodtype="normalmethod" returntype="String" parameters="&apos;caId&apos;" returnloc="#temp1828" lineno="49" />
+<assignHeap name="caseId" scope="" type="" rhsType="methodinvoke" rhs="Apexpages.currentPage().getParameters().get(&apos;caId&apos;)" lineno="49" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="List&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1829" lineno="50" />
+<assignHeap name="newOrder" scope="" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;()" lineno="50" />
+</AssignmentStatement>
+<if type="simpleif" lineno="51">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="caseId" RHStype="" RHS="null" Operator="=="/>
+<conditionalExpr>
+<methodInvoke name="caseId.length" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1830" lineno="51" />
+<ConditionalStatement LHStype="" LHS="caseId.length()" RHStype="" RHS="5" Operator="&lt;"/>
+<ConditionalStatement LHStype="methodinvoke" LHS="5" RHStype="caseId.length()&lt;5" RHS="caseId.length()&lt;5" Operator="OR"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "caseId==null||caseId.length()&lt;5"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="caseId" scope="" type="" rhsType="methodinvoke" rhs="&apos;none&apos;" lineno="52" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+<AssignmentStatement>
+<assignHeap name="renderSurveyPreview" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="55" />
+</AssignmentStatement>
+<if type="simpleif" lineno="57">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="surveyId" RHStype="" RHS="null" Operator="!="/>
+</conditionalExpr>
+<ifcondition expression= "surveyId!=null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="List&lt;question&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1831" lineno="59" />
+<assignHeap name="allQuestions" scope="" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;question&gt;()" lineno="59" />
+</AssignmentStatement>
+<methodInvoke name="setSurveyNameAndThankYou" methodtype="normalmethod" returntype="String" parameters="surveyId" returnloc="#temp1832" lineno="60" />
+</body>
+</true>
+</if>
+<AssignmentStatement>
+<assignHeap name="surveyRef" scope="" type="" rhsType="variable" rhs="surveyId" lineno="63" />
+</AssignmentStatement>
+<methodInvoke name="setupQuestionTypeOptions" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1833" lineno="64" />
+<methodInvoke name="resetViewsToFalse" methodtype="normalmethod" returntype="String" parameters="true" returnloc="#temp1834" lineno="65" />
+<AssignmentStatement>
+<assignHeap name="showSelectQuestionType" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="66" />
+</AssignmentStatement>
+<VariableDeclaration>
+<methodInvoke name="ReportFinderUtil" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1835" lineno="67" />
+<varDeclaration name="rfu" scope="methodvar" location="SurveyAndQuestionController" type="ReportFinderUtil" lineno="67" />
+<assignHeap name="rfu" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newReportFinderUtil()" lineno="67" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="rfu#temp1835rfu.findReportId" methodtype="normalmethod" returntype="String" parameters="&apos;Survey with Questions and Responses&apos;" returnloc="#temp1836" lineno="68" />
+<assignHeap name="reportId" scope="" type="" rhsType="methodinvoke" rhs="rfu.findReportId(&apos;Survey with Questions and Responses&apos;)" lineno="68" />
+</AssignmentStatement>
+<methodendline lineno="70"/>
+</body>
+</method>
+<method returntype="void" name="testCreateQuestionController" parameters="" isTestMethod="true" lineno="73" throws="" modifiers="private,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SurveyTestingUtil" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1837" lineno="74" />
+<varDeclaration name="tu" scope="methodvar" location="SurveyAndQuestionController" type="SurveyTestingUtil" lineno="74" />
+<assignHeap name="tu" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyTestingUtil()" lineno="74" />
+</VariableDeclaration>
+<methodInvoke name="Apexpages.currentPage" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1838" lineno="75" />
+<methodInvoke name="Apexpages.currentPage(.getParameters" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1839" lineno="75" />
+<methodInvoke name="Apexpages.currentPage(.getParameters(.put" methodtype="normalmethod" returntype="String" parameters="&apos;id&apos;,tu.surveyId" returnloc="#temp1840" lineno="75" />
+<VariableDeclaration>
+<varDeclaration name="std" scope="methodvar" location="SurveyAndQuestionController" type="Apexpages.Standardcontroller" lineno="76" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="std" returnloc="#temp1841" lineno="77" />
+<varDeclaration name="cqc" scope="methodvar" location="SurveyAndQuestionController" type="SurveyAndQuestionController" lineno="77" />
+<assignHeap name="cqc" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(std)" lineno="77" />
+</VariableDeclaration>
+<methodInvoke name="cqc.addQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1842" lineno="78" />
+<methodInvoke name="cqc.getNewQuestionNum" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1843" lineno="79" />
+<methodInvoke name="cqc.makeNewQuestionLink" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1844" lineno="80" />
+<ExpressionStatement expression="cqc.surveyId==tu.surveyId" key="assert" lineno="81"/>
+<methodendline lineno="82"/>
+</body>
+</method>
+<method returntype="Pagereference" name="makeNewQuestionLink" parameters="" isTestMethod="false" lineno="115" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<assignHeap name="questionReference" scope="" type="" rhsType="value" rhs="null" lineno="116" />
+</AssignmentStatement>
+<methodInvoke name="resetViewsToFalse" methodtype="normalmethod" returntype="String" parameters="true" returnloc="#temp1845" lineno="117" />
+<ReturnBlock>
+<return expression="null" expressiontype="@methodinvoke" lineno="118" />
+</ReturnBlock>
+<methodendline lineno="119"/>
+</body>
+</method>
+<method returntype="Pagereference" name="editQuestion" parameters="" isTestMethod="false" lineno="121" throws="" modifiers="public">
+<body>
+<if type="simpleif" lineno="122">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="questionReference" RHStype="" RHS="null" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "questionReference==null"/>
+<true>
+<body>
+<ReturnBlock>
+<return expression="null" expressiontype="@value" lineno="123" />
+</ReturnBlock>
+</body>
+</true>
+</if>
+<methodInvoke name="setupEditQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1846" lineno="124" />
+<AssignmentStatement>
+<assignHeap name="showSelectQuestionType" scope="" type="" rhsType="value" rhs="&apos;true&apos;" lineno="125" />
+</AssignmentStatement>
+<ReturnBlock>
+<return expression="null" expressiontype="@value" lineno="126" />
+</ReturnBlock>
+<methodendline lineno="127"/>
+</body>
+</method>
+<method returntype="Pagereference" name="addQuestion" parameters="" isTestMethod="false" lineno="129" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<assignHeap name="showSelectQuestionType" scope="" type="" rhsType="value" rhs="&apos;true&apos;" lineno="130" />
+</AssignmentStatement>
+<methodInvoke name="resetViewsToFalse" methodtype="normalmethod" returntype="String" parameters="true" returnloc="#temp1847" lineno="131" />
+<ReturnBlock>
+<return expression="null" expressiontype="@methodinvoke" lineno="132" />
+</ReturnBlock>
+<methodendline lineno="133"/>
+</body>
+</method>
+<method returntype="void" name="setupEditQuestion" parameters="" isTestMethod="false" lineno="135" throws="" modifiers="private">
+<body>
+<AssignmentStatement>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Type__c, Question__c, Id, Choices__c, Required__c, 
+                           OrderNumber__c, Survey__c, Name
+                           from Survey_Question__c 
+                           where Id = :questionReference]" returnloc="#temp1848" lineno="136" />
+<assignHeap name="questionToUpdate" scope="" type="" rhsType="soqlquery" rhs="[select Type__c, Question__c, Id, Choices__c, Required__c, 
+                           OrderNumber__c, Survey__c, Name
+                           from Survey_Question__c 
+                           where Id = :questionReference]" lineno="136" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="questionType" scope="" type="" rhsType="variable" rhs="questionToUpdate.Type__c" lineno="140" />
+</AssignmentStatement>
+<methodInvoke name="setupQuestionFields" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1849" lineno="141" />
+<methodInvoke name="setupEditFields" methodtype="normalmethod" returntype="String" parameters="questionToUpdate" returnloc="#temp1850" lineno="142" />
+<methodendline lineno="143"/>
+</body>
+</method>
+<method returntype="void" name="setupEditFields" parameters="q:Survey_Question__c" isTestMethod="false" lineno="145" throws="" modifiers="private">
+<body>
+<AssignmentStatement>
+<assignHeap name="qQuestion" scope="" type="" rhsType="variable" rhs="q.Question__c" lineno="146" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="qRequired" scope="" type="" rhsType="variable" rhs="q.Required__c" lineno="147" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="qChoices" scope="" type="" rhsType="variable" rhs="q.Choices__c" lineno="148" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="surveyRef" scope="" type="" rhsType="variable" rhs="q.Survey__c" lineno="149" />
+</AssignmentStatement>
+<methodendline lineno="150"/>
+</body>
+</method>
+<method returntype="void" name="setupQuestionTypeOptions" parameters="" isTestMethod="false" lineno="152" throws="" modifiers="private">
+<body>
+<VariableDeclaration>
+<methodInvoke name="" methodtype="normalmethod" returntype="String" parameters=".getDescribe(" returnloc="#temp1851" lineno="155" />
+<varDeclaration name="fieldResult" scope="methodvar" location="SurveyAndQuestionController" type="Schema.DescribeFieldResult" lineno="155" />
+<assignHeap name="fieldResult" scope="methodvar" type="Schema.DescribeFieldResult" rhsType="methodinvoke" rhs="Survey_Question__c.Type__c.getDescribe()" lineno="155" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1851.getPicklistValues" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1852" lineno="156" />
+<varDeclaration name="ple" scope="methodvar" location="SurveyAndQuestionController" type="List&amp;lt;Schema.PicklistEntry&amp;gt;" lineno="156" />
+<assignHeap name="ple" scope="methodvar" type="List&amp;lt;Schema.PicklistEntry&amp;gt;" rhsType="methodinvoke" rhs="fieldResult.getPicklistValues()" lineno="156" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="List&lt;SelectOption&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1853" lineno="159" />
+<assignHeap name="questionTypeOptions" scope="" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;SelectOption&gt;()" lineno="159" />
+</AssignmentStatement>
+<methodInvoke name="SelectOption" methodtype="constructormethod" returntype="newobject" parameters="&apos;--select--&apos;,system.Label.LABS_SF_SELECTTYPE" returnloc="#temp1854" lineno="160" />
+<methodInvoke name="questionTypeOptions.add" methodtype="normalmethod" returntype="String" parameters="newSelectOption(&apos;--select--&apos;,system.Label.LABS_SF_SELECTTYPE)" returnloc="#temp1855" lineno="160" />
+<loop type="advancedfor" lineno="161">
+<Iterator type="Schema.PicklistEntry" name="pe" on="ple">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="pe.getLabel" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1856" lineno="162" />
+<methodInvoke name="#temp1856.getValue" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1857" lineno="162" />
+<methodInvoke name="SelectOption" methodtype="constructormethod" returntype="newobject" parameters="pe.getLabel(),pe.getValue()" returnloc="#temp1858" lineno="162" />
+<methodInvoke name="questionTypeOptions.add" methodtype="normalmethod" returntype="String" parameters="newSelectOption(pe.getLabel(),pe.getValue())" returnloc="#temp1859" lineno="162" />
+</body>
+</loop>
+<methodendline lineno="164"/>
+</body>
+</method>
+<method returntype="void" name="testEditQuestion" parameters="" isTestMethod="true" lineno="167" throws="" modifiers="private,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SurveyTestingUtil" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1860" lineno="168" />
+<varDeclaration name="tu" scope="methodvar" location="SurveyAndQuestionController" type="SurveyTestingUtil" lineno="168" />
+<assignHeap name="tu" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyTestingUtil()" lineno="168" />
+</VariableDeclaration>
+<methodInvoke name="Apexpages.currentPage" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1861" lineno="169" />
+<methodInvoke name="Apexpages.currentPage(.getParameters" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1862" lineno="169" />
+<methodInvoke name="Apexpages.currentPage(.getParameters(.put" methodtype="normalmethod" returntype="String" parameters="&apos;id&apos;,tu.surveyId" returnloc="#temp1863" lineno="169" />
+<VariableDeclaration>
+<varDeclaration name="std" scope="methodvar" location="SurveyAndQuestionController" type="Apexpages.Standardcontroller" lineno="170" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="std" returnloc="#temp1864" lineno="171" />
+<varDeclaration name="cqc" scope="methodvar" location="SurveyAndQuestionController" type="SurveyAndQuestionController" lineno="171" />
+<assignHeap name="cqc" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(std)" lineno="171" />
+</VariableDeclaration>
+<methodInvoke name="cqc.editQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1865" lineno="172" />
+<AssignmentStatement>
+<assignHeap name="cqc.questionReference" scope="" type="" rhsType="value" rhs="tu.questionIds[0]" lineno="173" />
+</AssignmentStatement>
+<methodInvoke name="cqc.editQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1867" lineno="174" />
+<AssignmentStatement>
+<assignHeap name="cqc.questionReference" scope="" type="" rhsType="value" rhs="1" lineno="175" />
+</AssignmentStatement>
+<methodInvoke name="cqc.editQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1869" lineno="176" />
+<AssignmentStatement>
+<assignHeap name="cqc.questionReference" scope="" type="" rhsType="value" rhs="2" lineno="177" />
+</AssignmentStatement>
+<methodInvoke name="cqc.editQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1871" lineno="178" />
+<AssignmentStatement>
+<assignHeap name="cqc.questionReference" scope="" type="" rhsType="value" rhs="3" lineno="179" />
+</AssignmentStatement>
+<ExpressionStatement expression="cqc.editQuestion()==null" key="assert" lineno="180"/>
+<methodendline lineno="182"/>
+</body>
+</method>
+<method returntype="void" name="resetViewsToFalse" parameters="clearFields:boolean" isTestMethod="false" lineno="185" throws="" modifiers="private">
+<body>
+<AssignmentStatement>
+<assignHeap name="showSingleSelect" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="186" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="showSingleSelectPreview" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="187" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="showMultiSelect" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="188" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="showMultiSelectPreview" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="189" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="showFreeText" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="190" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="showFreeTextPreview" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="191" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="showRowQuestion" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="192" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="showRowQuestionPreview" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="193" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="qRequired" scope="" type="" rhsType="value" rhs="true" lineno="194" />
+</AssignmentStatement>
+<if type="simpleif" lineno="195">
+<conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "clearFields"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="qChoices" scope="" type="" rhsType="value" rhs="&apos;&apos;" lineno="196" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="qQuestion" scope="" type="" rhsType="value" rhs="&apos;&apos;" lineno="197" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+<methodendline lineno="199"/>
+</body>
+</method>
+<method returntype="Pagereference" name="setupQuestionFields" parameters="" isTestMethod="false" lineno="201" throws="" modifiers="public">
+<body>
+<methodInvoke name="resetViewsToFalse" methodtype="normalmethod" returntype="String" parameters="false" returnloc="#temp1873" lineno="202" />
+<if type="simpleif" lineno="203">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="questionType" RHStype="" RHS="&apos;Multi-select--Vertical&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "questionType==&apos;Multi-select--Vertical&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="showMultiSelect" scope="" type="" rhsType="value" rhs="&apos;true&apos;" lineno="204" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="206">
+<body>
+<if type="elseif" lineno="206">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="questionType" RHStype="" RHS="&apos;Single select--Vertical&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "questionType==&apos;Single select--Vertical&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="showSingleSelect" scope="" type="" rhsType="value" rhs="&apos;true&apos;" lineno="207" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="209">
+<body>
+<if type="elseif" lineno="209">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="questionType" RHStype="" RHS="&apos;Free Text&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "questionType==&apos;Free Text&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="showFreeText" scope="" type="" rhsType="value" rhs="&apos;true&apos;" lineno="210" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="212">
+<body>
+<if type="elseif" lineno="212">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="questionType" RHStype="" RHS="&apos;Single select--Horizontal&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "questionType==&apos;Single select--Horizontal&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="showRowQuestion" scope="" type="" rhsType="value" rhs="&apos;true&apos;" lineno="213" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+<ReturnBlock>
+<return expression="null" expressiontype="@value" lineno="215" />
+</ReturnBlock>
+<methodendline lineno="216"/>
+</body>
+</method>
+<method returntype="Pagereference" name="saveAndNewQuestion" parameters="" isTestMethod="false" lineno="218" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<assignHeap name="saveAndNew" scope="" type="" rhsType="value" rhs="true" lineno="219" />
+</AssignmentStatement>
+<if type="simpleif" lineno="220">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="questionReference" RHStype="" RHS="null" Operator="=="/>
+<conditionalExpr>
+<methodInvoke name="questionReference.length" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1874" lineno="220" />
+<ConditionalStatement LHStype="" LHS="questionReference.length()" RHStype="" RHS="5" Operator="&lt;"/>
+<ConditionalStatement LHStype="methodinvoke" LHS="5" RHStype="questionReference.length()&lt;5" RHS="questionReference.length()&lt;5" Operator="OR"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "questionReference==null||questionReference.length()&lt;5"/>
+<true>
+<body>
+<ReturnBlock>
+<methodInvoke name="#temp1874.saveNewQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1875" lineno="221" />
+<return expression="saveNewQuestion()" expressiontype="@methodinvoke" lineno="221" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="222">
+<body>
+<ReturnBlock>
+<methodInvoke name="#temp1875.updateQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1876" lineno="223" />
+<return expression="updateQuestion()" expressiontype="@methodinvoke" lineno="223" />
+</ReturnBlock>
+</body>
+</false>
+</if>
+<methodendline lineno="224"/>
+</body>
+</method>
+<method returntype="void" name="testsaveAndNewQuestion" parameters="" isTestMethod="true" lineno="228" throws="" modifiers="private,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SurveyTestingUtil" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1877" lineno="229" />
+<varDeclaration name="tu" scope="methodvar" location="SurveyAndQuestionController" type="SurveyTestingUtil" lineno="229" />
+<assignHeap name="tu" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyTestingUtil()" lineno="229" />
+</VariableDeclaration>
+<methodInvoke name="Apexpages.currentPage" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1878" lineno="230" />
+<methodInvoke name="Apexpages.currentPage(.getParameters" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1879" lineno="230" />
+<methodInvoke name="Apexpages.currentPage(.getParameters(.put" methodtype="normalmethod" returntype="String" parameters="&apos;id&apos;,tu.surveyId" returnloc="#temp1880" lineno="230" />
+<VariableDeclaration>
+<varDeclaration name="std" scope="methodvar" location="SurveyAndQuestionController" type="Apexpages.Standardcontroller" lineno="231" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="std" returnloc="#temp1881" lineno="232" />
+<varDeclaration name="cqc" scope="methodvar" location="SurveyAndQuestionController" type="SurveyAndQuestionController" lineno="232" />
+<assignHeap name="cqc" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(std)" lineno="232" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="cqc.qQuestion" scope="" type="" rhsType="methodinvoke" rhs="&apos;this IS A NEW QUESTION&apos;" lineno="234" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="cqc.qChoices" scope="" type="" rhsType="value" rhs="&apos;1\\n2\\n3\\3&apos;" lineno="235" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="cqc.qRequired" scope="" type="" rhsType="value" rhs="true" lineno="236" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="cqc.questionType" scope="" type="" rhsType="value" rhs="&apos;Single select--Vertical&apos;" lineno="237" />
+</AssignmentStatement>
+<methodInvoke name="cqc.saveAndNewQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1882" lineno="238" />
+<ExpressionStatement expression="5,cqc.getNewQuestionNum()" key="assertequals" lineno="239"/>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="std" returnloc="#temp1883" lineno="241" />
+<varDeclaration name="cqcI" scope="methodvar" location="SurveyAndQuestionController" type="SurveyAndQuestionController" lineno="241" />
+<assignHeap name="cqcI" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(std)" lineno="241" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="cqcI.questionReference" scope="" type="" rhsType="methodinvoke" rhs="tu.questionIds[0]" lineno="242" />
+</AssignmentStatement>
+<methodInvoke name="cqcI.editQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1885" lineno="243" />
+<AssignmentStatement>
+<assignHeap name="cqcI.qQuestion" scope="" type="" rhsType="value" rhs="&apos;this IS A NEW QUESTION THAT IS EXTRA long SO THE NAME SHORTENING CALL WILL BE USED, this SHOULD BE long ENOUGH now this IS A NEW&apos;" lineno="244" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="cqcI.qChoices" scope="" type="" rhsType="value" rhs="&apos;1\\n2\\n3\\3&apos;" lineno="245" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="cqcI.qRequired" scope="" type="" rhsType="value" rhs="true" lineno="246" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="cqcI.questionType" scope="" type="" rhsType="value" rhs="&apos;Single select--Vertical&apos;" lineno="247" />
+</AssignmentStatement>
+<methodInvoke name="cqcI.saveAndNewQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1886" lineno="248" />
+<ExpressionStatement expression="5,cqcI.getNewQuestionNum()" key="assertequals" lineno="249"/>
+<methodendline lineno="250"/>
+</body>
+</method>
+<method returntype="Pagereference" name="controllerSavQuestion" parameters="" isTestMethod="false" lineno="252" throws="" modifiers="public">
+<body>
+<if type="simpleif" lineno="253">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="questionReference" RHStype="" RHS="null" Operator="=="/>
+<conditionalExpr>
+<methodInvoke name="questionReference.length" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1887" lineno="253" />
+<ConditionalStatement LHStype="" LHS="questionReference.length()" RHStype="" RHS="5" Operator="&lt;"/>
+<ConditionalStatement LHStype="methodinvoke" LHS="5" RHStype="questionReference.length()&lt;5" RHS="questionReference.length()&lt;5" Operator="OR"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "questionReference==null||questionReference.length()&lt;5"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ReturnBlock>
+<methodInvoke name="#temp1887.saveNewQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1888" lineno="254" />
+<return expression="saveNewQuestion()" expressiontype="@methodinvoke" lineno="254" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="256">
+<body>
+<curlybrace exists="true"/>
+<ReturnBlock>
+<methodInvoke name="#temp1888.updateQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1889" lineno="257" />
+<return expression="updateQuestion()" expressiontype="@methodinvoke" lineno="257" />
+</ReturnBlock>
+</body>
+</false>
+</if>
+<methodendline lineno="259"/>
+</body>
+</method>
+<method returntype="void" name="testsavesaveQuestion" parameters="" isTestMethod="true" lineno="263" throws="" modifiers="private,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SurveyTestingUtil" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1890" lineno="264" />
+<varDeclaration name="tu" scope="methodvar" location="SurveyAndQuestionController" type="SurveyTestingUtil" lineno="264" />
+<assignHeap name="tu" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyTestingUtil()" lineno="264" />
+</VariableDeclaration>
+<methodInvoke name="Apexpages.currentPage" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1891" lineno="265" />
+<methodInvoke name="Apexpages.currentPage(.getParameters" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1892" lineno="265" />
+<methodInvoke name="Apexpages.currentPage(.getParameters(.put" methodtype="normalmethod" returntype="String" parameters="&apos;id&apos;,tu.surveyId" returnloc="#temp1893" lineno="265" />
+<VariableDeclaration>
+<varDeclaration name="std" scope="methodvar" location="SurveyAndQuestionController" type="Apexpages.Standardcontroller" lineno="266" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="std" returnloc="#temp1894" lineno="267" />
+<varDeclaration name="cqc" scope="methodvar" location="SurveyAndQuestionController" type="SurveyAndQuestionController" lineno="267" />
+<assignHeap name="cqc" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(std)" lineno="267" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="cqc.qQuestion" scope="" type="" rhsType="methodinvoke" rhs="&apos;this IS A NEW QUESTION&apos;" lineno="269" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="cqc.qChoices" scope="" type="" rhsType="value" rhs="&apos;1\\n2\\n3\\3&apos;" lineno="270" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="cqc.qRequired" scope="" type="" rhsType="value" rhs="true" lineno="271" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="cqc.questionType" scope="" type="" rhsType="value" rhs="&apos;Single select--Vertical&apos;" lineno="272" />
+</AssignmentStatement>
+<methodInvoke name="cqc.controllerSavQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1895" lineno="273" />
+<ExpressionStatement expression="5,cqc.getNewQuestionNum()" key="assertequals" lineno="274"/>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="std" returnloc="#temp1896" lineno="276" />
+<varDeclaration name="cqcI" scope="methodvar" location="SurveyAndQuestionController" type="SurveyAndQuestionController" lineno="276" />
+<assignHeap name="cqcI" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(std)" lineno="276" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="cqcI.questionReference" scope="" type="" rhsType="methodinvoke" rhs="tu.questionIds[0]" lineno="277" />
+</AssignmentStatement>
+<methodInvoke name="cqcI.editQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1898" lineno="278" />
+<AssignmentStatement>
+<assignHeap name="cqcI.qQuestion" scope="" type="" rhsType="value" rhs="&apos;this IS A NEW QUESTION THAT IS EXTRA long SO THE NAME SHORTENING CALL WILL BE USED, this SHOULD BE long ENOUGH now&apos;" lineno="279" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="cqcI.qChoices" scope="" type="" rhsType="value" rhs="&apos;1\\n2\\n3\\3&apos;" lineno="280" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="cqcI.qRequired" scope="" type="" rhsType="value" rhs="true" lineno="281" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="cqcI.questionType" scope="" type="" rhsType="value" rhs="&apos;Single select--Vertical&apos;" lineno="282" />
+</AssignmentStatement>
+<methodInvoke name="cqcI.controllerSavQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1899" lineno="283" />
+<ExpressionStatement expression="5,cqcI.getNewQuestionNum()" key="assertequals" lineno="284"/>
+<methodendline lineno="285"/>
+</body>
+</method>
+<method returntype="Pagereference" name="updateQuestion" parameters="" isTestMethod="false" lineno="288" throws="" modifiers="private">
+<body>
+<AssignmentStatement>
+<methodInvoke name="questionToName" methodtype="normalmethod" returntype="String" parameters="qQuestion" returnloc="#temp1900" lineno="290" />
+<assignHeap name="questionToUpdate.Name" scope="" type="" rhsType="methodinvoke" rhs="questionToName(qQuestion)" lineno="290" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="questionToUpdate.Choices__c" scope="" type="" rhsType="variable" rhs="qChoices" lineno="291" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="questionToUpdate.Required__c" scope="" type="" rhsType="variable" rhs="qRequired" lineno="292" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="questionToUpdate.Type__c" scope="" type="" rhsType="variable" rhs="questionType" lineno="293" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="questionToUpdate.Question__c" scope="" type="" rhsType="variable" rhs="qQuestion" lineno="294" />
+</AssignmentStatement>
+<TryStatement lineno="295">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="lib.dml.update" methodtype="" returntype="" parameters="questionToUpdate" returnloc="" lineno="296" />
+<methodInvoke name="resetViewsToFalse" methodtype="normalmethod" returntype="String" parameters="true" returnloc="#temp1901" lineno="297" />
+<methodInvoke name="deleteOldResponses" methodtype="normalmethod" returntype="String" parameters="questionToUpdate.id" returnloc="#temp1902" lineno="298" />
+<AssignmentStatement>
+<assignHeap name="questionReference" scope="" type="" rhsType="value" rhs="null" lineno="299" />
+</AssignmentStatement>
+</body>
+<CatchStatement type="Exception" name="e" lineno="300">
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="e" key="debug" lineno="301"/>
+<methodInvoke name="Apexpages.addMessages" methodtype="normalmethod" returntype="String" parameters="e" returnloc="#temp1903" lineno="302" />
+</body>
+</CatchStatement>
+</TryStatement>
+<ReturnBlock>
+<methodInvoke name="saveOrUpdateReturn" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1904" lineno="305" />
+<return expression="saveOrUpdateReturn()" expressiontype="@methodinvoke" lineno="305" />
+</ReturnBlock>
+<methodendline lineno="306"/>
+</body>
+</method>
+<method returntype="void" name="deleteOldResponses" parameters="qId:string" isTestMethod="false" lineno="308" throws="" modifiers="private">
+<body>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id, Survey_Question__c from SurveyQuestionResponse__c where Survey_Question__c = :qId]" returnloc="#temp1905" lineno="309" />
+<varDeclaration name="sResponses" scope="methodvar" location="SurveyAndQuestionController" type="List&amp;lt;SurveyQuestionResponse__c&amp;gt;" lineno="309" />
+<assignHeap name="sResponses" scope="methodvar" type="List&amp;lt;SurveyQuestionResponse__c&amp;gt;" rhsType="query" rhs="[select id, Survey_Question__c from SurveyQuestionResponse__c where Survey_Question__c = :qId]" lineno="309" />
+</VariableDeclaration>
+<if type="simpleif" lineno="310">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="sResponses" RHStype="" RHS="null" Operator="!="/>
+</conditionalExpr>
+<ifcondition expression= "sResponses!=null"/>
+<true>
+<body>
+<methodInvoke name="lib.dml.delete" methodtype="" returntype="" parameters="sResponses" returnloc="" lineno="311" />
+</body>
+</true>
+</if>
+<methodendline lineno="312"/>
+</body>
+</method>
+<method returntype="Pagereference" name="saveOrUpdateReturn" parameters="" isTestMethod="false" lineno="314" throws="" modifiers="private">
+<body>
+<methodInvoke name="setupQuestionList" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1906" lineno="315" />
+<VariableDeclaration>
+<methodInvoke name="Pagereference" methodtype="constructormethod" returntype="newobject" parameters="&apos;/apex/SurveyPage?id=&apos;+surveyRef" returnloc="#temp1907" lineno="316" />
+<methodInvoke name="lib.stradd" methodtype="constructormethod" returntype="String" parameters="newPagereference(&apos;/apex/SurveyPage?id=&apos;+surveyRef)" returnloc="#temp1908" lineno="316" />
+<varDeclaration name="pr" scope="methodvar" location="SurveyAndQuestionController" type="Pagereference" lineno="316" />
+<assignHeap name="pr" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newPagereference(&apos;/apex/SurveyPage?id=&apos;+surveyRef)" lineno="316" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="questionType" scope="" type="" rhsType="methodinvoke" rhs="&apos;--select--&apos;" lineno="317" />
+</AssignmentStatement>
+<if type="simpleif" lineno="318">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="saveAndNew" RHStype="" RHS="null" Operator="!="/>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="saveAndNew" RHStype="" RHS="true" Operator="=="/>
+<ConditionalStatement LHStype="value" LHS="true" RHStype="saveAndNew==true" RHS="saveAndNew==true" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "saveAndNew!=null&amp;&amp;saveAndNew==true"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="saveAndNew" scope="" type="" rhsType="value" rhs="false" lineno="319" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="showSelectQuestionType" scope="" type="" rhsType="value" rhs="&apos;true&apos;" lineno="320" />
+</AssignmentStatement>
+<ReturnBlock>
+<return expression="pr" expressiontype="@alias" lineno="321" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="323">
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="showSelectQuestionType" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="324" />
+</AssignmentStatement>
+<ReturnBlock>
+<return expression="pr" expressiontype="@alias" lineno="325" />
+</ReturnBlock>
+</body>
+</false>
+</if>
+<methodendline lineno="327"/>
+</body>
+</method>
+<method returntype="integer" name="getNewQuestionNum" parameters="" isTestMethod="false" lineno="329" throws="" modifiers="private">
+<body>
+<if type="simpleif" lineno="330">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="allQuestions" RHStype="" RHS="null" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "allQuestions==null"/>
+<true>
+<body>
+<ReturnBlock>
+<return expression="0" expressiontype="@value" lineno="331" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="332">
+<body>
+<curlybrace exists="true"/>
+<ReturnBlock>
+<methodInvoke name="allQuestions.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1909" lineno="333" />
+<return expression="allQuestions.size()" expressiontype="@methodinvoke" lineno="333" />
+</ReturnBlock>
+</body>
+</false>
+</if>
+<methodendline lineno="335"/>
+</body>
+</method>
+<method returntype="Pagereference" name="saveNewQuestion" parameters="" isTestMethod="false" lineno="337" throws="" modifiers="private">
+<body>
+<VariableDeclaration>
+<methodInvoke name="Survey_Question__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1910" lineno="338" />
+<varDeclaration name="newQuestion" scope="methodvar" location="SurveyAndQuestionController" type="Survey_Question__c" lineno="338" />
+<assignHeap name="newQuestion" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurvey_Question__c()" lineno="338" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="newQuestion.Survey__c" scope="" type="" rhsType="methodinvoke" rhs="surveyRef" lineno="339" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="questionToName" methodtype="normalmethod" returntype="String" parameters="qQuestion" returnloc="#temp1911" lineno="340" />
+<assignHeap name="newQuestion.Name" scope="" type="" rhsType="methodinvoke" rhs="questionToName(qQuestion)" lineno="340" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="newQuestion.Choices__c" scope="" type="" rhsType="variable" rhs="qChoices" lineno="341" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="newQuestion.Required__c" scope="" type="" rhsType="variable" rhs="qRequired" lineno="342" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="newQuestion.Type__c" scope="" type="" rhsType="variable" rhs="questionType" lineno="343" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="getNewQuestionNum" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1912" lineno="344" />
+<assignHeap name="newQuestion.OrderNumber__c" scope="" type="" rhsType="methodinvoke" rhs="getNewQuestionNum()" lineno="344" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="newQuestion.Question__c" scope="" type="" rhsType="variable" rhs="qQuestion" lineno="345" />
+</AssignmentStatement>
+<methodInvoke name="resetViewsToFalse" methodtype="normalmethod" returntype="String" parameters="true" returnloc="#temp1913" lineno="346" />
+<TryStatement lineno="347">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="newQuestion" returnloc="" lineno="348" />
+</body>
+<CatchStatement type="Exception" name="e" lineno="349">
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="e" key="debug" lineno="350"/>
+</body>
+</CatchStatement>
+</TryStatement>
+<ReturnBlock>
+<methodInvoke name="saveOrUpdateReturn" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1914" lineno="352" />
+<return expression="saveOrUpdateReturn()" expressiontype="@methodinvoke" lineno="352" />
+</ReturnBlock>
+<methodendline lineno="353"/>
+</body>
+</method>
+<method returntype="string" name="questionToName" parameters="q:string" isTestMethod="false" lineno="355" throws="" modifiers="private">
+<body>
+<if type="simpleif" lineno="356">
+<conditionalExpr>
+<methodInvoke name="#temp1914.length" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1915" lineno="356" />
+<ConditionalStatement LHStype="" LHS="q.length()" RHStype="" RHS="75" Operator="&lt;"/>
+</conditionalExpr>
+<ifcondition expression= "q.length()&lt;75"/>
+<true>
+<body>
+<ReturnBlock>
+<return expression="q" expressiontype="@alias" lineno="357" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="358">
+<body>
+<ReturnBlock>
+<methodInvoke name="#temp1915.substring" methodtype="normalmethod" returntype="String" parameters="0,75" returnloc="#temp1916" lineno="359" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="&apos;...&apos;" returnloc="#temp1917" lineno="359" />
+<return expression="q.substring(0,75)+&apos;...&apos;" expressiontype="@alias" lineno="359" />
+</ReturnBlock>
+</body>
+</false>
+</if>
+<methodendline lineno="360"/>
+</body>
+</method>
+<method returntype="Pagereference" name="previewQuestion" parameters="" isTestMethod="false" lineno="362" throws="" modifiers="public">
+<body>
+<if type="simpleif" lineno="363">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="questionType" RHStype="" RHS="&apos;Multi-select--Vertical&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "questionType==&apos;Multi-select--Vertical&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="showMultiSelectPreview" scope="" type="" rhsType="methodinvoke" rhs="&apos;true&apos;" lineno="364" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="stringToSelectOptions" methodtype="normalmethod" returntype="String" parameters="qChoices" returnloc="#temp1918" lineno="365" />
+<assignHeap name="multiOptions" scope="" type="" rhsType="methodinvoke" rhs="stringToSelectOptions(qChoices)" lineno="365" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="367">
+<body>
+<if type="elseif" lineno="367">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="questionType" RHStype="" RHS="&apos;Single select--Vertical&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "questionType==&apos;Single select--Vertical&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="showSingleSelectPreview" scope="" type="" rhsType="value" rhs="&apos;true&apos;" lineno="368" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="stringToSelectOptions" methodtype="normalmethod" returntype="String" parameters="qChoices" returnloc="#temp1919" lineno="369" />
+<assignHeap name="singleOptions" scope="" type="" rhsType="methodinvoke" rhs="stringToSelectOptions(qChoices)" lineno="369" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="371">
+<body>
+<if type="elseif" lineno="371">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="questionType" RHStype="" RHS="&apos;Free Text&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "questionType==&apos;Free Text&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="showFreeTextPreview" scope="" type="" rhsType="value" rhs="&apos;true&apos;" lineno="372" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="374">
+<body>
+<if type="elseif" lineno="374">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="questionType" RHStype="" RHS="&apos;Single select--Horizontal&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "questionType==&apos;Single select--Horizontal&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="showRowQuestionPreview" scope="" type="" rhsType="value" rhs="&apos;true&apos;" lineno="375" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="stringToSelectOptions" methodtype="normalmethod" returntype="String" parameters="qChoices" returnloc="#temp1920" lineno="376" />
+<assignHeap name="rowOptions" scope="" type="" rhsType="methodinvoke" rhs="stringToSelectOptions(qChoices)" lineno="376" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+<ReturnBlock>
+<return expression="null" expressiontype="@value" lineno="378" />
+</ReturnBlock>
+<methodendline lineno="379"/>
+</body>
+</method>
+<method returntype="void" name="testPreviewQuestion" parameters="" isTestMethod="true" lineno="383" throws="" modifiers="private,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SurveyTestingUtil" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1921" lineno="384" />
+<varDeclaration name="tu" scope="methodvar" location="SurveyAndQuestionController" type="SurveyTestingUtil" lineno="384" />
+<assignHeap name="tu" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyTestingUtil()" lineno="384" />
+</VariableDeclaration>
+<methodInvoke name="Apexpages.currentPage" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1922" lineno="385" />
+<methodInvoke name="Apexpages.currentPage(.getParameters" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1923" lineno="385" />
+<methodInvoke name="Apexpages.currentPage(.getParameters(.put" methodtype="normalmethod" returntype="String" parameters="&apos;id&apos;,tu.surveyId" returnloc="#temp1924" lineno="385" />
+<VariableDeclaration>
+<varDeclaration name="std" scope="methodvar" location="SurveyAndQuestionController" type="Apexpages.Standardcontroller" lineno="386" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="std" returnloc="#temp1925" lineno="387" />
+<varDeclaration name="cqc" scope="methodvar" location="SurveyAndQuestionController" type="SurveyAndQuestionController" lineno="387" />
+<assignHeap name="cqc" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(std)" lineno="387" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="cqc.questionReference" scope="" type="" rhsType="methodinvoke" rhs="tu.questionIds[0]" lineno="389" />
+</AssignmentStatement>
+<methodInvoke name="cqc.editQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1927" lineno="390" />
+<methodInvoke name="cqc.previewQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1928" lineno="391" />
+<AssignmentStatement>
+<assignHeap name="cqc.questionReference" scope="" type="" rhsType="value" rhs="1" lineno="393" />
+</AssignmentStatement>
+<methodInvoke name="cqc.editQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1930" lineno="394" />
+<methodInvoke name="cqc.previewQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1931" lineno="395" />
+<AssignmentStatement>
+<assignHeap name="cqc.questionReference" scope="" type="" rhsType="value" rhs="2" lineno="397" />
+</AssignmentStatement>
+<methodInvoke name="cqc.editQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1933" lineno="398" />
+<ExpressionStatement expression="cqc.previewQuestion()==null" key="assert" lineno="399"/>
+<AssignmentStatement>
+<assignHeap name="cqc.questionReference" scope="" type="" rhsType="value" rhs="3" lineno="401" />
+</AssignmentStatement>
+<methodInvoke name="cqc.editQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1935" lineno="402" />
+<ExpressionStatement expression="cqc.previewQuestion()==null" key="assert" lineno="403"/>
+<methodendline lineno="405"/>
+</body>
+</method>
+<method returntype="List&amp;lt;SelectOption&amp;gt;" name="stringToSelectOptions" parameters="str:string" isTestMethod="false" lineno="408" throws="" modifiers="private">
+<body>
+<VariableDeclaration>
+<methodInvoke name="str.split" methodtype="normalmethod" returntype="String" parameters="&apos;\\r|\n&apos;" returnloc="#temp1936" lineno="409" />
+<varDeclaration name="strList" scope="methodvar" location="SurveyAndQuestionController" type="List&amp;lt;string&amp;gt;" lineno="409" />
+<assignHeap name="strList" scope="methodvar" type="List&amp;lt;string&amp;gt;" rhsType="methodinvoke" rhs="str.split(&apos;\\r|\n&apos;)" lineno="409" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;SelectOption&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1937" lineno="410" />
+<varDeclaration name="returnVal" scope="methodvar" location="SurveyAndQuestionController" type="List&amp;lt;SelectOption&amp;gt;" lineno="410" />
+<assignHeap name="returnVal" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;SelectOption&gt;()" lineno="410" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="411">
+<Iterator type="string" name="s" on="strList">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="SelectOption" methodtype="constructormethod" returntype="newobject" parameters="s,s" returnloc="#temp1938" lineno="412" />
+<methodInvoke name="returnVal.add" methodtype="normalmethod" returntype="String" parameters="newSelectOption(s,s)" returnloc="#temp1939" lineno="412" />
+</body>
+</loop>
+<ReturnBlock>
+<return expression="returnVal" expressiontype="@alias" lineno="414" />
+</ReturnBlock>
+<methodendline lineno="416"/>
+</body>
+</method>
+<method returntype="integer" name="setupQuestionList" parameters="" isTestMethod="false" lineno="421" throws="" modifiers="public">
+<body>
+<methodInvoke name="getAQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1940" lineno="434" />
+<ReturnBlock>
+<methodInvoke name="allQuestions.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1941" lineno="435" />
+<return expression="allQuestions.size()" expressiontype="@methodinvoke" lineno="435" />
+</ReturnBlock>
+<methodendline lineno="436"/>
+</body>
+</method>
+<method returntype="void" name="setSurveyNameAndThankYou" parameters="sId:string" isTestMethod="false" lineno="442" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Name, Id, URL__c, thankYouText__c, thankYouLink__c, Survey_Header__c from Survey__c where Id =:sId]" returnloc="#temp1942" lineno="443" />
+<varDeclaration name="s" scope="methodvar" location="SurveyAndQuestionController" type="Survey__c" lineno="443" />
+<assignHeap name="s" scope="methodvar" type="Survey__c" rhsType="query" rhs="[select Name, Id, URL__c, thankYouText__c, thankYouLink__c, Survey_Header__c from Survey__c where Id =:sId]" lineno="443" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="surveyName" scope="" type="" rhsType="methodinvoke" rhs="s.Name" lineno="444" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="surveyHeader" scope="" type="" rhsType="variable" rhs="s.Survey_Header__c" lineno="445" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="sId" returnloc="#temp1943" lineno="446" />
+<assignHeap name="templateURL" scope="" type="" rhsType="stradd" rhs="s.URL__c+&apos;id=&apos;+sId" lineno="446" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="surveyThankYouText" scope="" type="" rhsType="variable" rhs="s.thankYouText__c" lineno="447" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="surveyThankYouURL" scope="" type="" rhsType="variable" rhs="s.thankYouLink__c" lineno="448" />
+</AssignmentStatement>
+<methodendline lineno="449"/>
+</body>
+</method>
+<method returntype="Pagereference" name="updateSurveyName" parameters="" isTestMethod="false" lineno="452" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Name, Id, URL__c, thankYouText__c, thankYouLink__c from Survey__c where Id =:surveyId]" returnloc="#temp1944" lineno="453" />
+<varDeclaration name="s" scope="methodvar" location="SurveyAndQuestionController" type="Survey__c" lineno="453" />
+<assignHeap name="s" scope="methodvar" type="Survey__c" rhsType="query" rhs="[select Name, Id, URL__c, thankYouText__c, thankYouLink__c from Survey__c where Id =:surveyId]" lineno="453" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="s.Name" scope="" type="" rhsType="variable" rhs="surveyName" lineno="454" />
+</AssignmentStatement>
+<TryStatement lineno="455">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="lib.dml.update" methodtype="" returntype="" parameters="s" returnloc="" lineno="456" />
+</body>
+<CatchStatement type="Exception" name="e" lineno="457">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="Apexpages.addMessages" methodtype="normalmethod" returntype="String" parameters="e" returnloc="#temp1945" lineno="458" />
+</body>
+</CatchStatement>
+</TryStatement>
+<ReturnBlock>
+<return expression="null" expressiontype="@value" lineno="460" />
+</ReturnBlock>
+<methodendline lineno="461"/>
+</body>
+</method>
+<method returntype="void" name="testUpdateSurveyName" parameters="" isTestMethod="true" lineno="463" throws="" modifiers="private,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SurveyTestingUtil" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1946" lineno="464" />
+<varDeclaration name="tu" scope="methodvar" location="SurveyAndQuestionController" type="SurveyTestingUtil" lineno="464" />
+<assignHeap name="tu" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyTestingUtil()" lineno="464" />
+</VariableDeclaration>
+<methodInvoke name="Apexpages.currentPage" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1947" lineno="465" />
+<methodInvoke name="Apexpages.currentPage(.getParameters" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1948" lineno="465" />
+<methodInvoke name="Apexpages.currentPage(.getParameters(.put" methodtype="normalmethod" returntype="String" parameters="&apos;id&apos;,tu.surveyId" returnloc="#temp1949" lineno="465" />
+<VariableDeclaration>
+<varDeclaration name="stc" scope="methodvar" location="SurveyAndQuestionController" type="Apexpages.Standardcontroller" lineno="466" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stc" returnloc="#temp1950" lineno="467" />
+<varDeclaration name="vsc" scope="methodvar" location="SurveyAndQuestionController" type="SurveyAndQuestionController" lineno="467" />
+<assignHeap name="vsc" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stc)" lineno="467" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="vsc.surveyName" scope="" type="" rhsType="methodinvoke" rhs="&apos;new name&apos;" lineno="468" />
+</AssignmentStatement>
+<ExpressionStatement expression="vsc.updateSurveyName()==null" key="assert" lineno="469"/>
+<methodendline lineno="471"/>
+</body>
+</method>
+<method returntype="Pagereference" name="updateSurveyThankYouAndLink" parameters="" isTestMethod="false" lineno="473" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Name, Id, URL__c, thankYouText__c, thankYouLink__c from Survey__c where Id =:surveyId]" returnloc="#temp1951" lineno="474" />
+<varDeclaration name="s" scope="methodvar" location="SurveyAndQuestionController" type="Survey__c" lineno="474" />
+<assignHeap name="s" scope="methodvar" type="Survey__c" rhsType="query" rhs="[select Name, Id, URL__c, thankYouText__c, thankYouLink__c from Survey__c where Id =:surveyId]" lineno="474" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="s.thankYouText__c" scope="" type="" rhsType="variable" rhs="surveyThankYouText" lineno="475" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="s.thankYouLink__c" scope="" type="" rhsType="variable" rhs="surveyThankYouURL" lineno="476" />
+</AssignmentStatement>
+<TryStatement lineno="477">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="lib.dml.update" methodtype="" returntype="" parameters="s" returnloc="" lineno="478" />
+</body>
+<CatchStatement type="Exception" name="e" lineno="479">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="Apexpages.addMessages" methodtype="normalmethod" returntype="String" parameters="e" returnloc="#temp1952" lineno="480" />
+</body>
+</CatchStatement>
+</TryStatement>
+<ReturnBlock>
+<return expression="null" expressiontype="@value" lineno="482" />
+</ReturnBlock>
+<methodendline lineno="483"/>
+</body>
+</method>
+<method returntype="void" name="testupdateSurveyThankYouAndLink" parameters="" isTestMethod="true" lineno="485" throws="" modifiers="private,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SurveyTestingUtil" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1953" lineno="486" />
+<varDeclaration name="tu" scope="methodvar" location="SurveyAndQuestionController" type="SurveyTestingUtil" lineno="486" />
+<assignHeap name="tu" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyTestingUtil()" lineno="486" />
+</VariableDeclaration>
+<methodInvoke name="Apexpages.currentPage" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1954" lineno="487" />
+<methodInvoke name="Apexpages.currentPage(.getParameters" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1955" lineno="487" />
+<methodInvoke name="Apexpages.currentPage(.getParameters(.put" methodtype="normalmethod" returntype="String" parameters="&apos;id&apos;,tu.surveyId" returnloc="#temp1956" lineno="487" />
+<VariableDeclaration>
+<varDeclaration name="stc" scope="methodvar" location="SurveyAndQuestionController" type="Apexpages.Standardcontroller" lineno="488" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stc" returnloc="#temp1957" lineno="489" />
+<varDeclaration name="vsc" scope="methodvar" location="SurveyAndQuestionController" type="SurveyAndQuestionController" lineno="489" />
+<assignHeap name="vsc" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stc)" lineno="489" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="vsc.surveyThankYouText" scope="" type="" rhsType="methodinvoke" rhs="&apos;new stuff&apos;" lineno="490" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="vsc.surveyThankYouURL" scope="" type="" rhsType="value" rhs="&apos;more new stff&apos;" lineno="491" />
+</AssignmentStatement>
+<ExpressionStatement expression="vsc.updateSurveyThankYouAndLink()==null" key="assert" lineno="492"/>
+<methodendline lineno="493"/>
+</body>
+</method>
+<method returntype="PageReference" name="updateOrderList" parameters="" isTestMethod="false" lineno="495" throws="" modifiers="public">
+<body>
+<if type="simpleif" lineno="497">
+<conditionalExpr>
+<methodInvoke name="newOrderW.length" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1958" lineno="497" />
+<ConditionalStatement LHStype="" LHS="newOrderW.length()" RHStype="" RHS="0" Operator="&lt;="/>
+</conditionalExpr>
+<ifcondition expression= "newOrderW.length()&lt;=0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ReturnBlock>
+<return expression="null" expressiontype="@methodinvoke" lineno="499" />
+</ReturnBlock>
+</body>
+</true>
+</if>
+<AssignmentStatement>
+<methodInvoke name="newOrderW#temp1958newOrderW.length" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1959" lineno="502" />
+<methodInvoke name="newOrderW#temp1958newOrderW.substring" methodtype="normalmethod" returntype="String" parameters="0,newOrderW.length()-1" returnloc="#temp1960" lineno="502" />
+<assignHeap name="newOrderW" scope="" type="" rhsType="methodinvoke" rhs="newOrderW.substring(0,newOrderW.length()-1)" lineno="502" />
+</AssignmentStatement>
+<VariableDeclaration>
+<methodInvoke name="newOrderW.split" methodtype="normalmethod" returntype="String" parameters="&apos;,&apos;,-1" returnloc="#temp1961" lineno="504" />
+<varDeclaration name="idsToUpdate" scope="methodvar" location="SurveyAndQuestionController" type="List&amp;lt;string&amp;gt;" lineno="504" />
+<assignHeap name="idsToUpdate" scope="methodvar" type="List&amp;lt;string&amp;gt;" rhsType="methodinvoke" rhs="newOrderW.split(&apos;,&apos;,-1)" lineno="504" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;Survey_Question__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1962" lineno="505" />
+<varDeclaration name="qsToUpdate" scope="methodvar" location="SurveyAndQuestionController" type="List&amp;lt;Survey_Question__c&amp;gt;" lineno="505" />
+<assignHeap name="qsToUpdate" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;Survey_Question__c&gt;()" lineno="505" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Id, OrderNumber__c from Survey_Question__c where Id in :idsToUpdate]" returnloc="#temp1963" lineno="507" />
+<methodInvoke name="Map&lt;Id,Survey_Question__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="[select Id, OrderNumber__c from Survey_Question__c where Id in :idsToUpdate]" returnloc="#temp1964" lineno="507" />
+<varDeclaration name="questionMap" scope="methodvar" location="SurveyAndQuestionController" type="Map&amp;lt;Id,Survey_Question__c&amp;gt;" lineno="507" />
+<assignHeap name="questionMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;Id,Survey_Question__c&gt;([select Id, OrderNumber__c from Survey_Question__c where Id in :idsToUpdate])" lineno="507" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="sqToUpdate" scope="methodvar" location="SurveyAndQuestionController" type="Survey_Question__c" lineno="508" />
+</VariableDeclaration>
+<loop type="simplefor" lineno="510">
+<initialExpr>
+<VariableDeclaration>
+<varDeclaration name="i" scope="methodvar" location="SurveyAndQuestionController" type="integer" lineno="510" />
+<assignHeap name="i" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="510" />
+</VariableDeclaration>
+</initialExpr>
+<conditionalExpr>
+<methodInvoke name="#temp1964.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1965" lineno="510" />
+<ConditionalStatement LHStype="" LHS="i" RHStype="" RHS="idsToUpdate.size()" Operator="&lt;"/>
+</conditionalExpr>
+<incrementExpr>
+</incrementExpr>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="idsToUpdate#temp1965idsToUpdate.get" methodtype="normalmethod" returntype="String" parameters="i" returnloc="#temp1966" lineno="512" />
+<methodInvoke name="questionMap#temp1965questionMap.get" methodtype="normalmethod" returntype="String" parameters="idsToUpdate.get(i)" returnloc="#temp1967" lineno="512" />
+<assignHeap name="sqToUpdate" scope="" type="" rhsType="methodinvoke" rhs="questionMap.get(idsToUpdate.get(i))" lineno="512" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="sqToUpdate.OrderNumber__c" scope="" type="" rhsType="variable" rhs="i" lineno="513" />
+</AssignmentStatement>
+<methodInvoke name="qsToUpdate.add" methodtype="normalmethod" returntype="String" parameters="sqToUpdate" returnloc="#temp1968" lineno="514" />
+</body>
+</loop>
+<methodInvoke name="lib.dml.update" methodtype="" returntype="" parameters="qsToUpdate" returnloc="" lineno="517" />
+<ReturnBlock>
+<return expression="null" expressiontype="@value" lineno="519" />
+</ReturnBlock>
+<methodendline lineno="520"/>
+</body>
+</method>
+<method returntype="Pagereference" name="refreshQuestionList" parameters="" isTestMethod="false" lineno="526" throws="" modifiers="public">
+<body>
+<methodInvoke name="setupQuestionList" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1969" lineno="527" />
+<ReturnBlock>
+<return expression="null" expressiontype="@methodinvoke" lineno="528" />
+</ReturnBlock>
+<methodendline lineno="529"/>
+</body>
+</method>
+<method returntype="void" name="testRefreshQuestionList" parameters="" isTestMethod="true" lineno="532" throws="" modifiers="private,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SurveyTestingUtil" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1970" lineno="533" />
+<varDeclaration name="tu" scope="methodvar" location="SurveyAndQuestionController" type="SurveyTestingUtil" lineno="533" />
+<assignHeap name="tu" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyTestingUtil()" lineno="533" />
+</VariableDeclaration>
+<methodInvoke name="Apexpages.currentPage" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1971" lineno="534" />
+<methodInvoke name="Apexpages.currentPage(.getParameters" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1972" lineno="534" />
+<methodInvoke name="Apexpages.currentPage(.getParameters(.put" methodtype="normalmethod" returntype="String" parameters="&apos;id&apos;,tu.surveyId" returnloc="#temp1973" lineno="534" />
+<VariableDeclaration>
+<varDeclaration name="stc" scope="methodvar" location="SurveyAndQuestionController" type="Apexpages.Standardcontroller" lineno="535" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stc" returnloc="#temp1974" lineno="536" />
+<varDeclaration name="vsc" scope="methodvar" location="SurveyAndQuestionController" type="SurveyAndQuestionController" lineno="536" />
+<assignHeap name="vsc" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stc)" lineno="536" />
+</VariableDeclaration>
+<methodInvoke name="vsc.getAQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1975" lineno="537" />
+<VariableDeclaration>
+<methodInvoke name="List&lt;Survey_Question__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1976" lineno="540" />
+<varDeclaration name="sq" scope="methodvar" location="SurveyAndQuestionController" type="List&amp;lt;Survey_Question__c&amp;gt;" lineno="540" />
+<assignHeap name="sq" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;Survey_Question__c&gt;()" lineno="540" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id, orderNumber__c from Survey_Question__c]" returnloc="#temp1977" lineno="541" />
+<assignHeap name="sq" scope="" type="" rhsType="soqlquery" rhs="[select id, orderNumber__c from Survey_Question__c]" lineno="541" />
+</AssignmentStatement>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id, orderNumber__c from Survey_Question__c where orderNumber__c =: 1 and Survey__c =: tu.surveyId]" returnloc="#temp1978" lineno="544" />
+<varDeclaration name="first" scope="methodvar" location="SurveyAndQuestionController" type="Survey_Question__c" lineno="544" />
+<assignHeap name="first" scope="methodvar" type="Survey_Question__c" rhsType="query" rhs="[select id, orderNumber__c from Survey_Question__c where orderNumber__c =: 1 and Survey__c =: tu.surveyId]" lineno="544" />
+</VariableDeclaration>
+<ExpressionStatement expression="first.orderNumber__c==1" key="assert" lineno="545"/>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="&apos;,&apos;" returnloc="#temp1987" lineno="551" />
+<assignHeap name="vsc.newOrderW" scope="" type="" rhsType="stradd" rhs="vsc.allQuestions[2].id+&apos;,&apos;+vsc.allQuestions[0].id+&apos;,&apos;+vsc.allQuestions[1].id+&apos;,&apos;+vsc.allQuestions[3].id+&apos;,&apos;" lineno="551" />
+</AssignmentStatement>
+<methodInvoke name="vsc.updateOrderList" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1988" lineno="553" />
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id, orderNumber__c from Survey_Question__c where orderNumber__c =: 1 and Survey__c =: tu.surveyId]" returnloc="#temp1989" lineno="556" />
+<varDeclaration name="second" scope="methodvar" location="SurveyAndQuestionController" type="Survey_Question__c" lineno="556" />
+<assignHeap name="second" scope="methodvar" type="Survey_Question__c" rhsType="query" rhs="[select id, orderNumber__c from Survey_Question__c where orderNumber__c =: 1 and Survey__c =: tu.surveyId]" lineno="556" />
+</VariableDeclaration>
+<ExpressionStatement expression="second.id!=first.id" key="assert" lineno="557"/>
+<methodInvoke name="vsc.refreshQuestionList" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1990" lineno="560" />
+<ExpressionStatement expression="vsc.allQuestions[1].id!=first.id" key="assert" lineno="561"/>
+<methodendline lineno="563"/>
+</body>
+</method>
+<method returntype="PageReference" name="resultPage" parameters="" isTestMethod="false" lineno="573" throws="" modifiers="public">
+<body>
+<ReturnBlock>
+<methodInvoke name="PageReference" methodtype="constructormethod" returntype="newobject" parameters="&apos;/apex/ResultsPage?id=&apos;+surveyId" returnloc="#temp1991" lineno="574" />
+<methodInvoke name="lib.stradd" methodtype="constructormethod" returntype="String" parameters="newPageReference(&apos;/apex/ResultsPage?id=&apos;+surveyId)" returnloc="#temp1992" lineno="574" />
+<return expression="newPageReference(&apos;/apex/ResultsPage?id=&apos;+surveyId)" expressiontype="@newobject" lineno="574" />
+</ReturnBlock>
+<methodendline lineno="575"/>
+</body>
+</method>
+<method returntype="Pagereference" name="deleteRefresh" parameters="" isTestMethod="false" lineno="581" throws="" modifiers="public">
+<body>
+<if type="simpleif" lineno="582">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="questionReference" RHStype="" RHS="null" Operator="!="/>
+</conditionalExpr>
+<ifcondition expression= "questionReference!=null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Id, Name from Survey_Question__c where Id =: questionReference]" returnloc="#temp1993" lineno="584" />
+<varDeclaration name="sq" scope="methodvar" location="SurveyAndQuestionController" type="Survey_Question__c" lineno="584" />
+<assignHeap name="sq" scope="methodvar" type="Survey_Question__c" rhsType="query" rhs="[select Id, Name from Survey_Question__c where Id =: questionReference]" lineno="584" />
+</VariableDeclaration>
+<methodInvoke name="lib.dml.delete" methodtype="" returntype="" parameters="sq" returnloc="" lineno="585" />
+<AssignmentStatement>
+<assignHeap name="questionReference" scope="" type="" rhsType="value" rhs="null" lineno="586" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+<methodInvoke name="allQuestions.clear" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1994" lineno="588" />
+<VariableDeclaration>
+<varDeclaration name="j" scope="methodvar" location="SurveyAndQuestionController" type="double" lineno="589" />
+<assignHeap name="j" scope="methodvar" type="double" rhsType="value" rhs="0.0" lineno="589" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Type__c, Id, Survey__c, Required__c, 
+                    Question__c, OrderNumber__c, Name, Choices__c
+                    from Survey_Question__c  
+                    where Survey__c =: surveyId
+                    order by OrderNumber__c]" returnloc="#temp1995" lineno="591" />
+<varDeclaration name="allQuestionsObject" scope="methodvar" location="SurveyAndQuestionController" type="List&amp;lt;Survey_Question__c&amp;gt;" lineno="590" />
+<assignHeap name="allQuestionsObject" scope="methodvar" type="List&amp;lt;Survey_Question__c&amp;gt;" rhsType="query" rhs="[select Type__c, Id, Survey__c, Required__c, 
+                    Question__c, OrderNumber__c, Name, Choices__c
+                    from Survey_Question__c  
+                    where Survey__c =: surveyId
+                    order by OrderNumber__c]" lineno="590" />
+</VariableDeclaration>
+<loop type="simplefor" lineno="596">
+<initialExpr>
+<VariableDeclaration>
+<varDeclaration name="i" scope="methodvar" location="SurveyAndQuestionController" type="integer" lineno="596" />
+<assignHeap name="i" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="596" />
+</VariableDeclaration>
+</initialExpr>
+<conditionalExpr>
+<methodInvoke name="allQuestionsObject.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1996" lineno="596" />
+<ConditionalStatement LHStype="" LHS="i" RHStype="" RHS="allQuestionsObject.size()" Operator="&lt;"/>
+</conditionalExpr>
+<incrementExpr>
+</incrementExpr>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="allQuestionsObject.OrderNumber__c" scope="" type="" rhsType="methodinvoke" rhs="j" lineno="597" />
+</AssignmentStatement>
+<VariableDeclaration>
+<methodInvoke name="question" methodtype="constructormethod" returntype="newobject" parameters="allQuestionsObject" returnloc="#temp1997" lineno="598" />
+<varDeclaration name="theQ" scope="methodvar" location="SurveyAndQuestionController" type="question" lineno="598" />
+<assignHeap name="theQ" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newquestion(allQuestionsObject)" lineno="598" />
+</VariableDeclaration>
+<methodInvoke name="allQuestions.add" methodtype="normalmethod" returntype="String" parameters="theQ" returnloc="#temp1998" lineno="599" />
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="1.0" returnloc="#temp1999" lineno="600" />
+<assignHeap name="j" scope="" type="" rhsType="stradd" rhs="j+1.0" lineno="600" />
+</AssignmentStatement>
+</body>
+</loop>
+<AssignmentStatement>
+<methodInvoke name="getResponses" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2000" lineno="602" />
+<assignHeap name="responses" scope="" type="" rhsType="methodinvoke" rhs="getResponses()" lineno="602" />
+</AssignmentStatement>
+<TryStatement lineno="603">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="lib.dml.update" methodtype="" returntype="" parameters="allQuestionsObject" returnloc="" lineno="604" />
+</body>
+<CatchStatement type="Exception" name="e" lineno="605">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="Apexpages.addMessages" methodtype="normalmethod" returntype="String" parameters="e" returnloc="#temp2001" lineno="606" />
+</body>
+</CatchStatement>
+</TryStatement>
+<ReturnBlock>
+<methodInvoke name="saveOrUpdateReturn" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2002" lineno="608" />
+<return expression="saveOrUpdateReturn()" expressiontype="@methodinvoke" lineno="608" />
+</ReturnBlock>
+<methodendline lineno="609"/>
+</body>
+</method>
+<method returntype="void" name="testDeleteQuestion" parameters="" isTestMethod="true" lineno="612" throws="" modifiers="private,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SurveyTestingUtil" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2003" lineno="613" />
+<varDeclaration name="tu" scope="methodvar" location="SurveyAndQuestionController" type="SurveyTestingUtil" lineno="613" />
+<assignHeap name="tu" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyTestingUtil()" lineno="613" />
+</VariableDeclaration>
+<methodInvoke name="Apexpages.currentPage" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2004" lineno="614" />
+<methodInvoke name="Apexpages.currentPage(.getParameters" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2005" lineno="614" />
+<methodInvoke name="Apexpages.currentPage(.getParameters(.put" methodtype="normalmethod" returntype="String" parameters="&apos;id&apos;,tu.surveyId" returnloc="#temp2006" lineno="614" />
+<VariableDeclaration>
+<varDeclaration name="stc" scope="methodvar" location="SurveyAndQuestionController" type="Apexpages.Standardcontroller" lineno="615" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stc" returnloc="#temp2007" lineno="616" />
+<varDeclaration name="vsc" scope="methodvar" location="SurveyAndQuestionController" type="SurveyAndQuestionController" lineno="616" />
+<assignHeap name="vsc" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stc)" lineno="616" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id, orderNumber__c from Survey_Question__c where orderNumber__c =: 1 and Survey__c =: tu.surveyId]" returnloc="#temp2008" lineno="620" />
+<varDeclaration name="sq" scope="methodvar" location="SurveyAndQuestionController" type="Survey_Question__c" lineno="620" />
+<assignHeap name="sq" scope="methodvar" type="Survey_Question__c" rhsType="query" rhs="[select id, orderNumber__c from Survey_Question__c where orderNumber__c =: 1 and Survey__c =: tu.surveyId]" lineno="620" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="vsc.questionReference" scope="" type="" rhsType="methodinvoke" rhs="sq.Id" lineno="621" />
+</AssignmentStatement>
+<methodInvoke name="vsc.deleteRefresh" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2009" lineno="622" />
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id, orderNumber__c from Survey_Question__c where orderNumber__c =: 1 and Survey__c =: tu.surveyId]" returnloc="#temp2010" lineno="624" />
+<varDeclaration name="sq2" scope="methodvar" location="SurveyAndQuestionController" type="Survey_Question__c" lineno="624" />
+<assignHeap name="sq2" scope="methodvar" type="Survey_Question__c" rhsType="query" rhs="[select id, orderNumber__c from Survey_Question__c where orderNumber__c =: 1 and Survey__c =: tu.surveyId]" lineno="624" />
+</VariableDeclaration>
+<ExpressionStatement expression="sq.Id!=sq2.Id" key="assert" lineno="625"/>
+<methodendline lineno="628"/>
+</body>
+</method>
+<method returntype="List&amp;lt;string&amp;gt;" name="getResponses" parameters="" isTestMethod="false" lineno="635" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Survey_Question__c, SurveyTaker__c, Response__c, Name from SurveyQuestionResponse__c limit 100]" returnloc="#temp2011" lineno="636" />
+<varDeclaration name="qr" scope="methodvar" location="SurveyAndQuestionController" type="List&amp;lt;SurveyQuestionResponse__c&amp;gt;" lineno="636" />
+<assignHeap name="qr" scope="methodvar" type="List&amp;lt;SurveyQuestionResponse__c&amp;gt;" rhsType="query" rhs="[select Survey_Question__c, SurveyTaker__c, Response__c, Name from SurveyQuestionResponse__c limit 100]" lineno="636" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2012" lineno="637" />
+<varDeclaration name="resp" scope="methodvar" location="SurveyAndQuestionController" type="List&amp;lt;string&amp;gt;" lineno="637" />
+<assignHeap name="resp" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;()" lineno="637" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="638">
+<Iterator type="SurveyQuestionResponse__c" name="r" on="qr">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="resp.add" methodtype="normalmethod" returntype="String" parameters="r.Response__c" returnloc="#temp2013" lineno="639" />
+</body>
+</loop>
+<ReturnBlock>
+<return expression="resp" expressiontype="@alias" lineno="642" />
+</ReturnBlock>
+<methodendline lineno="643"/>
+</body>
+</method>
+<class name="question" sharing="default" implements="" isenum="false" lineno="648" modifiers="public">
+<classbody>
+<varDeclaration name="name" scope="instancevar" location="question" type="string" lineno="649" />
+<VariableProperties name="name">
+<getterMethod name="name" returntype="string" modifiers="" lineno="649">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="name" modifiers="" lineno="649">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="id" scope="instancevar" location="question" type="string" lineno="650" />
+<VariableProperties name="id">
+<getterMethod name="id" returntype="string" modifiers="" lineno="650">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="id" modifiers="" lineno="650">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="question" scope="instancevar" location="question" type="string" lineno="651" />
+<VariableProperties name="question">
+<getterMethod name="question" returntype="string" modifiers="" lineno="651">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="question" modifiers="" lineno="651">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="orderNumber" scope="instancevar" location="question" type="string" lineno="652" />
+<VariableProperties name="orderNumber">
+<getterMethod name="orderNumber" returntype="string" modifiers="" lineno="652">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="orderNumber" modifiers="" lineno="652">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="choices" scope="instancevar" location="question" type="string" lineno="653" />
+<VariableProperties name="choices">
+<getterMethod name="choices" returntype="string" modifiers="" lineno="653">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="choices" modifiers="" lineno="653">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="singleOptions" scope="instancevar" location="question" type="List&amp;lt;SelectOption&amp;gt;" lineno="654" />
+<VariableProperties name="singleOptions">
+<getterMethod name="singleOptions" returntype="List&amp;lt;SelectOption&amp;gt;" modifiers="" lineno="654">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="singleOptions" modifiers="" lineno="654">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="multiOptions" scope="instancevar" location="question" type="List&amp;lt;SelectOption&amp;gt;" lineno="655" />
+<VariableProperties name="multiOptions">
+<getterMethod name="multiOptions" returntype="List&amp;lt;SelectOption&amp;gt;" modifiers="" lineno="655">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="multiOptions" modifiers="" lineno="655">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="required" scope="instancevar" location="question" type="boolean" lineno="656" />
+<VariableProperties name="required">
+<getterMethod name="required" returntype="boolean" modifiers="" lineno="656">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="required" modifiers="" lineno="656">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="questionType" scope="instancevar" location="question" type="string" lineno="657" />
+<VariableProperties name="questionType">
+<getterMethod name="questionType" returntype="string" modifiers="" lineno="657">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="questionType" modifiers="" lineno="657">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="surveyName" scope="instancevar" location="question" type="string" lineno="658" />
+<VariableProperties name="surveyName">
+<getterMethod name="surveyName" returntype="string" modifiers="" lineno="658">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="surveyName" modifiers="" lineno="658">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="renderFreeText" scope="instancevar" location="question" type="string" lineno="659" />
+<VariableProperties name="renderFreeText">
+<getterMethod name="renderFreeText" returntype="string" modifiers="" lineno="659">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="renderFreeText" modifiers="" lineno="659">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="renderSelectRadio" scope="instancevar" location="question" type="string" lineno="660" />
+<VariableProperties name="renderSelectRadio">
+<getterMethod name="renderSelectRadio" returntype="string" modifiers="" lineno="660">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="renderSelectRadio" modifiers="" lineno="660">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="renderSelectCheckboxes" scope="instancevar" location="question" type="string" lineno="661" />
+<VariableProperties name="renderSelectCheckboxes">
+<getterMethod name="renderSelectCheckboxes" returntype="string" modifiers="" lineno="661">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="renderSelectCheckboxes" modifiers="" lineno="661">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="renderSelectRow" scope="instancevar" location="question" type="string" lineno="662" />
+<VariableProperties name="renderSelectRow">
+<getterMethod name="renderSelectRow" returntype="string" modifiers="" lineno="662">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="renderSelectRow" modifiers="" lineno="662">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="responses" scope="instancevar" location="question" type="List&amp;lt;string&amp;gt;" lineno="663" />
+<VariableProperties name="responses">
+<getterMethod name="responses" returntype="List&amp;lt;string&amp;gt;" modifiers="" lineno="663">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="responses" modifiers="" lineno="663">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="singleOptionsForChart" scope="instancevar" location="question" type="string" lineno="664" />
+<VariableProperties name="singleOptionsForChart">
+<getterMethod name="singleOptionsForChart" returntype="string" modifiers="" lineno="664">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="singleOptionsForChart" modifiers="" lineno="664">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="qResultsForChart" scope="instancevar" location="question" type="string" lineno="665" />
+<VariableProperties name="qResultsForChart">
+<getterMethod name="qResultsForChart" returntype="string" modifiers="" lineno="665">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="qResultsForChart" modifiers="" lineno="665">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="strList" scope="instancevar" location="question" type="List&amp;lt;string&amp;gt;" lineno="666" />
+<VariableProperties name="strList">
+<getterMethod name="strList" returntype="List&amp;lt;string&amp;gt;" modifiers="" lineno="666">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="strList" modifiers="" lineno="666">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="resultsCounts" scope="instancevar" location="question" type="List&amp;lt;integer&amp;gt;" lineno="667" />
+<VariableProperties name="resultsCounts">
+<getterMethod name="resultsCounts" returntype="List&amp;lt;integer&amp;gt;" modifiers="" lineno="667">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="resultsCounts" modifiers="" lineno="667">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="rowOptions" scope="instancevar" location="question" type="List&amp;lt;SelectOption&amp;gt;" lineno="668" />
+<VariableProperties name="rowOptions">
+<getterMethod name="rowOptions" returntype="List&amp;lt;SelectOption&amp;gt;" modifiers="" lineno="668">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="rowOptions" modifiers="" lineno="668">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="noData" scope="instancevar" location="question" type="boolean" lineno="669" />
+<VariableProperties name="noData">
+<getterMethod name="noData" returntype="boolean" modifiers="" lineno="669">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="noData" modifiers="" lineno="669">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<method returntype="" name="question" parameters="sq:Survey_Question__c" isTestMethod="false" lineno="674" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<assignHeap name="name" scope="" type="" rhsType="variable" rhs="sq.Name" lineno="675" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="id" scope="" type="" rhsType="variable" rhs="sq.Id" lineno="676" />
+</AssignmentStatement>
+<ExpressionStatement expression="&apos;in Question found one with id &apos;+id" key="debug" lineno="677"/>
+<AssignmentStatement>
+<assignHeap name="question" scope="" type="" rhsType="variable" rhs="sq.Question__c" lineno="678" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="string.valueOf" methodtype="normalmethod" returntype="String" parameters="sq.OrderNumber__c+1" returnloc="#temp2014" lineno="679" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="#temp2014" returnloc="#temp2015" lineno="679" />
+<assignHeap name="orderNumber" scope="" type="" rhsType="stradd" rhs="string.valueOf(sq.OrderNumber__c+1)" lineno="679" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="choices" scope="" type="" rhsType="variable" rhs="sq.Choices__c" lineno="680" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="required" scope="" type="" rhsType="variable" rhs="sq.Required__c" lineno="681" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="questionType" scope="" type="" rhsType="variable" rhs="sq.Type__c" lineno="682" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="singleOptionsForChart" scope="" type="" rhsType="value" rhs="&apos; &apos;" lineno="683" />
+</AssignmentStatement>
+<if type="simpleif" lineno="684">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="sq.Type__c" RHStype="" RHS="&apos;Single select--Vertical&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "sq.Type__c==&apos;Single select--Vertical&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="renderSelectRadio" scope="" type="" rhsType="value" rhs="&apos;true&apos;" lineno="685" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="stringToSelectOptions" methodtype="normalmethod" returntype="String" parameters="choices" returnloc="#temp2016" lineno="686" />
+<assignHeap name="singleOptions" scope="" type="" rhsType="methodinvoke" rhs="stringToSelectOptions(choices)" lineno="686" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="renderSelectCheckboxes" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="687" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="renderFreeText" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="688" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="renderSelectRow" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="689" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="691">
+<body>
+<if type="elseif" lineno="691">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="sq.Type__c" RHStype="" RHS="&apos;Multi-select--Vertical&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "sq.Type__c==&apos;Multi-select--Vertical&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="renderSelectCheckboxes" scope="" type="" rhsType="value" rhs="&apos;true&apos;" lineno="692" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="stringToSelectOptions" methodtype="normalmethod" returntype="String" parameters="choices" returnloc="#temp2017" lineno="693" />
+<assignHeap name="multiOptions" scope="" type="" rhsType="methodinvoke" rhs="stringToSelectOptions(choices)" lineno="693" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="renderSelectRadio" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="694" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="renderFreeText" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="695" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="renderSelectRow" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="696" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="698">
+<body>
+<if type="elseif" lineno="698">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="sq.Type__c" RHStype="" RHS="&apos;Single select--Horizontal&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "sq.Type__c==&apos;Single select--Horizontal&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="renderSelectCheckboxes" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="699" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="stringToSelectOptions" methodtype="normalmethod" returntype="String" parameters="choices" returnloc="#temp2018" lineno="700" />
+<assignHeap name="rowOptions" scope="" type="" rhsType="methodinvoke" rhs="stringToSelectOptions(choices)" lineno="700" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="renderSelectRadio" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="701" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="renderFreeText" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="702" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="renderSelectRow" scope="" type="" rhsType="value" rhs="&apos;true&apos;" lineno="703" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="705">
+<body>
+<if type="elseif" lineno="705">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="sq.Type__c" RHStype="" RHS="&apos;Free Text&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "sq.Type__c==&apos;Free Text&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="renderFreeText" scope="" type="" rhsType="value" rhs="&apos;true&apos;" lineno="706" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="renderSelectRadio" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="707" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="renderSelectCheckboxes" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="708" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="renderSelectRow" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="709" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+<methodendline lineno="712"/>
+</body>
+</method>
+<method returntype="List&amp;lt;SelectOption&amp;gt;" name="stringToSelectOptions" parameters="str:string" isTestMethod="false" lineno="719" throws="" modifiers="private">
+<body>
+<if type="simpleif" lineno="720">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="str" RHStype="" RHS="&apos;&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "str==&apos;&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ReturnBlock>
+<methodInvoke name="List&lt;SelectOption&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2019" lineno="722" />
+<return expression="newList&lt;SelectOption&gt;()" expressiontype="@newobject" lineno="720" />
+</ReturnBlock>
+</body>
+</true>
+</if>
+<AssignmentStatement>
+<methodInvoke name="str#temp2019str.split" methodtype="normalmethod" returntype="String" parameters="&apos;\n&apos;" returnloc="#temp2020" lineno="724" />
+<assignHeap name="strList" scope="" type="" rhsType="methodinvoke" rhs="str.split(&apos;\n&apos;)" lineno="724" />
+</AssignmentStatement>
+<VariableDeclaration>
+<methodInvoke name="List&lt;SelectOption&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2021" lineno="726" />
+<varDeclaration name="returnVal" scope="methodvar" location="question" type="List&amp;lt;SelectOption&amp;gt;" lineno="726" />
+<assignHeap name="returnVal" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;SelectOption&gt;()" lineno="726" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="727">
+<Iterator type="string" name="s" on="strList">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="728">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s" RHStype="" RHS="&apos;&apos;" Operator="!="/>
+</conditionalExpr>
+<ifcondition expression= "s!=&apos;&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="SelectOption" methodtype="constructormethod" returntype="newobject" parameters="s,s" returnloc="#temp2022" lineno="729" />
+<methodInvoke name="returnVal.add" methodtype="normalmethod" returntype="String" parameters="newSelectOption(s,s)" returnloc="#temp2023" lineno="729" />
+<if type="simpleif" lineno="730">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s" RHStype="" RHS="&apos;null&apos;" Operator="!="/>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s" RHStype="" RHS="null" Operator="!="/>
+<ConditionalStatement LHStype="value" LHS="null" RHStype="s!=null" RHS="s!=null" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "s!=&apos;null&apos;&amp;&amp;s!=null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="s.replace" methodtype="normalmethod" returntype="String" parameters="&apos; &apos;,&apos;%20&apos;" returnloc="#temp2024" lineno="731" />
+<varDeclaration name="sBis" scope="methodvar" location="question" type="string" lineno="731" />
+<assignHeap name="sBis" scope="methodvar" type="string" rhsType="methodinvoke" rhs="s.replace(&apos; &apos;,&apos;%20&apos;)" lineno="731" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="s#temp2024s.trim" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2025" lineno="732" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="&apos;|&apos;" returnloc="#temp2026" lineno="732" />
+<assignHeap name="singleOptionsForChart" scope="" type="" rhsType="stradd" rhs="s.trim()+&apos;|&apos;" lineno="732" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+</body>
+</true>
+</if>
+</body>
+</loop>
+<AssignmentStatement>
+<methodInvoke name="singleOptionsForChart#temp2026singleOptionsForChart.length" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2027" lineno="736" />
+<methodInvoke name="singleOptionsForChart.substring" methodtype="normalmethod" returntype="String" parameters="0,singleOptionsForChart.length()-1" returnloc="#temp2028" lineno="736" />
+<assignHeap name="singleOptionsForChart" scope="" type="" rhsType="methodinvoke" rhs="singleOptionsForChart.substring(0,singleOptionsForChart.length()-1)" lineno="736" />
+</AssignmentStatement>
+<ReturnBlock>
+<return expression="returnVal" expressiontype="@alias" lineno="737" />
+</ReturnBlock>
+<methodendline lineno="738"/>
+</body>
+</method>
+</classbody>
+</class>
+<method returntype="List&amp;lt;question&amp;gt;" name="getAQuestion" parameters="" isTestMethod="false" lineno="743" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select s.Type__c, s.Id, s.Survey__c, s.Required__c, s.Question__c, 
+                    s.OrderNumber__c, s.Name, s.Choices__c 
+                    from Survey_Question__c s 
+                    where s.Survey__c =: surveyId ORDER BY s.OrderNumber__c]" returnloc="#temp2029" lineno="745" />
+<varDeclaration name="allQuestionsObject" scope="methodvar" location="question" type="List&amp;lt;Survey_Question__c&amp;gt;" lineno="744" />
+<assignHeap name="allQuestionsObject" scope="methodvar" type="List&amp;lt;Survey_Question__c&amp;gt;" rhsType="query" rhs="[select s.Type__c, s.Id, s.Survey__c, s.Required__c, s.Question__c, 
+                    s.OrderNumber__c, s.Name, s.Choices__c 
+                    from Survey_Question__c s 
+                    where s.Survey__c =: surveyId ORDER BY s.OrderNumber__c]" lineno="744" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="List&lt;question&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2030" lineno="749" />
+<assignHeap name="allQuestions" scope="" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;question&gt;()" lineno="749" />
+</AssignmentStatement>
+<VariableDeclaration>
+<varDeclaration name="old_OrderNumber" scope="methodvar" location="question" type="double" lineno="751" />
+<assignHeap name="old_OrderNumber" scope="methodvar" type="double" rhsType="value" rhs="0" lineno="751" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="new_OrderNumber" scope="methodvar" location="question" type="double" lineno="752" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="difference" scope="methodvar" location="question" type="double" lineno="753" />
+<assignHeap name="difference" scope="methodvar" type="double" rhsType="value" rhs="0" lineno="753" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="755">
+<Iterator type="Survey_Question__c" name="q" on="allQuestionsObject">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="new_OrderNumber" scope="" type="" rhsType="variable" rhs="q.OrderNumber__c" lineno="756" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="difference" scope="" type="" rhsType="value" rhs="1" lineno="757" />
+</AssignmentStatement>
+<if type="simpleif" lineno="758">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="difference" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "difference&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="double.valueOf" methodtype="normalmethod" returntype="String" parameters="difference" returnloc="#temp2031" lineno="759" />
+<varDeclaration name="dd" scope="methodvar" location="question" type="double" lineno="759" />
+<assignHeap name="dd" scope="methodvar" type="double" rhsType="variable" rhs="double.valueOf(difference)" lineno="759" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp2031.intValue" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2032" lineno="760" />
+<varDeclaration name="newOrderInt" scope="methodvar" location="question" type="integer" lineno="760" />
+<assignHeap name="newOrderInt" scope="methodvar" type="integer" rhsType="methodinvoke" rhs="dd.intValue()" lineno="760" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="integer#temp2032integer.valueOf" methodtype="normalmethod" returntype="String" parameters="newOrderInt" returnloc="#temp2033" lineno="761" />
+<assignHeap name="q.OrderNumber__c" scope="" type="" rhsType="methodinvoke" rhs="integer.valueOf(newOrderInt)" lineno="761" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+<AssignmentStatement>
+<assignHeap name="old_OrderNumber" scope="" type="" rhsType="variable" rhs="q.OrderNumber__c" lineno="763" />
+</AssignmentStatement>
+<VariableDeclaration>
+<methodInvoke name="question" methodtype="constructormethod" returntype="newobject" parameters="q" returnloc="#temp2034" lineno="764" />
+<varDeclaration name="theQ" scope="methodvar" location="question" type="question" lineno="764" />
+<assignHeap name="theQ" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newquestion(q)" lineno="764" />
+</VariableDeclaration>
+<methodInvoke name="allQuestions.add" methodtype="normalmethod" returntype="String" parameters="theQ" returnloc="#temp2035" lineno="765" />
+</body>
+</loop>
+<AssignmentStatement>
+<methodInvoke name="allQuestions.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2036" lineno="767" />
+<assignHeap name="allQuestionsSize" scope="" type="" rhsType="methodinvoke" rhs="allQuestions.size()" lineno="767" />
+</AssignmentStatement>
+<ReturnBlock>
+<return expression="allQuestions" expressiontype="@alias" lineno="768" />
+</ReturnBlock>
+<methodendline lineno="769"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[1, 47, 54, 58, 72, 85, 154, 158, 166, 227, 233, 240, 268, 275, 289, 382, 446, 451, 472, 522, 531, 539, 543, 547, 555, 559, 564, 567, 580, 611, 619, 629, 631, 666, 667, 711]" multi="[23-23, 46-46, 62-62, 86-95, 96-113, 417-417, 419-420, 422-433, 439-441, 523-525, 570-572, 633-634, 645-647, 671-673, 714-718, 741-742, 754-754]" empty="[2, 43, 44, 56, 69, 71, 83, 84, 114, 120, 128, 134, 144, 151, 153, 157, 165, 181, 183, 184, 200, 217, 225, 226, 251, 260, 261, 262, 286, 287, 304, 307, 313, 328, 336, 354, 361, 380, 381, 388, 392, 396, 400, 404, 406, 407, 415, 418, 437, 438, 450, 462, 470, 484, 494, 501, 503, 506, 509, 516, 518, 521, 530, 538, 542, 546, 552, 554, 558, 562, 565, 566, 568, 569, 576, 577, 578, 579, 610, 617, 618, 623, 626, 627, 630, 632, 641, 644, 670, 713, 725, 740, 750, 770]" singlebrace="[53, 61, 70, 82, 94, 109, 112, 119, 127, 133, 143, 150, 163, 164, 182, 198, 199, 205, 208, 211, 214, 216, 224, 250, 255, 258, 259, 285, 303, 306, 312, 322, 326, 327, 334, 335, 351, 353, 360, 366, 370, 373, 377, 379, 405, 413, 416, 432, 436, 449, 459, 461, 471, 481, 483, 493, 496, 498, 500, 511, 515, 520, 529, 563, 575, 583, 587, 601, 607, 609, 628, 640, 643, 690, 697, 704, 710, 712, 721, 723, 733, 734, 735, 738, 739, 762, 766, 769, 771]"/>
+</stac>

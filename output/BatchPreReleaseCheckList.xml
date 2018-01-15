@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="BatchPreReleaseCheckList.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="9 KB">
+<class name="BatchPreReleaseCheckList" sharing="default" implements="Database.batchable&lt;sobject&gt;,Database.stateful" isenum="false" lineno="9" modifiers="global">
+<classbody>
+<VariableDeclaration>
+<methodInvoke name="system.today" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp905" lineno="11" />
+<methodInvoke name="system.today(.toStartOfMonth" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp906" lineno="11" />
+<methodInvoke name="system.today(.toStartOfMonth(.adddays" methodtype="normalmethod" returntype="String" parameters="-1" returnloc="#temp907" lineno="11" />
+<varDeclaration name="d00" scope="methodvar" location="BatchPreReleaseCheckList" type="date" lineno="11" />
+<assignHeap name="d00" scope="methodvar" type="date" rhsType="methodinvoke" rhs="system.today().toStartOfMonth().adddays(-1)" lineno="11" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp907.addmonths" methodtype="normalmethod" returntype="String" parameters="-1" returnloc="#temp908" lineno="12" />
+<varDeclaration name="d01" scope="methodvar" location="BatchPreReleaseCheckList" type="date" lineno="12" />
+<assignHeap name="d01" scope="methodvar" type="date" rhsType="methodinvoke" rhs="d00.addmonths(-1)" lineno="12" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp908.addmonths" methodtype="normalmethod" returntype="String" parameters="-2" returnloc="#temp909" lineno="13" />
+<varDeclaration name="d02" scope="methodvar" location="BatchPreReleaseCheckList" type="date" lineno="13" />
+<assignHeap name="d02" scope="methodvar" type="date" rhsType="methodinvoke" rhs="d00.addmonths(-2)" lineno="13" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp909.addmonths" methodtype="normalmethod" returntype="String" parameters="-3" returnloc="#temp910" lineno="14" />
+<varDeclaration name="d03" scope="methodvar" location="BatchPreReleaseCheckList" type="date" lineno="14" />
+<assignHeap name="d03" scope="methodvar" type="date" rhsType="methodinvoke" rhs="d00.addmonths(-3)" lineno="14" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp910.addmonths" methodtype="normalmethod" returntype="String" parameters="-4" returnloc="#temp911" lineno="15" />
+<varDeclaration name="d04" scope="methodvar" location="BatchPreReleaseCheckList" type="date" lineno="15" />
+<assignHeap name="d04" scope="methodvar" type="date" rhsType="methodinvoke" rhs="d00.addmonths(-4)" lineno="15" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp911.addmonths" methodtype="normalmethod" returntype="String" parameters="-5" returnloc="#temp912" lineno="16" />
+<varDeclaration name="d05" scope="methodvar" location="BatchPreReleaseCheckList" type="date" lineno="16" />
+<assignHeap name="d05" scope="methodvar" type="date" rhsType="methodinvoke" rhs="d00.addmonths(-5)" lineno="16" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp912.addmonths" methodtype="normalmethod" returntype="String" parameters="-6" returnloc="#temp913" lineno="17" />
+<varDeclaration name="d06" scope="methodvar" location="BatchPreReleaseCheckList" type="date" lineno="17" />
+<assignHeap name="d06" scope="methodvar" type="date" rhsType="methodinvoke" rhs="d00.addmonths(-6)" lineno="17" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="processingList" scope="methodvar" location="BatchPreReleaseCheckList" type="Set&amp;lt;string&amp;gt;" lineno="19" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="objectName" scope="methodvar" location="BatchPreReleaseCheckList" type="string" lineno="20" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp914" lineno="21" />
+<varDeclaration name="objectsList" scope="methodvar" location="BatchPreReleaseCheckList" type="List&amp;lt;string&amp;gt;" lineno="21" />
+<assignHeap name="objectsList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;()" lineno="21" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="MAP&lt;string,decimal&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp915" lineno="22" />
+<varDeclaration name="finalMAP" scope="methodvar" location="BatchPreReleaseCheckList" type="MAP&amp;lt;string,decimal&amp;gt;" lineno="22" />
+<assignHeap name="finalMAP" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMAP&lt;string,decimal&gt;()" lineno="22" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="MAP&lt;string,decimal&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp916" lineno="23" />
+<varDeclaration name="finalMAPZero" scope="methodvar" location="BatchPreReleaseCheckList" type="MAP&amp;lt;string,decimal&amp;gt;" lineno="23" />
+<assignHeap name="finalMAPZero" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMAP&lt;string,decimal&gt;()" lineno="23" />
+</VariableDeclaration>
+<varDeclaration name="finalSET" scope="instancevar" location="BatchPreReleaseCheckList" type="SET&amp;lt;string&amp;gt;" lineno="25" />
+<VariableProperties name="finalSET">
+<getterMethod name="finalSET" returntype="SET&amp;lt;string&amp;gt;" modifiers="" lineno="25">
+<body>
+<VariableDeclaration>
+<methodInvoke name="#temp916.getGlobalDescribe" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp917" lineno="28" />
+<methodInvoke name="#temp917.Values" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp918" lineno="28" />
+<varDeclaration name="gd" scope="methodvar" location="BatchPreReleaseCheckList" type="List&amp;lt;Schema.SObjectType&amp;gt;" lineno="28" />
+<assignHeap name="gd" scope="methodvar" type="List&amp;lt;Schema.SObjectType&amp;gt;" rhsType="methodinvoke" rhs="Schema.getGlobalDescribe().Values()" lineno="28" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="30">
+<Iterator type="Schema.SObjectType" name="f" on="gd">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="32">
+<conditionalExpr>
+<methodInvoke name="#temp918.getDescribe" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp919" lineno="32" />
+<methodInvoke name="#temp919.isCustom" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp920" lineno="32" />
+<conditionalExpr>
+<methodInvoke name="#temp920.getDescribe" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp921" lineno="32" />
+<methodInvoke name="#temp921.isCustomSetting" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp922" lineno="32" />
+<ConditionalStatement LHStype="methodinvoke" LHS="#temp921.isCustomSetting(" RHStype="!f.getDescribe().isCustomSetting()" RHS="!f.getDescribe().isCustomSetting()" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "f.getDescribe().isCustom()&amp;&amp;!f.getDescribe().isCustomSetting()"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="39">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="finalSET" RHStype="" RHS="null" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "finalSET==null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="Set&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp923" lineno="40" />
+<assignHeap name="finalSET" scope="" type="newobject" rhsType="constructorInvoke" rhs="newSet&lt;string&gt;()" lineno="40" />
+</AssignmentStatement>
+<methodInvoke name="f.getDescribe" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp924" lineno="41" />
+<methodInvoke name="f.getDescribe(.getName" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp925" lineno="41" />
+<methodInvoke name="finalSET.add" methodtype="normalmethod" returntype="String" parameters="f.getDescribe().getName()" returnloc="#temp926" lineno="41" />
+</body>
+</true>
+<false type="" lineno="44">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="f.getDescribe" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp927" lineno="45" />
+<methodInvoke name="f.getDescribe(.getName" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp928" lineno="45" />
+<methodInvoke name="finalSET.add" methodtype="normalmethod" returntype="String" parameters="f.getDescribe().getName()" returnloc="#temp929" lineno="45" />
+</body>
+</false>
+</if>
+</body>
+</true>
+</if>
+</body>
+</loop>
+<ReturnBlock>
+<return expression="finalSET" expressiontype="@alias" lineno="50" />
+</ReturnBlock>
+</body>
+</getterMethod>
+<setterMethod name="" modifiers="" lineno="50">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<method returntype="" name="BatchPreReleaseCheckList" parameters="objNames:SET&amp;lt;string&amp;gt;" isTestMethod="false" lineno="58" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<assignHeap name="processingList" scope="" type="" rhsType="variable" rhs="objNames" lineno="60" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="List&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="objNames" returnloc="#temp930" lineno="61" />
+<assignHeap name="objectsList" scope="" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;(objNames)" lineno="61" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="objectName" scope="" type="" rhsType="value" rhs="objectsList[0]" lineno="62" />
+</AssignmentStatement>
+<methodendline lineno="64"/>
+</body>
+</method>
+<method returntype="Database.querylocator" name="start" parameters="BC:Database.batchablecontext" isTestMethod="false" lineno="66" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="objectName" returnloc="#temp932" lineno="71" />
+<varDeclaration name="query0" scope="methodvar" location="BatchPreReleaseCheckList" type="string" lineno="71" />
+<assignHeap name="query0" scope="methodvar" type="string" rhsType="variable" rhs="&apos;select id from &apos;+objectName" lineno="71" />
+</VariableDeclaration>
+<TryStatement lineno="73">
+<body>
+<curlybrace exists="true"/>
+</body>
+<CatchStatement type="Exception" name="e" lineno="78">
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;Type: &apos;+e.getTypeName()+&apos;\n&apos;+&apos;Cause: &apos;+e.getCause()+&apos;\n&apos;+&apos;Message: &apos;+e.getMessage()+&apos;\n&apos;+&apos;Line #: &apos;+e.getLineNumber()+&apos;\n&apos;+e.getStackTraceString()" key="debug" lineno="80"/>
+</body>
+</CatchStatement>
+</TryStatement>
+<ReturnBlock>
+<methodInvoke name="Database.getquerylocator" methodtype="normalmethod" returntype="String" parameters="query0" returnloc="#temp933" lineno="84" />
+<return expression="Database.getquerylocator(query0)" expressiontype="@alias" lineno="84" />
+</ReturnBlock>
+<methodendline lineno="86"/>
+</body>
+</method>
+<method returntype="void" name="execute" parameters="BC:Database.batchablecontext,scope:List&amp;lt;sobject&amp;gt;" isTestMethod="false" lineno="88" throws="" modifiers="public">
+<body>
+<TryStatement lineno="90">
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<varDeclaration name="i" scope="methodvar" location="BatchPreReleaseCheckList" type="integer" lineno="92" />
+<assignHeap name="i" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="92" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="name" scope="methodvar" location="BatchPreReleaseCheckList" type="string" lineno="94" />
+<assignHeap name="name" scope="methodvar" type="string" rhsType="variable" rhs="objectName" lineno="94" />
+</VariableDeclaration>
+<if type="simpleif" lineno="96">
+<conditionalExpr>
+<methodInvoke name="#temp933.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp934" lineno="96" />
+<ConditionalStatement LHStype="" LHS="scope.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "scope.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="&apos; where id in: scope&apos;" returnloc="#temp935" lineno="98" />
+<varDeclaration name="condQueryO" scope="methodvar" location="BatchPreReleaseCheckList" type="string" lineno="98" />
+<assignHeap name="condQueryO" scope="methodvar" type="string" rhsType="value" rhs="&apos;select count(id) from &apos;+name+&apos; where id in: scope&apos;" lineno="98" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp935.query" methodtype="normalmethod" returntype="String" parameters="condQueryO" returnloc="#temp936" lineno="100" />
+<varDeclaration name="ar" scope="methodvar" location="BatchPreReleaseCheckList" type="List&amp;lt;AggregateResult&amp;gt;" lineno="100" />
+<assignHeap name="ar" scope="methodvar" type="List&amp;lt;AggregateResult&amp;gt;" rhsType="variable" rhs="Database.query(condQueryO)" lineno="100" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;@@@ condQueryO &apos;+condQueryO" key="debug" lineno="101"/>
+<loop type="advancedfor" lineno="103">
+<Iterator type="AggregateResult" name="a" on="ar">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="finalMAP.get" methodtype="normalmethod" returntype="String" parameters="objectName" returnloc="#temp937" lineno="107" />
+<ConditionalStatement LHStype="" LHS="finalMAP.get(objectName)" RHStype="" RHS="null" Operator="=="/>
+<methodInvoke name="#temp937.get" methodtype="normalmethod" returntype="String" parameters="&apos;expr0&apos;" returnloc="#temp938" lineno="107" />
+<methodInvoke name="#temp938.get" methodtype="normalmethod" returntype="String" parameters="&apos;expr0&apos;" returnloc="#temp939" lineno="107" />
+<methodInvoke name="#temp939.get" methodtype="normalmethod" returntype="String" parameters="objectName" returnloc="#temp940" lineno="107" />
+<methodInvoke name="finalMAP.put" methodtype="normalmethod" returntype="String" parameters="objectName,(finalMAP.get(objectName)==null?(decimal)a.get(&apos;expr0&apos;):(decimal)a.get(&apos;expr0&apos;)+finalMAP.get(objectName))" returnloc="#temp941" lineno="107" />
+</body>
+</loop>
+</body>
+</true>
+</if>
+</body>
+<CatchStatement type="Exception" name="e" lineno="112">
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;Type: &apos;+e.getTypeName()+&apos;\n&apos;+&apos;Cause: &apos;+e.getCause()+&apos;\n&apos;+&apos;Message: &apos;+e.getMessage()+&apos;\n&apos;+&apos;Line #: &apos;+e.getLineNumber()+&apos;\n&apos;+e.getStackTraceString()" key="debug" lineno="114"/>
+</body>
+</CatchStatement>
+</TryStatement>
+<methodendline lineno="117"/>
+</body>
+</method>
+<method returntype="void" name="finish" parameters="BC:Database.batchablecontext" isTestMethod="false" lineno="120" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="List&lt;PreReleaseReport__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp942" lineno="125" />
+<varDeclaration name="csInsertList" scope="methodvar" location="BatchPreReleaseCheckList" type="List&amp;lt;PreReleaseReport__c&amp;gt;" lineno="125" />
+<assignHeap name="csInsertList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;PreReleaseReport__c&gt;()" lineno="125" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;PreReleaseReport__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp943" lineno="126" />
+<varDeclaration name="csUpdateList" scope="methodvar" location="BatchPreReleaseCheckList" type="List&amp;lt;PreReleaseReport__c&amp;gt;" lineno="126" />
+<assignHeap name="csUpdateList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;PreReleaseReport__c&gt;()" lineno="126" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="PreReleaseReport__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp944" lineno="128" />
+<varDeclaration name="cs" scope="methodvar" location="BatchPreReleaseCheckList" type="PreReleaseReport__c" lineno="128" />
+<assignHeap name="cs" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newPreReleaseReport__c()" lineno="128" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="LIST&lt;PreReleaseReport__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp945" lineno="130" />
+<varDeclaration name="csInsertListZero" scope="methodvar" location="BatchPreReleaseCheckList" type="LIST&amp;lt;PreReleaseReport__c&amp;gt;" lineno="130" />
+<assignHeap name="csInsertListZero" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newLIST&lt;PreReleaseReport__c&gt;()" lineno="130" />
+</VariableDeclaration>
+<TryStatement lineno="132">
+<body>
+<curlybrace exists="true"/>
+<loop type="advancedfor" lineno="134">
+<methodInvoke name="#temp945.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp946" lineno="134" />
+<Iterator type="string" name="s" on="finalMAP.keySet()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id,name,Object_Name__c,Record_Count__c from PreReleaseReport__c 
+                                              where name=: s limit 1]" returnloc="#temp947" lineno="138" />
+<varDeclaration name="checkRecord" scope="methodvar" location="BatchPreReleaseCheckList" type="List&amp;lt;PreReleaseReport__c&amp;gt;" lineno="138" />
+<assignHeap name="checkRecord" scope="methodvar" type="List&amp;lt;PreReleaseReport__c&amp;gt;" rhsType="query" rhs="[select id,name,Object_Name__c,Record_Count__c from PreReleaseReport__c 
+                                              where name=: s limit 1]" lineno="138" />
+</VariableDeclaration>
+<if type="simpleif" lineno="141">
+<conditionalExpr>
+<methodInvoke name="#temp947.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp948" lineno="141" />
+<ConditionalStatement LHStype="" LHS="checkRecord.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "checkRecord.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<loop type="advancedfor" lineno="142">
+<Iterator type="PreReleaseReport__c" name="p" on="checkRecord">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="PreReleaseReport__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp949" lineno="144" />
+<assignHeap name="cs" scope="" type="newobject" rhsType="constructorInvoke" rhs="newPreReleaseReport__c()" lineno="144" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="cs.Object_Name__c" scope="" type="" rhsType="variable" rhs="p.Object_Name__c" lineno="146" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="finalMAP.get" methodtype="normalmethod" returntype="String" parameters="s" returnloc="#temp950" lineno="147" />
+<assignHeap name="cs.Record_Count__c" scope="" type="" rhsType="methodinvoke" rhs="finalMAP.get(s)" lineno="147" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="cs.id" scope="" type="" rhsType="variable" rhs="p.id" lineno="148" />
+</AssignmentStatement>
+<methodInvoke name="csUpdateList.add" methodtype="normalmethod" returntype="String" parameters="cs" returnloc="#temp951" lineno="149" />
+</body>
+</loop>
+</body>
+</true>
+<false type="" lineno="153">
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="PreReleaseReport__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp952" lineno="155" />
+<assignHeap name="cs" scope="" type="newobject" rhsType="constructorInvoke" rhs="newPreReleaseReport__c()" lineno="155" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="cs.name" scope="" type="" rhsType="variable" rhs="s" lineno="157" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="cs.Object_Name__c" scope="" type="" rhsType="variable" rhs="s" lineno="158" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="finalMAP.get" methodtype="normalmethod" returntype="String" parameters="s" returnloc="#temp953" lineno="159" />
+<assignHeap name="cs.Record_Count__c" scope="" type="" rhsType="methodinvoke" rhs="finalMAP.get(s)" lineno="159" />
+</AssignmentStatement>
+<methodInvoke name="csInsertList.add" methodtype="normalmethod" returntype="String" parameters="cs" returnloc="#temp954" lineno="160" />
+</body>
+</false>
+</if>
+</body>
+</loop>
+<ExpressionStatement expression="&apos;Custom Setting Object Data - insert &apos;+csInsertList.size()" key="debug" lineno="166"/>
+<ExpressionStatement expression="&apos;Custom Setting Object Data - update &apos;+csUpdateList.size()" key="debug" lineno="167"/>
+<if type="simpleif" lineno="169">
+<conditionalExpr>
+<methodInvoke name="csInsertList.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp955" lineno="169" />
+<ConditionalStatement LHStype="" LHS="csInsertList.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "csInsertList.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="lib.dml.Database.insert" methodtype="" returntype="" parameters="csInsertList" returnloc="" lineno="170" />
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="173">
+<conditionalExpr>
+<methodInvoke name="csUpdateList.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp956" lineno="173" />
+<ConditionalStatement LHStype="" LHS="csUpdateList.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "csUpdateList.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="lib.dml.Database.update" methodtype="" returntype="" parameters="csUpdateList" returnloc="" lineno="174" />
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="178">
+<conditionalExpr>
+<methodInvoke name="processingList.isEmpty" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp957" lineno="178" />
+</conditionalExpr>
+<ifcondition expression= "!processingList.isEmpty()"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;******** ########## ---- check if list non-empty&apos;" key="debug" lineno="180"/>
+<methodInvoke name="processingList.remove" methodtype="normalmethod" returntype="String" parameters="objectName" returnloc="#temp958" lineno="182" />
+<methodInvoke name="finalMAP.clear" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp959" lineno="183" />
+<methodInvoke name="csInsertList.clear" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp960" lineno="184" />
+<methodInvoke name="csUpdateList.clear" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp961" lineno="185" />
+<if type="simpleif" lineno="187">
+<conditionalExpr>
+<methodInvoke name="processingList.isEmpty" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp962" lineno="187" />
+</conditionalExpr>
+<ifcondition expression= "!processingList.isEmpty()"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="BatchPreReleaseCheckList" methodtype="constructormethod" returntype="newobject" parameters="processingList" returnloc="#temp963" lineno="189" />
+<methodInvoke name="lib.dml.Database.executebatch" methodtype="" returntype="" parameters="newBatchPreReleaseCheckList(processingList)" returnloc="" lineno="189" />
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="192">
+<conditionalExpr>
+<methodInvoke name="processingList.isEmpty" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp964" lineno="192" />
+</conditionalExpr>
+<ifcondition expression= "processingList.isEmpty()"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;Zero Object insert Processing.........&apos;" key="debug" lineno="194"/>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Name,Object_Name__c  from PreReleaseReport__c]" returnloc="#temp965" lineno="196" />
+<varDeclaration name="Listzero" scope="methodvar" location="BatchPreReleaseCheckList" type="List&amp;lt;PreReleaseReport__c&amp;gt;" lineno="196" />
+<assignHeap name="Listzero" scope="methodvar" type="List&amp;lt;PreReleaseReport__c&amp;gt;" rhsType="query" rhs="[select Name,Object_Name__c  from PreReleaseReport__c]" lineno="196" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="MAP&lt;string,integer&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp966" lineno="197" />
+<varDeclaration name="zeroMap" scope="methodvar" location="BatchPreReleaseCheckList" type="MAP&amp;lt;string,integer&amp;gt;" lineno="197" />
+<assignHeap name="zeroMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMAP&lt;string,integer&gt;()" lineno="197" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="198">
+<Iterator type="PreReleaseReport__c" name="sp" on="Listzero">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="zeroMap.put" methodtype="normalmethod" returntype="String" parameters="sp.Name,1" returnloc="#temp967" lineno="199" />
+</body>
+</loop>
+<loop type="advancedfor" lineno="202">
+<Iterator type="string" name="sName" on="finalSET">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="203">
+<conditionalExpr>
+<methodInvoke name="zeroMap.containsKey" methodtype="normalmethod" returntype="String" parameters="sName" returnloc="#temp968" lineno="203" />
+</conditionalExpr>
+<ifcondition expression= "!zeroMap.containsKey(sName)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;sName&apos;+sName" key="debug" lineno="205"/>
+<methodInvoke name="finalMAPZero.put" methodtype="normalmethod" returntype="String" parameters="sName,0" returnloc="#temp969" lineno="207" />
+</body>
+</true>
+</if>
+</body>
+</loop>
+<ExpressionStatement expression="&apos;Zero Map KeySet&apos;+finalMAPZero.keySet()" key="debug" lineno="213"/>
+<if type="simpleif" lineno="215">
+<conditionalExpr>
+<methodInvoke name="finalMAPZero.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp970" lineno="215" />
+<ConditionalStatement LHStype="" LHS="finalMAPZero.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "finalMAPZero.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<loop type="advancedfor" lineno="216">
+<methodInvoke name="#temp970.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp971" lineno="216" />
+<Iterator type="string" name="s1" on="finalMAPZero.keySet()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="PreReleaseReport__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp972" lineno="218" />
+<varDeclaration name="csZero" scope="methodvar" location="BatchPreReleaseCheckList" type="PreReleaseReport__c" lineno="218" />
+<assignHeap name="csZero" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newPreReleaseReport__c()" lineno="218" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="csZero.name" scope="" type="" rhsType="methodinvoke" rhs="s1" lineno="220" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="csZero.Object_Name__c" scope="" type="" rhsType="variable" rhs="s1" lineno="221" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="finalMAPZero.get" methodtype="normalmethod" returntype="String" parameters="s1" returnloc="#temp973" lineno="222" />
+<assignHeap name="csZero.Record_Count__c" scope="" type="" rhsType="methodinvoke" rhs="finalMAPZero.get(s1)" lineno="222" />
+</AssignmentStatement>
+<methodInvoke name="csInsertListZero.add" methodtype="normalmethod" returntype="String" parameters="csZero" returnloc="#temp974" lineno="223" />
+</body>
+</loop>
+<ExpressionStatement expression="&apos;final Zero List&apos;+csInsertListZero" key="debug" lineno="226"/>
+<if type="simpleif" lineno="228">
+<conditionalExpr>
+<methodInvoke name="csInsertListZero.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp975" lineno="228" />
+<ConditionalStatement LHStype="" LHS="csInsertListZero.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "csInsertListZero.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="lib.dml.Database.insert" methodtype="" returntype="" parameters="csInsertListZero" returnloc="" lineno="230" />
+</body>
+</true>
+</if>
+</body>
+</true>
+</if>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Id, Status, NumberOfErrors, JobItemsProcessed,  
+                                                   TotalJobItems, CreatedBy.Email, ExtendedStatus  
+                                                   from AsyncApexJob where Id = :BC.getJobId()]" returnloc="#temp976" lineno="239" />
+<varDeclaration name="a" scope="methodvar" location="BatchPreReleaseCheckList" type="AsyncApexJob" lineno="239" />
+<assignHeap name="a" scope="methodvar" type="AsyncApexJob" rhsType="query" rhs="[select Id, Status, NumberOfErrors, JobItemsProcessed,  
+                                                   TotalJobItems, CreatedBy.Email, ExtendedStatus  
+                                                   from AsyncApexJob where Id = :BC.getJobId()]" lineno="239" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="Messaging.SingleEmailMessage" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp977" lineno="245" />
+<varDeclaration name="mail" scope="methodvar" location="BatchPreReleaseCheckList" type="Messaging.SingleEmailMessage" lineno="245" />
+<assignHeap name="mail" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMessaging.SingleEmailMessage()" lineno="245" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="toAddresses" scope="methodvar" location="BatchPreReleaseCheckList" type="string[]" lineno="246" />
+<assignHeap name="toAddresses" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newstring[]{&apos;s.c.kumar.mohanty@accenture.com&apos;}" lineno="246" />
+</VariableDeclaration>
+<methodInvoke name="mail.setToAddresses" methodtype="normalmethod" returntype="String" parameters="toAddresses" returnloc="#temp979" lineno="247" />
+<methodInvoke name="mail.setSubject" methodtype="normalmethod" returntype="String" parameters="&apos;BatchJob Status&apos;+a.status" returnloc="#temp980" lineno="248" />
+<methodInvoke name="mail.setPlainTextBody" methodtype="normalmethod" returntype="String" parameters="&apos;The batch Apex job processed &apos;+a.TotalJobItems+&apos; batches with &apos;+a.NumberOfErrors+&apos; failures. ExtendedStatus: &apos;+a.ExtendedStatus+&apos;you can check the report now by executing the visualforce page&apos;" returnloc="#temp981" lineno="251" />
+<methodInvoke name="Messaging.SingleEmailMessage" methodtype="normalmethod" returntype="String" parameters="newMessaging.SingleEmailMessage[]{mail}" returnloc="#temp983" lineno="253" />
+</body>
+</true>
+</if>
+</body>
+</true>
+</if>
+</body>
+<CatchStatement type="Exception" name="e" lineno="262">
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;Type: &apos;+e.getTypeName()+&apos;\n&apos;+&apos;Cause: &apos;+e.getCause()+&apos;\n&apos;+&apos;Message: &apos;+e.getMessage()+&apos;\n&apos;+&apos;Line #: &apos;+e.getLineNumber()+&apos;\n&apos;+e.getStackTraceString()" key="debug" lineno="263"/>
+</body>
+</CatchStatement>
+</TryStatement>
+<methodendline lineno="267"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[34, 35, 36, 37, 69, 105, 237, 243]" multi="[1-8]" empty="[5, 6, 10, 18, 24, 27, 29, 33, 38, 43, 47, 51, 55, 56, 57, 59, 63, 65, 68, 70, 72, 74, 75, 77, 79, 83, 85, 87, 91, 93, 95, 97, 99, 102, 104, 106, 111, 113, 118, 119, 122, 123, 124, 127, 129, 131, 133, 135, 136, 137, 140, 143, 145, 152, 154, 156, 161, 163, 165, 168, 172, 176, 177, 179, 181, 186, 188, 191, 193, 195, 201, 204, 206, 209, 210, 212, 214, 217, 219, 225, 227, 229, 231, 232, 233, 235, 238, 242, 244, 252, 255, 256, 258, 259, 261, 265, 268]" singlebrace="[31, 42, 46, 48, 49, 52, 54, 64, 67, 76, 82, 86, 89, 108, 109, 110, 116, 117, 121, 150, 151, 162, 164, 171, 175, 190, 200, 208, 211, 224, 234, 236, 254, 257, 260, 266, 267, 269]"/>
+</stac>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="AggregateResultIterator.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="755 bytes">
+<class name="AggregateResultIterator" sharing="default" implements="Iterator&lt;AggregateResult&gt;" isenum="false" lineno="1" modifiers="global">
+<classbody>
+<varDeclaration name="results" scope="instancevar" location="AggregateResultIterator" type="AggregateResult[]" lineno="3" />
+<VariableProperties name="results">
+<getterMethod name="results" returntype="AggregateResult[]" modifiers="" lineno="3">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="results" modifiers="" lineno="3">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="index" scope="instancevar" location="AggregateResultIterator" type="integer" lineno="4" />
+<VariableProperties name="index">
+<getterMethod name="index" returntype="integer" modifiers="" lineno="4">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="index" modifiers="" lineno="4">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<method returntype="" name="AggregateResultIterator" parameters="" isTestMethod="false" lineno="6" throws="" modifiers="global">
+<body>
+<VariableDeclaration>
+<varDeclaration name="query" scope="methodvar" location="AggregateResultIterator" type="string" lineno="7" />
+<assignHeap name="query" scope="methodvar" type="string" rhsType="value" rhs="&apos;select count_distinct(CreatedById),CALENDAR_YEAR(CreatedDate), CALENDAR_MONTH(CreatedDate) from case where createddate = Last_n_months:6 group by CALENDAR_YEAR(CreatedDate), CALENDAR_MONTH(CreatedDate) order by CALENDAR_YEAR(CreatedDate) asc, CALENDAR_MONTH(CreatedDate) asc&apos;" lineno="7" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="Database#temp1Database.query" methodtype="normalmethod" returntype="String" parameters="query" returnloc="#temp2" lineno="8" />
+<assignHeap name="results" scope="" type="" rhsType="methodinvoke" rhs="Database.query(query)" lineno="8" />
+</AssignmentStatement>
+<methodendline lineno="9"/>
+</body>
+</method>
+<method returntype="boolean" name="hasNext" parameters="" isTestMethod="false" lineno="11" throws="" modifiers="global">
+<body>
+<ReturnBlock>
+<conditionalExpr>
+<methodInvoke name="results.isEmpty" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp3" lineno="12" />
+<ConditionalStatement LHStype="methodinvoke" LHS="results.isEmpty(" RHStype="!results.isEmpty()" RHS="!results.isEmpty()" Operator="AND"/>
+</conditionalExpr>
+<conditionalExpr>
+<methodInvoke name="#temp3.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp4" lineno="12" />
+<ConditionalStatement LHStype="methodinvoke" LHS="#temp3" RHStype="index&lt;results.size()" RHS="index&lt;results.size()" Operator="AND"/>
+</conditionalExpr>
+<return expression="results!=null&amp;&amp;!results.isEmpty()&amp;&amp;index&lt;results.size()" expressiontype="@methodinvoke" lineno="12" />
+</ReturnBlock>
+<methodendline lineno="13"/>
+</body>
+</method>
+<curlybrace exists="true"/>
+<ReturnBlock>
+<return expression="results" expressiontype="@alias" lineno="16" />
+</ReturnBlock>
+<ExpressionStatement expression="#temp4.results" key="PostfixPlus"/>
+</classbody>
+</class>
+<comments single="[]" multi="[]" empty="[2, 5, 10, 14]" singlebrace="[9, 13, 17, 18]"/>
+</stac>

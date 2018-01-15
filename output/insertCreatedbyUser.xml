@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="insertCreatedbyUser.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="5 KB">
+<class name="insertCreatedbyUser" sharing="default" implements="Database.batchable&lt;sobject&gt;,Database.stateful" isenum="false" lineno="1" modifiers="global">
+<classbody>
+<VariableDeclaration>
+<methodInvoke name="system.today" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1206" lineno="3" />
+<methodInvoke name="system.today(.toStartOfMonth" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1207" lineno="3" />
+<varDeclaration name="d00" scope="" location="insertCreatedbyUser" type="" lineno="3" />
+<assignHeap name="d00" scope="" type="" rhsType="methodinvoke" rhs="system.today().toStartOfMonth()" lineno="3" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1207.addMonths" methodtype="normalmethod" returntype="String" parameters="-1" returnloc="#temp1208" lineno="4" />
+<varDeclaration name="d01" scope="" location="insertCreatedbyUser" type="" lineno="4" />
+<assignHeap name="d01" scope="" type="" rhsType="methodinvoke" rhs="d00.addMonths(-1)" lineno="4" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1208.addMonths" methodtype="normalmethod" returntype="String" parameters="-2" returnloc="#temp1209" lineno="5" />
+<varDeclaration name="d02" scope="" location="insertCreatedbyUser" type="" lineno="5" />
+<assignHeap name="d02" scope="" type="" rhsType="methodinvoke" rhs="d00.addMonths(-2)" lineno="5" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1209.addMonths" methodtype="normalmethod" returntype="String" parameters="-3" returnloc="#temp1210" lineno="6" />
+<varDeclaration name="d03" scope="" location="insertCreatedbyUser" type="" lineno="6" />
+<assignHeap name="d03" scope="" type="" rhsType="methodinvoke" rhs="d00.addMonths(-3)" lineno="6" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1210.addMonths" methodtype="normalmethod" returntype="String" parameters="-4" returnloc="#temp1211" lineno="7" />
+<varDeclaration name="d04" scope="" location="insertCreatedbyUser" type="" lineno="7" />
+<assignHeap name="d04" scope="" type="" rhsType="methodinvoke" rhs="d00.addMonths(-4)" lineno="7" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1211.addMonths" methodtype="normalmethod" returntype="String" parameters="-5" returnloc="#temp1212" lineno="8" />
+<varDeclaration name="d05" scope="" location="insertCreatedbyUser" type="" lineno="8" />
+<assignHeap name="d05" scope="" type="" rhsType="methodinvoke" rhs="d00.addMonths(-5)" lineno="8" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1212.addMonths" methodtype="normalmethod" returntype="String" parameters="-6" returnloc="#temp1213" lineno="9" />
+<varDeclaration name="d06" scope="" location="insertCreatedbyUser" type="" lineno="9" />
+<assignHeap name="d06" scope="" type="" rhsType="methodinvoke" rhs="d00.addMonths(-6)" lineno="9" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="Map&lt;integer,string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1214" lineno="13" />
+<varDeclaration name="monthMap" scope="" location="insertCreatedbyUser" type="" lineno="13" />
+<assignHeap name="monthMap" scope="" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;integer,string&gt;()" lineno="13" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1214.MonthName" methodtype="normalmethod" returntype="String" parameters="d06" returnloc="#temp1215" lineno="31" />
+<methodInvoke name="#temp1215.MonthName" methodtype="normalmethod" returntype="String" parameters="d01" returnloc="#temp1216" lineno="31" />
+<methodInvoke name="#temp1216.MonthName" methodtype="normalmethod" returntype="String" parameters="d02" returnloc="#temp1217" lineno="31" />
+<methodInvoke name="#temp1217.MonthName" methodtype="normalmethod" returntype="String" parameters="d03" returnloc="#temp1218" lineno="31" />
+<methodInvoke name="#temp1218.MonthName" methodtype="normalmethod" returntype="String" parameters="d04" returnloc="#temp1219" lineno="31" />
+<methodInvoke name="#temp1219.MonthName" methodtype="normalmethod" returntype="String" parameters="d05" returnloc="#temp1220" lineno="31" />
+<varDeclaration name="MonthList" scope="" location="insertCreatedbyUser" type="" lineno="31" />
+<assignHeap name="MonthList" scope="" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;{MonthName(d06),MonthName(d01),MonthName(d02),MonthName(d03),MonthName(d04),MonthName(d05)}" lineno="31" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="Map&lt;string,decimal&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1222" lineno="33" />
+<varDeclaration name="Scandata" scope="" location="insertCreatedbyUser" type="" lineno="33" />
+<assignHeap name="Scandata" scope="" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;string,decimal&gt;()" lineno="33" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="MonthMap" scope="" location="insertCreatedbyUser" type="" lineno="35" />
+<assignHeap name="MonthMap" scope="" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;integer,string&gt;{1=&gt;&apos;JAN&apos;,2=&gt;&apos;FEB&apos;,3=&gt;&apos;MAR&apos;,4=&gt;&apos;APR&apos;,5=&gt;&apos;MAY&apos;,6=&gt;&apos;JUN&apos;,7=&gt;&apos;JUL&apos;,8=&gt;&apos;AUG&apos;,9=&gt;&apos;SEP&apos;,10=&gt;&apos;OCT&apos;,11=&gt;&apos;NOV&apos;,12=&gt;&apos;DEC&apos;}" lineno="35" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="query" scope="" location="insertCreatedbyUser" type="" lineno="39" />
+<assignHeap name="query" scope="" type="newobject" rhsType="constructorInvoke" rhs="&apos; select id,CreatedById,CreatedDate from Case where createddate = Last_n_months:6&apos;" lineno="39" />
+</VariableDeclaration>
+</classbody>
+</class>
+<comments single="[]" multi="[]" empty="[2, 10, 12, 26, 28, 30, 32, 34, 36, 42, 46, 52, 59, 60, 64, 66, 67, 71, 75, 77, 80, 83, 85, 88, 90, 97, 100, 101, 102, 104, 109, 121, 122]" singlebrace="[29, 38, 41, 44, 50, 68, 70, 74, 76, 79, 82, 95, 96, 98, 99, 123, 125, 128, 129, 130]"/>
+</stac>

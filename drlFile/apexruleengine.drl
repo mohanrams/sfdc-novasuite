@@ -1,0 +1,1179 @@
+//created on: Jan 14, 2013
+package com.atl.nova.trap
+
+//list any import classes here.
+
+import com.atl.nova.trap.ruleengine.facts.*;
+import com.atl.nova.trap.ruleengine.drools.*;
+import com.atl.nova.trap.violation.jaxb.model.*;
+//declare any global variables here
+
+
+rule "Hard Coded Rules in variable statement "
+	salience 0
+    when
+        apexVariableStatement: ApexVariableStatement()
+        vioColl:ApexViolationCollection();	
+        rulesDetail:RulesDetail();
+        eval(apexVariableStatement.isRHSContainsStringLiteral() && apexVariableStatement.isHardCodeIdNotExist() )
+    then
+       Violation violation = new Violation(apexVariableStatement.getStartPosition(),rulesDetail.HARDCODINGRULENAME,rulesDetail.HARD_CODING_RULESET,apexVariableStatement.getParentName(),rulesDetail.PRIORITY_P1,"",rulesDetail.HARD_CODING_DESC);
+       vioColl.addToCollection(apexVariableStatement.getDirectoryPath(),apexVariableStatement.getParentName(),violation);
+       System.out.println("HardCoded");
+end
+
+rule "Hard Coded Rules in Expression Statement"
+when
+	apexExpressionStatement:ApexExpressionStatement();
+	 rulesDetail:RulesDetail();
+	vioColl:ApexViolationCollection();
+	eval(apexExpressionStatement.isReturnContainsStringLiteral())
+then
+	 Violation violation = new Violation(apexExpressionStatement.getStartPosition(),rulesDetail.HARDCODINGRULENAME,rulesDetail.HARD_CODING_RULESET,apexExpressionStatement.getParentName(),rulesDetail.PRIORITY_P1,"",rulesDetail.HARD_CODING_DESC);
+	 vioColl.addToCollection(apexExpressionStatement.getDirectoryPath(),apexExpressionStatement.getParentName(),violation);
+	 System.out.println("HardCoded in expression");
+end
+
+
+rule "Hard Coded Rules in Assignment Statement"
+salience 1
+when
+	apexAssignmentStatement:ApexAssignmentStatement();
+	rulesDetail:RulesDetail();
+	vioColl:ApexViolationCollection();
+	eval( apexAssignmentStatement.isRHSContainsStringLiteral() && apexAssignmentStatement.isHardCodeIdNotExist())
+then
+	 Violation violation = new Violation(apexAssignmentStatement.getStartPosition(),rulesDetail.HARDCODINGRULENAME,rulesDetail.HARD_CODING_RULESET,apexAssignmentStatement.getParentName(),rulesDetail.PRIORITY_P1,"",rulesDetail.HARD_CODING_DESC);
+	 vioColl.addToCollection(apexAssignmentStatement.getDirectoryPath(),apexAssignmentStatement.getParentName(),violation);
+	 System.out.println("HardCoded in Assignment Statement");
+end
+
+rule "Hard Coded Rules in Method Statement"
+when
+	apexMethod:ApexMethod();
+	 rulesDetail:RulesDetail();
+	vioColl:ApexViolationCollection();
+	eval(apexMethod.isArgumentsContainsStringLiteral())
+then
+	 Violation violation = new Violation(apexMethod.getStartPosition(),rulesDetail.HARDCODINGRULENAME,rulesDetail.HARD_CODING_RULESET,apexMethod.getParentName(),rulesDetail.PRIORITY_P1,"",rulesDetail.HARD_CODING_DESC);
+	 vioColl.addToCollection(apexMethod.getDirectoryPath(),apexMethod.getParentName(),violation);
+	 System.out.println("HardCoded in Method");
+end
+
+rule "Hard Coded Rules in Method Invocation Statement"
+salience 2
+when
+	apexMethodInvocation:ApexMethodInvocationStatement();
+	rulesDetail:RulesDetail();
+	vioColl:ApexViolationCollection();
+	eval(apexMethodInvocation.isArgumentsContainsStringLiteral() && apexMethodInvocation.isHardCodeIdNotExist())
+then
+	 Violation violation = new Violation(apexMethodInvocation.getStartPosition(),rulesDetail.HARDCODINGRULENAME,rulesDetail.HARD_CODING_RULESET,apexMethodInvocation.getParentName(),rulesDetail.PRIORITY_P1,"",rulesDetail.HARD_CODING_DESC);
+	 vioColl.addToCollection(apexMethodInvocation.getDirectoryPath(),apexMethodInvocation.getParentName(),violation);
+	 System.out.println("HardCoded in Method Invocation");
+end
+
+rule "Hard Coded Rules in Conditional  Statement"
+salience 3
+when
+	apexConditionalStmt:ApexConditionalStatement();
+	rulesDetail:RulesDetail();
+	vioColl:ApexViolationCollection();
+	eval(apexConditionalStmt.isConditionContainsStringLiteral() && apexConditionalStmt.isHardCodeIdNotExist())
+then
+	 Violation violation = new Violation(apexConditionalStmt.getStartPosition(),rulesDetail.HARDCODINGRULENAME,rulesDetail.HARD_CODING_RULESET,apexConditionalStmt.getParentName(),rulesDetail.PRIORITY_P1,"",rulesDetail.HARD_CODING_DESC);
+	 vioColl.addToCollection(apexConditionalStmt.getDirectoryPath(),apexConditionalStmt.getParentName(),violation);
+	 System.out.println("HardCoded in Conditional Statement");
+end
+
+rule "Hard Coded Rules in Database Query Statement"
+salience 4
+when
+	apexDatabaseQueryStatement:ApexDatabaseQueryStatement();
+	rulesDetail:RulesDetail();
+	vioColl:ApexViolationCollection();
+	eval(apexDatabaseQueryStatement.isQueryContainsStringLiteral() && apexDatabaseQueryStatement.isHardCodeIdNotExist())
+then
+	 Violation violation = new Violation(apexDatabaseQueryStatement.getStartPosition(),rulesDetail.HARDCODINGRULENAME,rulesDetail.HARD_CODING_RULESET,apexDatabaseQueryStatement.getParentName(),rulesDetail.PRIORITY_P1,"",rulesDetail.HARD_CODING_DESC);
+	 vioColl.addToCollection(apexDatabaseQueryStatement.getDirectoryPath(),apexDatabaseQueryStatement.getParentName(),violation);
+	 System.out.println("HardCoded in Database Query Statement");
+end
+
+	
+rule "Empty Catch Block"
+when
+	apexCatchStatement:ApexCatchStatement();
+	rulesDetail:RulesDetail();
+	vioColl:ApexViolationCollection();
+	eval(apexCatchStatement.isEmptyCatchBlock())
+then
+	 Violation violation = new Violation(apexCatchStatement.getStartPosition(),rulesDetail.EMPTYCATCH_RULENAME,rulesDetail.EMPTY_CATCH_RULESET,apexCatchStatement.getParentName(),rulesDetail.PRIORITY_P2," ",rulesDetail.EMPTY_CATCH_DESC);
+	 vioColl.addToCollection(apexCatchStatement.getDirectoryPath(),apexCatchStatement.getParentName(),violation);
+	 System.out.println("Empty Catch Statement");
+end	
+
+rule "Use Database Method"
+when
+	 apexDatabaseExecuteStatement:ApexDatabaseExecuteStatement();
+	 rulesDetail:RulesDetail();
+	 vioColl:ApexViolationCollection();
+	eval(apexDatabaseExecuteStatement.isDatabaseKeywordNotUsed())
+then
+	 Violation violation = new Violation( apexDatabaseExecuteStatement.getStartPosition(),rulesDetail.USEDATABASEMETHOD,rulesDetail.USE_DATABASE_METHOD_RULESET, apexDatabaseExecuteStatement.getParentName(),rulesDetail.PRIORITY_P3,"",rulesDetail.USE_DATABASE_METHOD_DESC);
+	 vioColl.addToCollection(apexDatabaseExecuteStatement.getDirectoryPath(),apexDatabaseExecuteStatement.getParentName(),violation);
+	 System.out.println("Database Method not used");
+end
+
+rule "Object creation in loop "
+when
+	 apexLoopStatement:ApexLoop();
+	 rulesDetail:RulesDetail();
+	 vioColl:ApexViolationCollection();
+	eval(apexLoopStatement.isObjectIsCreatedInLoop())
+then
+	 //Violation violation = new Violation( apexLoopStatement.getConstructorMetInvokeStartPos(),rulesDetail.OBJECTCREATIONINLOOP,rulesDetail.OBJECT_CREATION_IN_LOOP_RULESET, apexLoopStatement.getParentName(),rulesDetail.PRIORITY_P1,"",rulesDetail.OBJECT_CREATION_IN_LOOP_DESC);
+	 //vioColl.addToCollection(apexLoopStatement.getDirectoryPath(),apexLoopStatement.getParentName(),violation);
+	 vioColl.addToCollection(apexLoopStatement.getDirectoryPath(),apexLoopStatement.getParentName(),RuleEngineHelper.getViolationList(apexLoopStatement.getApexViolationsList(),rulesDetail.OBJECTCREATIONINLOOP,rulesDetail.OBJECT_CREATION_IN_LOOP_RULESET,rulesDetail.OBJECT_CREATION_IN_LOOP_DESC,rulesDetail.PRIORITY_P1));
+	 System.out.println("Object created in loop ");
+end
+
+
+rule "Multiple Exit Points "
+when
+	 apexMethod:ApexMethod();
+	 rulesDetail:RulesDetail();
+	 vioColl:ApexViolationCollection();
+	eval(apexMethod.isMultipleExitPointExists())
+then
+	 Violation violation = new Violation( apexMethod.getStartPosition(),rulesDetail.MULTIPLEEXITPOINTS,rulesDetail.MULTIPLE_EXIT_POINTS_RULESET, apexMethod.getParentName(),rulesDetail.PRIORITY_P3,"",rulesDetail.MULTIPLE_EXIT_POINTS_DESC);
+	 vioColl.addToCollection(apexMethod.getDirectoryPath(),apexMethod.getParentName(),violation);
+	 System.out.println("Multiple Exit Points present  ");
+end
+
+rule "Multiple Exit Points in Getter Variable property "
+when
+	 apexPropery:ApexProperyGetter();
+	 rulesDetail:RulesDetail();
+	 vioColl:ApexViolationCollection();
+	eval(apexPropery.isMultipleExitPointExists())
+then
+	 Violation violation = new Violation( apexPropery.getStartPosition(),rulesDetail.MULTIPLEEXITPOINTS,rulesDetail.MULTIPLE_EXIT_POINTS_RULESET,apexPropery.getParentName(),rulesDetail.PRIORITY_P3,"",rulesDetail.MULTIPLE_EXIT_POINTS_DESC);
+	 vioColl.addToCollection(apexPropery.getDirectoryPath(),apexPropery.getParentName(),violation);
+	 System.out.println("Multiple Exit Points present in Getter Variable property  ");
+end
+
+rule "Multiple Exit Points in Setter Variable property "
+when
+	 apexPropery:ApexProperySetter();
+	 rulesDetail:RulesDetail();
+	 vioColl:ApexViolationCollection();
+	eval(apexPropery.isMultipleExitPointExists())
+then
+	 Violation violation = new Violation( apexPropery.getStartPosition(),rulesDetail.MULTIPLEEXITPOINTS,rulesDetail.MULTIPLE_EXIT_POINTS_RULESET,apexPropery.getParentName(),rulesDetail.PRIORITY_P3,"",rulesDetail.MULTIPLE_EXIT_POINTS_DESC);
+	 vioColl.addToCollection(apexPropery.getDirectoryPath(),apexPropery.getParentName(),violation);
+	 System.out.println("Multiple Exit Points present in Setter Variable property  ");
+end
+
+rule "Initialize Collections"
+when
+        apexVariableStatement: ApexVariableStatement() ;
+        vioColl:ApexViolationCollection();	
+        rulesDetail:RulesDetail();
+        eval(apexVariableStatement.isCollectionNotInitialzed() )
+    then
+    	
+        //actions
+        
+       Violation violation = new Violation(apexVariableStatement.getStartPosition(),rulesDetail.INITIALIZECOLLECTIONS_RULENAME,rulesDetail.INITIALIZECOLLECTIONS_RULESET,apexVariableStatement.getParentName(),rulesDetail.PRIORITY_P3,"",rulesDetail.INITIALIZECOLLECTIONS_DESC);
+       vioColl.addToCollection(apexVariableStatement.getDirectoryPath(),apexVariableStatement.getParentName(),violation);
+       
+ System.out.println("HardCoded");
+end
+
+
+rule " Avoid Reassigning Parameters"
+when
+	 apexMethod:ApexMethod();
+	 rulesDetail:RulesDetail();
+	 vioColl:ApexViolationCollection();
+	eval(apexMethod.isReassignParameter())
+then
+	 vioColl.addToCollection(apexMethod.getDirectoryPath(),apexMethod.getParentName(),RuleEngineHelper.getViolationList(apexMethod.getApexViolationsList()));
+	 System.out.println(" Parameters Reassigned inside method ");
+	 
+end
+
+rule "Avoid HardCoded URL "
+when
+	 apexMethodInvoke:ApexMethodInvocationStatement();
+	 rulesDetail:RulesDetail();
+	 vioColl:ApexViolationCollection();
+	eval(apexMethodInvoke.isURLHardCoded())
+then
+	 Violation violation = new Violation( apexMethodInvoke.getStartPosition(),rulesDetail.AVOIDHARDCODEDURLS_RULENAME,rulesDetail.AVOIDHARDCODEDURLS_RULESET, apexMethodInvoke.getParentName(),rulesDetail.PRIORITY_P1,"",rulesDetail.AVOIDHARDCODEDURLS_DESC);
+	 vioColl.addToCollection(apexMethodInvoke.getDirectoryPath(),apexMethodInvoke.getParentName(),violation);
+	 System.out.println(" URL is  HardCoded ");
+end
+
+rule "Avoid HardCoded URL in Class Annotation "
+when
+	 apexClass:ApexClass();
+	 rulesDetail:RulesDetail();
+	 vioColl:ApexViolationCollection();
+	eval(apexClass.testIsUrlIsHardcodedInAnnotaion())
+then
+	 Violation violation = new Violation( apexClass.getHardCodedUrlStartPos(),rulesDetail.AVOIDHARDCODEDURLS_RULENAME,rulesDetail.AVOIDHARDCODEDURLS_RULESET, apexClass.getParentName(),rulesDetail.PRIORITY_P1,"",rulesDetail.AVOIDHARDCODEDURLS_DESC);
+	 vioColl.addToCollection(apexClass.getDirectoryPath(),apexClass.getParentName(),violation);
+	 System.out.println(" URL is  HardCoded in Class Annotation ");
+end
+
+
+
+rule "Use Assert"
+when
+	 apexMethod:ApexMethod();
+	 rulesDetail:RulesDetail();
+	 vioColl:ApexViolationCollection();
+	eval(apexMethod.isAssertNotUsedInTestClass())
+then
+	 Violation violation = new Violation( apexMethod.getStartPosition(),rulesDetail.USEASSERT_RULENAME,rulesDetail.USEASSERT_RULESET, apexMethod.getParentName(),rulesDetail.PRIORITY_P4,"",rulesDetail.USEASSERT_DESC);
+	 vioColl.addToCollection(apexMethod.getDirectoryPath(),apexMethod.getParentName(),violation);
+	 System.out.println("  Assert is not used in Test method  ");
+end
+
+
+rule "Use Limit Keyword"
+when
+	apexDatabaseQueryStmt:ApexDatabaseQueryStatement();
+ 	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexDatabaseQueryStmt.isLimitKeywordNotUsed() )
+then
+    	
+        //actions
+        
+       Violation violation = new Violation(apexDatabaseQueryStmt.getStartPosition(),rulesDetail.USE_LIMIT_API_RULENAME,rulesDetail.USE_DATABASE_METHOD_RULESET,apexDatabaseQueryStmt.getParentName(),rulesDetail.PRIORITY_P2,"yes",rulesDetail.USE_LIMIT_API_DESC);
+       vioColl.addToCollection(apexDatabaseQueryStmt.getDirectoryPath(),apexDatabaseQueryStmt.getParentName(),violation);
+       
+ System.out.println("Limit keyword not used");
+end	
+
+rule "NoSOQL in Loop"
+when
+	apexLoop:ApexLoop()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexLoop.isSOQLInLoop() )
+then
+	Violation violation = new Violation(apexLoop.getStartPosition(),rulesDetail.NOLOOP_IN_SQL_RULENAME,rulesDetail.USE_DATABASE_METHOD_RULESET,apexLoop.getParentName(),rulesDetail.PRIORITY_P1,"yes",rulesDetail.NOLOOP_IN_SQL_DESC);
+    vioColl.addToCollection(apexLoop.getDirectoryPath(),apexLoop.getParentName(),violation);
+end
+
+/*
+rule "Precede Null Check"
+when
+	apexContionalStmt:ApexConditionalStatement()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexContionalStmt.isPrecedeNullCheck())
+then
+	Violation violation = new Violation(apexContionalStmt.getStartPosition(),rulesDetail.PRECEDE_NULL_CHECK_RULENAME,rulesDetail.PRECEDE_NULL_CHECK_RULESET,apexContionalStmt.getParentName(),rulesDetail.PRIORITY_P1,"",rulesDetail.PRECEDE_NULL_CHECK_DESC);
+    vioColl.addToCollection(apexContionalStmt.getDirectoryPath(),apexContionalStmt.getParentName(),violation);
+end
+*/
+
+
+rule "Minimize static methods and blocks "
+when
+	apexClass:ApexClass()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexClass.isStaticMethodsBlocksExists())
+then
+     vioColl.addToCollection(apexClass.getDirectoryPath(),apexClass.getParentName(),RuleEngineHelper.getStaticBlockViolationList(apexClass.getApexStaticsViolationsList()));
+     System.out.println("Minimize static methods and blocks ");
+end
+
+rule "Minimize static variables  "
+when
+	apexVariableStatement:ApexVariableStatement()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexVariableStatement.isStaticVariable())
+then
+	 Violation violation = new Violation(apexVariableStatement.getStartPosition(),rulesDetail.MINIMIZE_STATICS_VARIABLES_RULENAME,rulesDetail.DESING_RULESET,apexVariableStatement.getParentName(),rulesDetail.PRIORITY_P4,"",rulesDetail.MINIMIZE_STATICS_VARIABLES_DESC);
+     vioColl.addToCollection(apexVariableStatement.getDirectoryPath(),apexVariableStatement.getParentName(),violation);
+      System.out.println("Minimize static variables");
+end
+
+rule "Initialise all local variables of a method"
+when
+	apexMathod:ApexMethod()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexMathod.isVariableNotInitialzed())
+then
+     vioColl.addToCollection(apexMathod.getDirectoryPath(),apexMathod.getParentName(),RuleEngineHelper.getViolationList(apexMathod.getVarUnInitlisedViolationsList(),rulesDetail.INITIALISE_LOCAL_VAR_RULENAME,
+						rulesDetail.BASIC_RULESET,rulesDetail.INITIALISE_LOCAL_VAR_DESC,rulesDetail.PRIORITY_P3));
+     System.out.println("Initialise all local variables of a method");
+end
+
+rule "Initialise all local variables of a Trigger"
+when
+	apexTrigger:ApexTrigger()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexTrigger.isVariableNotInitialzed())
+then
+     vioColl.addToCollection(apexTrigger.getDirectoryPath(),apexTrigger.getParentName(),RuleEngineHelper.getViolationList(apexTrigger.getVarUnInitlisedViolationsList(),rulesDetail.INITIALISE_LOCAL_VAR_RULENAME,
+						rulesDetail.BASIC_RULESET,rulesDetail.INITIALISE_TRIGGER_LOCAL_VAR_DESC,rulesDetail.PRIORITY_P3));
+     System.out.println("Initialise all local variables of a trigger");
+end
+
+
+rule "Instance Variables should be declared Private"
+salience 5
+when
+	apexClass:ApexClass()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexClass.isVariablesArePrivate() && apexClass.isTestCalssVarNotExist())
+then
+	 vioColl.addToCollection(apexClass.getDirectoryPath(),apexClass.getParentName(),RuleEngineHelper.getViolationList(apexClass.getApexVarPrivareViolationsList(),rulesDetail.METHOD_INSTANCE_VAR_SHUD_BE_PRIVATE_RULENAME,
+						rulesDetail.BASIC_RULESET,rulesDetail.METHOD_INSTANCE_VAR_SHUD_BE_PRIVATE_DESC,rulesDetail.PRIORITY_P3));
+	 System.out.println("Instance Variables should be declared Private");
+end
+
+
+
+
+
+
+rule "method names begin with lower case"
+when
+	apexClass:ApexClass()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexClass.isMethodNameNotStrtWithLowerCase())
+then
+	vioColl.addToCollection(apexClass.getDirectoryPath(),apexClass.getParentName(),RuleEngineHelper.getViolationList(apexClass.getMethodNameViolationList(),rulesDetail.METHOD_NAME_SRARTWITH_LOWERCASE_RULENAME,
+						rulesDetail.NAMING_RULESET,rulesDetail.METHOD_NAME_SRARTWITH_LOWERCASE_DESC,rulesDetail.PRIORITY_P3));
+	
+end
+
+rule "Variable names begin with lower case"
+when
+	apexVariableStatement:ApexVariableStatement()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexVariableStatement.isVariableNotStartWithlowerCase())
+then
+	Violation violation = new Violation(apexVariableStatement.getStartPosition(),rulesDetail.VARIABLE_NAME_SRARTWITH_LOWERCASE_RULENAME,rulesDetail.NAMING_RULESET,apexVariableStatement.getParentName(),rulesDetail.PRIORITY_P3,"",rulesDetail.VARIABLE_NAME_SRARTWITH_LOWERCASE_DESC);
+    vioColl.addToCollection(apexVariableStatement.getDirectoryPath(),apexVariableStatement.getParentName(),violation);
+end
+
+rule "All class names begin with Uppercase character"
+when
+	apexClass:ApexClass()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexClass.isClassNameNotStartWithUpperCase())
+then
+	Violation violation = new Violation(apexClass.getStartPosition(),rulesDetail.CLASS_NAME_SRARTWITH_UPPERCASE_RULENAME,rulesDetail.NAMING_RULESET,apexClass.getParentName(),rulesDetail.PRIORITY_P3,"",rulesDetail.CLASS_NAME_SRARTWITH_UPPERCASE_DESC);
+    vioColl.addToCollection(apexClass.getDirectoryPath(),apexClass.getParentName(),violation);
+end
+
+rule "All Trigger names begin with Uppercase character"
+when
+	apexTrigger:ApexTrigger()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexTrigger.isTriggerNameNotStartWithUpperCase())
+then
+	Violation violation = new Violation(apexTrigger.getStartPosition(),rulesDetail.TRIGGER_NAME_SRARTWITH_UPPERCASE_RULENAME,rulesDetail.NAMING_RULESET,apexTrigger.getParentName(),rulesDetail.PRIORITY_P3,"",rulesDetail.TRIGGER_NAME_SRARTWITH_UPPERCASE_DESC);
+    vioColl.addToCollection(apexTrigger.getDirectoryPath(),apexTrigger.getParentName(),violation);
+end
+
+
+
+rule "Variables that are final and static should be in all caps"
+when
+	apexVariableStatement:ApexVariableStatement()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexVariableStatement.isStaticFinalVarNotInCaps())
+then
+	Violation violation = new Violation(apexVariableStatement.getStartPosition(),rulesDetail.STATIC_FINAL_VAR_IN_CAPS_RULENAME,rulesDetail.NAMING_RULESET,apexVariableStatement.getParentName(),rulesDetail.PRIORITY_P3,"",rulesDetail.STATIC_FINAL_VAR_IN_CAPS_DESC);
+    vioColl.addToCollection(apexVariableStatement.getDirectoryPath(),apexVariableStatement.getParentName(),violation);
+end
+
+rule "Avoid un used methods  "
+when
+	apexUnUsedMethodObj:ApexUnUsedMethodObject()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexUnUsedMethodObj.isMethodUnUsed())
+then
+	vioColl.addToCollection(apexUnUsedMethodObj.getUnUsedMethodsVoilationList(),rulesDetail.AVOID_UN_USED_METHODS_RULENAME,rulesDetail.DESING_RULESET,rulesDetail.AVOID_UN_USED_METHODS_DESC,rulesDetail.PRIORITY_P1);
+     System.out.println("Avoid un used methods");
+end
+
+rule "Avoid unused method variables"
+when
+	apexMethod:ApexMethod()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexMethod.isMethodVarUnused())
+then
+	 vioColl.addToCollection(apexMethod.getDirectoryPath(),apexMethod.getParentName(),RuleEngineHelper.getViolationList(apexMethod.getVarUnUsedViolationsList(),rulesDetail.AVOID_UN_USED_METHOD_VAR_RULENAME,rulesDetail.BASIC_RULESET,rulesDetail.AVOID_UN_USED_METHOD_VAR_DESC,rulesDetail.PRIORITY_P2));
+	 System.out.println("Avoid un used method variables ");
+end
+
+rule "Avoid unused Trigger variables"
+when
+	apexTrigger:ApexTrigger()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexTrigger.isTriggerVarUnused())
+then
+	 vioColl.addToCollection(apexTrigger.getDirectoryPath(),apexTrigger.getParentName(),RuleEngineHelper.getViolationList(apexTrigger.getVarUnUsedViolationsList(),rulesDetail.AVOID_UN_USED_TRIGGER_VAR_RULENAME,rulesDetail.BASIC_RULESET,rulesDetail.AVOID_UN_USED_TRIGGER_VAR_DESC,rulesDetail.PRIORITY_P2));
+	 System.out.println("Avoid un used trigger variables ");
+end
+
+rule "Required Documentation"
+when
+	apexCompilationUnit:ApexCompilationUnit()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexCompilationUnit.isDocumentationNotExist())
+then
+	 vioColl.addToCollection(apexCompilationUnit.getDirectoryPath(),apexCompilationUnit.getParentName(),RuleEngineHelper.getViolationList(apexCompilationUnit.getDocumentViolationList(),rulesDetail.DOCUMENTATION_REQUIRED_RULENAME,rulesDetail.BASIC_RULESET,rulesDetail.DOCUMENTATION_REQUIRED_DESC,rulesDetail.PRIORITY_P2));
+	 System.out.println("Required Documentation");
+end
+
+rule "Avoid three or more nested loops"
+when
+	apexLoop:ApexLoop()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexLoop.isNestedLoopExits("3"))
+then
+	Violation violation = new Violation(apexLoop.getStartPosition(),rulesDetail.AVOID_NESTED_LOOPS_RULENAME,rulesDetail.DESING_RULESET,apexLoop.getParentName(),rulesDetail.PRIORITY_P1,"",rulesDetail.AVOID_NESTED_LOOPS_DESC);
+    vioColl.addToCollection(apexLoop.getDirectoryPath(),apexLoop.getParentName(),violation);
+    System.out.println("Avoid three or more nested loops");
+end
+
+rule "Avoid exceeding 2000 lines per Class"
+when
+	apexClass:ApexClass()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexClass.isClassLineNoCorrect("2000"))
+then
+	 Violation violation = new Violation(apexClass.getStartPosition(),rulesDetail.AVOID_EXCEEDING_EXPECTED_LINES_PER_CLASS_RULENAME,rulesDetail.DESING_RULESET,apexClass.getParentName(),rulesDetail.PRIORITY_P3,"",rulesDetail.AVOID_EXCEEDING_EXPECTED_LINES_PER_CLASS_DESC);
+     vioColl.addToCollection(apexClass.getDirectoryPath(),apexClass.getParentName(),violation);
+     System.out.println("Avoid exceeding 2000 lines per Class ");
+end
+
+rule "Avoid exceeding 200 lines per Trigger"
+when
+	apexTrigger:ApexTrigger()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexTrigger.isTriggerLineNoCorrect("200"))
+then
+	 Violation violation = new Violation(apexTrigger.getStartPosition(),rulesDetail.AVOID_EXCEEDING_EXPECTED_LINES_PER_TRIGGER_RULENAME,rulesDetail.DESING_RULESET,apexTrigger.getParentName(),rulesDetail.PRIORITY_P3,"",rulesDetail.AVOID_EXCEEDING_EXPECTED_LINES_PER_TRIGGER_DESC);
+     vioColl.addToCollection(apexTrigger.getDirectoryPath(),apexTrigger.getParentName(),violation);
+     System.out.println("Avoid exceeding 200 lines per Trigger ");
+end
+
+rule "Avoid exceeding 30 lines per Method"
+when
+	apexMethod:ApexMethod()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexMethod.isMethodSizeNotCorrect("30"))
+then
+	 Violation violation = new Violation(apexMethod.getStartPosition(),rulesDetail.AVOID_EXCEEDING_EXPECTED_LINES_PER_METHOD_RULENAME,rulesDetail.DESING_RULESET,apexMethod.getParentName(),rulesDetail.PRIORITY_P3,"",rulesDetail.AVOID_EXCEEDING_EXPECTED_LINES_PER_METHOD_DESC);
+     vioColl.addToCollection(apexMethod.getDirectoryPath(),apexMethod.getParentName(),violation);
+     System.out.println("Avoid exceeding 30 lines per Method");
+end
+
+rule "Assign Global access specifier "
+when
+	apexClass:ApexClass()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexClass.isGlobalSpecifierRequiredForClass())
+then
+     vioColl.addToCollection(apexClass.getDirectoryPath(),apexClass.getParentName(),RuleEngineHelper.getViolationList(apexClass.getApexGlobalModifierViolationList(),rulesDetail.ASSIGN_GLOBAL_ACCESS_MODIFIER_RULENAME,rulesDetail.DESING_RULESET,rulesDetail.ASSIGN_GLOBAL_ACCESS_MODIFIER_DESC,rulesDetail.PRIORITY_P2));
+     System.out.println("Assign Global access specifier  ");
+end
+
+rule "Avoid Finally block without Catch block"
+when
+	apexTryStatement:ApexTryStatement()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexTryStatement.isFinallyExistsWithoutCatch())
+then
+	Violation violation = new Violation(apexTryStatement.getFinallyStmtStatrtPos(),rulesDetail.AVOID_FINALLY_WITHOUT_CATCH_RULENAME,rulesDetail.DESING_RULESET,apexTryStatement.getParentName(),rulesDetail.PRIORITY_P1,"",rulesDetail.AVOID_FINALLY_WITHOUT_CATCH_DESC);
+    vioColl.addToCollection(apexTryStatement.getDirectoryPath(),apexTryStatement.getParentName(),violation);
+    System.out.println("Avoid Finally block without Catch block ");
+end
+
+
+rule "Avoid SOQL/DML in Constructors "
+when
+	apexClass:ApexClass()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexClass.isNoSOQLDMLStatementsInConstructor())
+then
+	 vioColl.addToCollection(apexClass.getDirectoryPath(),apexClass.getParentName(),RuleEngineHelper.getViolationList(apexClass.getNoSQLDMLInConstrViolationsList(),rulesDetail.AVOID_SOQL_DML_INSIDE_CONSTRUCTOR_RULENAME,rulesDetail.DESING_RULESET,rulesDetail.AVOID_SOQL_DML_INSIDE_CONSTRUCTOR_DESC,rulesDetail.PRIORITY_P2));
+	 System.out.println("Avoid SOQL/DML in Constructors ");
+end
+
+
+rule "Use proper test class signature "
+when
+	apexClass:ApexClass()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexClass.isTestClassSignCorrect())
+then
+	 Violation violation = new Violation(apexClass.getStartPosition(),rulesDetail.TEST_CLS_SIGN_RULENAME,rulesDetail.DESING_RULESET,apexClass.getParentName(),rulesDetail.PRIORITY_P1,"",rulesDetail.TEST_CLS_SIGN_DESC);
+     vioColl.addToCollection(apexClass.getDirectoryPath(),apexClass.getParentName(),violation);
+end
+
+rule "Finish if-else if block with else condition"
+when
+	apexIfStatement:ApexElseStatement()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexIfStatement.isElseIfEndsWithElse())
+then
+	Violation violation = new Violation(apexIfStatement.getStartPosition(),rulesDetail.FINISH_ELSEIF_WITH_ELSE_RULENAME,rulesDetail.BASIC_RULESET,apexIfStatement.getParentName(),rulesDetail.PRIORITY_P2,"",rulesDetail.FINISH_ELSEIF_WITH_ELSE_DESC);
+    vioColl.addToCollection(apexIfStatement.getDirectoryPath(),apexIfStatement.getParentName(),violation);
+    System.out.println("Finish if-else if block with else condition ");
+end
+
+rule "Avoid using == for comparison inside method"
+when
+	apexClass:ApexClass()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexClass.isConditionConstainsEqualsOperator())
+then
+    vioColl.addToCollection(apexClass.getDirectoryPath(),apexClass.getParentName(),RuleEngineHelper.getViolationList(apexClass.getConditionOperViolationList(),rulesDetail.AVOID_USING_EQUALS_OPER_RULENAME,rulesDetail.BASIC_RULESET,rulesDetail.AVOID_USING_EQUALS_OPER_DESC,rulesDetail.PRIORITY_P2));
+end
+
+rule "Avoid using == for comparison inside Trigger"
+when
+	apexTrigger:ApexTrigger()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexTrigger.isConditionConstainsEqualsOperator())
+then
+    vioColl.addToCollection(apexTrigger.getDirectoryPath(),apexTrigger.getParentName(),RuleEngineHelper.getViolationList(apexTrigger.getConditionOperViolationList(),rulesDetail.AVOID_USING_EQUALS_OPER_RULENAME,rulesDetail.BASIC_RULESET,rulesDetail.AVOID_USING_EQUALS_OPER_DESC,rulesDetail.PRIORITY_P2));
+end
+
+rule "Avoid SOQL/DML in Trigger "
+when
+	apexTrigger:ApexTrigger()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexTrigger.isSOQLDMLStatementsInTrigger())
+then
+     vioColl.addToCollection(apexTrigger.getDirectoryPath(),apexTrigger.getParentName(),RuleEngineHelper.getViolationList(apexTrigger.getNoSQLDMLInTriggerViolationsList(),rulesDetail.AVOID_SOQL_DML_INSIDE_TRIGGER_RULENAME,rulesDetail.DESING_RULESET,rulesDetail.AVOID_SOQL_DML_INSIDE_TRIGGER_DESC,rulesDetail.PRIORITY_P2));
+	 System.out.println("Avoid SOQL/DML in Trigger ");
+end
+
+rule "No test method required for Utility Classes"
+when
+	apexClass:ApexClass()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexClass.isUtilClassHasTestMethods("Util,Utils,Utility,AP"))
+then
+	 Violation violation = new Violation(apexClass.getStartPosition(),rulesDetail.NO_TEST_METHOD_IN_UTILCLASS_RULENAME,rulesDetail.DESING_RULESET,apexClass.getParentName(),rulesDetail.PRIORITY_P2,"",rulesDetail.NO_TEST_METHOD_IN_UTILCLASS_DESC);
+     vioColl.addToCollection(apexClass.getDirectoryPath(),apexClass.getParentName(),violation);
+     System.out.println("No test method required for Utility Classes ");
+end
+
+
+
+/*
+
+rule "Avoid assignments inside if and while conditions"
+when
+	apexConditionalStatement:ApexConditionalStatement()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexConditionalStatement.isConditionContainsAssignments())
+then
+	 Violation violation = new Violation(apexConditionalStatement.getStartPosition(),rulesDetail.ASSIGNMENT_USED_CONDITION_RULENAME,rulesDetail.BASIC_RULESET,apexConditionalStatement.getParentName(),rulesDetail.PRIORITY_P2,"",rulesDetail.ASSIGNMENT_USED_CONDITION_DESC);
+     vioColl.addToCollection(apexConditionalStatement.getDirectoryPath(),apexConditionalStatement.getParentName(),violation);
+end
+
+*/
+
+rule "Avoid overriding Variable names  "
+when
+	apexClass:ApexClass()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexClass.isVariableOverriddenWithinClass())
+then
+	 vioColl.addToCollection(apexClass.getDirectoryPath(),apexClass.getParentName(),RuleEngineHelper.getViolationList(apexClass.getVarOverridenViolationsList(),rulesDetail.VARIABLE_OVERRIDDEN_WITHIN_CLASS_RULENAME,rulesDetail.BASIC_RULESET,rulesDetail.VARIABLE_OVERRIDDEN_WITHIN_CLASS_DESC,rulesDetail.PRIORITY_P3));
+     System.out.println("Avoid overriding Variable names ");
+end
+
+rule "Avoid using if and loop statements without curly braces "
+when
+	apexIfStatement:ApexIfStatement()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexIfStatement.isCurlyBraceNotExist())
+then
+    
+    vioColl.addToCollection(apexIfStatement.getDirectoryPath(),apexIfStatement.getParentName(),RuleEngineHelper.getViolationList(apexIfStatement.getCurlyBraceMissingStmtList(),rulesDetail.AVOID_IFLOOP_WITHOUT_CURLY_BRACE_RULENAME,rulesDetail.BASIC_RULESET,rulesDetail.AVOID_IFLOOP_WITHOUT_CURLY_BRACE_DESC,rulesDetail.PRIORITY_P3));
+    System.out.println("Avoid using if and loop statements without curly braces");
+end
+
+rule "Avoid using if and loop statements without curly braces  "
+when
+	 apexLoopStatement:ApexLoop();
+	 rulesDetail:RulesDetail();
+	 vioColl:ApexViolationCollection();
+	eval(apexLoopStatement.isCurlyBraceNotExist())
+then
+	 Violation violation = new Violation( apexLoopStatement.getStartPosition(),rulesDetail.AVOID_IFLOOP_WITHOUT_CURLY_BRACE_RULENAME,rulesDetail.BASIC_RULESET, apexLoopStatement.getParentName(),rulesDetail.PRIORITY_P3,"",rulesDetail.AVOID_IFLOOP_WITHOUT_CURLY_BRACE_DESC);
+	 vioColl.addToCollection(apexLoopStatement.getDirectoryPath(),apexLoopStatement.getParentName(),violation);
+	 System.out.println("Avoid using if and loop statements without curly braces ");
+end
+
+
+rule "Avoid empty constructors"
+when
+	apexClass:ApexClass()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexClass.isConstructorEmpty())
+then
+	 vioColl.addToCollection(apexClass.getDirectoryPath(),apexClass.getParentName(),RuleEngineHelper.getViolationList(apexClass.getEmptyConstrViolationList(),rulesDetail.AVOID_EMPTY_CONSTRUCTOR_RULENAME,rulesDetail.DESING_RULESET,rulesDetail.AVOID_EMPTY_CONSTRUCTOR_DESC,rulesDetail.PRIORITY_P2));
+end
+
+
+rule "Triggers Should Include Try/Catch blocks"
+when
+	apexTrigger:ApexTrigger()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexTrigger.isTryCatchNotExist())
+then
+	 Violation violation = new Violation(apexTrigger.getStartPosition(),rulesDetail.TRIGGER_SHOULD_INCLUDE_TRYCATCH_RULENAME,rulesDetail.DESING_RULESET,apexTrigger.getParentName(),rulesDetail.PRIORITY_P4,"",rulesDetail.TRIGGER_SHOULD_INCLUDE_TRYCATCH_DESC);
+     vioColl.addToCollection(apexTrigger.getDirectoryPath(),apexTrigger.getParentName(),violation);
+end
+
+
+rule "Public methods should include Try/Catch blocks"
+when
+	apexMethod:ApexMethod()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexMethod.isTryCatchNotExist())
+then
+	 Violation violation = new Violation(apexMethod.getStartPosition(),rulesDetail.PUBLIC_METHOD_SHOULD_INCLUDE_TRYCATCH_RULENAME,rulesDetail.DESING_RULESET,apexMethod.getParentName(),rulesDetail.PRIORITY_P2,"",rulesDetail.PUBLIC_METHOD_SHOULD_INCLUDE_TRYCATCH_DESC);
+     vioColl.addToCollection(apexMethod.getDirectoryPath(),apexMethod.getParentName(),violation);
+end
+
+
+rule "Test Methods should Use System.RunAs() "
+when
+	apexMethod:ApexMethod()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexMethod.isTestMethodHasSysRunAs())
+then
+	 Violation violation = new Violation(apexMethod.getStartPosition(),rulesDetail.TEST_METHOD_SHOULD_INCLUDE_SYSTEMRUNAS_RULENAME,rulesDetail.BASIC_RULESET,apexMethod.getParentName(),rulesDetail.PRIORITY_P2,"",rulesDetail.TEST_METHOD_SHOULD_INCLUDE_SYSTEMRUNAS_DESC);
+     vioColl.addToCollection(apexMethod.getDirectoryPath(),apexMethod.getParentName(),violation);
+end
+
+
+rule "Minimum variable length other than loop control variables"
+when
+	apexVarStatement:ApexVariableStatement()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexVarStatement.isVariableHasMinLength("3"))
+then
+	 Violation violation = new Violation(apexVarStatement.getStartPosition(),rulesDetail.MINIMUM_VARIABLE_LENGTH_RULENAME,rulesDetail.BASIC_RULESET,apexVarStatement.getParentName(),rulesDetail.PRIORITY_P3,"",rulesDetail.MINIMUM_VARIABLE_LENGTH_DESC);
+     vioColl.addToCollection(apexVarStatement.getDirectoryPath(),apexVarStatement.getParentName(),violation);
+end
+
+
+rule "Excessive Parameter List "
+when
+	apexMethod:ApexMethod()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexMethod.isMetHasExcessiveParameters("10"))
+then
+	 Violation violation = new Violation(apexMethod.getStartPosition(),rulesDetail.EXCESSIVE_PARAMETER_LIST_RULENAME,rulesDetail.DESING_RULESET,apexMethod.getParentName(),rulesDetail.PRIORITY_P2,"",rulesDetail.EXCESSIVE_PARAMETER_LIST_DESC);
+     vioColl.addToCollection(apexMethod.getDirectoryPath(),apexMethod.getParentName(),violation);
+end
+
+
+rule "Hard Coded ID Rules in Assignment Statement"
+	salience 20
+	no-loop true
+	when
+		apexAssignmentStatement:ApexAssignmentStatement();
+		rulesDetail:RulesDetail();
+		vioColl:ApexViolationCollection();
+		eval(apexAssignmentStatement.isIdHardCoded())
+	then
+		 apexAssignmentStatement.setHardCodeIdNotExist(false);
+		 update(apexAssignmentStatement);
+		 Violation violation = new Violation(apexAssignmentStatement.getStartPosition(),rulesDetail.HARD_CODING_ID_RULENAME,rulesDetail.DESING_RULESET,apexAssignmentStatement.getParentName(),rulesDetail.PRIORITY_P1,"",rulesDetail.HARD_CODING_ID_DESC);
+		 vioColl.addToCollection(apexAssignmentStatement.getDirectoryPath(),apexAssignmentStatement.getParentName(),violation);
+end
+
+
+
+rule "Hard Coded Id Rule in variable statement "
+	salience 10
+	//agenda-group "1"
+	no-loop true
+    when
+        apexVariableStatement: ApexVariableStatement();
+        vioColl:ApexViolationCollection();	
+        rulesDetail:RulesDetail();
+        eval(apexVariableStatement.isIdHardCoded())
+    then
+    System.out.println("Value in HardcodedId is "+apexVariableStatement.isHardCodeIdNotExist());
+       apexVariableStatement.setHardCodeIdNotExist(false);
+   		update(apexVariableStatement);   
+       Violation violation = new Violation(apexVariableStatement.getStartPosition(),rulesDetail.HARD_CODING_ID_RULENAME,rulesDetail.DESING_RULESET,apexVariableStatement.getParentName(),rulesDetail.PRIORITY_P1,"",rulesDetail.HARD_CODING_ID_DESC);
+       vioColl.addToCollection(apexVariableStatement.getDirectoryPath(),apexVariableStatement.getParentName(),violation);
+end
+
+rule "Hard Coded Id Rules in Method invoke statement "
+	salience 30
+	//agenda-group "1"
+	no-loop true
+    when
+        apexMethodInvocation: ApexMethodInvocationStatement();
+        vioColl:ApexViolationCollection();	
+        rulesDetail:RulesDetail();
+        eval(apexMethodInvocation.isIdHardCoded())
+    then
+       apexMethodInvocation.setHardCodeIdNotExist(false);
+   		update(apexMethodInvocation);   
+       Violation violation = new Violation(apexMethodInvocation.getStartPosition(),rulesDetail.HARD_CODING_ID_RULENAME,rulesDetail.DESING_RULESET,apexMethodInvocation.getParentName(),rulesDetail.PRIORITY_P1,"",rulesDetail.HARD_CODING_ID_DESC);
+       vioColl.addToCollection(apexMethodInvocation.getDirectoryPath(),apexMethodInvocation.getParentName(),violation);
+end
+
+rule "Hard Coded Id Rules in Conditional  Statement"
+salience 40
+no-loop true
+when
+	apexConditionalStmt:ApexConditionalStatement();
+	rulesDetail:RulesDetail();
+	vioColl:ApexViolationCollection();
+	eval(apexConditionalStmt.isIdHardCodedInCondition())
+then
+	apexConditionalStmt.setHardCodeIdNotExist(false);
+	update(apexConditionalStmt);
+	 Violation violation = new Violation(apexConditionalStmt.getStartPosition(),rulesDetail.HARD_CODING_ID_RULENAME,rulesDetail.DESING_RULESET,apexConditionalStmt.getParentName(),rulesDetail.PRIORITY_P1,"",rulesDetail.HARD_CODING_ID_DESC);
+     vioColl.addToCollection(apexConditionalStmt.getDirectoryPath(),apexConditionalStmt.getParentName(),violation);
+end
+
+rule "Hard Coded Id Rules in Database Query Statement"
+salience 60
+no-loop true
+when
+	apexDatabaseQueryStatement:ApexDatabaseQueryStatement();
+	rulesDetail:RulesDetail();
+	vioColl:ApexViolationCollection();
+	eval(apexDatabaseQueryStatement.isIdHardCodedInQuery())
+then
+	apexDatabaseQueryStatement.setHardCodeIdNotExist(false);
+	update(apexDatabaseQueryStatement);
+	
+	 Violation violation = new Violation(apexDatabaseQueryStatement.getStartPosition(),rulesDetail.HARD_CODING_ID_RULENAME,rulesDetail.DESING_RULESET,apexDatabaseQueryStatement.getParentName(),rulesDetail.PRIORITY_P1,"",rulesDetail.HARD_CODING_ID_DESC);
+     vioColl.addToCollection(apexDatabaseQueryStatement.getDirectoryPath(),apexDatabaseQueryStatement.getParentName(),violation);
+end
+
+
+
+
+rule "Use Apex Properties"
+when
+	apexClass:ApexClass()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexClass.isApexPropertyNotUsed())
+then
+     vioColl.addToCollection(apexClass.getDirectoryPath(),apexClass.getParentName(),RuleEngineHelper.getViolationList(apexClass.getApexPropertyNotExistVioList(),rulesDetail.APEX_PROPERTY_NOT_USED_RULENAME,
+						rulesDetail.OPTIMIZATION_RULESET,rulesDetail.APEX_PROPERTY_NOT_USED_DESC,rulesDetail.PRIORITY_P2));
+    
+end
+
+ rule "Debug Statement in Expression Statement"
+when
+	apexExpressionStatement:ApexExpressionStatement();
+	 rulesDetail:RulesDetail();
+	vioColl:ApexViolationCollection();
+	eval(apexExpressionStatement.isDebugPresent())
+then
+	 Violation violation = new Violation(apexExpressionStatement.getStartPosition(),rulesDetail.DEBUG_STATEMENT_RULENAME,rulesDetail.BASIC_RULESET,apexExpressionStatement.getParentName(),rulesDetail.PRIORITY_P3,"",rulesDetail.DEBUG_STATEMENT_DESC);
+	 vioColl.addToCollection(apexExpressionStatement.getDirectoryPath(),apexExpressionStatement.getParentName(),violation);
+	 System.out.println("Debug Statement in Expression Statement");
+end  
+
+rule "Iterate query in 'for-each' loop"
+when
+	apexMethod:ApexMethod()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexMethod.isIterQueryNotUsedInLoop())
+then
+     vioColl.addToCollection(apexMethod.getDirectoryPath(),apexMethod.getParentName(),RuleEngineHelper.getViolationList(apexMethod.getIterQueryNotUsedInLoopVioLst(),rulesDetail.ITERATE_QUERY_IN_FOR_LOOP_RULENAME,
+						rulesDetail.OPTIMIZATION_RULESET,rulesDetail.ITERATE_QUERY_IN_FOR_LOOP_DESC,rulesDetail.PRIORITY_P1));
+    
+end
+
+rule "Use proper naming convention for getter and setter methods "
+when
+	 apexMethod:ApexMethod();
+	 rulesDetail:RulesDetail();
+	 vioColl:ApexViolationCollection();
+	eval(apexMethod.isProperGetterSetterName())
+then
+	 Violation violation = new Violation( apexMethod.getStartPosition(),rulesDetail.USE_PROPER_NAMING_CONVENTION_FOR_GETTER_AND_SETTER_METHODS,rulesDetail.NAMING_RULESET, apexMethod.getParentName(),rulesDetail.PRIORITY_P4,"",rulesDetail.USE_PROPER_NAMING_CONVENTION_FOR_GETTER_AND_SETTER_DESC);
+	 vioColl.addToCollection(apexMethod.getDirectoryPath(),apexMethod.getParentName(),violation);
+	 System.out.println("Use proper naming convention for getter and setter methods ");
+end
+
+rule "Avoid comparing boolean variables "
+when
+	 apexConditionalStmt:ApexConditionalStatement(); 
+	 rulesDetail:RulesDetail();
+	 vioColl:ApexViolationCollection();
+	eval(apexConditionalStmt.isBooleanCondtnCheckedWithBoolanVar())
+then
+	 Violation violation = new Violation( apexConditionalStmt.getStartPosition(),rulesDetail.AVOID_COMPARING_BOOLEAN_VARIABLES,rulesDetail.BASIC_RULESET, apexConditionalStmt.getParentName(),rulesDetail.PRIORITY_P3,"",rulesDetail.AVOID_CHECKING_FOR_BOOLEAN_CONDITION_ON_BOOLEAN_VARIABLES_DESC);
+	 vioColl.addToCollection(apexConditionalStmt.getDirectoryPath(),apexConditionalStmt.getParentName(),violation);
+	 System.out.println("Avoid comparing boolean variables");
+end
+
+rule "Test Class instance variables should be private and static "
+	salience 50
+	no-loop true
+when
+	 apexClass:ApexClass(); 
+	 rulesDetail:RulesDetail();
+	 vioColl:ApexViolationCollection();
+	eval(apexClass.isTestVariablesArePrivateAndStatic())
+then
+	
+	apexClass.setTestCalssVarNotExist(false);
+	update(apexClass);
+	vioColl.addToCollection(apexClass.getDirectoryPath(),apexClass.getParentName(),RuleEngineHelper.getViolationList(apexClass.getApexVarPrivateStaticViolationsList(),rulesDetail.TEST_CLASS_INSTANCE_VARIABLES_SHOULD_BE_PRIVATE_AND_STATIC,
+						rulesDetail.BASIC_RULESET ,rulesDetail.TEST_CLASS_INSTANCE_VARIABLES_SHOULD_BE_PRIVATE_AND_STATIC_DESC,rulesDetail.PRIORITY_P2));
+	System.out.println("Test Class instance variables should be private and static");
+end
+
+rule " Initialize Varaible Property Collections"
+when
+        apexProperty: ApexProperyGetter();
+        vioColl:ApexViolationCollection();	
+        rulesDetail:RulesDetail();
+        eval( apexProperty.checkApexPropertyIsCollection())
+    then
+    
+       Violation violation = new Violation(apexProperty.getStartPosition(),rulesDetail.INITIALIZECOLLECTIONS_RULENAME,rulesDetail.INITIALIZECOLLECTIONS_RULESET,apexProperty.getParentName(),rulesDetail.PRIORITY_P3,"",rulesDetail.INITIALIZECOLLECTIONS_DESC);
+       vioColl.addToCollection(apexProperty.getDirectoryPath(),apexProperty.getParentName(),violation);
+end
+
+
+rule "Use isBlank"
+when
+	apexContionalStmt:ApexConditionalStatement()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexContionalStmt.checkIsBlankNotUsed())
+then
+	Violation violation = new Violation(apexContionalStmt.getStartPosition(),rulesDetail.USE_ISBLANK_RULENAME,rulesDetail.BASIC_RULESET,apexContionalStmt.getParentName(),rulesDetail.PRIORITY_P2,"",rulesDetail.USE_ISBLANK_DESC);
+    vioColl.addToCollection(apexContionalStmt.getDirectoryPath(),apexContionalStmt.getParentName(),violation);
+end
+
+rule "Avoid max characters per line"
+when
+	
+	apexClass:ApexClass()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+   
+   eval(apexClass.isLineNoCorrect("125"))
+then
+
+	vioColl.addToCollection(apexClass.getDirectoryPath(),apexClass.getParentName(),
+	 RuleEngineHelper.getViolationList(apexClass.getCharactersInALineViolationList(),rulesDetail.AVOID_MAX_CHARACTERS_PER_LINE_RULENAME,
+	 rulesDetail.BASIC_RULESET,rulesDetail.AVOID_MAX_CHARACTERS_PER_LINE_DESC,rulesDetail.PRIORITY_P4,apexClass));
+	
+	 System.out.println("Avoid max characters per line");
+end
+
+rule "Test methods should avoid multiple same DML statements "
+when
+	apexMethod:ApexMethod();
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexMethod.isTestMethodHasSameDMLStmts())
+    
+then
+	Violation violation = new Violation(apexMethod.getStartPosition(),
+	rulesDetail.AVOID_MULTIPLE_DML_STMT_IN_TEST_METHODS_RULENAME,rulesDetail.USE_DATABASE_METHOD_RULESET,apexMethod.getParentName(),rulesDetail.PRIORITY_P2,"yes",
+	rulesDetail.AVOID_MULTIPLE_DML_STMT_IN_TEST_METHODS_DESC);
+   
+    vioColl.addToCollection(apexMethod.getDirectoryPath(),apexMethod.getParentName(),violation);
+	 
+	 System.out.println("Test methods should avoid multiple same DML statements");
+end
+
+
+rule "Avoid for loop to just add elements  to collection"
+when
+	 apexLoop:ApexLoop(); 
+	 rulesDetail:RulesDetail();
+	 vioColl:ApexViolationCollection();
+	eval(apexLoop.isLoopUsedToAddElementsToLst())
+then
+	 Violation violation = new Violation( apexLoop.getStartPosition(),rulesDetail.AVOID_LOOP_ONLY_ADD_COLL_RULENAME,rulesDetail.OPTIMIZATION_RULESET, apexLoop.getParentName(),rulesDetail.PRIORITY_P2,"",rulesDetail.AVOID_LOOP_ONLY_ADD_COLL_DESC);
+	 vioColl.addToCollection(apexLoop.getDirectoryPath(),apexLoop.getParentName(),violation);
+end
+
+
+rule "Avoid Describe calls inside for loop"
+when
+	 apexLoop:ApexLoop(); 
+	 rulesDetail:RulesDetail();
+	 vioColl:ApexViolationCollection();
+	eval(apexLoop.isDescribeCallUsedInLoop())
+then
+	 Violation violation = new Violation( apexLoop.getStartPosition(),rulesDetail.AVOID_DESCRIBE_CALL_IN_LOOP_RULENAME,rulesDetail.DESING_RULESET, apexLoop.getParentName(),rulesDetail.PRIORITY_P1,"yes",rulesDetail.AVOID_DESCRIBE_CALL_IN_LOOP_DESC);
+	 vioColl.addToCollection(apexLoop.getDirectoryPath(),apexLoop.getParentName(),violation);
+end
+
+
+rule "Triggers should support bulk operations"
+when
+	 apexTrigger:ApexTrigger(); 
+	 rulesDetail:RulesDetail();
+	 vioColl:ApexViolationCollection();
+	eval(apexTrigger.isTriggerNotSupportingBulkOper())
+then
+	 vioColl.addToCollection(apexTrigger.getDirectoryPath(),apexTrigger.getParentName(),RuleEngineHelper.getViolationList(apexTrigger.getTriggerNotSupportBulkOperVioLst(),rulesDetail.TRIGGER_SHUD_SUPPORT_BULK_OPER_RULENAME,
+						rulesDetail.DESING_RULESET ,rulesDetail.TRIGGER_SHUD_SUPPORT_BULK_OPER_DESC,rulesDetail.PRIORITY_P1,"yes"));
+end
+
+
+rule "Private methods should not catch generic exceptions"
+when
+	apexMethod:ApexMethod()
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexMethod.isPrivateMethodCatchGenericExp())
+then
+	 Violation violation = new Violation(apexMethod.getStartPosition(),rulesDetail.PRIVATE_METHODS_SHOULD_NOT_CATCH_GENERIC_EXCEPTIONS,rulesDetail.DESING_RULESET,apexMethod.getParentName(),rulesDetail.PRIORITY_P3,"",rulesDetail.PRIVATE_METHODS_SHOULD_NOT_CATCH_GENERIC_EXCEPTIONS_DESC);
+     vioColl.addToCollection(apexMethod.getDirectoryPath(),apexMethod.getParentName(),violation);
+     System.out.println("Private methods should not catch generic exceptions");
+end
+
+
+
+rule "Multiple variable declarations on a single line should be avoided"
+when
+	 apexClass:ApexClass(); 
+	 rulesDetail:RulesDetail();
+	 vioColl:ApexViolationCollection();
+	 eval(apexClass.isMultipleDeclarationPerLinePresent())
+then
+
+     vioColl.addToCollection(apexClass.getDirectoryPath(),apexClass.getParentName(),
+	 RuleEngineHelper.getViolationList(apexClass.getMultVariableExpreCount(),rulesDetail.MULTIPLE_DECLARATION_STATEMENT_RULENAME,
+	 rulesDetail.BASIC_RULESET,rulesDetail.MULTIPLE_DECLARATION_STATEMENT_DESC,rulesDetail.PRIORITY_P3,apexClass));
+	
+	
+	
+	 System.out.println("Multiple variable declarations on a single line should be avoided");
+end
+
+rule "Test Classes should use Test Data Creation Utility Class"
+when
+	apexMethod:ApexMethod();
+	rulesDetail:RulesDetail();
+	vioColl:ApexViolationCollection();
+	eval(apexMethod.isTestDataUtilityClassUsed())
+then
+  
+     vioColl.addToCollection(apexMethod.getDirectoryPath(),apexMethod.getParentName(),
+	 RuleEngineHelper.getViolationList(apexMethod.getTestDataUtilityClassLineNumbers(),rulesDetail.TEST_CLASS_USES_UTIL_CLASS_RULENAME,
+	 rulesDetail.DESING_RULESET,rulesDetail.TEST_CLASS_USES_UTIL_CLASS_DESC,rulesDetail.PRIORITY_P3,apexMethod));
+	 
+	 
+   System.out.println("Test Classes should use Test Data Creation Utility Class");
+end
+
+
+rule "Assert statements should be after Test.stopTest()"
+when
+	apexMethod:ApexMethod();
+	rulesDetail:RulesDetail();
+	vioColl:ApexViolationCollection();
+	eval(apexMethod.isAssertMethodAfterTestStop())
+then
+     vioColl.addToCollection(apexMethod.getDirectoryPath(),apexMethod.getParentName(),
+	 RuleEngineHelper.getViolationList(apexMethod.getAssertAfterTestStartViolationsList(),rulesDetail.ASSERT_STATEMENTS_SHOULD_BE_AFTER_TEST_STOPTEST,
+	 rulesDetail.BASIC_RULESET,rulesDetail.ASSERT_STATEMENTS_FOR_ASYNC_CALLS_LIKE_BATCH_CLASSES_SCHEDULER_SHOULD_BE_AFTER_THE_TEST_STOPTEST_DESC,rulesDetail.PRIORITY_P2,apexMethod));
+	
+    System.out.println("Assert statements should be after Test.stopTest()");
+end
+
+rule "Test data creation should be before Test.startTest()"
+when
+	apexMethod:ApexMethod();
+	rulesDetail:RulesDetail();
+	vioColl:ApexViolationCollection();
+	eval(apexMethod.isTestDataCreationBeforeTestStart())
+then
+     vioColl.addToCollection(apexMethod.getDirectoryPath(),apexMethod.getParentName(),
+	 RuleEngineHelper.getViolationList(apexMethod.getTestCreationBeforeTestStartViolationsList(),rulesDetail.ALL_TEST_DATA_SHOULD_BE_CREATED_BEFORE_TEST_STARTTEST,
+	 rulesDetail.BASIC_RULESET,rulesDetail.ALL_TEST_DATA_SHOULD_BE_CREATED_BEFORE_TEST_STARTTEST_DESC,rulesDetail.PRIORITY_P3,apexMethod));
+	
+    System.out.println("Test data creation should be before Test.startTest()");
+end
+
+rule "VF Page tags should have unique ID"
+when
+	vfpageProcesser:VFPageProcess();
+	rulesDetail:RulesDetail();
+	vioColl:ApexViolationCollection();
+	eval(vfpageProcesser.isVFPageHavingUniqID())
+then
+	 vioColl.addToCollection(RuleEngineHelper.getVFViolationList(vfpageProcesser.getVFPageHasUniqIDList(),
+	 rulesDetail.VF_PAGE_UNIQ_ID_RULENAME,rulesDetail.BASIC_RULESET,rulesDetail.PRIORITY_P3,rulesDetail.VF_PAGE_UNIQ_ID_DESC));
+	
+	 System.out.println("VF Page tags should have unique ID");
+end
+
+
+rule "Avoid Hardcoding in VF Page"
+when
+	vfpageProcesser:VFPageProcess();
+	rulesDetail:RulesDetail();
+	vioColl:ApexViolationCollection();
+	eval(vfpageProcesser.isHardCodingUsedInVFPage())
+then
+	 vioColl.addToCollection(RuleEngineHelper.getVFViolationList(vfpageProcesser.getVFPageHasHardCodedValsList(),
+	 rulesDetail.VF_PAGE_AVOID_HARDCODING_RULENAME,rulesDetail.BASIC_RULESET,rulesDetail.PRIORITY_P1,rulesDetail.VF_PAGE_AVOID_HARDCODING_DESC));
+	
+	 System.out.println("Avoid Hardcoding in VF Page");
+end
+
+
+
+
+rule "VF Page should use static resource"
+when
+	vfpageProcesser:VFPageProcess();
+	rulesDetail:RulesDetail();
+	vioColl:ApexViolationCollection();
+	eval(vfpageProcesser.isVFPageUseStaticResource())
+then
+	 vioColl.addToCollection(RuleEngineHelper.getVFViolationList(vfpageProcesser.getVfPageUsesStaticResrceList(),
+	 rulesDetail.VF_PAGE_USES_STATIC_RESOURCE_RULENAME,rulesDetail.BASIC_RULESET,rulesDetail.PRIORITY_P3,rulesDetail.VF_PAGE_USES_STATIC_RESOURCE_DESC));
+	
+	 System.out.println("VF Page should use static resource");
+end
+
+rule "No ASCII Characters and br tags in VF Page"
+when
+	
+	
+	vfpageProcesser:VFPageProcess();
+	rulesDetail:RulesDetail();
+	vioColl:ApexViolationCollection();
+	eval(vfpageProcesser.isVFPageUsingASCIIChar())
+then
+	 vioColl.addToCollection(RuleEngineHelper.getVFViolationList(vfpageProcesser.getVFASCIIViolationList(),
+	 rulesDetail.VF_PAGE_WITH_NO_ASCII_CHAR_RULENAME,rulesDetail.BASIC_RULESET,rulesDetail.PRIORITY_P3,rulesDetail.VF_PAGE_WITH_NO_ASCII_CHAR_DESC));
+	
+	 System.out.println("No ASCII Characters and br tags in VF Page");
+end
+
+rule "Use constant first while comparing"
+when
+	apexConditionalStmt:ApexConditionalStatement(); 
+	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexConditionalStmt.isConstantFirstUsedWhileComparing())
+then
+	 Violation violation = new Violation(apexConditionalStmt.getStartPosition(),rulesDetail.USE_CONSTANT_FIRST_WHILE_COMPARING,rulesDetail.BASIC_RULESET, apexConditionalStmt.getParentName(),rulesDetail.PRIORITY_P2,"",rulesDetail.USE_CONSTANT_FIRST_WHILE_COMPARING_DESC);
+	 vioColl.addToCollection(apexConditionalStmt.getDirectoryPath(),apexConditionalStmt.getParentName(),violation);
+	 System.out.println("Use constant first while comparing");
+end
+
+rule "Avoid inserting the user if it is used only for System.runAs()"
+when
+	apexMethod:ApexMethod();
+	rulesDetail:RulesDetail();
+	vioColl:ApexViolationCollection();
+	eval(apexMethod.isMethodHavingUserInSysRunAs())
+then
+     vioColl.addToCollection(apexMethod.getDirectoryPath(),apexMethod.getParentName(),
+	 RuleEngineHelper.getViolationList(apexMethod.getSysRunAsDBvoilationLineNumber(),rulesDetail.AVOID_INSERTING_USER_IN_SYSRUNAS_RULENAME,
+	 rulesDetail.BASIC_RULESET,rulesDetail.AVOID_INSERTING_USER_IN_SYSRUNAS_DESC,rulesDetail.PRIORITY_P2,apexMethod));
+	
+    System.out.println("Avoid inserting the user if it is used only for System.runAs()");
+end
+
+
+rule "Use Limit Keyword in condition query statement"
+when
+	apexConditionalStmt:ApexConditionalStatement();
+ 	vioColl:ApexViolationCollection();	
+    rulesDetail:RulesDetail();
+    eval(apexConditionalStmt.isLimitKeywordNotUsed() )
+then
+       Violation violation = new Violation(apexConditionalStmt.getStartPosition(),rulesDetail.USE_LIMIT_API_RULENAME,rulesDetail.USE_DATABASE_METHOD_RULESET,apexConditionalStmt.getParentName(),rulesDetail.PRIORITY_P2,"yes",rulesDetail.USE_LIMIT_API_DESC);
+       vioColl.addToCollection(apexConditionalStmt.getDirectoryPath(),apexConditionalStmt.getParentName(),violation);
+end	
+
+rule "Debug Statement in Expression Statement For Triggers"
+when
+	apexTrigger:ApexTrigger();
+	rulesDetail:RulesDetail();
+	vioColl:ApexViolationCollection();
+	eval(apexTrigger.isSystemDebugStmtPresentInTrigger())
+then
+     vioColl.addToCollection(apexTrigger.getDirectoryPath(),apexTrigger.getParentName(),
+	 RuleEngineHelper.getViolationList(apexTrigger.getSystemDebugStmtTrigger(),
+	 rulesDetail.DEBUG_STATEMENT_RULENAME,rulesDetail.BASIC_RULESET,rulesDetail.DEBUG_STATEMENT_DESC,rulesDetail.PRIORITY_P3,apexTrigger));
+	
+	System.out.println("Debug Statement in Expression Statement");
+end  
+
+rule "Apex Class Sharing Context"
+when
+	apexClass:ApexClass()
+	vioColl:ApexViolationCollection();
+	rulesDetail:RulesDetail();
+	eval(apexClass.checkSharingIsUsed())
+then
+	Violation violation = new Violation(apexClass.getStartPosition(),rulesDetail.CLASS_SHARING_RULENAME,rulesDetail.DESING_RULESET,apexClass.getParentName(),rulesDetail.PRIORITY_P2,"",rulesDetail.CLASS_SHARING_DESC);
+	vioColl.addToCollection(apexClass.getDirectoryPath(),apexClass.getParentName(),violation);
+end

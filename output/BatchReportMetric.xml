@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="BatchReportMetric.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="4 KB">
+<class name="BatchReportMetric" sharing="with" implements="Database.batchable&lt;sobject&gt;,Database.stateful" isenum="false" lineno="1" modifiers="global">
+<classbody>
+<VariableDeclaration>
+<varDeclaration name="d0" scope="methodvar" location="BatchReportMetric" type="date" lineno="2" />
+<assignHeap name="d0" scope="methodvar" type="date" rhsType="variable" rhs="Utildemo.d00" lineno="2" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d1" scope="methodvar" location="BatchReportMetric" type="date" lineno="3" />
+<assignHeap name="d1" scope="methodvar" type="date" rhsType="variable" rhs="Utildemo.d01" lineno="3" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d2" scope="methodvar" location="BatchReportMetric" type="date" lineno="4" />
+<assignHeap name="d2" scope="methodvar" type="date" rhsType="variable" rhs="Utildemo.d02" lineno="4" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d3" scope="methodvar" location="BatchReportMetric" type="date" lineno="5" />
+<assignHeap name="d3" scope="methodvar" type="date" rhsType="variable" rhs="Utildemo.d03" lineno="5" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d4" scope="methodvar" location="BatchReportMetric" type="date" lineno="6" />
+<assignHeap name="d4" scope="methodvar" type="date" rhsType="variable" rhs="Utildemo.d04" lineno="6" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d5" scope="methodvar" location="BatchReportMetric" type="date" lineno="7" />
+<assignHeap name="d5" scope="methodvar" type="date" rhsType="variable" rhs="Utildemo.d05" lineno="7" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d6" scope="methodvar" location="BatchReportMetric" type="date" lineno="8" />
+<assignHeap name="d6" scope="methodvar" type="date" rhsType="variable" rhs="Utildemo.d06" lineno="8" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="months" scope="methodvar" location="BatchReportMetric" type="List&amp;lt;date&amp;gt;" lineno="10" />
+<assignHeap name="months" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;date&gt;{d0,d1,d2,d3,d4,d5,d6}" lineno="10" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="oneToThreeMonths" scope="methodvar" location="BatchReportMetric" type="integer" lineno="12" />
+<assignHeap name="oneToThreeMonths" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="0" lineno="12" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="fourToSixMonths" scope="methodvar" location="BatchReportMetric" type="integer" lineno="13" />
+<assignHeap name="fourToSixMonths" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="0" lineno="13" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="moreThanSixMonths" scope="methodvar" location="BatchReportMetric" type="integer" lineno="14" />
+<assignHeap name="moreThanSixMonths" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="0" lineno="14" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="val" scope="methodvar" location="BatchReportMetric" type="integer" lineno="15" />
+<assignHeap name="val" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="0" lineno="15" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="map&lt;date,integer&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp999" lineno="16" />
+<varDeclaration name="reportMonthlyCount" scope="methodvar" location="BatchReportMetric" type="map&amp;lt;date,integer&amp;gt;" lineno="16" />
+<assignHeap name="reportMonthlyCount" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newmap&lt;date,integer&gt;()" lineno="16" />
+</VariableDeclaration>
+<method returntype="Database.querylocator" name="start" parameters="BC:Database.batchablecontext" isTestMethod="false" lineno="18" throws="" modifiers="global">
+<body>
+<TryStatement lineno="19">
+<body>
+<curlybrace exists="true"/>
+<loop type="advancedfor" lineno="20">
+<Iterator type="date" name="d" on="months">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="reportMonthlyCount.put" methodtype="normalmethod" returntype="String" parameters="d,val" returnloc="#temp1000" lineno="21" />
+</body>
+</loop>
+</body>
+<CatchStatement type="Exception" name="e" lineno="23">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="Utildemo.ExceptionHandler" methodtype="normalmethod" returntype="String" parameters="e,&apos;BatchReportMetric&apos;,&apos;start&apos;" returnloc="#temp1001" lineno="24" />
+</body>
+</CatchStatement>
+</TryStatement>
+<ReturnBlock>
+<methodInvoke name="Database.getquerylocator" methodtype="normalmethod" returntype="String" parameters="&apos;select createddate, lastRunDate, lastModifiedDate from report&apos;" returnloc="#temp1002" lineno="26" />
+<return expression="Database.getquerylocator(&apos;select createddate, lastRunDate, lastModifiedDate from report&apos;)" expressiontype="@methodinvoke" lineno="26" />
+</ReturnBlock>
+<methodendline lineno="29"/>
+</body>
+</method>
+<method returntype="void" name="execute" parameters="BC:Database.batchablecontext,scope:List&amp;lt;Report&amp;gt;" isTestMethod="false" lineno="30" throws="" modifiers="global">
+<body>
+<TryStatement lineno="31">
+<body>
+<curlybrace exists="true"/>
+<loop type="advancedfor" lineno="32">
+<Iterator type="Report" name="res" on="scope">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="#temp1002.valueOf" methodtype="normalmethod" returntype="String" parameters="res.createddate" returnloc="#temp1003" lineno="33" />
+<methodInvoke name="#temp1002.chooseDate" methodtype="normalmethod" returntype="String" parameters="date.valueOf(res.createddate)" returnloc="#temp1004" lineno="33" />
+<varDeclaration name="d" scope="methodvar" location="BatchReportMetric" type="date" lineno="33" />
+<assignHeap name="d" scope="methodvar" type="date" rhsType="variable" rhs="Utildemo.chooseDate(date.valueOf(res.createddate))" lineno="33" />
+</VariableDeclaration>
+<if type="simpleif" lineno="34">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="d" RHStype="" RHS="null" Operator="!="/>
+</conditionalExpr>
+<ifcondition expression= "d!=null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="reportMonthlyCount.get" methodtype="normalmethod" returntype="String" parameters="d" returnloc="#temp1005" lineno="36" />
+<methodInvoke name="reportMonthlyCount.put" methodtype="normalmethod" returntype="String" parameters="d,reportMonthlyCount.get(d)+1" returnloc="#temp1006" lineno="36" />
+</body>
+</true>
+<false type="" lineno="38">
+<body>
+<curlybrace exists="true"/>
+</body>
+</false>
+</if>
+<if type="simpleif" lineno="42">
+<conditionalExpr>
+<methodInvoke name="d3.adddays" methodtype="normalmethod" returntype="String" parameters="1" returnloc="#temp1007" lineno="42" />
+<ConditionalStatement LHStype="" LHS="res.lastModifiedDate" RHStype="" RHS="d3.adddays(1)" Operator="&gt;"/>
+<conditionalExpr>
+<methodInvoke name="#temp1007.adddays" methodtype="normalmethod" returntype="String" parameters="1" returnloc="#temp1008" lineno="42" />
+<ConditionalStatement LHStype="" LHS="res.LastModifiedDate" RHStype="" RHS="d1.adddays(1)" Operator="&lt;="/>
+<ConditionalStatement LHStype="methodinvoke" LHS="#temp1007" RHStype="res.LastModifiedDate&lt;=d1.adddays(1)" RHS="res.LastModifiedDate&lt;=d1.adddays(1)" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "res.lastModifiedDate&gt;d3.adddays(1)&amp;&amp;res.LastModifiedDate&lt;=d1.adddays(1)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+</body>
+</true>
+<false type="" lineno="45">
+<body>
+<if type="elseif" lineno="45">
+<conditionalExpr>
+<methodInvoke name="d6.adddays" methodtype="normalmethod" returntype="String" parameters="1" returnloc="#temp1009" lineno="45" />
+<ConditionalStatement LHStype="" LHS="res.lastModifiedDate" RHStype="" RHS="d6.adddays(1)" Operator="&gt;"/>
+<conditionalExpr>
+<methodInvoke name="#temp1009.adddays" methodtype="normalmethod" returntype="String" parameters="1" returnloc="#temp1010" lineno="45" />
+<ConditionalStatement LHStype="" LHS="res.LastModifiedDate" RHStype="" RHS="d3.adddays(1)" Operator="&lt;="/>
+<ConditionalStatement LHStype="methodinvoke" LHS="#temp1009" RHStype="res.LastModifiedDate&lt;=d3.adddays(1)" RHS="res.LastModifiedDate&lt;=d3.adddays(1)" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "res.lastModifiedDate&gt;d6.adddays(1)&amp;&amp;res.LastModifiedDate&lt;=d3.adddays(1)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+</body>
+</true>
+<false type="" lineno="48">
+<body>
+<if type="elseif" lineno="48">
+<conditionalExpr>
+<methodInvoke name="d6.adddays" methodtype="normalmethod" returntype="String" parameters="1" returnloc="#temp1011" lineno="48" />
+<ConditionalStatement LHStype="" LHS="res.LastModifiedDate" RHStype="" RHS="d6.adddays(1)" Operator="&lt;"/>
+</conditionalExpr>
+<ifcondition expression= "res.LastModifiedDate&lt;d6.adddays(1)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+</body>
+</true>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+</body>
+</loop>
+</body>
+<CatchStatement type="exception" name="e" lineno="53">
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;Execute&gt;&gt;&gt;&gt;&apos;+e.getMessage()+&apos;@line NO--&gt;&apos;+e.getLineNumber()" key="debug" lineno="54"/>
+<methodInvoke name="Utildemo.ExceptionHandler" methodtype="normalmethod" returntype="String" parameters="e,&apos;BatchReportMetric&apos;,&apos;execute&apos;" returnloc="#temp1012" lineno="55" />
+</body>
+</CatchStatement>
+</TryStatement>
+<methodendline lineno="58"/>
+</body>
+</method>
+<method returntype="void" name="finish" parameters="BC:Database.batchablecontext" isTestMethod="false" lineno="59" throws="" modifiers="global">
+<body>
+<TryStatement lineno="60">
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="List&lt;AIES_ACCENTURE__AIESMetricData__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1013" lineno="61" />
+<varDeclaration name="obj" scope="methodvar" location="BatchReportMetric" type="AIES_ACCENTURE__AIESMetricData__c[]" lineno="61" />
+<assignHeap name="obj" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_ACCENTURE__AIESMetricData__c&gt;()" lineno="61" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1013.createMetricMaster" methodtype="normalmethod" returntype="String" parameters="&apos;CM_Report_Detail&apos;,&apos;Reports By Last Run date&apos;,&apos;Period&apos;,&apos;Count&apos;" returnloc="#temp1014" lineno="65" />
+<varDeclaration name="m0" scope="methodvar" location="BatchReportMetric" type="AIES_ACCENTURE__AIESMetricMaster__c" lineno="65" />
+<assignHeap name="m0" scope="methodvar" type="AIES_ACCENTURE__AIESMetricMaster__c" rhsType="methodinvoke" rhs="Utildemo.createMetricMaster(&apos;CM_Report_Detail&apos;,&apos;Reports By Last Run date&apos;,&apos;Period&apos;,&apos;Count&apos;)" lineno="65" />
+</VariableDeclaration>
+<methodInvoke name="Utildemo.createMetricData" methodtype="normalmethod" returntype="String" parameters="&apos;1 to 3 Months&apos;,oneToThreeMonths,m0,1" returnloc="#temp1015" lineno="67" />
+<methodInvoke name="obj.add" methodtype="normalmethod" returntype="String" parameters="Utildemo.createMetricData(&apos;1 to 3 Months&apos;,oneToThreeMonths,m0,1)" returnloc="#temp1016" lineno="67" />
+<methodInvoke name="Utildemo.createMetricData" methodtype="normalmethod" returntype="String" parameters="&apos;4 to 6 Months&apos;,fourToSixMonths,m0,2" returnloc="#temp1017" lineno="68" />
+<methodInvoke name="obj.add" methodtype="normalmethod" returntype="String" parameters="Utildemo.createMetricData(&apos;4 to 6 Months&apos;,fourToSixMonths,m0,2)" returnloc="#temp1018" lineno="68" />
+<methodInvoke name="Utildemo.createMetricData" methodtype="normalmethod" returntype="String" parameters="&apos;More Than 6 Months&apos;,moreThanSixMonths,m0,3" returnloc="#temp1019" lineno="69" />
+<methodInvoke name="obj.add" methodtype="normalmethod" returntype="String" parameters="Utildemo.createMetricData(&apos;More Than 6 Months&apos;,moreThanSixMonths,m0,3)" returnloc="#temp1020" lineno="69" />
+<VariableDeclaration>
+<methodInvoke name="Utildemo.createMetricMaster" methodtype="normalmethod" returntype="String" parameters="&apos;AEU_Report_created_by_month&apos;,&apos;Reports created by month&apos;,&apos;Month&apos;,&apos;# of Reports&apos;" returnloc="#temp1021" lineno="73" />
+<varDeclaration name="m2" scope="methodvar" location="BatchReportMetric" type="AIES_ACCENTURE__AIESMetricMaster__c" lineno="73" />
+<assignHeap name="m2" scope="methodvar" type="AIES_ACCENTURE__AIESMetricMaster__c" rhsType="methodinvoke" rhs="Utildemo.createMetricMaster(&apos;AEU_Report_created_by_month&apos;,&apos;Reports created by month&apos;,&apos;Month&apos;,&apos;# of Reports&apos;)" lineno="73" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="75">
+<Iterator type="date" name="d" on="months">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="Utildemo.monthName" methodtype="normalmethod" returntype="String" parameters="d" returnloc="#temp1022" lineno="76" />
+<methodInvoke name="#temp1022.get" methodtype="normalmethod" returntype="String" parameters="d" returnloc="#temp1023" lineno="76" />
+<methodInvoke name="Utildemo.createMetricData" methodtype="normalmethod" returntype="String" parameters="Utildemo.monthName(d),reportMonthlyCount.get(d),m2" returnloc="#temp1024" lineno="76" />
+<methodInvoke name="obj.add" methodtype="normalmethod" returntype="String" parameters="Utildemo.createMetricData(Utildemo.monthName(d),reportMonthlyCount.get(d),m2)" returnloc="#temp1025" lineno="76" />
+</body>
+</loop>
+<ExpressionStatement expression="&apos;Obj object details&apos;+obj" key="debug" lineno="80"/>
+<methodInvoke name="lib.dml.upsert" methodtype="" returntype="" parameters="obj" returnloc="" lineno="83" />
+</body>
+<CatchStatement type="exception" name="e" lineno="88">
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;finish&gt;&gt;&gt;&gt;&apos;+e.getMessage()+&apos;@line NO--&gt;&apos;+e.getLineNumber()" key="debug" lineno="90"/>
+<methodInvoke name="Utildemo.exceptionHandler" methodtype="normalmethod" returntype="String" parameters="e,&apos;BatchReportMetric&apos;,&apos;finish&apos;" returnloc="#temp1026" lineno="91" />
+</body>
+</CatchStatement>
+</TryStatement>
+<methodendline lineno="95"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[36, 39, 63, 85]" multi="[71-71]" empty="[9, 11, 17, 27, 28, 41, 57, 62, 64, 66, 70, 72, 74, 78, 79, 81, 82, 84, 86, 92, 94, 96, 97]" singlebrace="[22, 25, 29, 35, 37, 40, 44, 47, 50, 51, 52, 56, 58, 77, 87, 89, 93, 95, 98]"/>
+</stac>

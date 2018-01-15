@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="Test_PMO_Task_Assignment.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="5 KB">
+<class name="Test_PMO_Task_Assignment" sharing="default" implements="" isenum="false" lineno="15" modifiers="private">
+<classbody>
+<Annotation name="isTest" lineno ="14"/>
+<method returntype="void" name="testPMOTaskAssignment" parameters="" isTestMethod="true" lineno="27" throws="" modifiers="public,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="List&lt;PMO_TaskAssignment__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2244" lineno="31" />
+<varDeclaration name="taskAssignmentCustomSettingList" scope="methodvar" location="Test_PMO_Task_Assignment" type="List&amp;lt;PMO_TaskAssignment__c&amp;gt;" lineno="31" />
+<assignHeap name="taskAssignmentCustomSettingList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;PMO_TaskAssignment__c&gt;()" lineno="31" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;PMO_CreateDefect__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2245" lineno="34" />
+<varDeclaration name="createDefectCustomSettingList" scope="methodvar" location="Test_PMO_Task_Assignment" type="List&amp;lt;PMO_CreateDefect__c&amp;gt;" lineno="34" />
+<assignHeap name="createDefectCustomSettingList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;PMO_CreateDefect__c&gt;()" lineno="34" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;IDC_Task__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2246" lineno="37" />
+<varDeclaration name="taskList" scope="methodvar" location="Test_PMO_Task_Assignment" type="List&amp;lt;IDC_Task__c&amp;gt;" lineno="37" />
+<assignHeap name="taskList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;IDC_Task__c&gt;()" lineno="37" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;IDC_Task__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2247" lineno="40" />
+<varDeclaration name="updateTaskList" scope="methodvar" location="Test_PMO_Task_Assignment" type="List&amp;lt;IDC_Task__c&amp;gt;" lineno="40" />
+<assignHeap name="updateTaskList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;IDC_Task__c&gt;()" lineno="40" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Id from User where IsActive = true limit 1]" returnloc="#temp2248" lineno="44" />
+<varDeclaration name="user" scope="methodvar" location="Test_PMO_Task_Assignment" type="User" lineno="44" />
+<assignHeap name="user" scope="methodvar" type="User" rhsType="query" rhs="[select Id from User where IsActive = true limit 1]" lineno="44" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="userId" scope="methodvar" location="Test_PMO_Task_Assignment" type="string" lineno="45" />
+<assignHeap name="userId" scope="methodvar" type="string" rhsType="variable" rhs="user.id" lineno="45" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="PMO_TaskAssignment__c" methodtype="constructormethod" returntype="newobject" parameters="name=&apos;Analysis&apos;,Task__c=&apos;Analysis&apos;,Owner_Queue__c=userId" returnloc="#temp2249" lineno="48" />
+<varDeclaration name="taskAssignemntCustomSetting1" scope="methodvar" location="Test_PMO_Task_Assignment" type="PMO_TaskAssignment__c" lineno="48" />
+<assignHeap name="taskAssignemntCustomSetting1" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newPMO_TaskAssignment__c(name=&apos;Analysis&apos;,Task__c=&apos;Analysis&apos;,Owner_Queue__c=userId)" lineno="48" />
+</VariableDeclaration>
+<methodInvoke name="taskAssignmentCustomSettingList.add" methodtype="normalmethod" returntype="String" parameters="taskAssignemntCustomSetting1" returnloc="#temp2250" lineno="49" />
+<VariableDeclaration>
+<methodInvoke name="PMO_TaskAssignment__c" methodtype="constructormethod" returntype="newobject" parameters="name=&apos;Design&apos;,Task__c=&apos;Design&apos;,Preceding_Task__c=&apos;Analysis&apos;,Owner_Queue__c=userId" returnloc="#temp2251" lineno="50" />
+<varDeclaration name="taskAssignemntCustomSetting2" scope="methodvar" location="Test_PMO_Task_Assignment" type="PMO_TaskAssignment__c" lineno="50" />
+<assignHeap name="taskAssignemntCustomSetting2" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newPMO_TaskAssignment__c(name=&apos;Design&apos;,Task__c=&apos;Design&apos;,Preceding_Task__c=&apos;Analysis&apos;,Owner_Queue__c=userId)" lineno="50" />
+</VariableDeclaration>
+<methodInvoke name="taskAssignmentCustomSettingList.add" methodtype="normalmethod" returntype="String" parameters="taskAssignemntCustomSetting2" returnloc="#temp2252" lineno="51" />
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="taskAssignmentCustomSettingList" returnloc="" lineno="54" />
+<VariableDeclaration>
+<methodInvoke name="PMO_CreateDefect__c" methodtype="constructormethod" returntype="newobject" parameters="name=&apos;Analysis&apos;,Create_Defect__c=true" returnloc="#temp2253" lineno="57" />
+<varDeclaration name="createDefectCustomSetting1" scope="methodvar" location="Test_PMO_Task_Assignment" type="PMO_CreateDefect__c" lineno="57" />
+<assignHeap name="createDefectCustomSetting1" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newPMO_CreateDefect__c(name=&apos;Analysis&apos;,Create_Defect__c=true)" lineno="57" />
+</VariableDeclaration>
+<methodInvoke name="createDefectCustomSettingList.add" methodtype="normalmethod" returntype="String" parameters="createDefectCustomSetting1" returnloc="#temp2254" lineno="58" />
+<VariableDeclaration>
+<methodInvoke name="PMO_CreateDefect__c" methodtype="constructormethod" returntype="newobject" parameters="name=&apos;Design&apos;,Create_Defect__c=true" returnloc="#temp2255" lineno="59" />
+<varDeclaration name="createDefectCustomSetting2" scope="methodvar" location="Test_PMO_Task_Assignment" type="PMO_CreateDefect__c" lineno="59" />
+<assignHeap name="createDefectCustomSetting2" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newPMO_CreateDefect__c(name=&apos;Design&apos;,Create_Defect__c=true)" lineno="59" />
+</VariableDeclaration>
+<methodInvoke name="createDefectCustomSettingList.add" methodtype="normalmethod" returntype="String" parameters="createDefectCustomSetting2" returnloc="#temp2256" lineno="62" />
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="createDefectCustomSettingList" returnloc="" lineno="65" />
+<VariableDeclaration>
+<methodInvoke name="PMODataUnitHelper.insertReleaseForRequest" methodtype="normalmethod" returntype="String" parameters="&apos;Test Release&apos;+1" returnloc="#temp2257" lineno="68" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="#temp2257" returnloc="#temp2258" lineno="68" />
+<varDeclaration name="release" scope="methodvar" location="Test_PMO_Task_Assignment" type="Release__c" lineno="68" />
+<assignHeap name="release" scope="methodvar" type="Release__c" rhsType="value" rhs="PMODataUnitHelper.insertReleaseForRequest(&apos;Test Release&apos;+1)" lineno="68" />
+</VariableDeclaration>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="release" returnloc="" lineno="71" />
+<VariableDeclaration>
+<methodInvoke name="PMODataUnitHelper.insertRequest" methodtype="normalmethod" returntype="String" parameters="&apos;Test Request&apos;,release.Id" returnloc="#temp2259" lineno="74" />
+<varDeclaration name="request" scope="methodvar" location="Test_PMO_Task_Assignment" type="Request__c" lineno="74" />
+<assignHeap name="request" scope="methodvar" type="Request__c" rhsType="variable" rhs="PMODataUnitHelper.insertRequest(&apos;Test Request&apos;,release.Id)" lineno="74" />
+</VariableDeclaration>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="request" returnloc="" lineno="77" />
+<loop type="simplefor" lineno="81">
+<initialExpr>
+<VariableDeclaration>
+<varDeclaration name="count" scope="methodvar" location="Test_PMO_Task_Assignment" type="integer" lineno="81" />
+<assignHeap name="count" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="81" />
+</VariableDeclaration>
+</initialExpr>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="count" RHStype="" RHS="200" Operator="&lt;"/>
+</conditionalExpr>
+<incrementExpr>
+</incrementExpr>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="PMODataUnitHelper.createTask" methodtype="normalmethod" returntype="String" parameters="&apos;Analysis&apos;,userId,request.id" returnloc="#temp2260" lineno="83" />
+<varDeclaration name="task" scope="methodvar" location="Test_PMO_Task_Assignment" type="IDC_Task__c" lineno="83" />
+<assignHeap name="task" scope="methodvar" type="IDC_Task__c" rhsType="variable" rhs="PMODataUnitHelper.createTask(&apos;Analysis&apos;,userId,request.id)" lineno="83" />
+</VariableDeclaration>
+<methodInvoke name="taskList.add" methodtype="normalmethod" returntype="String" parameters="task" returnloc="#temp2261" lineno="84" />
+</body>
+</loop>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="taskList" returnloc="" lineno="88" />
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Id from IDC_Task__c where Id in:taskList]" returnloc="#temp2262" lineno="91" />
+<varDeclaration name="insertedTaskList" scope="methodvar" location="Test_PMO_Task_Assignment" type="List&amp;lt;IDC_Task__c&amp;gt;" lineno="91" />
+<assignHeap name="insertedTaskList" scope="methodvar" type="List&amp;lt;IDC_Task__c&amp;gt;" rhsType="query" rhs="[select Id from IDC_Task__c where Id in:taskList]" lineno="91" />
+</VariableDeclaration>
+<ExpressionStatement expression="insertedTaskList.size(),200,&apos;Number of task record returned is incorrect.The result has &apos;+insertedTaskList.size()+&apos; records-Expected 200&apos;" key="assertequals" lineno="94"/>
+<loop type="advancedfor" lineno="98">
+<Iterator type="IDC_Task__c" name="currentTask" on="insertedTaskList">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="PMODataUnitHelper.updateTask" methodtype="normalmethod" returntype="String" parameters="currentTask" returnloc="#temp2263" lineno="100" />
+<methodInvoke name="updateTaskList.add" methodtype="normalmethod" returntype="String" parameters="PMODataUnitHelper.updateTask(currentTask)" returnloc="#temp2264" lineno="100" />
+</body>
+</loop>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2265" lineno="104" />
+<methodInvoke name="lib.dml.update" methodtype="" returntype="" parameters="updateTaskList" returnloc="" lineno="107" />
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2266" lineno="110" />
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[ select Id, status__c from Defect__c where Related_Request__c =: request.id ]" returnloc="#temp2267" lineno="113" />
+<varDeclaration name="defectList" scope="methodvar" location="Test_PMO_Task_Assignment" type="List&amp;lt;Defect__c&amp;gt;" lineno="113" />
+<assignHeap name="defectList" scope="methodvar" type="List&amp;lt;Defect__c&amp;gt;" rhsType="query" rhs="[ select Id, status__c from Defect__c where Related_Request__c =: request.id ]" lineno="113" />
+</VariableDeclaration>
+<ExpressionStatement expression="defectList.size(),200,&apos;Number of defect record returned is incorrect.The result has &apos;+defectList.size()+&apos; records-Expected 200&apos;" key="assertequals" lineno="116"/>
+<loop type="advancedfor" lineno="120">
+<Iterator type="Defect__c" name="currentDefect" on="defectList">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="currentDefect.status__c,&apos;Open&apos;,&apos;Status of defect incorrect. The status is &apos;+currentDefect.status__c+&apos; - Expected Open&apos;" key="assertequals" lineno="122"/>
+</body>
+</loop>
+<methodendline lineno="125"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[30, 33, 36, 39, 42, 43, 47, 53, 56, 61, 64, 67, 70, 73, 76, 80, 87, 90, 93, 97, 103, 106, 109, 112, 115, 119]" multi="[1-13, 16-26]" empty="[3, 5, 7, 9, 11, 29, 32, 35, 38, 41, 46, 52, 55, 60, 63, 66, 69, 72, 75, 78, 79, 86, 89, 92, 96, 102, 105, 108, 111, 114, 118, 126]" singlebrace="[28, 82, 85, 99, 101, 121, 124, 125, 127]"/>
+</stac>

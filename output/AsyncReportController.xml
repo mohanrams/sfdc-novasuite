@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="AsyncReportController.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="12 KB">
+<class name="AsyncReportController" sharing="with" implements="" isenum="false" lineno="1" modifiers="public">
+<classbody>
+<VariableDeclaration>
+<varDeclaration name="mapPortfolio" scope="methodvar" location="AsyncReportController" type="Map&amp;lt;Id,AIES_ACCENTURE__Portfolio__c&amp;gt;" lineno="3" modifiers="public,transient" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="mapScan" scope="methodvar" location="AsyncReportController" type="Map&amp;lt;string,ScanDetail&amp;gt;" lineno="4" modifiers="public" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="mapReports" scope="methodvar" location="AsyncReportController" type="Map&amp;lt;string,Scan_Metric__c&amp;gt;" lineno="5" modifiers="public,transient" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="listMetricData" scope="methodvar" location="AsyncReportController" type="List&amp;lt;Scan_Metric_Data__c&amp;gt;" lineno="6" modifiers="public,transient" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="map&lt;integer,string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp142" lineno="9" />
+<varDeclaration name="monthName" scope="methodvar" location="AsyncReportController" type="map&amp;lt;integer,string&amp;gt;" lineno="9" modifiers="public" />
+<assignHeap name="monthName" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newmap&lt;integer,string&gt;()" lineno="9" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="lstReports" scope="methodvar" location="AsyncReportController" type="List&amp;lt;Report&amp;gt;" lineno="11" modifiers="public" />
+</VariableDeclaration>
+<varDeclaration name="reportId" scope="instancevar" location="AsyncReportController" type="Id" lineno="12" />
+<VariableProperties name="reportId">
+<getterMethod name="reportId" returntype="Id" modifiers="" lineno="12">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="reportId" modifiers="" lineno="12">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="selectedPortfolioId" scope="instancevar" location="AsyncReportController" type="Id" lineno="13" />
+<VariableProperties name="selectedPortfolioId">
+<getterMethod name="selectedPortfolioId" returntype="Id" modifiers="" lineno="13">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="selectedPortfolioId" modifiers="" lineno="13">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="instanceId" scope="instancevar" location="AsyncReportController" type="Id" lineno="14" />
+<VariableProperties name="instanceId">
+<getterMethod name="instanceId" returntype="Id" modifiers="" lineno="14">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="instanceId" modifiers="" lineno="14">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="reportIsRunning" scope="instancevar" location="AsyncReportController" type="boolean" lineno="15" />
+<VariableProperties name="reportIsRunning">
+<getterMethod name="reportIsRunning" returntype="boolean" modifiers="" lineno="15">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="reportIsRunning" modifiers="" lineno="15">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="reportCalculationIsRunning" scope="instancevar" location="AsyncReportController" type="string" lineno="16" />
+<VariableProperties name="reportCalculationIsRunning">
+<getterMethod name="reportCalculationIsRunning" returntype="string" modifiers="" lineno="16">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="reportCalculationIsRunning" modifiers="" lineno="16">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<VariableDeclaration>
+<varDeclaration name="reportResults" scope="methodvar" location="AsyncReportController" type="Reports.ReportResults" lineno="18" modifiers="private,transient" />
+</VariableDeclaration>
+<method returntype="" name="AsyncReportController" parameters="" isTestMethod="false" lineno="20" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<methodInvoke name="Map&lt;string,ScanDetail&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp143" lineno="25" />
+<assignHeap name="mapScan" scope="" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;string,ScanDetail&gt;()" lineno="25" />
+</AssignmentStatement>
+<methodInvoke name="monthName.put" methodtype="normalmethod" returntype="String" parameters="1,&apos;January&apos;" returnloc="#temp144" lineno="28" />
+<methodInvoke name="monthName.put" methodtype="normalmethod" returntype="String" parameters="2,&apos;February&apos;" returnloc="#temp145" lineno="29" />
+<methodInvoke name="monthName.put" methodtype="normalmethod" returntype="String" parameters="3,&apos;March&apos;" returnloc="#temp146" lineno="30" />
+<methodInvoke name="monthName.put" methodtype="normalmethod" returntype="String" parameters="4,&apos;April&apos;" returnloc="#temp147" lineno="31" />
+<methodInvoke name="monthName.put" methodtype="normalmethod" returntype="String" parameters="5,&apos;May&apos;" returnloc="#temp148" lineno="32" />
+<methodInvoke name="monthName.put" methodtype="normalmethod" returntype="String" parameters="6,&apos;June&apos;" returnloc="#temp149" lineno="33" />
+<methodInvoke name="monthName.put" methodtype="normalmethod" returntype="String" parameters="7,&apos;July&apos;" returnloc="#temp150" lineno="34" />
+<methodInvoke name="monthName.put" methodtype="normalmethod" returntype="String" parameters="8,&apos;August&apos;" returnloc="#temp151" lineno="35" />
+<methodInvoke name="monthName.put" methodtype="normalmethod" returntype="String" parameters="9,&apos;September&apos;" returnloc="#temp152" lineno="36" />
+<methodInvoke name="monthName.put" methodtype="normalmethod" returntype="String" parameters="10,&apos;October&apos;" returnloc="#temp153" lineno="37" />
+<methodInvoke name="monthName.put" methodtype="normalmethod" returntype="String" parameters="11,&apos;November&apos;" returnloc="#temp154" lineno="38" />
+<methodInvoke name="monthName.put" methodtype="normalmethod" returntype="String" parameters="12,&apos;December&apos;" returnloc="#temp155" lineno="39" />
+<methodendline lineno="40"/>
+</body>
+</method>
+<varDeclaration name="PortfolioList" scope="instancevar" location="AsyncReportController" type="List&amp;lt;SelectOption&amp;gt;" lineno="42" />
+<VariableProperties name="PortfolioList">
+<getterMethod name="PortfolioList" returntype="List&amp;lt;SelectOption&amp;gt;" modifiers="" lineno="42">
+<body>
+<if type="simpleif" lineno="46">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="mapPortfolio" RHStype="" RHS="null" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "mapPortfolio==null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="Map&lt;Id,AIES_ACCENTURE__Portfolio__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp156" lineno="47" />
+<assignHeap name="mapPortfolio" scope="" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;Id,AIES_ACCENTURE__Portfolio__c&gt;()" lineno="47" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="50">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="mapReports" RHStype="" RHS="null" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "mapReports==null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="Map&lt;string,Scan_Metric__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp157" lineno="51" />
+<assignHeap name="mapReports" scope="" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;string,Scan_Metric__c&gt;()" lineno="51" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select u.Name, u.Id from AIES_ACCENTURE__Portfolio__c u]" returnloc="#temp158" lineno="66" />
+<varDeclaration name="lstPortfolio" scope="methodvar" location="AsyncReportController" type="List&amp;lt;AIES_ACCENTURE__Portfolio__c&amp;gt;" lineno="66" />
+<assignHeap name="lstPortfolio" scope="methodvar" type="List&amp;lt;AIES_ACCENTURE__Portfolio__c&amp;gt;" rhsType="query" rhs="[select u.Name, u.Id from AIES_ACCENTURE__Portfolio__c u]" lineno="66" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="List&lt;SelectOption&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp159" lineno="67" />
+<assignHeap name="PortfolioList" scope="" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;SelectOption&gt;()" lineno="67" />
+</AssignmentStatement>
+<loop type="advancedfor" lineno="68">
+<Iterator type="AIES_ACCENTURE__Portfolio__c" name="p" on="lstPortfolio">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="SelectOption" methodtype="constructormethod" returntype="newobject" parameters="p.Id,p.Name" returnloc="#temp160" lineno="70" />
+<methodInvoke name="PortfolioList.add" methodtype="normalmethod" returntype="String" parameters="newSelectOption(p.Id,p.Name)" returnloc="#temp161" lineno="70" />
+<methodInvoke name="mapPortfolio.put" methodtype="normalmethod" returntype="String" parameters="p.id,p" returnloc="#temp162" lineno="71" />
+</body>
+</loop>
+<ReturnBlock>
+<return expression="PortfolioList" expressiontype="@alias" lineno="73" />
+</ReturnBlock>
+</body>
+</getterMethod>
+<setterMethod name="" modifiers="" lineno="73">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<method returntype="void" name="retrieveAvailableReports" parameters="" isTestMethod="false" lineno="78" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="list&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp163" lineno="80" />
+<varDeclaration name="reportNames" scope="methodvar" location="AsyncReportController" type="list&amp;lt;string&amp;gt;" lineno="80" />
+<assignHeap name="reportNames" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newlist&lt;string&gt;()" lineno="80" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Salesforce_Report_Key1_Column__c, Salesforce_Report_Value1_Column__c, Salesforce_Report_Reference__c, Salesforce_Report_Scan_Date__c, Salesforce_Report_Run_Scan__c, Salesforce_Report_Scan_Result__c, Salesforce_Report_Key2_Column__c, Salesforce_Report_Value2_Column__c, Salesforce_Report_Value3_Column__c, Salesforce_Report_Key3_Column__c, Salesforce_Report_Type__c, Id,name, Metric_Master__c from Scan_Metric__c where Salesforce_Report_Run_Scan__c = true]" returnloc="#temp164" lineno="82" />
+<varDeclaration name="reportListToScan" scope="methodvar" location="AsyncReportController" type="List&amp;lt;Scan_Metric__c&amp;gt;" lineno="82" />
+<assignHeap name="reportListToScan" scope="methodvar" type="List&amp;lt;Scan_Metric__c&amp;gt;" rhsType="query" rhs="[select Salesforce_Report_Key1_Column__c, Salesforce_Report_Value1_Column__c, Salesforce_Report_Reference__c, Salesforce_Report_Scan_Date__c, Salesforce_Report_Run_Scan__c, Salesforce_Report_Scan_Result__c, Salesforce_Report_Key2_Column__c, Salesforce_Report_Value2_Column__c, Salesforce_Report_Value3_Column__c, Salesforce_Report_Key3_Column__c, Salesforce_Report_Type__c, Id,name, Metric_Master__c from Scan_Metric__c where Salesforce_Report_Run_Scan__c = true]" lineno="82" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;reportListToScan@@@&apos;+reportListToScan" key="debug" lineno="83"/>
+<loop type="advancedfor" lineno="85">
+<Iterator type="Scan_Metric__c" name="mm" on="reportListToScan">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="mapReports.put" methodtype="normalmethod" returntype="String" parameters="mm.Salesforce_Report_Reference__c,mm" returnloc="#temp165" lineno="87" />
+</body>
+</loop>
+<loop type="advancedfor" lineno="90">
+<Iterator type="Scan_Metric__c" name="m" on="reportListToScan">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="reportNames.add" methodtype="normalmethod" returntype="String" parameters="m.Salesforce_Report_Reference__c" returnloc="#temp166" lineno="92" />
+</body>
+</loop>
+<AssignmentStatement>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Id, DeveloperName, Name from Report where DeveloperName in :reportNames]" returnloc="#temp167" lineno="94" />
+<assignHeap name="lstReports" scope="" type="" rhsType="soqlquery" rhs="[select Id, DeveloperName, Name from Report where DeveloperName in :reportNames]" lineno="94" />
+</AssignmentStatement>
+<methodendline lineno="95"/>
+</body>
+</method>
+<method returntype="void" name="generateDataFromSOQL" parameters="PFolio:string" isTestMethod="false" lineno="97" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="list&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp168" lineno="99" />
+<varDeclaration name="reportNames" scope="methodvar" location="AsyncReportController" type="list&amp;lt;string&amp;gt;" lineno="99" />
+<assignHeap name="reportNames" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newlist&lt;string&gt;()" lineno="99" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Id,name,SOQL_Query__c,SOQL_Key__c,SOQL_value__c,Query_Type__c,Store_Metric_in_AIESMetricData__c,Portfolio_ID__c,Portfolio_ID__r.name from Scan_Metric__c where SOQL_Check__c = true]" returnloc="#temp169" lineno="101" />
+<varDeclaration name="reportListToScan" scope="methodvar" location="AsyncReportController" type="List&amp;lt;Scan_Metric__c&amp;gt;" lineno="101" />
+<assignHeap name="reportListToScan" scope="methodvar" type="List&amp;lt;Scan_Metric__c&amp;gt;" rhsType="query" rhs="[select Id,name,SOQL_Query__c,SOQL_Key__c,SOQL_value__c,Query_Type__c,Store_Metric_in_AIESMetricData__c,Portfolio_ID__c,Portfolio_ID__r.name from Scan_Metric__c where SOQL_Check__c = true]" lineno="101" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;Scan_Metric_Data__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp170" lineno="102" />
+<varDeclaration name="metricdata" scope="methodvar" location="AsyncReportController" type="List&amp;lt;Scan_Metric_Data__c&amp;gt;" lineno="102" />
+<assignHeap name="metricdata" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;Scan_Metric_Data__c&gt;()" lineno="102" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="103">
+<Iterator type="Scan_Metric__c" name="mm" on="reportListToScan">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;Metric Name is &apos;+mm.name" key="debug" lineno="105"/>
+<VariableDeclaration>
+<varDeclaration name="fieldNames" scope="methodvar" location="AsyncReportController" type="string" lineno="106" />
+<assignHeap name="fieldNames" scope="methodvar" type="string" rhsType="variable" rhs="mm.SOQL_Key__c" lineno="106" />
+</VariableDeclaration>
+<if type="simpleif" lineno="107">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="fieldNames" RHStype="" RHS="null" Operator="!="/>
+</conditionalExpr>
+<ifcondition expression= "fieldNames!=null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="fieldNames.split" methodtype="normalmethod" returntype="String" parameters="&apos;,&apos;" returnloc="#temp171" lineno="108" />
+<varDeclaration name="keyNames" scope="methodvar" location="AsyncReportController" type="List&amp;lt;string&amp;gt;" lineno="108" />
+<assignHeap name="keyNames" scope="methodvar" type="List&amp;lt;string&amp;gt;" rhsType="methodinvoke" rhs="fieldNames.split(&apos;,&apos;)" lineno="108" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="sortorder" scope="methodvar" location="AsyncReportController" type="integer" lineno="109" />
+<assignHeap name="sortorder" scope="methodvar" type="integer" rhsType="value" rhs="1" lineno="109" />
+</VariableDeclaration>
+<if type="simpleif" lineno="110">
+<conditionalExpr>
+<methodInvoke name="" methodtype="normalmethod" returntype="String" parameters=".equalsignorecase(&apos;aggregate&apos;" returnloc="#temp172" lineno="110" />
+</conditionalExpr>
+<ifcondition expression= "mm.Query_Type__c.equalsignorecase(&apos;aggregate&apos;)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<loop type="advancedfor" lineno="111">
+<methodInvoke name="#temp172.Query" methodtype="normalmethod" returntype="String" parameters="mm.SOQL_Query__c" returnloc="#temp173" lineno="111" />
+<Iterator type="AggregateResult" name="ar" on="Database.Query(mm.SOQL_Query__c)">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<varDeclaration name="keys" scope="methodvar" location="AsyncReportController" type="string" lineno="112" />
+<assignHeap name="keys" scope="methodvar" type="string" rhsType="value" rhs="&apos;&apos;" lineno="112" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="Scan_Metric_Data__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp174" lineno="113" />
+<varDeclaration name="smc" scope="methodvar" location="AsyncReportController" type="Scan_Metric_Data__c" lineno="113" />
+<assignHeap name="smc" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newScan_Metric_Data__c()" lineno="113" />
+</VariableDeclaration>
+<loop type="simplefor" lineno="115">
+<initialExpr>
+<VariableDeclaration>
+<varDeclaration name="counter" scope="methodvar" location="AsyncReportController" type="integer" lineno="115" />
+<assignHeap name="counter" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="115" />
+</VariableDeclaration>
+</initialExpr>
+<conditionalExpr>
+<methodInvoke name="#temp174.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp175" lineno="115" />
+<ConditionalStatement LHStype="" LHS="counter" RHStype="" RHS="keyNames.size()" Operator="&lt;"/>
+</conditionalExpr>
+<incrementExpr>
+</incrementExpr>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="116">
+<conditionalExpr>
+<methodInvoke name="#temp176.equals" methodtype="normalmethod" returntype="String" parameters="&apos;mon&apos;" returnloc="#temp177" lineno="116" />
+</conditionalExpr>
+<ifcondition expression= "keyNames[counter].equals(&apos;mon&apos;)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="keyNames" methodtype="normalmethod" returntype="String" parameters="keyNames[counter]" returnloc="#temp179" lineno="117" />
+<methodInvoke name="ar#temp177ar.get" methodtype="normalmethod" returntype="String" parameters="(integer)ar.get(keyNames[counter])" returnloc="#temp180" lineno="117" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="&apos; &apos;" returnloc="#temp181" lineno="117" />
+<assignHeap name="keys" scope="" type="" rhsType="stradd" rhs="keys+monthName.get((integer)ar.get(keyNames[counter]))+&apos; &apos;" lineno="117" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="118">
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="keyNames" methodtype="normalmethod" returntype="String" parameters="keyNames[counter]" returnloc="#temp183" lineno="119" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="&apos; &apos;" returnloc="#temp184" lineno="119" />
+<assignHeap name="keys" scope="" type="" rhsType="stradd" rhs="keys+ar.get(keyNames[counter])+&apos; &apos;" lineno="119" />
+</AssignmentStatement>
+</body>
+</false>
+</if>
+</body>
+</loop>
+<AssignmentStatement>
+<assignHeap name="smc.Key__c" scope="" type="" rhsType="variable" rhs="keys" lineno="122" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="ar.get" methodtype="normalmethod" returntype="String" parameters="mm.SOQL_value__c" returnloc="#temp185" lineno="123" />
+<assignHeap name="smc.value__c" scope="" type="" rhsType="methodinvoke" rhs="(decimal)ar.get(mm.SOQL_value__c)" lineno="123" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="smc.Metric_Master__c" scope="" type="" rhsType="variable" rhs="mm.id" lineno="124" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="smc.Portfolio__c" scope="" type="" rhsType="variable" rhs="PFolio" lineno="125" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="keys" returnloc="#temp186" lineno="126" />
+<assignHeap name="smc.External_Id__c" scope="" type="" rhsType="stradd" rhs="PFolio+&apos; :: &apos;+mm.name+&apos; :: &apos;+keys" lineno="126" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="smc.Sort_Order__c" scope="" type="" rhsType="variable" rhs="sortOrder" lineno="127" />
+</AssignmentStatement>
+<methodInvoke name="metricdata.add" methodtype="normalmethod" returntype="String" parameters="smc" returnloc="#temp187" lineno="129" />
+</body>
+</loop>
+</body>
+</true>
+<false type="" lineno="132">
+<body>
+<curlybrace exists="true"/>
+<loop type="advancedfor" lineno="134">
+<methodInvoke name="Database.Query" methodtype="normalmethod" returntype="String" parameters="mm.SOQL_Query__c" returnloc="#temp188" lineno="134" />
+<Iterator type="sobject" name="sobj" on="Database.Query(mm.SOQL_Query__c)">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="Scan_Metric_Data__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp189" lineno="135" />
+<varDeclaration name="sm" scope="methodvar" location="AsyncReportController" type="Scan_Metric_Data__c" lineno="135" />
+<assignHeap name="sm" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newScan_Metric_Data__c()" lineno="135" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="sobj#temp189sobj.get" methodtype="normalmethod" returntype="String" parameters="mm.SOQL_Key__c" returnloc="#temp190" lineno="136" />
+<assignHeap name="sm.Key__c" scope="" type="" rhsType="methodinvoke" rhs="(string)sobj.get(mm.SOQL_Key__c)" lineno="136" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="sobj.get" methodtype="normalmethod" returntype="String" parameters="mm.SOQL_value__c" returnloc="#temp191" lineno="137" />
+<assignHeap name="sm.value__c" scope="" type="" rhsType="methodinvoke" rhs="(decimal)sobj.get(mm.SOQL_value__c)" lineno="137" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="sm.Metric_Master__c" scope="" type="" rhsType="variable" rhs="mm.id" lineno="138" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="sm.Portfolio__c" scope="" type="" rhsType="variable" rhs="PFolio" lineno="139" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="sobj.get" methodtype="normalmethod" returntype="String" parameters="mm.SOQL_Key__c" returnloc="#temp192" lineno="140" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="#temp192" returnloc="#temp193" lineno="140" />
+<assignHeap name="sm.External_Id__c" scope="" type="" rhsType="stradd" rhs="PFolio+&apos; :: &apos;+mm.name+&apos; :: &apos;+sobj.get(mm.SOQL_Key__c)" lineno="140" />
+</AssignmentStatement>
+<methodInvoke name="metricdata.add" methodtype="normalmethod" returntype="String" parameters="sm" returnloc="#temp194" lineno="141" />
+</body>
+</loop>
+</body>
+</false>
+</if>
+</body>
+</true>
+</if>
+</body>
+</loop>
+<methodInvoke name="lib.dml.upsert" methodtype="" returntype="" parameters="metricdata" returnloc="" lineno="147" />
+<methodendline lineno="148"/>
+</body>
+</method>
+<method returntype="PageReference" name="runReport" parameters="" isTestMethod="false" lineno="150" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<assignHeap name="reportIsRunning" scope="" type="" rhsType="value" rhs="true" lineno="151" />
+</AssignmentStatement>
+<methodInvoke name="retrieveAvailableReports" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp195" lineno="152" />
+<VariableDeclaration>
+<varDeclaration name="successMsg" scope="methodvar" location="AsyncReportController" type="ApexPages.Message" lineno="153" />
+<assignHeap name="successMsg" scope="methodvar" type="ApexPages.Message" rhsType="value" rhs="null" lineno="153" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="155">
+<Iterator type="Report" name="r" on="lstReports">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="" methodtype="normalmethod" returntype="String" parameters=".runAsyncReport(r.id,false" returnloc="#temp196" lineno="157" />
+<varDeclaration name="reportInstance" scope="methodvar" location="AsyncReportController" type="Reports.ReportInstance" lineno="157" />
+<assignHeap name="reportInstance" scope="methodvar" type="Reports.ReportInstance" rhsType="value" rhs="Reports.ReportManager.runAsyncReport(r.id,false)" lineno="157" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="reportInstance#temp196reportInstance.getId" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp197" lineno="158" />
+<assignHeap name="instanceId" scope="" type="" rhsType="methodinvoke" rhs="reportInstance.getId()" lineno="158" />
+</AssignmentStatement>
+<VariableDeclaration>
+<methodInvoke name="ScanDetail" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp198" lineno="160" />
+<varDeclaration name="s" scope="methodvar" location="AsyncReportController" type="ScanDetail" lineno="160" />
+<assignHeap name="s" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newScanDetail()" lineno="160" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="s.InstanceId" scope="" type="" rhsType="methodinvoke" rhs="instanceId" lineno="161" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="s.ReportName" scope="" type="" rhsType="variable" rhs="r.Name" lineno="162" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="mapPortfolio.get" methodtype="normalmethod" returntype="String" parameters="selectedPortfolioId" returnloc="#temp199" lineno="163" />
+<assignHeap name="s.Portfolio" scope="" type="" rhsType="methodinvoke" rhs="mapPortfolio.get(selectedPortfolioId)" lineno="163" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="mapReports.get" methodtype="normalmethod" returntype="String" parameters="r.DeveloperName" returnloc="#temp200" lineno="164" />
+<assignHeap name="s.MetricMaster" scope="" type="" rhsType="methodinvoke" rhs="mapReports.get(r.DeveloperName)" lineno="164" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="datetime.now" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp201" lineno="165" />
+<assignHeap name="s.StartTime" scope="" type="" rhsType="methodinvoke" rhs="datetime.now()" lineno="165" />
+</AssignmentStatement>
+<methodInvoke name="mapScan.put" methodtype="normalmethod" returntype="String" parameters="instanceId,s" returnloc="#temp202" lineno="167" />
+</body>
+</loop>
+<ReturnBlock>
+<return expression="null" expressiontype="@value" lineno="170" />
+</ReturnBlock>
+<methodendline lineno="171"/>
+</body>
+</method>
+<method returntype="PageReference" name="checkForReportResults" parameters="" isTestMethod="false" lineno="173" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<varDeclaration name="localreportIsRunning" scope="methodvar" location="AsyncReportController" type="boolean" lineno="174" />
+<assignHeap name="localreportIsRunning" scope="methodvar" type="boolean" rhsType="value" rhs="false" lineno="174" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="175">
+<methodInvoke name="mapScan.values" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp203" lineno="175" />
+<Iterator type="ScanDetail" name="s" on="mapScan.values()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="" methodtype="normalmethod" returntype="String" parameters=".getReportInstance(s.instanceId" returnloc="#temp204" lineno="177" />
+<varDeclaration name="reportInstance" scope="methodvar" location="AsyncReportController" type="Reports.ReportInstance" lineno="177" />
+<assignHeap name="reportInstance" scope="methodvar" type="Reports.ReportInstance" rhsType="variable" rhs="Reports.ReportManager.getReportInstance(s.instanceId)" lineno="177" />
+</VariableDeclaration>
+<methodInvoke name="processInstance" methodtype="normalmethod" returntype="String" parameters="reportInstance,s" returnloc="#temp205" lineno="178" />
+<if type="simpleif" lineno="180">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.ReportStatus" RHStype="" RHS="&apos;Running&apos;" Operator="=="/>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.ReportStatus" RHStype="" RHS="&apos;New&apos;" Operator="=="/>
+<ConditionalStatement LHStype="value" LHS="&apos;New&apos;" RHStype="s.ReportStatus==&apos;New&apos;" RHS="s.ReportStatus==&apos;New&apos;" Operator="OR"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "s.ReportStatus==&apos;Running&apos;||s.ReportStatus==&apos;New&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="localreportIsRunning" scope="" type="" rhsType="value" rhs="true" lineno="182" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+</body>
+</loop>
+<AssignmentStatement>
+<assignHeap name="reportIsRunning" scope="" type="" rhsType="variable" rhs="localReportIsRunning" lineno="187" />
+</AssignmentStatement>
+<ReturnBlock>
+<return expression="null" expressiontype="@value" lineno="189" />
+</ReturnBlock>
+<methodendline lineno="190"/>
+</body>
+</method>
+<method returntype="void" name="processInstance" parameters="reportInstance:Reports.ReportInstance,s:ScanDetail" isTestMethod="false" lineno="192" throws="" modifiers="private">
+<body>
+<VariableDeclaration>
+<methodInvoke name="Map&lt;string,Scan_Metric_Data__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp206" lineno="193" />
+<varDeclaration name="mapMetricData" scope="methodvar" location="AsyncReportController" type="Map&amp;lt;string,Scan_Metric_Data__c&amp;gt;" lineno="193" />
+<assignHeap name="mapMetricData" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;string,Scan_Metric_Data__c&gt;()" lineno="193" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="Map&lt;id,Scan_Metric__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp207" lineno="194" />
+<varDeclaration name="mapMetricMaster" scope="methodvar" location="AsyncReportController" type="Map&amp;lt;id,Scan_Metric__c&amp;gt;" lineno="194" />
+<assignHeap name="mapMetricMaster" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;id,Scan_Metric__c&gt;()" lineno="194" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp207.getStatus" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp208" lineno="195" />
+<conditionalExpr>
+<methodInvoke name="#temp208.getStatus" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp209" lineno="195" />
+<ConditionalStatement LHStype="methodinvoke" LHS="&apos;New&apos;" RHStype="reportInstance.getStatus()==&apos;New&apos;" RHS="reportInstance.getStatus()==&apos;New&apos;" Operator="OR"/>
+</conditionalExpr>
+<varDeclaration name="localreportIsRunning" scope="methodvar" location="AsyncReportController" type="boolean" lineno="195" />
+<assignHeap name="localreportIsRunning" scope="methodvar" type="boolean" rhsType="methodinvoke" rhs="reportInstance.getStatus()==&apos;Running&apos;||reportInstance.getStatus()==&apos;New&apos;" lineno="195" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="reportInstance#temp209reportInstance.getStatus" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp210" lineno="196" />
+<assignHeap name="s.ReportStatus" scope="" type="" rhsType="methodinvoke" rhs="reportInstance.getStatus()" lineno="196" />
+</AssignmentStatement>
+<if type="simpleif" lineno="204">
+<conditionalExpr>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.UpsertStatus" RHStype="" RHS="null" Operator="=="/>
+<ConditionalStatement LHStype="value" LHS="null" RHStype="(s.UpsertStatus==null)" RHS="(s.UpsertStatus==null)" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "(!localreportIsRunning)&amp;&amp;(s.UpsertStatus==null)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="reportInstance.getReportResults" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp211" lineno="205" />
+<assignHeap name="reportResults" scope="" type="" rhsType="methodinvoke" rhs="reportInstance.getReportResults()" lineno="205" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="s.Results" scope="" type="" rhsType="variable" rhs="reportResults" lineno="206" />
+</AssignmentStatement>
+<VariableDeclaration>
+<varDeclaration name="metricMaster" scope="methodvar" location="AsyncReportController" type="Scan_Metric__c" lineno="207" />
+<assignHeap name="metricMaster" scope="methodvar" type="Scan_Metric__c" rhsType="variable" rhs="s.MetricMaster" lineno="207" />
+</VariableDeclaration>
+<TryStatement lineno="208">
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="ReportScannerUtility.InsertReportData" methodtype="normalmethod" returntype="String" parameters="s.Results,s.MetricMaster,s.PortFolio" returnloc="#temp212" lineno="210" />
+<varDeclaration name="reportScanResult" scope="methodvar" location="AsyncReportController" type="List&amp;lt;Scan_Metric_Data__c&amp;gt;" lineno="210" />
+<assignHeap name="reportScanResult" scope="methodvar" type="List&amp;lt;Scan_Metric_Data__c&amp;gt;" rhsType="variable" rhs="ReportScannerUtility.InsertReportData(s.Results,s.MetricMaster,s.PortFolio)" lineno="210" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="211">
+<Iterator type="Scan_Metric_Data__c" name="currentMetricData" on="reportScanResult">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="mapMetricData.put" methodtype="normalmethod" returntype="String" parameters="currentMetricData.External_Id__c,currentMetricData" returnloc="#temp213" lineno="213" />
+</body>
+</loop>
+<AssignmentStatement>
+<methodInvoke name="system.now" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp214" lineno="215" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="&apos; Success&apos;" returnloc="#temp215" lineno="215" />
+<assignHeap name="metricMaster.Salesforce_Report_Scan_Result__c" scope="" type="" rhsType="stradd" rhs="system.now()+&apos; Success&apos;" lineno="215" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="s.UpsertStatus" scope="" type="" rhsType="value" rhs="&apos;Success&apos;" lineno="216" />
+</AssignmentStatement>
+</body>
+<CatchStatement type="exception" name="e" lineno="220">
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="system.now" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp216" lineno="222" />
+<methodInvoke name="#temp216.getStackTraceString" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp217" lineno="222" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="#temp217" returnloc="#temp218" lineno="222" />
+<assignHeap name="metricMaster.Salesforce_Report_Scan_Result__c" scope="" type="" rhsType="stradd" rhs="system.now()+&apos; error :: &apos;+e+&apos; :: &apos;+e.getStackTraceString()" lineno="222" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="s.UpsertStatus" scope="" type="" rhsType="value" rhs="&apos;Failure&apos;" lineno="223" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="s.DebugLog" scope="" type="" rhsType="variable" rhs="metricMaster.Salesforce_Report_Scan_Result__c" lineno="224" />
+</AssignmentStatement>
+</body>
+</CatchStatement>
+</TryStatement>
+<AssignmentStatement>
+<methodInvoke name="system.now" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp219" lineno="226" />
+<assignHeap name="metricMaster.Salesforce_Report_Scan_Date__c" scope="" type="" rhsType="methodinvoke" rhs="system.now()" lineno="226" />
+</AssignmentStatement>
+<methodInvoke name="mapMetricMaster.put" methodtype="normalmethod" returntype="String" parameters="metricMaster.id,metricMaster" returnloc="#temp220" lineno="228" />
+<methodInvoke name="SaveData" methodtype="normalmethod" returntype="String" parameters="mapMetricData,mapMetricMaster" returnloc="#temp221" lineno="229" />
+<AssignmentStatement>
+<methodInvoke name="datetime.now" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp222" lineno="230" />
+<assignHeap name="s.EndTime" scope="" type="" rhsType="methodinvoke" rhs="datetime.now()" lineno="230" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+<methodendline lineno="233"/>
+</body>
+</method>
+<method returntype="void" name="SaveData" parameters="mapMetricData:Map&amp;lt;string,Scan_Metric_Data__c&amp;gt;,mapMetricMaster:Map&amp;lt;id,Scan_Metric__c&amp;gt;" isTestMethod="false" lineno="235" throws="" modifiers="private">
+<body>
+<methodInvoke name="mapMetricData.values" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp223" lineno="237" />
+<methodInvoke name="lib.dml.upsert" methodtype="" returntype="" parameters="mapMetricData.values()" returnloc="" lineno="237" />
+<methodInvoke name="mapMetricMaster.values" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp224" lineno="238" />
+<methodInvoke name="lib.dml.update" methodtype="" returntype="" parameters="mapMetricMaster.values()" returnloc="" lineno="238" />
+<methodendline lineno="240"/>
+</body>
+</method>
+<method returntype="Reports.ReportResults" name="getReportResults" parameters="" isTestMethod="false" lineno="242" throws="" modifiers="public">
+<body>
+<ReturnBlock>
+<return expression="reportResults" expressiontype="@alias" lineno="243" />
+</ReturnBlock>
+<methodendline lineno="244"/>
+</body>
+</method>
+<method returntype="List&amp;lt;ScanDetail&amp;gt;" name="getScanDetailStatus" parameters="" isTestMethod="false" lineno="245" throws="" modifiers="public">
+<body>
+<ReturnBlock>
+<methodInvoke name="mapScan.values" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp225" lineno="246" />
+<return expression="mapScan.values()" expressiontype="@methodinvoke" lineno="246" />
+</ReturnBlock>
+<methodendline lineno="247"/>
+</body>
+</method>
+<class name="ScanDetail" sharing="default" implements="" isenum="false" lineno="249" modifiers="public">
+<classbody>
+<varDeclaration name="InstanceId" scope="instancevar" location="ScanDetail" type="string" lineno="251" />
+<VariableProperties name="InstanceId">
+<getterMethod name="InstanceId" returntype="string" modifiers="" lineno="251">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="InstanceId" modifiers="" lineno="251">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="ReportName" scope="instancevar" location="ScanDetail" type="string" lineno="252" />
+<VariableProperties name="ReportName">
+<getterMethod name="ReportName" returntype="string" modifiers="" lineno="252">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="ReportName" modifiers="" lineno="252">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="Results" scope="instancevar" location="ScanDetail" type="Reports.reportResults" lineno="253" />
+<VariableProperties name="Results">
+<getterMethod name="Results" returntype="Reports.reportResults" modifiers="" lineno="253">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="Results" modifiers="" lineno="253">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="MetricMaster" scope="instancevar" location="ScanDetail" type="Scan_Metric__c" lineno="254" />
+<VariableProperties name="MetricMaster">
+<getterMethod name="MetricMaster" returntype="Scan_Metric__c" modifiers="" lineno="254">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="MetricMaster" modifiers="" lineno="254">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="Portfolio" scope="instancevar" location="ScanDetail" type="AIES_ACCENTURE__Portfolio__c" lineno="255" />
+<VariableProperties name="Portfolio">
+<getterMethod name="Portfolio" returntype="AIES_ACCENTURE__Portfolio__c" modifiers="" lineno="255">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="Portfolio" modifiers="" lineno="255">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="ReportStatus" scope="instancevar" location="ScanDetail" type="string" lineno="256" />
+<VariableProperties name="ReportStatus">
+<getterMethod name="ReportStatus" returntype="string" modifiers="" lineno="256">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="ReportStatus" modifiers="" lineno="256">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="UpsertStatus" scope="instancevar" location="ScanDetail" type="string" lineno="257" />
+<VariableProperties name="UpsertStatus">
+<getterMethod name="UpsertStatus" returntype="string" modifiers="" lineno="257">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="UpsertStatus" modifiers="" lineno="257">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="StartTime" scope="instancevar" location="ScanDetail" type="datetime" lineno="258" />
+<VariableProperties name="StartTime">
+<getterMethod name="StartTime" returntype="datetime" modifiers="" lineno="258">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="StartTime" modifiers="" lineno="258">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="EndTime" scope="instancevar" location="ScanDetail" type="datetime" lineno="259" />
+<VariableProperties name="EndTime">
+<getterMethod name="EndTime" returntype="datetime" modifiers="" lineno="259">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="EndTime" modifiers="" lineno="259">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="DebugLog" scope="instancevar" location="ScanDetail" type="string" lineno="260" />
+<VariableProperties name="DebugLog">
+<getterMethod name="DebugLog" returntype="string" modifiers="" lineno="260">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="DebugLog" modifiers="" lineno="260">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+</classbody>
+</class>
+<method returntype="PageReference" name="runReportCalculation" parameters="" isTestMethod="false" lineno="265" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<varDeclaration name="successMsg" scope="methodvar" location="ScanDetail" type="ApexPages.Message" lineno="266" />
+<assignHeap name="successMsg" scope="methodvar" type="ApexPages.Message" rhsType="value" rhs="null" lineno="266" />
+</VariableDeclaration>
+<TryStatement lineno="267">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="generateDataFromSOQL" methodtype="normalmethod" returntype="String" parameters="selectedPortfolioId" returnloc="#temp226" lineno="270" />
+<AssignmentStatement>
+<methodInvoke name="ApexPages.Message" methodtype="constructormethod" returntype="newobject" parameters="ApexPages.Severity.CONFIRM,&apos;Running SOQL Query completed! \n&apos;" returnloc="#temp227" lineno="271" />
+<assignHeap name="successMsg" scope="" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.Message(ApexPages.Severity.CONFIRM,&apos;Running SOQL Query completed! \n&apos;)" lineno="271" />
+</AssignmentStatement>
+<methodInvoke name="ApexPages.addMessage" methodtype="normalmethod" returntype="String" parameters="successMsg" returnloc="#temp228" lineno="272" />
+<VariableDeclaration>
+<methodInvoke name="ScanMetricCalculation" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp229" lineno="273" />
+<varDeclaration name="metricCalc" scope="methodvar" location="ScanDetail" type="ScanMetricCalculation" lineno="273" />
+<assignHeap name="metricCalc" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newScanMetricCalculation()" lineno="273" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp229.doProcess" methodtype="normalmethod" returntype="String" parameters="selectedPortfolioId" returnloc="#temp230" lineno="274" />
+<varDeclaration name="status" scope="methodvar" location="ScanDetail" type="boolean" lineno="274" />
+<assignHeap name="status" scope="methodvar" type="boolean" rhsType="variable" rhs="metricCalc.doProcess(selectedPortfolioId)" lineno="274" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="ApexPages.Message" methodtype="constructormethod" returntype="newobject" parameters="ApexPages.Severity.CONFIRM,&apos;Metric calculations are completed! \n&apos;" returnloc="#temp231" lineno="275" />
+<assignHeap name="successMsg" scope="" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.Message(ApexPages.Severity.CONFIRM,&apos;Metric calculations are completed! \n&apos;)" lineno="275" />
+</AssignmentStatement>
+<methodInvoke name="ApexPages.addMessage" methodtype="normalmethod" returntype="String" parameters="successMsg" returnloc="#temp232" lineno="276" />
+<VariableDeclaration>
+<methodInvoke name="postMetricDataFromStage" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp233" lineno="277" />
+<varDeclaration name="postData" scope="methodvar" location="ScanDetail" type="postMetricDataFromStage" lineno="277" />
+<assignHeap name="postData" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newpostMetricDataFromStage()" lineno="277" />
+</VariableDeclaration>
+<methodInvoke name="postData.copyMetricData" methodtype="normalmethod" returntype="String" parameters="selectedPortfolioId" returnloc="#temp234" lineno="278" />
+<AssignmentStatement>
+<methodInvoke name="ApexPages.Message" methodtype="constructormethod" returntype="newobject" parameters="ApexPages.Severity.CONFIRM,&apos;Published the calculations! \n&apos;" returnloc="#temp235" lineno="279" />
+<assignHeap name="successMsg" scope="" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.Message(ApexPages.Severity.CONFIRM,&apos;Published the calculations! \n&apos;)" lineno="279" />
+</AssignmentStatement>
+<methodInvoke name="ApexPages.addMessage" methodtype="normalmethod" returntype="String" parameters="successMsg" returnloc="#temp236" lineno="280" />
+</body>
+<CatchStatement type="Exception" name="e" lineno="281">
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;Aravind ---- &apos;+e" key="debug" lineno="282"/>
+<methodInvoke name="ApexPages.addMessages" methodtype="normalmethod" returntype="String" parameters="e" returnloc="#temp237" lineno="283" />
+</body>
+</CatchStatement>
+</TryStatement>
+<ReturnBlock>
+<return expression="null" expressiontype="@value" lineno="286" />
+</ReturnBlock>
+<methodendline lineno="287"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[7, 8, 23, 24, 26, 27, 54, 55, 56, 58, 59, 60, 62, 63, 64, 166, 227, 264, 269]" multi="[198-202]" empty="[2, 10, 17, 19, 21, 22, 41, 49, 53, 57, 61, 65, 77, 79, 81, 84, 89, 96, 98, 100, 114, 130, 133, 146, 149, 154, 159, 169, 172, 179, 184, 186, 188, 191, 197, 203, 217, 219, 231, 234, 239, 241, 248, 262, 263, 268, 285, 288]" singlebrace="[40, 43, 45, 48, 52, 69, 72, 74, 76, 86, 88, 91, 93, 95, 104, 120, 121, 131, 142, 143, 144, 145, 148, 156, 168, 171, 176, 181, 183, 185, 190, 199, 209, 212, 214, 218, 221, 225, 232, 233, 236, 240, 244, 247, 250, 261, 284, 287, 289]"/>
+</stac>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="PreReleaseChecklist_Test.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="226 bytes">
+<class name="PreReleaseChecklist_Test" sharing="default" implements="" isenum="false" lineno="2" modifiers="public">
+<classbody>
+<Annotation name="istest" lineno ="1"/>
+<method returntype="void" name="test_PreRelease" parameters="" isTestMethod="true" lineno="4" throws="" modifiers="public,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="PreReleaseChecklist" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1436" lineno="6" />
+<varDeclaration name="pr" scope="methodvar" location="PreReleaseChecklist_Test" type="PreReleaseChecklist" lineno="6" />
+<assignHeap name="pr" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newPreReleaseChecklist()" lineno="6" />
+</VariableDeclaration>
+<methodInvoke name="pr.generateTableData" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1437" lineno="7" />
+<methodInvoke name="pr.generateEXCEL" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1438" lineno="8" />
+<methodendline lineno="11"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[]" multi="[]" empty="[9, 10]" singlebrace="[3, 5, 11, 12]"/>
+</stac>

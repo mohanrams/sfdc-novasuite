@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="Test_updateReleaseLOE.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="6 KB">
+<class name="Test_updateReleaseLOE" sharing="default" implements="" isenum="false" lineno="17" modifiers="private">
+<classbody>
+<Annotation name="isTest" lineno ="16"/>
+<method returntype="void" name="testInsertRequest" parameters="" isTestMethod="true" lineno="32" throws="" modifiers="public,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="List&lt;Request__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2272" lineno="36" />
+<varDeclaration name="requestList" scope="methodvar" location="Test_updateReleaseLOE" type="List&amp;lt;Request__c&amp;gt;" lineno="36" />
+<assignHeap name="requestList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;Request__c&gt;()" lineno="36" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp2272.insertReleaseForRequest" methodtype="normalmethod" returntype="String" parameters="&apos;Test Release&apos;+1" returnloc="#temp2273" lineno="39" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="#temp2273" returnloc="#temp2274" lineno="39" />
+<varDeclaration name="release" scope="methodvar" location="Test_updateReleaseLOE" type="Release__c" lineno="39" />
+<assignHeap name="release" scope="methodvar" type="Release__c" rhsType="value" rhs="PMODataUnitHelper.insertReleaseForRequest(&apos;Test Release&apos;+1)" lineno="39" />
+</VariableDeclaration>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="release" returnloc="" lineno="42" />
+<loop type="simplefor" lineno="45">
+<initialExpr>
+<VariableDeclaration>
+<varDeclaration name="countRequest" scope="methodvar" location="Test_updateReleaseLOE" type="integer" lineno="45" />
+<assignHeap name="countRequest" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="45" />
+</VariableDeclaration>
+</initialExpr>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="countRequest" RHStype="" RHS="200" Operator="&lt;"/>
+</conditionalExpr>
+<incrementExpr>
+</incrementExpr>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="PMODataUnitHelper.insertRequest" methodtype="normalmethod" returntype="String" parameters="&apos;Test Request&apos;+countRequest,release.Id" returnloc="#temp2275" lineno="47" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="#temp2275" returnloc="#temp2276" lineno="47" />
+<varDeclaration name="currentRequest" scope="methodvar" location="Test_updateReleaseLOE" type="Request__c" lineno="47" />
+<assignHeap name="currentRequest" scope="methodvar" type="Request__c" rhsType="variable" rhs="PMODataUnitHelper.insertRequest(&apos;Test Request&apos;+countRequest,release.Id)" lineno="47" />
+</VariableDeclaration>
+<methodInvoke name="requestList.add" methodtype="normalmethod" returntype="String" parameters="currentRequest" returnloc="#temp2277" lineno="48" />
+</body>
+</loop>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2278" lineno="52" />
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="requestList" returnloc="" lineno="55" />
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2279" lineno="58" />
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select TotEst__c
+											from Request__c
+											where Id in: requestList]" returnloc="#temp2280" lineno="61" />
+<varDeclaration name="insertedRequest" scope="methodvar" location="Test_updateReleaseLOE" type="List&amp;lt;Request__c&amp;gt;" lineno="61" />
+<assignHeap name="insertedRequest" scope="methodvar" type="List&amp;lt;Request__c&amp;gt;" rhsType="query" rhs="[select TotEst__c
+											from Request__c
+											where Id in: requestList]" lineno="61" />
+</VariableDeclaration>
+<ExpressionStatement expression="requestList.size(),200,&apos;Number of request record returned is incorrect.The result has &apos;+requestList.size()+&apos; records-Expected 200&apos;" key="assertequals" lineno="66"/>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Total_Estimate__c
+									  from Release__c
+									  where Id =: release.id]" returnloc="#temp2281" lineno="70" />
+<varDeclaration name="insertedRelease" scope="methodvar" location="Test_updateReleaseLOE" type="Release__c" lineno="70" />
+<assignHeap name="insertedRelease" scope="methodvar" type="Release__c" rhsType="query" rhs="[select Total_Estimate__c
+									  from Release__c
+									  where Id =: release.id]" lineno="70" />
+</VariableDeclaration>
+<ExpressionStatement expression="insertedRelease.Total_Estimate__c,1400,&apos;Estimate total returned is incorrect.The total estimate is &apos;+insertedRelease.Total_Estimate__c+&apos; Total Estimate-Expected 1400&apos;" key="assertequals" lineno="75"/>
+<methodendline lineno="79"/>
+</body>
+</method>
+<method returntype="void" name="testUpdateRequest" parameters="" isTestMethod="true" lineno="94" throws="" modifiers="public,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="List&lt;Request__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2282" lineno="97" />
+<varDeclaration name="requestList" scope="methodvar" location="Test_updateReleaseLOE" type="List&amp;lt;Request__c&amp;gt;" lineno="97" />
+<assignHeap name="requestList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;Request__c&gt;()" lineno="97" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;Request__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2283" lineno="100" />
+<varDeclaration name="requestUpdateList" scope="methodvar" location="Test_updateReleaseLOE" type="List&amp;lt;Request__c&amp;gt;" lineno="100" />
+<assignHeap name="requestUpdateList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;Request__c&gt;()" lineno="100" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp2283.insertReleaseForRequest" methodtype="normalmethod" returntype="String" parameters="&apos;Test Release&apos;+1" returnloc="#temp2284" lineno="103" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="#temp2284" returnloc="#temp2285" lineno="103" />
+<varDeclaration name="release" scope="methodvar" location="Test_updateReleaseLOE" type="Release__c" lineno="103" />
+<assignHeap name="release" scope="methodvar" type="Release__c" rhsType="value" rhs="PMODataUnitHelper.insertReleaseForRequest(&apos;Test Release&apos;+1)" lineno="103" />
+</VariableDeclaration>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="release" returnloc="" lineno="106" />
+<loop type="simplefor" lineno="109">
+<initialExpr>
+<VariableDeclaration>
+<varDeclaration name="countRequest" scope="methodvar" location="Test_updateReleaseLOE" type="integer" lineno="109" />
+<assignHeap name="countRequest" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="109" />
+</VariableDeclaration>
+</initialExpr>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="countRequest" RHStype="" RHS="200" Operator="&lt;"/>
+</conditionalExpr>
+<incrementExpr>
+</incrementExpr>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="PMODataUnitHelper.insertRequest" methodtype="normalmethod" returntype="String" parameters="&apos;Test Request&apos;+countRequest,release.Id" returnloc="#temp2286" lineno="111" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="#temp2286" returnloc="#temp2287" lineno="111" />
+<varDeclaration name="currentRequest" scope="methodvar" location="Test_updateReleaseLOE" type="Request__c" lineno="111" />
+<assignHeap name="currentRequest" scope="methodvar" type="Request__c" rhsType="variable" rhs="PMODataUnitHelper.insertRequest(&apos;Test Request&apos;+countRequest,release.Id)" lineno="111" />
+</VariableDeclaration>
+<methodInvoke name="requestList.add" methodtype="normalmethod" returntype="String" parameters="currentRequest" returnloc="#temp2288" lineno="112" />
+</body>
+</loop>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="requestList" returnloc="" lineno="116" />
+<loop type="advancedfor" lineno="119">
+<Iterator type="Request__c" name="currentRequest" on="requestList">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="Request__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2289" lineno="121" />
+<varDeclaration name="requestUpdate" scope="methodvar" location="Test_updateReleaseLOE" type="Request__c" lineno="121" />
+<assignHeap name="requestUpdate" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newRequest__c()" lineno="121" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="PMODataUnitHelper#temp2289PMODataUnitHelper.updateRequest" methodtype="normalmethod" returntype="String" parameters="currentRequest" returnloc="#temp2290" lineno="122" />
+<assignHeap name="requestUpdate" scope="" type="" rhsType="methodinvoke" rhs="PMODataUnitHelper.updateRequest(currentRequest)" lineno="122" />
+</AssignmentStatement>
+<methodInvoke name="requestUpdateList.add" methodtype="normalmethod" returntype="String" parameters="requestUpdate" returnloc="#temp2291" lineno="123" />
+</body>
+</loop>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2292" lineno="127" />
+<methodInvoke name="lib.dml.update" methodtype="" returntype="" parameters="requestUpdateList" returnloc="" lineno="130" />
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2293" lineno="133" />
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select TotEst__c
+										   from Request__c
+										   where Id in: requestUpdateList]" returnloc="#temp2294" lineno="136" />
+<varDeclaration name="updatedRequest" scope="methodvar" location="Test_updateReleaseLOE" type="List&amp;lt;Request__c&amp;gt;" lineno="136" />
+<assignHeap name="updatedRequest" scope="methodvar" type="List&amp;lt;Request__c&amp;gt;" rhsType="query" rhs="[select TotEst__c
+										   from Request__c
+										   where Id in: requestUpdateList]" lineno="136" />
+</VariableDeclaration>
+<ExpressionStatement expression="requestList.size(),200,&apos;Number of request record returned is incorrect.The result has &apos;+requestList.size()+&apos; records-Expected 200&apos;" key="assertequals" lineno="141"/>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Total_Estimate__c
+									 from Release__c
+									 where Id =: release.id]" returnloc="#temp2295" lineno="145" />
+<varDeclaration name="updatedRelease" scope="methodvar" location="Test_updateReleaseLOE" type="Release__c" lineno="145" />
+<assignHeap name="updatedRelease" scope="methodvar" type="Release__c" rhsType="query" rhs="[select Total_Estimate__c
+									 from Release__c
+									 where Id =: release.id]" lineno="145" />
+</VariableDeclaration>
+<ExpressionStatement expression="updatedRelease.Total_Estimate__c,1600,&apos;Estimate total returned is incorrect.The total estimate is &apos;+updatedRelease.Total_Estimate__c+&apos; Total Estimate-Expected 1600&apos;" key="assertequals" lineno="150"/>
+<methodendline lineno="154"/>
+</body>
+</method>
+<method returntype="void" name="testDeleteRequest" parameters="" isTestMethod="true" lineno="169" throws="" modifiers="public,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="List&lt;Request__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2296" lineno="173" />
+<varDeclaration name="requestList" scope="methodvar" location="Test_updateReleaseLOE" type="List&amp;lt;Request__c&amp;gt;" lineno="173" />
+<assignHeap name="requestList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;Request__c&gt;()" lineno="173" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp2296.insertReleaseForRequest" methodtype="normalmethod" returntype="String" parameters="&apos;Test Release&apos;+1" returnloc="#temp2297" lineno="176" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="#temp2297" returnloc="#temp2298" lineno="176" />
+<varDeclaration name="release" scope="methodvar" location="Test_updateReleaseLOE" type="Release__c" lineno="176" />
+<assignHeap name="release" scope="methodvar" type="Release__c" rhsType="value" rhs="PMODataUnitHelper.insertReleaseForRequest(&apos;Test Release&apos;+1)" lineno="176" />
+</VariableDeclaration>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="release" returnloc="" lineno="179" />
+<loop type="simplefor" lineno="182">
+<initialExpr>
+<VariableDeclaration>
+<varDeclaration name="countRequest" scope="methodvar" location="Test_updateReleaseLOE" type="integer" lineno="182" />
+<assignHeap name="countRequest" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="182" />
+</VariableDeclaration>
+</initialExpr>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="countRequest" RHStype="" RHS="200" Operator="&lt;"/>
+</conditionalExpr>
+<incrementExpr>
+</incrementExpr>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="PMODataUnitHelper.insertRequest" methodtype="normalmethod" returntype="String" parameters="&apos;Test Request&apos;+countRequest,release.Id" returnloc="#temp2299" lineno="184" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="#temp2299" returnloc="#temp2300" lineno="184" />
+<varDeclaration name="currentRequest" scope="methodvar" location="Test_updateReleaseLOE" type="Request__c" lineno="184" />
+<assignHeap name="currentRequest" scope="methodvar" type="Request__c" rhsType="variable" rhs="PMODataUnitHelper.insertRequest(&apos;Test Request&apos;+countRequest,release.Id)" lineno="184" />
+</VariableDeclaration>
+<methodInvoke name="requestList.add" methodtype="normalmethod" returntype="String" parameters="currentRequest" returnloc="#temp2301" lineno="185" />
+</body>
+</loop>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="requestList" returnloc="" lineno="189" />
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select TotEst__c
+											  from Request__c
+											  where Id in: requestList
+											  limit 100]" returnloc="#temp2302" lineno="192" />
+<varDeclaration name="requestDeleteList" scope="methodvar" location="Test_updateReleaseLOE" type="List&amp;lt;Request__c&amp;gt;" lineno="192" />
+<assignHeap name="requestDeleteList" scope="methodvar" type="List&amp;lt;Request__c&amp;gt;" rhsType="query" rhs="[select TotEst__c
+											  from Request__c
+											  where Id in: requestList
+											  limit 100]" lineno="192" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2303" lineno="198" />
+<methodInvoke name="lib.dml.delete" methodtype="" returntype="" parameters="requestDeleteList" returnloc="" lineno="201" />
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2304" lineno="204" />
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Total_Estimate__c
+									 from Release__c
+									 where Id =: release.id]" returnloc="#temp2305" lineno="207" />
+<varDeclaration name="updatedRelease" scope="methodvar" location="Test_updateReleaseLOE" type="Release__c" lineno="207" />
+<assignHeap name="updatedRelease" scope="methodvar" type="Release__c" rhsType="query" rhs="[select Total_Estimate__c
+									 from Release__c
+									 where Id =: release.id]" lineno="207" />
+</VariableDeclaration>
+<ExpressionStatement expression="updatedRelease.Total_Estimate__c,700,&apos;Estimate total returned is incorrect.The total estimate is &apos;+updatedRelease.Total_Estimate__c+&apos; Total Estimate-Expected 700&apos;" key="assertequals" lineno="212"/>
+<methodendline lineno="215"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[35, 38, 41, 44, 51, 54, 57, 60, 65, 69, 74, 96, 99, 102, 105, 108, 115, 118, 126, 129, 132, 135, 140, 144, 149, 172, 175, 178, 181, 188, 191, 197, 200, 203, 206, 211]" multi="[1-15, 20-31, 82-93, 157-168]" empty="[3, 5, 7, 11, 13, 19, 34, 37, 40, 43, 50, 53, 56, 59, 64, 68, 73, 77, 78, 80, 81, 98, 101, 104, 107, 114, 117, 125, 128, 131, 134, 139, 143, 148, 152, 153, 155, 156, 171, 174, 177, 180, 187, 190, 196, 199, 202, 205, 210, 214, 216]" singlebrace="[18, 33, 46, 49, 79, 95, 110, 113, 120, 124, 154, 170, 183, 186, 215, 217]"/>
+</stac>

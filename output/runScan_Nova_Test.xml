@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="runScan_Nova_Test.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="3 KB">
+<class name="runScan_Nova_Test" sharing="default" implements="" isenum="false" lineno="10" modifiers="private">
+<classbody>
+<Annotation name="isTest" lineno ="9"/>
+<method returntype="void" name="testExtractReport_Scenario1" parameters="" isTestMethod="true" lineno="16" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1598" lineno="17" />
+<varDeclaration name="stdUser" scope="methodvar" location="runScan_Nova_Test" type="User" lineno="17" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="17" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="runScan" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1599" lineno="18" />
+<varDeclaration name="runScanTest" scope="methodvar" location="runScan_Nova_Test" type="runScan" lineno="18" />
+<assignHeap name="runScanTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newrunScan()" lineno="18" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1600" lineno="19" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.runScan123" returnloc="#temp1601" lineno="20" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="runScanTest.ExtractReport" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1602" lineno="22" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="runScan_Nova_Test" type="PageReference" lineno="22" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="runScanTest.ExtractReport()" lineno="22" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1603" lineno="23" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="24"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="26"/>
+</body>
+</method>
+<method returntype="void" name="testFindAggregatePosition_Scenario1" parameters="" isTestMethod="true" lineno="32" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1604" lineno="33" />
+<varDeclaration name="stdUser" scope="methodvar" location="runScan_Nova_Test" type="User" lineno="33" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="33" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="aggreagateColumnsTest" scope="methodvar" location="runScan_Nova_Test" type="string" lineno="34" />
+<assignHeap name="aggreagateColumnsTest" scope="methodvar" type="string" rhsType="value" rhs="&apos;testString&apos;" lineno="34" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="valueColumnTest" scope="methodvar" location="runScan_Nova_Test" type="string" lineno="36" />
+<assignHeap name="valueColumnTest" scope="methodvar" type="string" rhsType="value" rhs="&apos;testString&apos;" lineno="36" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="runScan" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1605" lineno="38" />
+<varDeclaration name="runScanTest" scope="methodvar" location="runScan_Nova_Test" type="runScan" lineno="38" />
+<assignHeap name="runScanTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newrunScan()" lineno="38" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1606" lineno="39" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.runScan123" returnloc="#temp1607" lineno="40" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="runScanTest.findAggregatePosition" methodtype="normalmethod" returntype="String" parameters="aggreagateColumnsTest,valueColumnTest" returnloc="#temp1608" lineno="42" />
+<varDeclaration name="integerTest" scope="methodvar" location="runScan_Nova_Test" type="integer" lineno="42" />
+<assignHeap name="integerTest" scope="methodvar" type="integer" rhsType="variable" rhs="runScanTest.findAggregatePosition(aggreagateColumnsTest,valueColumnTest)" lineno="42" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1609" lineno="43" />
+<ExpressionStatement expression="integerTest!=0" key="assert" lineno="44"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="46"/>
+</body>
+</method>
+<method returntype="void" name="testExtractDataForKey_Scenario1" parameters="" isTestMethod="true" lineno="52" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1610" lineno="53" />
+<varDeclaration name="stdUser" scope="methodvar" location="runScan_Nova_Test" type="User" lineno="53" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="53" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="valuePositionTest" scope="methodvar" location="runScan_Nova_Test" type="integer" lineno="54" />
+<assignHeap name="valuePositionTest" scope="methodvar" type="integer" rhsType="value" rhs="1" lineno="54" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="Reports.reportResults" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1611" lineno="56" />
+<varDeclaration name="resTest" scope="methodvar" location="runScan_Nova_Test" type="Reports.reportResults" lineno="56" />
+<assignHeap name="resTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newReports.reportResults()" lineno="56" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="AIES_ACCENTURE__AIESMetricMaster__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1612" lineno="57" />
+<varDeclaration name="repTest" scope="methodvar" location="runScan_Nova_Test" type="AIES_ACCENTURE__AIESMetricMaster__c" lineno="57" />
+<assignHeap name="repTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_ACCENTURE__AIESMetricMaster__c()" lineno="57" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="AIES_ACCENTURE__AIESMetricData__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1613" lineno="58" />
+<varDeclaration name="reportDataListTest1" scope="methodvar" location="runScan_Nova_Test" type="List&amp;lt;AIES_ACCENTURE__AIESMetricData__c&amp;gt;" lineno="58" />
+<assignHeap name="reportDataListTest1" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_ACCENTURE__AIESMetricData__c&gt;{newAIES_ACCENTURE__AIESMetricData__c()}" lineno="58" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="AIES_ACCENTURE__Portfolio__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1615" lineno="59" />
+<varDeclaration name="porTest" scope="methodvar" location="runScan_Nova_Test" type="AIES_ACCENTURE__Portfolio__c" lineno="59" />
+<assignHeap name="porTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_ACCENTURE__Portfolio__c()" lineno="59" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="Salesforce_Report_Key_ColumnTest" scope="methodvar" location="runScan_Nova_Test" type="string" lineno="61" />
+<assignHeap name="Salesforce_Report_Key_ColumnTest" scope="methodvar" type="string" rhsType="value" rhs="&apos;testString&apos;" lineno="61" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="ReportTypeTest" scope="methodvar" location="runScan_Nova_Test" type="string" lineno="63" />
+<assignHeap name="ReportTypeTest" scope="methodvar" type="string" rhsType="value" rhs="&apos;testString&apos;" lineno="63" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="runScan" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1616" lineno="65" />
+<varDeclaration name="runScanTest" scope="methodvar" location="runScan_Nova_Test" type="runScan" lineno="65" />
+<assignHeap name="runScanTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newrunScan()" lineno="65" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1617" lineno="66" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.runScan123" returnloc="#temp1618" lineno="67" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<methodInvoke name="runScanTest.extractDataForKey" methodtype="normalmethod" returntype="String" parameters="Salesforce_Report_Key_ColumnTest,valuePositionTest,resTest,repTest,reportDataListTest1,porTest,ReportTypeTest" returnloc="#temp1619" lineno="69" />
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1620" lineno="70" />
+<ExpressionStatement expression="true" key="assert" lineno="71"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="73"/>
+</body>
+</method>
+<method returntype="void" name="testInsertReportData_Scenario1" parameters="" isTestMethod="true" lineno="79" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1621" lineno="80" />
+<varDeclaration name="stdUser" scope="methodvar" location="runScan_Nova_Test" type="User" lineno="80" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="80" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="runScan" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1622" lineno="81" />
+<varDeclaration name="runScanTest" scope="methodvar" location="runScan_Nova_Test" type="runScan" lineno="81" />
+<assignHeap name="runScanTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newrunScan()" lineno="81" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1623" lineno="82" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.runScan123" returnloc="#temp1624" lineno="83" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<methodInvoke name="runScanTest.InsertReportData" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1625" lineno="85" />
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1626" lineno="86" />
+<ExpressionStatement expression="true" key="assert" lineno="87"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="89"/>
+</body>
+</method>
+<method returntype="void" name="testCheckForReportResults_Scenario1" parameters="" isTestMethod="true" lineno="95" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1627" lineno="96" />
+<varDeclaration name="stdUser" scope="methodvar" location="runScan_Nova_Test" type="User" lineno="96" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="96" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="runScan" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1628" lineno="97" />
+<varDeclaration name="runScanTest" scope="methodvar" location="runScan_Nova_Test" type="runScan" lineno="97" />
+<assignHeap name="runScanTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newrunScan()" lineno="97" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1629" lineno="98" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.runScan123" returnloc="#temp1630" lineno="99" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="runScanTest.checkForReportResults" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1631" lineno="101" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="runScan_Nova_Test" type="PageReference" lineno="101" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="runScanTest.checkForReportResults()" lineno="101" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1632" lineno="102" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="103"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="105"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[]" multi="[1-8, 11-15, 27-31, 47-51, 74-78, 90-94]" empty="[35, 37, 55, 60, 62, 64]" singlebrace="[25, 26, 45, 46, 72, 73, 88, 89, 104, 105, 106]"/>
+</stac>

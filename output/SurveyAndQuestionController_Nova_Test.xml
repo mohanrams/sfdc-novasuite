@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="SurveyAndQuestionController_Nova_Test.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="12 KB">
+<class name="SurveyAndQuestionController_Nova_Test" sharing="default" implements="" isenum="false" lineno="10" modifiers="private">
+<classbody>
+<Annotation name="isTest" lineno ="9"/>
+<method returntype="void" name="testMakeNewQuestionLink_Scenario1" parameters="" isTestMethod="true" lineno="16" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2037" lineno="17" />
+<varDeclaration name="stdUser" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="User" lineno="17" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="17" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="ApexPages.StandardController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2038" lineno="18" />
+<varDeclaration name="stdTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="ApexPages.StandardController" lineno="18" />
+<assignHeap name="stdTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.StandardController()" lineno="18" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stdTest" returnloc="#temp2039" lineno="19" />
+<varDeclaration name="surveyAndQuestionControllerTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="SurveyAndQuestionController" lineno="19" />
+<assignHeap name="surveyAndQuestionControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stdTest)" lineno="19" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2040" lineno="20" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.SurveyPage" returnloc="#temp2041" lineno="21" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="surveyAndQuestionControllerTest.makeNewQuestionLink" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2042" lineno="23" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="PageReference" lineno="23" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="surveyAndQuestionControllerTest.makeNewQuestionLink()" lineno="23" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2043" lineno="24" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="25"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="27"/>
+</body>
+</method>
+<method returntype="void" name="testEditQuestion_Scenario1" parameters="" isTestMethod="true" lineno="33" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2044" lineno="34" />
+<varDeclaration name="stdUser" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="User" lineno="34" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="34" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="ApexPages.StandardController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2045" lineno="35" />
+<varDeclaration name="stdTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="ApexPages.StandardController" lineno="35" />
+<assignHeap name="stdTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.StandardController()" lineno="35" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stdTest" returnloc="#temp2046" lineno="36" />
+<varDeclaration name="surveyAndQuestionControllerTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="SurveyAndQuestionController" lineno="36" />
+<assignHeap name="surveyAndQuestionControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stdTest)" lineno="36" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2047" lineno="37" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.SurveyPage" returnloc="#temp2048" lineno="38" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="surveyAndQuestionControllerTest.editQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2049" lineno="40" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="PageReference" lineno="40" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="surveyAndQuestionControllerTest.editQuestion()" lineno="40" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2050" lineno="41" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="42"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="44"/>
+</body>
+</method>
+<method returntype="void" name="testAddQuestion_Scenario1" parameters="" isTestMethod="true" lineno="50" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2051" lineno="51" />
+<varDeclaration name="stdUser" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="User" lineno="51" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="51" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="ApexPages.StandardController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2052" lineno="52" />
+<varDeclaration name="stdTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="ApexPages.StandardController" lineno="52" />
+<assignHeap name="stdTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.StandardController()" lineno="52" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stdTest" returnloc="#temp2053" lineno="53" />
+<varDeclaration name="surveyAndQuestionControllerTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="SurveyAndQuestionController" lineno="53" />
+<assignHeap name="surveyAndQuestionControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stdTest)" lineno="53" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2054" lineno="54" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.SurveyPage" returnloc="#temp2055" lineno="55" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="surveyAndQuestionControllerTest.addQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2056" lineno="57" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="PageReference" lineno="57" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="surveyAndQuestionControllerTest.addQuestion()" lineno="57" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2057" lineno="58" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="59"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="61"/>
+</body>
+</method>
+<method returntype="void" name="testSetupQuestionFields_Scenario1" parameters="" isTestMethod="true" lineno="67" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2058" lineno="68" />
+<varDeclaration name="stdUser" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="User" lineno="68" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="68" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="ApexPages.StandardController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2059" lineno="69" />
+<varDeclaration name="stdTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="ApexPages.StandardController" lineno="69" />
+<assignHeap name="stdTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.StandardController()" lineno="69" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stdTest" returnloc="#temp2060" lineno="70" />
+<varDeclaration name="surveyAndQuestionControllerTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="SurveyAndQuestionController" lineno="70" />
+<assignHeap name="surveyAndQuestionControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stdTest)" lineno="70" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2061" lineno="71" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.SurveyPage" returnloc="#temp2062" lineno="72" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="surveyAndQuestionControllerTest.setupQuestionFields" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2063" lineno="74" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="PageReference" lineno="74" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="surveyAndQuestionControllerTest.setupQuestionFields()" lineno="74" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2064" lineno="75" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="76"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="78"/>
+</body>
+</method>
+<method returntype="void" name="testSaveAndNewQuestion_Scenario1" parameters="" isTestMethod="true" lineno="84" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2065" lineno="85" />
+<varDeclaration name="stdUser" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="User" lineno="85" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="85" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="ApexPages.StandardController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2066" lineno="86" />
+<varDeclaration name="stdTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="ApexPages.StandardController" lineno="86" />
+<assignHeap name="stdTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.StandardController()" lineno="86" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stdTest" returnloc="#temp2067" lineno="87" />
+<varDeclaration name="surveyAndQuestionControllerTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="SurveyAndQuestionController" lineno="87" />
+<assignHeap name="surveyAndQuestionControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stdTest)" lineno="87" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2068" lineno="88" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.SurveyPage" returnloc="#temp2069" lineno="89" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="surveyAndQuestionControllerTest.saveAndNewQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2070" lineno="91" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="PageReference" lineno="91" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="surveyAndQuestionControllerTest.saveAndNewQuestion()" lineno="91" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2071" lineno="92" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="93"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="95"/>
+</body>
+</method>
+<method returntype="void" name="testControllerSavQuestion_Scenario1" parameters="" isTestMethod="true" lineno="101" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2072" lineno="102" />
+<varDeclaration name="stdUser" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="User" lineno="102" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="102" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="ApexPages.StandardController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2073" lineno="103" />
+<varDeclaration name="stdTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="ApexPages.StandardController" lineno="103" />
+<assignHeap name="stdTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.StandardController()" lineno="103" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stdTest" returnloc="#temp2074" lineno="104" />
+<varDeclaration name="surveyAndQuestionControllerTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="SurveyAndQuestionController" lineno="104" />
+<assignHeap name="surveyAndQuestionControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stdTest)" lineno="104" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2075" lineno="105" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.SurveyPage" returnloc="#temp2076" lineno="106" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="surveyAndQuestionControllerTest.controllerSavQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2077" lineno="108" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="PageReference" lineno="108" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="surveyAndQuestionControllerTest.controllerSavQuestion()" lineno="108" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2078" lineno="109" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="110"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="112"/>
+</body>
+</method>
+<method returntype="void" name="testPreviewQuestion_Scenario1" parameters="" isTestMethod="true" lineno="118" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2079" lineno="119" />
+<varDeclaration name="stdUser" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="User" lineno="119" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="119" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="ApexPages.StandardController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2080" lineno="120" />
+<varDeclaration name="stdTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="ApexPages.StandardController" lineno="120" />
+<assignHeap name="stdTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.StandardController()" lineno="120" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stdTest" returnloc="#temp2081" lineno="121" />
+<varDeclaration name="surveyAndQuestionControllerTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="SurveyAndQuestionController" lineno="121" />
+<assignHeap name="surveyAndQuestionControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stdTest)" lineno="121" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2082" lineno="122" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.SurveyPage" returnloc="#temp2083" lineno="123" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="surveyAndQuestionControllerTest.previewQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2084" lineno="125" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="PageReference" lineno="125" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="surveyAndQuestionControllerTest.previewQuestion()" lineno="125" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2085" lineno="126" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="127"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="129"/>
+</body>
+</method>
+<method returntype="void" name="testSetupQuestionList_Scenario1" parameters="" isTestMethod="true" lineno="135" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2086" lineno="136" />
+<varDeclaration name="stdUser" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="User" lineno="136" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="136" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="ApexPages.StandardController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2087" lineno="137" />
+<varDeclaration name="stdTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="ApexPages.StandardController" lineno="137" />
+<assignHeap name="stdTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.StandardController()" lineno="137" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stdTest" returnloc="#temp2088" lineno="138" />
+<varDeclaration name="surveyAndQuestionControllerTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="SurveyAndQuestionController" lineno="138" />
+<assignHeap name="surveyAndQuestionControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stdTest)" lineno="138" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2089" lineno="139" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.SurveyPage" returnloc="#temp2090" lineno="140" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="surveyAndQuestionControllerTest.setupQuestionList" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2091" lineno="142" />
+<varDeclaration name="integerTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="integer" lineno="142" />
+<assignHeap name="integerTest" scope="methodvar" type="integer" rhsType="methodinvoke" rhs="surveyAndQuestionControllerTest.setupQuestionList()" lineno="142" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2092" lineno="143" />
+<ExpressionStatement expression="integerTest!=0" key="assert" lineno="144"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="146"/>
+</body>
+</method>
+<method returntype="void" name="testSetSurveyNameAndThankYou_Scenario1" parameters="" isTestMethod="true" lineno="152" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2093" lineno="153" />
+<varDeclaration name="stdUser" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="User" lineno="153" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="153" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="sIdTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="string" lineno="154" />
+<assignHeap name="sIdTest" scope="methodvar" type="string" rhsType="value" rhs="&apos;testString&apos;" lineno="154" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="ApexPages.StandardController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2094" lineno="156" />
+<varDeclaration name="stdTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="ApexPages.StandardController" lineno="156" />
+<assignHeap name="stdTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.StandardController()" lineno="156" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stdTest" returnloc="#temp2095" lineno="157" />
+<varDeclaration name="surveyAndQuestionControllerTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="SurveyAndQuestionController" lineno="157" />
+<assignHeap name="surveyAndQuestionControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stdTest)" lineno="157" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2096" lineno="158" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.SurveyPage" returnloc="#temp2097" lineno="159" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<methodInvoke name="surveyAndQuestionControllerTest.setSurveyNameAndThankYou" methodtype="normalmethod" returntype="String" parameters="sIdTest" returnloc="#temp2098" lineno="161" />
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2099" lineno="162" />
+<ExpressionStatement expression="true" key="assert" lineno="163"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="165"/>
+</body>
+</method>
+<method returntype="void" name="testUpdateSurveyName_Scenario1" parameters="" isTestMethod="true" lineno="171" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2100" lineno="172" />
+<varDeclaration name="stdUser" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="User" lineno="172" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="172" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="ApexPages.StandardController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2101" lineno="173" />
+<varDeclaration name="stdTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="ApexPages.StandardController" lineno="173" />
+<assignHeap name="stdTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.StandardController()" lineno="173" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stdTest" returnloc="#temp2102" lineno="174" />
+<varDeclaration name="surveyAndQuestionControllerTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="SurveyAndQuestionController" lineno="174" />
+<assignHeap name="surveyAndQuestionControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stdTest)" lineno="174" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2103" lineno="175" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.SurveyPage" returnloc="#temp2104" lineno="176" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="surveyAndQuestionControllerTest.updateSurveyName" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2105" lineno="178" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="PageReference" lineno="178" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="surveyAndQuestionControllerTest.updateSurveyName()" lineno="178" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2106" lineno="179" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="180"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="182"/>
+</body>
+</method>
+<method returntype="void" name="testUpdateSurveyThankYouAndLink_Scenario1" parameters="" isTestMethod="true" lineno="188" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2107" lineno="189" />
+<varDeclaration name="stdUser" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="User" lineno="189" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="189" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="ApexPages.StandardController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2108" lineno="190" />
+<varDeclaration name="stdTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="ApexPages.StandardController" lineno="190" />
+<assignHeap name="stdTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.StandardController()" lineno="190" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stdTest" returnloc="#temp2109" lineno="191" />
+<varDeclaration name="surveyAndQuestionControllerTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="SurveyAndQuestionController" lineno="191" />
+<assignHeap name="surveyAndQuestionControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stdTest)" lineno="191" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2110" lineno="192" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.SurveyPage" returnloc="#temp2111" lineno="193" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="surveyAndQuestionControllerTest.updateSurveyThankYouAndLink" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2112" lineno="195" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="PageReference" lineno="195" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="surveyAndQuestionControllerTest.updateSurveyThankYouAndLink()" lineno="195" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2113" lineno="196" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="197"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="199"/>
+</body>
+</method>
+<method returntype="void" name="testUpdateOrderList_Scenario1" parameters="" isTestMethod="true" lineno="205" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2114" lineno="206" />
+<varDeclaration name="stdUser" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="User" lineno="206" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="206" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="ApexPages.StandardController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2115" lineno="207" />
+<varDeclaration name="stdTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="ApexPages.StandardController" lineno="207" />
+<assignHeap name="stdTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.StandardController()" lineno="207" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stdTest" returnloc="#temp2116" lineno="208" />
+<varDeclaration name="surveyAndQuestionControllerTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="SurveyAndQuestionController" lineno="208" />
+<assignHeap name="surveyAndQuestionControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stdTest)" lineno="208" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2117" lineno="209" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.SurveyPage" returnloc="#temp2118" lineno="210" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="surveyAndQuestionControllerTest.updateOrderList" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2119" lineno="212" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="PageReference" lineno="212" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="surveyAndQuestionControllerTest.updateOrderList()" lineno="212" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2120" lineno="213" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="214"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="216"/>
+</body>
+</method>
+<method returntype="void" name="testRefreshQuestionList_Scenario1" parameters="" isTestMethod="true" lineno="222" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2121" lineno="223" />
+<varDeclaration name="stdUser" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="User" lineno="223" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="223" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="ApexPages.StandardController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2122" lineno="224" />
+<varDeclaration name="stdTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="ApexPages.StandardController" lineno="224" />
+<assignHeap name="stdTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.StandardController()" lineno="224" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stdTest" returnloc="#temp2123" lineno="225" />
+<varDeclaration name="surveyAndQuestionControllerTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="SurveyAndQuestionController" lineno="225" />
+<assignHeap name="surveyAndQuestionControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stdTest)" lineno="225" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2124" lineno="226" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.SurveyPage" returnloc="#temp2125" lineno="227" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="surveyAndQuestionControllerTest.refreshQuestionList" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2126" lineno="229" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="PageReference" lineno="229" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="surveyAndQuestionControllerTest.refreshQuestionList()" lineno="229" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2127" lineno="230" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="231"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="233"/>
+</body>
+</method>
+<method returntype="void" name="testResultPage_Scenario1" parameters="" isTestMethod="true" lineno="239" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2128" lineno="240" />
+<varDeclaration name="stdUser" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="User" lineno="240" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="240" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="ApexPages.StandardController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2129" lineno="241" />
+<varDeclaration name="stdTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="ApexPages.StandardController" lineno="241" />
+<assignHeap name="stdTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.StandardController()" lineno="241" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stdTest" returnloc="#temp2130" lineno="242" />
+<varDeclaration name="surveyAndQuestionControllerTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="SurveyAndQuestionController" lineno="242" />
+<assignHeap name="surveyAndQuestionControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stdTest)" lineno="242" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2131" lineno="243" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.SurveyPage" returnloc="#temp2132" lineno="244" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="surveyAndQuestionControllerTest.resultPage" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2133" lineno="246" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="PageReference" lineno="246" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="surveyAndQuestionControllerTest.resultPage()" lineno="246" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2134" lineno="247" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="248"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="250"/>
+</body>
+</method>
+<method returntype="void" name="testDeleteRefresh_Scenario1" parameters="" isTestMethod="true" lineno="256" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2135" lineno="257" />
+<varDeclaration name="stdUser" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="User" lineno="257" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="257" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="ApexPages.StandardController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2136" lineno="258" />
+<varDeclaration name="stdTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="ApexPages.StandardController" lineno="258" />
+<assignHeap name="stdTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.StandardController()" lineno="258" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stdTest" returnloc="#temp2137" lineno="259" />
+<varDeclaration name="surveyAndQuestionControllerTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="SurveyAndQuestionController" lineno="259" />
+<assignHeap name="surveyAndQuestionControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stdTest)" lineno="259" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2138" lineno="260" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.SurveyPage" returnloc="#temp2139" lineno="261" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="surveyAndQuestionControllerTest.deleteRefresh" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2140" lineno="263" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="PageReference" lineno="263" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="surveyAndQuestionControllerTest.deleteRefresh()" lineno="263" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2141" lineno="264" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="265"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="267"/>
+</body>
+</method>
+<method returntype="void" name="testGetResponses_Scenario1" parameters="" isTestMethod="true" lineno="273" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2142" lineno="274" />
+<varDeclaration name="stdUser" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="User" lineno="274" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="274" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="ApexPages.StandardController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2143" lineno="275" />
+<varDeclaration name="stdTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="ApexPages.StandardController" lineno="275" />
+<assignHeap name="stdTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.StandardController()" lineno="275" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stdTest" returnloc="#temp2144" lineno="276" />
+<varDeclaration name="surveyAndQuestionControllerTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="SurveyAndQuestionController" lineno="276" />
+<assignHeap name="surveyAndQuestionControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stdTest)" lineno="276" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2145" lineno="277" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.SurveyPage" returnloc="#temp2146" lineno="278" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="surveyAndQuestionControllerTest.getResponses" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2147" lineno="280" />
+<varDeclaration name="listTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="List&amp;lt;string&amp;gt;" lineno="280" />
+<assignHeap name="listTest" scope="methodvar" type="List&amp;lt;string&amp;gt;" rhsType="methodinvoke" rhs="surveyAndQuestionControllerTest.getResponses()" lineno="280" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2148" lineno="281" />
+<ExpressionStatement expression="!listTest.isEmpty()" key="assert" lineno="282"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="284"/>
+</body>
+</method>
+<method returntype="void" name="testGetAQuestion_Scenario1" parameters="" isTestMethod="true" lineno="290" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2149" lineno="291" />
+<varDeclaration name="stdUser" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="User" lineno="291" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="291" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="ApexPages.StandardController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2150" lineno="292" />
+<varDeclaration name="stdTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="ApexPages.StandardController" lineno="292" />
+<assignHeap name="stdTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newApexPages.StandardController()" lineno="292" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="SurveyAndQuestionController" methodtype="constructormethod" returntype="newobject" parameters="stdTest" returnloc="#temp2151" lineno="293" />
+<varDeclaration name="surveyAndQuestionControllerTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="SurveyAndQuestionController" lineno="293" />
+<assignHeap name="surveyAndQuestionControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyAndQuestionController(stdTest)" lineno="293" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2152" lineno="294" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.SurveyPage" returnloc="#temp2153" lineno="295" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="surveyAndQuestionControllerTest.getAQuestion" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2154" lineno="297" />
+<varDeclaration name="listTest" scope="methodvar" location="SurveyAndQuestionController_Nova_Test" type="List&amp;lt;SurveyAndQuestionController.question&amp;gt;" lineno="297" />
+<assignHeap name="listTest" scope="methodvar" type="List&amp;lt;SurveyAndQuestionController.question&amp;gt;" rhsType="methodinvoke" rhs="surveyAndQuestionControllerTest.getAQuestion()" lineno="297" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2155" lineno="298" />
+<ExpressionStatement expression="!listTest.isEmpty()" key="assert" lineno="299"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="301"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[]" multi="[1-8, 11-15, 28-32, 45-49, 62-66, 79-83, 96-100, 113-117, 130-134, 147-151, 166-170, 183-187, 200-204, 217-221, 234-238, 251-255, 268-272, 285-289]" empty="[155]" singlebrace="[26, 27, 43, 44, 60, 61, 77, 78, 94, 95, 111, 112, 128, 129, 145, 146, 164, 165, 181, 182, 198, 199, 215, 216, 232, 233, 249, 250, 266, 267, 283, 284, 300, 301, 302]"/>
+</stac>

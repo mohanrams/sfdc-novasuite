@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<title>Untitled Page</title>
+<meta name="generator" content="PSPad editor, www.pspad.com">
+
+<style type="text/css" media="screen">
+.right {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px 6px 6px 0px;
+	background-color: #9FB2C1;
+	border-top-width: 2px;
+	border-right-width: 5px;
+	border-bottom-width: 5px;
+	border-left-width: 2px;
+	border-style: solid;
+	border-color: #082F70;
+}
+background-color
+:
+#66CDAA
+;min-height
+:
+30px;color
+:
+#FFF5EE
+;
+
+
+}
+</style>
+<head>
+<title>NovaCop-Quality Index Report</title>
+<link rel="stylesheet" type="text/css" href="css/Table.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+	<img src="images/header.png" width="100%">
+	<br>
+	<br>
+	<p align="left">
+		<a href="javascript:history.go(-1)"><img src="images/back.png"></a>
+	</p>
+	<h5>NQI(NovaCop Quality Index)</h5>
+
+	<img src="images/novacop_quality_index.jpg" width="50%" class="right">
+	<br>
+	<br>
+	<div></div>
+	<table width="100%">
+		<tr>
+			<td>
+				<p>NQI indicates the health of your code quality with respect to
+					best practices provided by NovaCop.</p>
+
+				<p>NQI for a project can be computed as follows:</p>
+				<p>
+					1. First calculate the Incident Measure from the following formula
+					<br />
+					<br /> Incident Measure =NCWLOC/(P1 x 1.0 + P2 x 0.8 + P3 x 0.2 +
+					P4*0.1) <br /> where NCWLOC is Non Commented and non White space
+					Lines of Code. <br /> P1, P2, P3, P4 are Priority 1, Priority 2,
+					Priority 3 and Priority 4 violations reported by Nova Cop.
+				</p>
+				<p>2. NQI is obtained by mapping the Incident Measure to NQI Score in
+					the following table</p>
+				<p>
+				<table class="tableForHTML">
+					<tr class="th1">
+						<th colspan=2 class="tdRightBottomC">Incident Measure</th>
+						<th class="tdRightBottomC">NQI Score</th>
+					</tr>
+					<tr class="th1">
+						<th class="tdRightBottomC">From</th>
+						<th class="tdRightBottomC">To</th>
+						<th class="tdRightBottomC">&nbsp;</th>
+					</tr>
+					<tr class="tr0">
+						<td class="tdRightBottomC">0</td>
+						<td class="tdRightBottomC">2</td>
+						<td class="tdRightBottomC">1</td>
+					</tr>
+					<tr class="tr1">
+						<td class="tdRightBottomC">2</td>
+						<td class="tdRightBottomC">4</td>
+						<td class="tdRightBottomC">2</td>
+					</tr>
+					<tr class="tr0">
+						<td class="tdRightBottomC">4</td>
+						<td class="tdRightBottomC">6</td>
+						<td class="tdRightBottomC">3</td>
+					</tr>
+					<tr class="tr1">
+						<td class="tdRightBottomC">6</td>
+						<td class="tdRightBottomC">8</td>
+						<td class="tdRightBottomC">4</td>
+					</tr>
+					<tr class="tr0">
+						<td class="tdRightBottomC">8</td>
+						<td class="tdRightBottomC">9</td>
+						<td class="tdRightBottomC">5</td>
+					</tr>
+					<tr class="tr1">
+						<td class="tdRightBottomC">9</td>
+						<td class="tdRightBottomC">10</td>
+						<td class="tdRightBottomC">6</td>
+					</tr>
+					<tr class="tr0">
+						<td class="tdRightBottomC">10</td>
+						<td class="tdRightBottomC">12</td>
+						<td class="tdRightBottomC">7</td>
+					</tr>
+					<tr class="tr1">
+						<td class="tdRightBottomC">12</td>
+						<td class="tdRightBottomC">16</td>
+						<td class="tdRightBottomC">8</td>
+					</tr>
+					<tr class="tr0">
+						<td class="tdRightBottomC">16</td>
+						<td class="tdRightBottomC">20</td>
+						<td class="tdRightBottomC">9</td>
+					</tr>
+					<tr class="tr1">
+						<td class="tdRightBottomC">20</td>
+						<td class="tdRightBottomC">&nbsp;</td>
+						<td class="tdRightBottomC">10</td>
+					</tr>
+				</table>
+
+				<p>3. If NQI is below 2 , it is considered red. If it is below 5
+					, it is considered amber. if it is above 5, it is considered green.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<img src="images/footer.png" width="100%">
+</body>
+</html>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="GettingStartedController_Nova_Test.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="2 KB">
+<class name="GettingStartedController_Nova_Test" sharing="default" implements="" isenum="false" lineno="10" modifiers="private">
+<classbody>
+<Annotation name="isTest" lineno ="9"/>
+<method returntype="void" name="testMakeTestSurvey_Scenario1" parameters="" isTestMethod="true" lineno="16" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1099" lineno="17" />
+<varDeclaration name="stdUser" scope="methodvar" location="GettingStartedController_Nova_Test" type="User" lineno="17" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="17" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="GettingStartedController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1100" lineno="18" />
+<varDeclaration name="gettingStartedControllerTest" scope="methodvar" location="GettingStartedController_Nova_Test" type="GettingStartedController" lineno="18" />
+<assignHeap name="gettingStartedControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newGettingStartedController()" lineno="18" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1101" lineno="19" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.Getting_Started_With_Survey_Force" returnloc="#temp1102" lineno="20" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<methodInvoke name="gettingStartedControllerTest.makeTestSurvey" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1103" lineno="22" />
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1104" lineno="23" />
+<ExpressionStatement expression="true" key="assert" lineno="24"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="26"/>
+</body>
+</method>
+<method returntype="void" name="testViewSurvey_Scenario1" parameters="" isTestMethod="true" lineno="32" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1105" lineno="33" />
+<varDeclaration name="stdUser" scope="methodvar" location="GettingStartedController_Nova_Test" type="User" lineno="33" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="33" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="GettingStartedController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1106" lineno="34" />
+<varDeclaration name="gettingStartedControllerTest" scope="methodvar" location="GettingStartedController_Nova_Test" type="GettingStartedController" lineno="34" />
+<assignHeap name="gettingStartedControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newGettingStartedController()" lineno="34" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1107" lineno="35" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.Getting_Started_With_Survey_Force" returnloc="#temp1108" lineno="36" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="gettingStartedControllerTest.viewSurvey" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1109" lineno="38" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="GettingStartedController_Nova_Test" type="PageReference" lineno="38" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="gettingStartedControllerTest.viewSurvey()" lineno="38" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1110" lineno="39" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="40"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="42"/>
+</body>
+</method>
+<method returntype="void" name="testTakeSurvey_Scenario1" parameters="" isTestMethod="true" lineno="48" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1111" lineno="49" />
+<varDeclaration name="stdUser" scope="methodvar" location="GettingStartedController_Nova_Test" type="User" lineno="49" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="49" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="GettingStartedController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1112" lineno="50" />
+<varDeclaration name="gettingStartedControllerTest" scope="methodvar" location="GettingStartedController_Nova_Test" type="GettingStartedController" lineno="50" />
+<assignHeap name="gettingStartedControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newGettingStartedController()" lineno="50" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1113" lineno="51" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.Getting_Started_With_Survey_Force" returnloc="#temp1114" lineno="52" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="gettingStartedControllerTest.takeSurvey" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1115" lineno="54" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="GettingStartedController_Nova_Test" type="PageReference" lineno="54" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="gettingStartedControllerTest.takeSurvey()" lineno="54" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1116" lineno="55" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="56"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="58"/>
+</body>
+</method>
+<method returntype="void" name="testViewResults_Scenario1" parameters="" isTestMethod="true" lineno="64" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1117" lineno="65" />
+<varDeclaration name="stdUser" scope="methodvar" location="GettingStartedController_Nova_Test" type="User" lineno="65" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="65" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="GettingStartedController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1118" lineno="66" />
+<varDeclaration name="gettingStartedControllerTest" scope="methodvar" location="GettingStartedController_Nova_Test" type="GettingStartedController" lineno="66" />
+<assignHeap name="gettingStartedControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newGettingStartedController()" lineno="66" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1119" lineno="67" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.Getting_Started_With_Survey_Force" returnloc="#temp1120" lineno="68" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="gettingStartedControllerTest.viewResults" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1121" lineno="70" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="GettingStartedController_Nova_Test" type="PageReference" lineno="70" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="gettingStartedControllerTest.viewResults()" lineno="70" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1122" lineno="71" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="72"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="74"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[]" multi="[1-8, 11-15, 27-31, 43-47, 59-63]" empty="[]" singlebrace="[25, 26, 41, 42, 57, 58, 73, 74, 75]"/>
+</stac>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="AsyncReportController_Nova_Test.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="4 KB">
+<class name="AsyncReportController_Nova_Test" sharing="default" implements="" isenum="false" lineno="10" modifiers="private">
+<classbody>
+<Annotation name="isTest" lineno ="9"/>
+<method returntype="void" name="testRetrieveAvailableReports_Scenario1" parameters="" isTestMethod="true" lineno="16" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp238" lineno="17" />
+<varDeclaration name="stdUser" scope="methodvar" location="AsyncReportController_Nova_Test" type="User" lineno="17" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="17" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="AsyncReportController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp239" lineno="18" />
+<varDeclaration name="asyncReportControllerTest" scope="methodvar" location="AsyncReportController_Nova_Test" type="AsyncReportController" lineno="18" />
+<assignHeap name="asyncReportControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAsyncReportController()" lineno="18" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp240" lineno="19" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.RKScanner" returnloc="#temp241" lineno="20" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<methodInvoke name="asyncReportControllerTest.retrieveAvailableReports" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp242" lineno="22" />
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp243" lineno="23" />
+<ExpressionStatement expression="true" key="assert" lineno="24"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="26"/>
+</body>
+</method>
+<method returntype="void" name="testGenerateDataFromSOQL_Scenario1" parameters="" isTestMethod="true" lineno="32" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp244" lineno="33" />
+<varDeclaration name="stdUser" scope="methodvar" location="AsyncReportController_Nova_Test" type="User" lineno="33" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="33" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="PFolioTest" scope="methodvar" location="AsyncReportController_Nova_Test" type="string" lineno="34" />
+<assignHeap name="PFolioTest" scope="methodvar" type="string" rhsType="value" rhs="&apos;testString&apos;" lineno="34" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="AsyncReportController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp245" lineno="36" />
+<varDeclaration name="asyncReportControllerTest" scope="methodvar" location="AsyncReportController_Nova_Test" type="AsyncReportController" lineno="36" />
+<assignHeap name="asyncReportControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAsyncReportController()" lineno="36" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp246" lineno="37" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.RKScanner" returnloc="#temp247" lineno="38" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<methodInvoke name="asyncReportControllerTest.generateDataFromSOQL" methodtype="normalmethod" returntype="String" parameters="PFolioTest" returnloc="#temp248" lineno="40" />
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp249" lineno="41" />
+<ExpressionStatement expression="true" key="assert" lineno="42"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="44"/>
+</body>
+</method>
+<method returntype="void" name="testRunReport_Scenario1" parameters="" isTestMethod="true" lineno="50" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp250" lineno="51" />
+<varDeclaration name="stdUser" scope="methodvar" location="AsyncReportController_Nova_Test" type="User" lineno="51" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="51" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="AsyncReportController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp251" lineno="52" />
+<varDeclaration name="asyncReportControllerTest" scope="methodvar" location="AsyncReportController_Nova_Test" type="AsyncReportController" lineno="52" />
+<assignHeap name="asyncReportControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAsyncReportController()" lineno="52" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp252" lineno="53" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.RKScanner" returnloc="#temp253" lineno="54" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="asyncReportControllerTest.runReport" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp254" lineno="56" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="AsyncReportController_Nova_Test" type="PageReference" lineno="56" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="asyncReportControllerTest.runReport()" lineno="56" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp255" lineno="57" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="58"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="60"/>
+</body>
+</method>
+<method returntype="void" name="testCheckForReportResults_Scenario1" parameters="" isTestMethod="true" lineno="66" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp256" lineno="67" />
+<varDeclaration name="stdUser" scope="methodvar" location="AsyncReportController_Nova_Test" type="User" lineno="67" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="67" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="AsyncReportController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp257" lineno="68" />
+<varDeclaration name="asyncReportControllerTest" scope="methodvar" location="AsyncReportController_Nova_Test" type="AsyncReportController" lineno="68" />
+<assignHeap name="asyncReportControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAsyncReportController()" lineno="68" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp258" lineno="69" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.RKScanner" returnloc="#temp259" lineno="70" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="asyncReportControllerTest.checkForReportResults" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp260" lineno="72" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="AsyncReportController_Nova_Test" type="PageReference" lineno="72" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="asyncReportControllerTest.checkForReportResults()" lineno="72" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp261" lineno="73" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="74"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="76"/>
+</body>
+</method>
+<method returntype="void" name="testGetReportResults_Scenario1" parameters="" isTestMethod="true" lineno="82" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp262" lineno="83" />
+<varDeclaration name="stdUser" scope="methodvar" location="AsyncReportController_Nova_Test" type="User" lineno="83" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="83" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="AsyncReportController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp263" lineno="84" />
+<varDeclaration name="asyncReportControllerTest" scope="methodvar" location="AsyncReportController_Nova_Test" type="AsyncReportController" lineno="84" />
+<assignHeap name="asyncReportControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAsyncReportController()" lineno="84" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp264" lineno="85" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.RKScanner" returnloc="#temp265" lineno="86" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="asyncReportControllerTest.getReportResults" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp266" lineno="88" />
+<varDeclaration name="reportsreportresultsTest" scope="methodvar" location="AsyncReportController_Nova_Test" type="Reports.ReportResults" lineno="88" />
+<assignHeap name="reportsreportresultsTest" scope="methodvar" type="Reports.ReportResults" rhsType="methodinvoke" rhs="asyncReportControllerTest.getReportResults()" lineno="88" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp267" lineno="89" />
+<ExpressionStatement expression="reportsreportresultsTest!=null" key="assert" lineno="90"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="92"/>
+</body>
+</method>
+<method returntype="void" name="testGetScanDetailStatus_Scenario1" parameters="" isTestMethod="true" lineno="98" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp268" lineno="99" />
+<varDeclaration name="stdUser" scope="methodvar" location="AsyncReportController_Nova_Test" type="User" lineno="99" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="99" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="AsyncReportController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp269" lineno="100" />
+<varDeclaration name="asyncReportControllerTest" scope="methodvar" location="AsyncReportController_Nova_Test" type="AsyncReportController" lineno="100" />
+<assignHeap name="asyncReportControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAsyncReportController()" lineno="100" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp270" lineno="101" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.RKScanner" returnloc="#temp271" lineno="102" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="asyncReportControllerTest.getScanDetailStatus" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp272" lineno="104" />
+<varDeclaration name="listTest" scope="methodvar" location="AsyncReportController_Nova_Test" type="List&amp;lt;AsyncReportController.ScanDetail&amp;gt;" lineno="104" />
+<assignHeap name="listTest" scope="methodvar" type="List&amp;lt;AsyncReportController.ScanDetail&amp;gt;" rhsType="methodinvoke" rhs="asyncReportControllerTest.getScanDetailStatus()" lineno="104" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp273" lineno="105" />
+<ExpressionStatement expression="!listTest.isEmpty()" key="assert" lineno="106"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="108"/>
+</body>
+</method>
+<method returntype="void" name="testRunReportCalculation_Scenario1" parameters="" isTestMethod="true" lineno="114" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="UtilNovaUnitTest.getUser" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp274" lineno="115" />
+<varDeclaration name="stdUser" scope="methodvar" location="AsyncReportController_Nova_Test" type="User" lineno="115" />
+<assignHeap name="stdUser" scope="methodvar" type="User" rhsType="methodinvoke" rhs="UtilNovaUnitTest.getUser()" lineno="115" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="AsyncReportController" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp275" lineno="116" />
+<varDeclaration name="asyncReportControllerTest" scope="methodvar" location="AsyncReportController_Nova_Test" type="AsyncReportController" lineno="116" />
+<assignHeap name="asyncReportControllerTest" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAsyncReportController()" lineno="116" />
+</VariableDeclaration>
+<methodInvoke name="Test.startTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp276" lineno="117" />
+<methodInvoke name="Test.setCurrentPage" methodtype="normalmethod" returntype="String" parameters="Page.RKScanner" returnloc="#temp277" lineno="118" />
+<systemrunasblock name="System.runAs" expression="stdUser" >
+<body>
+<VariableDeclaration>
+<methodInvoke name="asyncReportControllerTest.runReportCalculation" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp278" lineno="120" />
+<varDeclaration name="pagereferenceTest" scope="methodvar" location="AsyncReportController_Nova_Test" type="PageReference" lineno="120" />
+<assignHeap name="pagereferenceTest" scope="methodvar" type="PageReference" rhsType="methodinvoke" rhs="asyncReportControllerTest.runReportCalculation()" lineno="120" />
+</VariableDeclaration>
+<methodInvoke name="Test.stopTest" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp279" lineno="121" />
+<ExpressionStatement expression="pagereferenceTest!=null" key="assert" lineno="122"/>
+</body>
+</systemrunasblock>
+<methodendline lineno="124"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[]" multi="[1-8, 11-15, 27-31, 45-49, 61-65, 77-81, 93-97, 109-113]" empty="[35]" singlebrace="[25, 26, 43, 44, 59, 60, 75, 76, 91, 92, 107, 108, 123, 124, 125]"/>
+</stac>

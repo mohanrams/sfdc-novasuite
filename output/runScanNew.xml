@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="runScanNew.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="2 KB">
+<class name="runScanNew" sharing="default" implements="" isenum="false" lineno="1" modifiers="public">
+<classbody>
+<method returntype="void" name="runReportProcess" parameters="" isTestMethod="false" lineno="3" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id, name, AIES_ACCENTURE__Salesforce_Report_Key_Column__c,
+                                    AIES_ACCENTURE__Salesforce_Report_Type__c,AIES_ACCENTURE__Salesforce_Report_Reference__c, 
+                                    AIES_ACCENTURE__Salesforce_Report_Value_Column__c,AIES_ACCENTURE__Salesforce_Report_Scan_Date__c from AIES_ACCENTURE__AIESMetricMaster__c 
+                                    where zTesting__c= true ]" returnloc="#temp1580" lineno="5" />
+<varDeclaration name="masterList" scope="methodvar" location="runScanNew" type="List&amp;lt;AIES_ACCENTURE__AIESMetricMaster__c&amp;gt;" lineno="5" />
+<assignHeap name="masterList" scope="methodvar" type="List&amp;lt;AIES_ACCENTURE__AIESMetricMaster__c&amp;gt;" rhsType="query" rhs="[select id, name, AIES_ACCENTURE__Salesforce_Report_Key_Column__c,
+                                    AIES_ACCENTURE__Salesforce_Report_Type__c,AIES_ACCENTURE__Salesforce_Report_Reference__c, 
+                                    AIES_ACCENTURE__Salesforce_Report_Value_Column__c,AIES_ACCENTURE__Salesforce_Report_Scan_Date__c from AIES_ACCENTURE__AIESMetricMaster__c 
+                                    where zTesting__c= true ]" lineno="5" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="9">
+<Iterator type="AIES_ACCENTURE__AIESMetricMaster__c" name="masterrecord" on="masterList">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Id from Report where 
+                DeveloperName = :masterrecord.AIES_ACCENTURE__Salesforce_Report_Reference__c]" returnloc="#temp1581" lineno="11" />
+<varDeclaration name="reportList" scope="methodvar" location="runScanNew" type="List&amp;lt;Report&amp;gt;" lineno="11" />
+<assignHeap name="reportList" scope="methodvar" type="List&amp;lt;Report&amp;gt;" rhsType="query" rhs="[select Id from Report where 
+                DeveloperName = :masterrecord.AIES_ACCENTURE__Salesforce_Report_Reference__c]" lineno="11" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="reportList.get" methodtype="normalmethod" returntype="String" parameters="0" returnloc="#temp1582" lineno="13" />
+<methodInvoke name="0.get" methodtype="normalmethod" returntype="String" parameters="&apos;Id&apos;" returnloc="#temp1583" lineno="13" />
+<varDeclaration name="reportId" scope="methodvar" location="runScanNew" type="string" lineno="13" />
+<assignHeap name="reportId" scope="methodvar" type="string" rhsType="methodinvoke" rhs="(string)reportList.get(0).get(&apos;Id&apos;)" lineno="13" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="15">
+<Iterator type="Report" name="reportitem" on="reportList">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="" methodtype="normalmethod" returntype="String" parameters=".runAsyncReport(reportitem.id,true" returnloc="#temp1584" lineno="18" />
+<varDeclaration name="instance" scope="methodvar" location="runScanNew" type="Reports.ReportInstance" lineno="18" />
+<assignHeap name="instance" scope="methodvar" type="Reports.ReportInstance" rhsType="value" rhs="Reports.ReportManager.runAsyncReport(reportitem.id,true)" lineno="18" />
+</VariableDeclaration>
+<methodInvoke name="processReport" methodtype="normalmethod" returntype="String" parameters="instance" returnloc="#temp1585" lineno="19" />
+</body>
+</loop>
+</body>
+</loop>
+<methodendline lineno="22"/>
+</body>
+</method>
+<method returntype="void" name="processReport" parameters="instance:Reports.ReportInstance" isTestMethod="false" lineno="24" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="instance.getStatus" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1586" lineno="26" />
+<conditionalExpr>
+<methodInvoke name="#temp1586.getStatus" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1587" lineno="26" />
+<ConditionalStatement LHStype="methodinvoke" LHS="&apos;New&apos;" RHStype="instance.getStatus()==&apos;New&apos;" RHS="instance.getStatus()==&apos;New&apos;" Operator="OR"/>
+</conditionalExpr>
+<varDeclaration name="reportIsRunning" scope="methodvar" location="runScanNew" type="boolean" lineno="26" />
+<assignHeap name="reportIsRunning" scope="methodvar" type="boolean" rhsType="methodinvoke" rhs="instance.getStatus()==&apos;Running&apos;||instance.getStatus()==&apos;New&apos;" lineno="26" />
+</VariableDeclaration>
+<if type="simpleif" lineno="27">
+<conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "!reportIsRunning"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="#temp1587.getReportResults" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1588" lineno="28" />
+<varDeclaration name="results" scope="methodvar" location="runScanNew" type="Reports.ReportResults" lineno="28" />
+<assignHeap name="results" scope="methodvar" type="Reports.ReportResults" rhsType="methodinvoke" rhs="instance.getReportResults()" lineno="28" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1588.getGroupingsDown" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1589" lineno="31" />
+<varDeclaration name="dim" scope="methodvar" location="runScanNew" type="Reports.Dimension" lineno="31" />
+<assignHeap name="dim" scope="methodvar" type="Reports.Dimension" rhsType="methodinvoke" rhs="results.getGroupingsDown()" lineno="31" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="groupingVal" scope="methodvar" location="runScanNew" type="Reports.GroupingValue" lineno="32" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Size is &apos;+dim.getGroupings().size()" key="debug" lineno="33"/>
+<loop type="simplefor" lineno="34">
+<initialExpr>
+<VariableDeclaration>
+<varDeclaration name="i" scope="methodvar" location="runScanNew" type="integer" lineno="34" />
+<assignHeap name="i" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="34" />
+</VariableDeclaration>
+</initialExpr>
+<conditionalExpr>
+<methodInvoke name="dim.getGroupings" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1590" lineno="34" />
+<methodInvoke name="#temp1590.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1591" lineno="34" />
+<ConditionalStatement LHStype="" LHS="i" RHStype="" RHS="dim.getGroupings().size()" Operator="&lt;"/>
+</conditionalExpr>
+<incrementExpr>
+</incrementExpr>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="dim#temp1591dim.getGroupings" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1592" lineno="35" />
+<assignHeap name="groupingVal" scope="" type="" rhsType="methodinvoke" rhs="dim.getGroupings()" lineno="35" />
+</AssignmentStatement>
+<ExpressionStatement expression="&apos;Key: &apos;+groupingVal.getKey()" key="debug" lineno="36"/>
+<ExpressionStatement expression="&apos;Label: &apos;+groupingVal.getLabel()" key="debug" lineno="37"/>
+<ExpressionStatement expression="&apos;Value: &apos;+groupingVal.getValue()" key="debug" lineno="38"/>
+<VariableDeclaration>
+<methodInvoke name="groupingVal.getKey" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1593" lineno="41" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="&apos;!T&apos;" returnloc="#temp1594" lineno="41" />
+<varDeclaration name="factMapKey" scope="methodvar" location="runScanNew" type="string" lineno="41" />
+<assignHeap name="factMapKey" scope="methodvar" type="string" rhsType="value" rhs="groupingVal.getKey()+&apos;!T&apos;" lineno="41" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1594.getFactMap" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1595" lineno="45" />
+<methodInvoke name="#temp1595.get" methodtype="normalmethod" returntype="String" parameters="factMapKey" returnloc="#temp1596" lineno="45" />
+<varDeclaration name="factDetails" scope="methodvar" location="runScanNew" type="Reports.ReportFactWithDetails" lineno="44" />
+<assignHeap name="factDetails" scope="methodvar" type="Reports.ReportFactWithDetails" rhsType="variable" rhs="(Reports.ReportFactWithDetails)results.getFactMap().get(factMapKey)" lineno="44" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1596.getAggregates" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1597" lineno="48" />
+<varDeclaration name="sumVal" scope="methodvar" location="runScanNew" type="Reports.SummaryValue" lineno="48" />
+<assignHeap name="sumVal" scope="methodvar" type="Reports.SummaryValue" rhsType="methodinvoke" rhs="factDetails.getAggregates()[0]" lineno="48" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Summary Value: &apos;+sumVal.getLabel()" key="debug" lineno="49"/>
+</body>
+</loop>
+</body>
+</true>
+</if>
+<methodendline lineno="56"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[10, 17, 30, 40, 43, 47, 51, 52, 53]" multi="[]" empty="[4, 14, 16, 23, 25, 29, 39, 42, 46, 50]" singlebrace="[2, 20, 21, 22, 54, 55, 56, 57]"/>
+</stac>

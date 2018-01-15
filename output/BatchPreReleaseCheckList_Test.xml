@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="BatchPreReleaseCheckList_Test.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="790 bytes">
+<class name="BatchPreReleaseCheckList_Test" sharing="default" implements="" isenum="false" lineno="3" modifiers="private">
+<classbody>
+<Annotation name="isTest" lineno ="1"/>
+<method returntype="void" name="testMethod2_Positive" parameters="" isTestMethod="true" lineno="5" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SET&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp989" lineno="7" />
+<varDeclaration name="objNames" scope="methodvar" location="BatchPreReleaseCheckList_Test" type="SET&amp;lt;string&amp;gt;" lineno="7" />
+<assignHeap name="objNames" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSET&lt;string&gt;()" lineno="7" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;sobject&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp990" lineno="8" />
+<varDeclaration name="lst" scope="methodvar" location="BatchPreReleaseCheckList_Test" type="List&amp;lt;sobject&amp;gt;" lineno="8" />
+<assignHeap name="lst" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;sobject&gt;()" lineno="8" />
+</VariableDeclaration>
+<methodInvoke name="objNames.add" methodtype="normalmethod" returntype="String" parameters="&apos;Account&apos;" returnloc="#temp991" lineno="10" />
+<methodInvoke name="objNames.add" methodtype="normalmethod" returntype="String" parameters="&apos;Contact&apos;" returnloc="#temp992" lineno="11" />
+<VariableDeclaration>
+<methodInvoke name="PreReleaseReport__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp993" lineno="12" />
+<varDeclaration name="p" scope="methodvar" location="BatchPreReleaseCheckList_Test" type="PreReleaseReport__c" lineno="12" />
+<assignHeap name="p" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newPreReleaseReport__c()" lineno="12" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="p.name" scope="" type="" rhsType="methodinvoke" rhs="&apos;Account&apos;" lineno="13" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="p.Object_Name__c" scope="" type="" rhsType="value" rhs="&apos;Account&apos;" lineno="14" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="p.Record_Count__c" scope="" type="" rhsType="value" rhs="100" lineno="15" />
+</AssignmentStatement>
+<methodInvoke name="lib.dml.Database.insert" methodtype="" returntype="" parameters="p" returnloc="" lineno="16" />
+<VariableDeclaration>
+<varDeclaration name="batchablecontext" scope="methodvar" location="BatchPreReleaseCheckList_Test" type="Database.batchablecontext" lineno="18" />
+<assignHeap name="batchablecontext" scope="methodvar" type="Database.batchablecontext" rhsType="value" rhs="null" lineno="18" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="BatchPreReleaseCheckList" methodtype="constructormethod" returntype="newobject" parameters="objNames" returnloc="#temp994" lineno="19" />
+<varDeclaration name="prcheck" scope="methodvar" location="BatchPreReleaseCheckList_Test" type="BatchPreReleaseCheckList" lineno="19" />
+<assignHeap name="prcheck" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newBatchPreReleaseCheckList(objNames)" lineno="19" />
+</VariableDeclaration>
+<methodInvoke name="prcheck.start" methodtype="normalmethod" returntype="String" parameters="batchablecontext" returnloc="#temp995" lineno="20" />
+<methodInvoke name="prcheck.execute" methodtype="normalmethod" returntype="String" parameters="batchablecontext,lst" returnloc="#temp996" lineno="21" />
+<methodInvoke name="prcheck.finish" methodtype="normalmethod" returntype="String" parameters="batchablecontext" returnloc="#temp997" lineno="22" />
+<methodInvoke name="lib.dml.Database.executebatch" methodtype="" returntype="" parameters="prcheck" returnloc="" lineno="25" />
+<methodendline lineno="28"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[]" multi="[]" empty="[2, 4, 6, 9, 17, 23, 24, 26, 27]" singlebrace="[28, 29]"/>
+</stac>

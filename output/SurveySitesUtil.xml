@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="SurveySitesUtil.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="1 KB">
+<class name="SurveySitesUtil" sharing="with" implements="" isenum="false" lineno="1" modifiers="public">
+<classbody>
+<method returntype="boolean" name="hasSites" parameters="" isTestMethod="false" lineno="5" throws="" modifiers="public">
+<body>
+<ReturnBlock>
+<methodInvoke name="Schema.getGlobalDescribe" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2166" lineno="6" />
+<methodInvoke name="Schema.getGlobalDescribe(.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2167" lineno="6" />
+<methodInvoke name="Schema.getGlobalDescribe(.keySet(.contains" methodtype="normalmethod" returntype="String" parameters="&apos;site&apos;" returnloc="#temp2168" lineno="6" />
+<return expression="Schema.getGlobalDescribe().keySet().contains(&apos;site&apos;)" expressiontype="@methodinvoke" lineno="6" />
+</ReturnBlock>
+<methodendline lineno="7"/>
+</body>
+</method>
+<method returntype="List&amp;lt;SurveySiteInfo&amp;gt;" name="getSiteList" parameters="" isTestMethod="false" lineno="9" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="List&lt;SurveySiteInfo&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2169" lineno="11" />
+<varDeclaration name="ret" scope="methodvar" location="SurveySitesUtil" type="List&amp;lt;SurveySiteInfo&amp;gt;" lineno="11" />
+<assignHeap name="ret" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;SurveySiteInfo&gt;()" lineno="11" />
+</VariableDeclaration>
+<if type="simpleif" lineno="13">
+<conditionalExpr>
+<methodInvoke name="#temp2169.hasSites" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2170" lineno="13" />
+</conditionalExpr>
+<ifcondition expression= "!hasSites()"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ReturnBlock>
+<return expression="ret" expressiontype="@alias" lineno="14" />
+</ReturnBlock>
+</body>
+</true>
+</if>
+<VariableDeclaration>
+<methodInvoke name="#temp2170.query" methodtype="normalmethod" returntype="String" parameters="&apos;select Name, Subdomain, UrlPathPrefix from Site where Status = \&apos;Active\&apos;&apos;" returnloc="#temp2171" lineno="17" />
+<varDeclaration name="sitesResults" scope="methodvar" location="SurveySitesUtil" type="List&amp;lt;sobject&amp;gt;" lineno="17" />
+<assignHeap name="sitesResults" scope="methodvar" type="List&amp;lt;sobject&amp;gt;" rhsType="methodinvoke" rhs="Database.query(&apos;select Name, Subdomain, UrlPathPrefix from Site where Status = \&apos;Active\&apos;&apos;)" lineno="17" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="19">
+<Iterator type="sobject" name="current" on="sitesResults">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="current.get" methodtype="normalmethod" returntype="String" parameters="&apos;Name&apos;" returnloc="#temp2172" lineno="20" />
+<methodInvoke name="#temp2172.get" methodtype="normalmethod" returntype="String" parameters="&apos;UrlPathPrefix&apos;" returnloc="#temp2173" lineno="20" />
+<methodInvoke name="#temp2173.get" methodtype="normalmethod" returntype="String" parameters="&apos;Subdomain&apos;" returnloc="#temp2174" lineno="20" />
+<methodInvoke name="SurveySiteInfo" methodtype="constructormethod" returntype="newobject" parameters="(string)current.get(&apos;Name&apos;),(string)current.get(&apos;UrlPathPrefix&apos;),(string)current.get(&apos;Subdomain&apos;)" returnloc="#temp2175" lineno="20" />
+<methodInvoke name="ret.add" methodtype="normalmethod" returntype="String" parameters="newSurveySiteInfo((string)current.get(&apos;Name&apos;),(string)current.get(&apos;UrlPathPrefix&apos;),(string)current.get(&apos;Subdomain&apos;))" returnloc="#temp2176" lineno="20" />
+</body>
+</loop>
+<ReturnBlock>
+<return expression="ret" expressiontype="@alias" lineno="23" />
+</ReturnBlock>
+<methodendline lineno="25"/>
+</body>
+</method>
+<class name="SurveySiteInfo" sharing="default" implements="" isenum="false" lineno="27" modifiers="public">
+<classbody>
+<varDeclaration name="name" scope="instancevar" location="SurveySiteInfo" type="string" lineno="28" />
+<VariableProperties name="name">
+<getterMethod name="name" returntype="string" modifiers="" lineno="28">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="name" modifiers="" lineno="28">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="prefix" scope="instancevar" location="SurveySiteInfo" type="string" lineno="29" />
+<VariableProperties name="prefix">
+<getterMethod name="prefix" returntype="string" modifiers="" lineno="29">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="prefix" modifiers="" lineno="29">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="subdomain" scope="instancevar" location="SurveySiteInfo" type="string" lineno="30" />
+<VariableProperties name="subdomain">
+<getterMethod name="subdomain" returntype="string" modifiers="" lineno="30">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="subdomain" modifiers="" lineno="30">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<method returntype="" name="SurveySiteInfo" parameters="name:string,prefix:string,subdomain:string" isTestMethod="false" lineno="32" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<assignHeap name="this.name" scope="" type="" rhsType="variable" rhs="name" lineno="33" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="this.prefix" scope="" type="" rhsType="variable" rhs="prefix" lineno="34" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="this.subdomain" scope="" type="" rhsType="variable" rhs="subdomain" lineno="35" />
+</AssignmentStatement>
+<methodendline lineno="36"/>
+</body>
+</method>
+</classbody>
+</class>
+<method returntype="void" name="testSurveySiteInfo" parameters="" isTestMethod="true" lineno="39" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SurveySitesUtil.SurveySiteInfo" methodtype="constructormethod" returntype="newobject" parameters="&apos;one&apos;,&apos;two&apos;,&apos;three&apos;" returnloc="#temp2177" lineno="40" />
+<varDeclaration name="info" scope="methodvar" location="SurveySiteInfo" type="SurveySitesUtil.SurveySiteInfo" lineno="40" />
+<assignHeap name="info" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveySitesUtil.SurveySiteInfo(&apos;one&apos;,&apos;two&apos;,&apos;three&apos;)" lineno="40" />
+</VariableDeclaration>
+<ExpressionStatement expression="info.name,&apos;one&apos;" key="assertequals" lineno="41"/>
+<ExpressionStatement expression="info.prefix,&apos;two&apos;" key="assertequals" lineno="42"/>
+<ExpressionStatement expression="info.subdomain,&apos;three&apos;" key="assertequals" lineno="43"/>
+<methodendline lineno="44"/>
+</body>
+</method>
+<method returntype="void" name="testHasSites" parameters="" isTestMethod="true" lineno="46" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SurveySitesUtil" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2178" lineno="47" />
+<varDeclaration name="util" scope="methodvar" location="SurveySiteInfo" type="SurveySitesUtil" lineno="47" />
+<assignHeap name="util" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveySitesUtil()" lineno="47" />
+</VariableDeclaration>
+<if type="simpleif" lineno="49">
+<conditionalExpr>
+<methodInvoke name="#temp2178.getGlobalDescribe" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2179" lineno="49" />
+<methodInvoke name="#temp2179.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2180" lineno="49" />
+<methodInvoke name="#temp2180.contains" methodtype="normalmethod" returntype="String" parameters="&apos;site&apos;" returnloc="#temp2181" lineno="49" />
+</conditionalExpr>
+<ifcondition expression= "Schema.getGlobalDescribe().keySet().contains(&apos;site&apos;)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="util.hasSites()" key="assert" lineno="50"/>
+</body>
+</true>
+<false type="" lineno="51">
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="!util.hasSites()" key="assert" lineno="52"/>
+</body>
+</false>
+</if>
+<methodendline lineno="54"/>
+</body>
+</method>
+<method returntype="void" name="testGetInfo" parameters="" isTestMethod="true" lineno="56" throws="" modifiers="static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SurveySitesUtil" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2182" lineno="57" />
+<varDeclaration name="util" scope="methodvar" location="SurveySiteInfo" type="SurveySitesUtil" lineno="57" />
+<assignHeap name="util" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveySitesUtil()" lineno="57" />
+</VariableDeclaration>
+<ExpressionStatement expression="util.getSiteList()!=null" key="assert" lineno="58"/>
+<if type="simpleif" lineno="59">
+<conditionalExpr>
+<methodInvoke name="util.hasSites" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2183" lineno="59" />
+</conditionalExpr>
+<ifcondition expression= "util.hasSites()"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="60">
+<conditionalExpr>
+<methodInvoke name="#temp2183.getSiteList" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2184" lineno="60" />
+<methodInvoke name="#temp2184.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2185" lineno="60" />
+<ConditionalStatement LHStype="" LHS="util.getSiteList().size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "util.getSiteList().size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="#temp2185.getSiteList" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2186" lineno="61" />
+<varDeclaration name="current" scope="methodvar" location="SurveySiteInfo" type="SurveySitesUtil.SurveySiteInfo" lineno="61" />
+<assignHeap name="current" scope="methodvar" type="SurveySitesUtil.SurveySiteInfo" rhsType="methodinvoke" rhs="util.getSiteList()[0]" lineno="61" />
+</VariableDeclaration>
+<ConditionalStatement LHStype="" LHS="current" RHStype="" RHS="null" Operator="!="/>
+<ExpressionStatement expression="current!=null" key="assert" lineno="62"/>
+</body>
+</true>
+</if>
+</body>
+</true>
+</if>
+<methodendline lineno="65"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[]" multi="[]" empty="[2, 3, 4, 8, 10, 12, 16, 18, 22, 24, 26, 31, 38, 45, 48, 55, 66]" singlebrace="[7, 15, 21, 25, 36, 37, 44, 53, 54, 63, 64, 65, 67]"/>
+</stac>

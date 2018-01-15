@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="UpdateReleaseLOE_HelperClass.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="4 KB">
+<class name="UpdateReleaseLOE_HelperClass" sharing="default" implements="" isenum="false" lineno="14" modifiers="public">
+<classbody>
+<VariableDeclaration>
+<varDeclaration name="requirementEstimate" scope="methodvar" location="UpdateReleaseLOE_HelperClass" type="double" lineno="17" modifiers="private,static" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="sitEstimate" scope="methodvar" location="UpdateReleaseLOE_HelperClass" type="double" lineno="18" modifiers="private,static" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="butEstimate" scope="methodvar" location="UpdateReleaseLOE_HelperClass" type="double" lineno="19" modifiers="private,static" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="uatEstimate" scope="methodvar" location="UpdateReleaseLOE_HelperClass" type="double" lineno="20" modifiers="private,static" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="designEstimate" scope="methodvar" location="UpdateReleaseLOE_HelperClass" type="double" lineno="21" modifiers="private,static" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="deployEstimate" scope="methodvar" location="UpdateReleaseLOE_HelperClass" type="double" lineno="22" modifiers="private,static" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="adaptEstimate" scope="methodvar" location="UpdateReleaseLOE_HelperClass" type="double" lineno="23" modifiers="private,static" />
+</VariableDeclaration>
+<method returntype="void" name="resetValues" parameters="" isTestMethod="false" lineno="36" throws="" modifiers="public,static">
+<body>
+<AssignmentStatement>
+<assignHeap name="requirementEstimate" scope="" type="" rhsType="value" rhs="0.0" lineno="40" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="sitEstimate" scope="" type="" rhsType="value" rhs="0.0" lineno="41" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="butEstimate" scope="" type="" rhsType="value" rhs="0.0" lineno="42" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uatEstimate" scope="" type="" rhsType="value" rhs="0.0" lineno="43" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="designEstimate" scope="" type="" rhsType="value" rhs="0.0" lineno="44" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="deployEstimate" scope="" type="" rhsType="value" rhs="0.0" lineno="45" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="adaptEstimate" scope="" type="" rhsType="value" rhs="0.0" lineno="46" />
+</AssignmentStatement>
+<methodendline lineno="47"/>
+</body>
+</method>
+<method returntype="void" name="updateRelease" parameters="requestToProcess:List&amp;lt;Request__c&amp;gt;" isTestMethod="false" lineno="62" throws="" modifiers="public,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="set&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2538" lineno="64" />
+<varDeclaration name="releaseSet" scope="methodvar" location="UpdateReleaseLOE_HelperClass" type="Set&amp;lt;string&amp;gt;" lineno="64" />
+<assignHeap name="releaseSet" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newset&lt;string&gt;()" lineno="64" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;Release__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2539" lineno="65" />
+<varDeclaration name="releaseToUpdateList" scope="methodvar" location="UpdateReleaseLOE_HelperClass" type="List&amp;lt;Release__c&amp;gt;" lineno="65" />
+<assignHeap name="releaseToUpdateList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;Release__c&gt;()" lineno="65" />
+</VariableDeclaration>
+<TryStatement lineno="67">
+<body>
+<curlybrace exists="true"/>
+<loop type="advancedfor" lineno="70">
+<Iterator type="Request__c" name="currentRequest" on="requestToProcess">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="releaseSet.add" methodtype="normalmethod" returntype="String" parameters="currentRequest.Release__c" returnloc="#temp2540" lineno="73" />
+</body>
+</loop>
+<loop type="advancedfor" lineno="77">
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Id, Requirements_Gathering__c, Design__c, Build_Unit_Test__c,
+                                                	 PMT2009_SIT__c, PMT2009_UAT__c, PMT2009_Train_Deploy__c, 
+                                                     Adapt_Ongoing_Support__c,
+                                                     (select Id, Req__c, Des__c, BUT__c, SIT__c, UAT__c, 
+                                                             TrnDep__c, Adapt__c 
+                                                      from Requirements__r) 
+                                              from Release__c 
+                                              where id in : releaseSet ]" returnloc="#temp2541" lineno="77" />
+<Iterator type="Release__c" name="currentRelease" on="[select Id, Requirements_Gathering__c, Design__c, Build_Unit_Test__c,
+                                                	 PMT2009_SIT__c, PMT2009_UAT__c, PMT2009_Train_Deploy__c, 
+                                                     Adapt_Ongoing_Support__c,
+                                                     (select Id, Req__c, Des__c, BUT__c, SIT__c, UAT__c, 
+                                                             TrnDep__c, Adapt__c 
+                                                      from Requirements__r) 
+                                              from Release__c 
+                                              where id in : releaseSet ]">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="resetValues" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2542" lineno="88" />
+<loop type="advancedfor" lineno="91">
+<Iterator type="Request__c" name="currentRequest" on="currentRelease.Requirements__r">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="currentRequest.Req__c" returnloc="#temp2543" lineno="94" />
+<assignHeap name="requirementEstimate" scope="" type="" rhsType="stradd" rhs="requirementEstimate+currentRequest.Req__c" lineno="94" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="currentRequest.SIT__c" returnloc="#temp2544" lineno="95" />
+<assignHeap name="sitEstimate" scope="" type="" rhsType="stradd" rhs="sitEstimate+currentRequest.SIT__c" lineno="95" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="currentRequest.BUT__c" returnloc="#temp2545" lineno="96" />
+<assignHeap name="butEstimate" scope="" type="" rhsType="stradd" rhs="butEstimate+currentRequest.BUT__c" lineno="96" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="currentRequest.UAT__c" returnloc="#temp2546" lineno="97" />
+<assignHeap name="uatEstimate" scope="" type="" rhsType="stradd" rhs="uatEstimate+currentRequest.UAT__c" lineno="97" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="currentRequest.Des__c" returnloc="#temp2547" lineno="98" />
+<assignHeap name="designEstimate" scope="" type="" rhsType="stradd" rhs="designEstimate+currentRequest.Des__c" lineno="98" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="currentRequest.TrnDep__c" returnloc="#temp2548" lineno="99" />
+<assignHeap name="deployEstimate" scope="" type="" rhsType="stradd" rhs="deployEstimate+currentRequest.TrnDep__c" lineno="99" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="currentRequest.Adapt__c" returnloc="#temp2549" lineno="100" />
+<assignHeap name="adaptEstimate" scope="" type="" rhsType="stradd" rhs="adaptEstimate+currentRequest.Adapt__c" lineno="100" />
+</AssignmentStatement>
+</body>
+</loop>
+<AssignmentStatement>
+<assignHeap name="currentRelease.Requirements_Gathering__c" scope="" type="" rhsType="variable" rhs="requirementEstimate" lineno="104" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="currentRelease.Design__c" scope="" type="" rhsType="variable" rhs="designEstimate" lineno="105" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="currentRelease.Build_Unit_Test__c" scope="" type="" rhsType="variable" rhs="butEstimate" lineno="106" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="currentRelease.PMT2009_SIT__c" scope="" type="" rhsType="variable" rhs="sitEstimate" lineno="107" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="currentRelease.PMT2009_UAT__c" scope="" type="" rhsType="variable" rhs="uatEstimate" lineno="108" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="currentRelease.PMT2009_Train_Deploy__c" scope="" type="" rhsType="variable" rhs="deployEstimate" lineno="109" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="currentRelease.Adapt_Ongoing_Support__c" scope="" type="" rhsType="variable" rhs="adaptEstimate" lineno="110" />
+</AssignmentStatement>
+<methodInvoke name="releaseToUpdateList.add" methodtype="normalmethod" returntype="String" parameters="currentRelease" returnloc="#temp2550" lineno="113" />
+</body>
+</loop>
+<if type="simpleif" lineno="119">
+<conditionalExpr>
+<methodInvoke name="releaseToUpdateList.isEmpty" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2551" lineno="119" />
+</conditionalExpr>
+<ifcondition expression= "!releaseToUpdateList.isEmpty()"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="lib.dml.update" methodtype="" returntype="" parameters="releaseToUpdateList" returnloc="" lineno="122" />
+</body>
+</true>
+</if>
+</body>
+<CatchStatement type="Exception" name="ex" lineno="126">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="ex.setMessage" methodtype="normalmethod" returntype="String" parameters="system.label.PMO_Task_Error" returnloc="#temp2552" lineno="128" />
+</body>
+</CatchStatement>
+</TryStatement>
+<methodendline lineno="130"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[16, 39, 69, 72, 76, 87, 90, 93, 103, 112, 118, 121]" multi="[1-13, 25-35, 49-61]" empty="[3, 5, 7, 9, 11, 15, 24, 38, 48, 66, 75, 86, 89, 102, 111, 114, 115, 117, 125]" singlebrace="[37, 47, 63, 68, 71, 74, 85, 92, 101, 116, 120, 123, 124, 127, 129, 130, 131]"/>
+</stac>

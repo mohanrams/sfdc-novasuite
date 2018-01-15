@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="GSurveysController.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="6 KB">
+<class name="GSurveysController" sharing="with" implements="" isenum="false" lineno="1" modifiers="global">
+<classbody>
+<varDeclaration name="surveyDelete" scope="instancevar" location="GSurveysController" type="string" lineno="3" />
+<VariableProperties name="surveyDelete">
+<getterMethod name="surveyDelete" returntype="string" modifiers="" lineno="3">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="surveyDelete" modifiers="" lineno="3">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="newSurveyName" scope="instancevar" location="GSurveysController" type="string" lineno="4" />
+<VariableProperties name="newSurveyName">
+<getterMethod name="newSurveyName" returntype="string" modifiers="" lineno="4">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="newSurveyName" modifiers="" lineno="4">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="allSurveys" scope="instancevar" location="GSurveysController" type="List&amp;lt;miniSurvey&amp;gt;" lineno="5" />
+<VariableProperties name="allSurveys">
+<getterMethod name="allSurveys" returntype="List&amp;lt;miniSurvey&amp;gt;" modifiers="" lineno="5">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="allSurveys" modifiers="" lineno="5">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="username" scope="instancevar" location="GSurveysController" type="string" lineno="6" />
+<VariableProperties name="username">
+<getterMethod name="username" returntype="string" modifiers="" lineno="6">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="username" modifiers="" lineno="6">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="userId" scope="instancevar" location="GSurveysController" type="string" lineno="7" />
+<VariableProperties name="userId">
+<getterMethod name="userId" returntype="string" modifiers="" lineno="7">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="userId" modifiers="" lineno="7">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="POD" scope="instancevar" location="GSurveysController" type="string" lineno="8" />
+<VariableProperties name="POD">
+<getterMethod name="POD" returntype="string" modifiers="" lineno="8">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="POD" modifiers="" lineno="8">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="sitesPicklist" scope="instancevar" location="GSurveysController" type="List&amp;lt;Selectoption&amp;gt;" lineno="9" />
+<VariableProperties name="sitesPicklist">
+<getterMethod name="sitesPicklist" returntype="List&amp;lt;Selectoption&amp;gt;" modifiers="" lineno="9">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="sitesPicklist" modifiers="" lineno="9">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="surveySite" scope="instancevar" location="GSurveysController" type="string" lineno="10" />
+<VariableProperties name="surveySite">
+<getterMethod name="surveySite" returntype="string" modifiers="" lineno="10">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="surveySite" modifiers="" lineno="10">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="showAddSitesMessage" scope="instancevar" location="GSurveysController" type="string" lineno="11" />
+<VariableProperties name="showAddSitesMessage">
+<getterMethod name="showAddSitesMessage" returntype="string" modifiers="" lineno="11">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="showAddSitesMessage" modifiers="" lineno="11">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<VariableDeclaration>
+<varDeclaration name="subdomain" scope="methodvar" location="GSurveysController" type="string" lineno="12" modifiers="private" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="useTopLevelDomain" scope="methodvar" location="GSurveysController" type="boolean" lineno="13" modifiers="private" />
+</VariableDeclaration>
+<varDeclaration name="siteInfo" scope="instancevar" location="GSurveysController" type="string" lineno="15" />
+<VariableProperties name="siteInfo">
+<getterMethod name="siteInfo" returntype="string" modifiers="" lineno="15">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="siteInfo" modifiers="" lineno="15">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<method returntype="" name="GSurveysController" parameters="stdController:ApexPages.StandardController" isTestMethod="false" lineno="17" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<methodInvoke name="" methodtype="normalmethod" returntype="String" parameters=".getUserId(" returnloc="#temp1123" lineno="18" />
+<assignHeap name="username" scope="" type="" rhsType="methodinvoke" rhs="system.Userinfo.getUserId()" lineno="18" />
+</AssignmentStatement>
+<methodInvoke name="setAllSurveys" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1124" lineno="19" />
+<methodInvoke name="setupSitesPicklist" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1125" lineno="20" />
+<AssignmentStatement>
+<methodInvoke name="Site.getDomain" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1126" lineno="21" />
+<assignHeap name="siteInfo" scope="" type="" rhsType="methodinvoke" rhs="Site.getDomain()" lineno="21" />
+</AssignmentStatement>
+<methodendline lineno="22"/>
+</body>
+</method>
+<method returntype="void" name="setupSitesPicklist" parameters="" isTestMethod="false" lineno="25" throws="" modifiers="private">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SurveySitesUtil" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1127" lineno="26" />
+<varDeclaration name="sites" scope="methodvar" location="GSurveysController" type="List&amp;lt;SurveySitesUtil.SurveySiteInfo&amp;gt;" lineno="26" />
+<assignHeap name="sites" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveySitesUtil().getSiteList()" lineno="26" />
+</VariableDeclaration>
+<if type="simpleif" lineno="27">
+<conditionalExpr>
+<methodInvoke name="#temp1127.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1128" lineno="27" />
+<ConditionalStatement LHStype="" LHS="sites.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "sites.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="subdomain" scope="" type="" rhsType="methodinvoke" rhs="sites[0].Subdomain" lineno="28" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+<AssignmentStatement>
+<assignHeap name="useTopLevelDomain" scope="" type="" rhsType="value" rhs="false" lineno="30" />
+</AssignmentStatement>
+<VariableDeclaration>
+<varDeclaration name="pathPrefix" scope="methodvar" location="GSurveysController" type="string" lineno="31" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="List&lt;Selectoption&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1130" lineno="32" />
+<assignHeap name="sitesPicklist" scope="" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;Selectoption&gt;()" lineno="32" />
+</AssignmentStatement>
+<methodInvoke name="sites.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1131" lineno="35" />
+<methodInvoke name="setupShowSites" methodtype="normalmethod" returntype="String" parameters="sites.size()" returnloc="#temp1132" lineno="35" />
+<methodInvoke name="Selectoption" methodtype="constructormethod" returntype="newobject" parameters="&apos;--select SITE--&apos;,system.Label.LABS_SF_SELECTSITE" returnloc="#temp1133" lineno="36" />
+<methodInvoke name="sitesPicklist.add" methodtype="normalmethod" returntype="String" parameters="newSelectoption(&apos;--select SITE--&apos;,system.Label.LABS_SF_SELECTSITE)" returnloc="#temp1134" lineno="36" />
+<methodInvoke name="Selectoption" methodtype="constructormethod" returntype="newobject" parameters="&apos;Internal&apos;,system.Label.LABS_SF_Internal" returnloc="#temp1135" lineno="37" />
+<methodInvoke name="sitesPicklist.add" methodtype="normalmethod" returntype="String" parameters="newSelectoption(&apos;Internal&apos;,system.Label.LABS_SF_Internal)" returnloc="#temp1136" lineno="37" />
+<loop type="advancedfor" lineno="38">
+<Iterator type="SurveySitesUtil.SurveySiteInfo" name="s" on="sites">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="39">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.prefix" RHStype="" RHS="null" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "s.prefix==null"/>
+<true>
+<body>
+<AssignmentStatement>
+<assignHeap name="pathPrefix" scope="" type="" rhsType="value" rhs="&apos;EMPTY&apos;" lineno="40" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="41">
+<body>
+<AssignmentStatement>
+<assignHeap name="pathPrefix" scope="" type="" rhsType="variable" rhs="s.prefix" lineno="42" />
+</AssignmentStatement>
+</body>
+</false>
+</if>
+<methodInvoke name="Selectoption" methodtype="constructormethod" returntype="newobject" parameters="pathPrefix,s.Name" returnloc="#temp1137" lineno="43" />
+<methodInvoke name="sitesPicklist.add" methodtype="normalmethod" returntype="String" parameters="newSelectoption(pathPrefix,s.Name)" returnloc="#temp1138" lineno="43" />
+</body>
+</loop>
+<methodendline lineno="45"/>
+</body>
+</method>
+<method returntype="void" name="setupShowSites" parameters="i:integer" isTestMethod="false" lineno="62" throws="" modifiers="private">
+<body>
+<if type="simpleif" lineno="63">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="i" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "i&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="showAddSitesMessage" scope="" type="" rhsType="value" rhs="&apos;false&apos;" lineno="64" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="66">
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="showAddSitesMessage" scope="" type="" rhsType="value" rhs="&apos;true&apos;" lineno="67" />
+</AssignmentStatement>
+</body>
+</false>
+</if>
+<methodendline lineno="69"/>
+</body>
+</method>
+<method returntype="void" name="setAllSurveys" parameters="" isTestMethod="false" lineno="71" throws="" modifiers="private">
+<body>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Id, Name from Survey__c where IsDeleted = false order by Name]" returnloc="#temp1139" lineno="72" />
+<varDeclaration name="surveys" scope="methodvar" location="GSurveysController" type="List&amp;lt;Survey__c&amp;gt;" lineno="72" />
+<assignHeap name="surveys" scope="methodvar" type="List&amp;lt;Survey__c&amp;gt;" rhsType="query" rhs="[select Id, Name from Survey__c where IsDeleted = false order by Name]" lineno="72" />
+</VariableDeclaration>
+<if type="simpleif" lineno="74">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="allSurveys" RHStype="" RHS="null" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "allSurveys==null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="List&lt;miniSurvey&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1140" lineno="75" />
+<assignHeap name="allSurveys" scope="" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;miniSurvey&gt;()" lineno="75" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="77">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="allSurveys.clear" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1141" lineno="78" />
+</body>
+</false>
+</if>
+<loop type="advancedfor" lineno="80">
+<Iterator type="Survey__c" name="s" on="surveys">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="miniSurvey" methodtype="constructormethod" returntype="newobject" parameters="s.Name,s.Id" returnloc="#temp1142" lineno="81" />
+<methodInvoke name="allSurveys.add" methodtype="normalmethod" returntype="String" parameters="newminiSurvey(s.Name,s.Id)" returnloc="#temp1143" lineno="81" />
+</body>
+</loop>
+<methodendline lineno="83"/>
+</body>
+</method>
+<method returntype="void" name="testGSurveysController" parameters="" isTestMethod="true" lineno="85" throws="" modifiers="private,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SurveyTestingUtil" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1144" lineno="86" />
+<varDeclaration name="tu" scope="methodvar" location="GSurveysController" type="SurveyTestingUtil" lineno="86" />
+<assignHeap name="tu" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyTestingUtil()" lineno="86" />
+</VariableDeclaration>
+<methodInvoke name="Apexpages.currentPage" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1145" lineno="87" />
+<methodInvoke name="Apexpages.currentPage(.getParameters" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1146" lineno="87" />
+<methodInvoke name="#temp1146.getUserId" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1147" lineno="87" />
+<methodInvoke name="Apexpages.currentPage(.getParameters(.put" methodtype="normalmethod" returntype="String" parameters="&apos;uId&apos;,Userinfo.getUserId()" returnloc="#temp1148" lineno="87" />
+<VariableDeclaration>
+<varDeclaration name="stc" scope="methodvar" location="GSurveysController" type="Apexpages.Standardcontroller" lineno="88" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="GSurveysController" methodtype="constructormethod" returntype="newobject" parameters="stc" returnloc="#temp1149" lineno="89" />
+<varDeclaration name="sc" scope="methodvar" location="GSurveysController" type="GSurveysController" lineno="89" />
+<assignHeap name="sc" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newGSurveysController(stc)" lineno="89" />
+</VariableDeclaration>
+<ExpressionStatement expression="sc.allSurveys.size()&gt;0" key="assert" lineno="90"/>
+<methodendline lineno="91"/>
+</body>
+</method>
+<method returntype="Pagereference" name="makeNewSurvey" parameters="" isTestMethod="false" lineno="93" throws="" modifiers="public">
+<body>
+<if type="simpleif" lineno="94">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="newSurveyName" RHStype="" RHS="null" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "newSurveyName==null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="POD" scope="" type="" rhsType="value" rhs="&apos;&apos;" lineno="95" />
+</AssignmentStatement>
+<methodInvoke name="ApexPages.Message" methodtype="constructormethod" returntype="newobject" parameters="ApexPages.Severity.error,system.Label.LABS_SF_Survey_Name_Is_Required" returnloc="#temp1150" lineno="96" />
+<methodInvoke name="ApexPages.addMessage" methodtype="normalmethod" returntype="String" parameters="newApexPages.Message(ApexPages.Severity.error,system.Label.LABS_SF_Survey_Name_Is_Required)" returnloc="#temp1151" lineno="96" />
+<ReturnBlock>
+<return expression="null" expressiontype="@value" lineno="97" />
+</ReturnBlock>
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="99">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="surveySite" RHStype="" RHS="&apos;--select SITE--&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "surveySite==&apos;--select SITE--&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="POD" scope="" type="" rhsType="value" rhs="&apos;&apos;" lineno="100" />
+</AssignmentStatement>
+<methodInvoke name="ApexPages.Message" methodtype="constructormethod" returntype="newobject" parameters="ApexPages.Severity.error,system.Label.LABS_SF_Survey_Site_Is_Required" returnloc="#temp1152" lineno="101" />
+<methodInvoke name="ApexPages.addMessage" methodtype="normalmethod" returntype="String" parameters="newApexPages.Message(ApexPages.Severity.error,system.Label.LABS_SF_Survey_Site_Is_Required)" returnloc="#temp1153" lineno="101" />
+<ReturnBlock>
+<return expression="null" expressiontype="@value" lineno="102" />
+</ReturnBlock>
+</body>
+</true>
+</if>
+<VariableDeclaration>
+<methodInvoke name="setupUrlPrefix" methodtype="normalmethod" returntype="String" parameters="surveySite" returnloc="#temp1154" lineno="107" />
+<varDeclaration name="urlPrefix" scope="methodvar" location="GSurveysController" type="string" lineno="107" />
+<assignHeap name="urlPrefix" scope="methodvar" type="string" rhsType="variable" rhs="setupUrlPrefix(surveySite)" lineno="107" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1154.setupDomainForSurvey" methodtype="normalmethod" returntype="String" parameters="POD" returnloc="#temp1155" lineno="108" />
+<varDeclaration name="domain" scope="methodvar" location="GSurveysController" type="string" lineno="108" />
+<assignHeap name="domain" scope="methodvar" type="string" rhsType="variable" rhs="setupDomainForSurvey(POD)" lineno="108" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="&apos;TakeSurvey?&apos;" returnloc="#temp1156" lineno="109" />
+<varDeclaration name="urlToSave" scope="methodvar" location="GSurveysController" type="string" lineno="109" />
+<assignHeap name="urlToSave" scope="methodvar" type="string" rhsType="value" rhs="domain+&apos;/&apos;+urlPrefix+&apos;TakeSurvey?&apos;" lineno="109" />
+</VariableDeclaration>
+<if type="simpleif" lineno="110">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="surveySite" RHStype="" RHS="&apos;Internal&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "surveySite==&apos;Internal&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="URL#temp1156URL.getSalesforceBaseUrl" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1157" lineno="112" />
+<methodInvoke name="#temp1157.toExternalForm" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1158" lineno="112" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="&apos;TakeSurvey?&apos;" returnloc="#temp1159" lineno="112" />
+<assignHeap name="urlToSave" scope="" type="" rhsType="stradd" rhs="URL.getSalesforceBaseUrl().toExternalForm()+&apos;/apex/&apos;+&apos;TakeSurvey?&apos;" lineno="112" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+<VariableDeclaration>
+<methodInvoke name="Survey__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1160" lineno="115" />
+<varDeclaration name="s" scope="methodvar" location="GSurveysController" type="Survey__c" lineno="115" />
+<assignHeap name="s" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurvey__c()" lineno="115" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="s.Name" scope="" type="" rhsType="methodinvoke" rhs="newSurveyName" lineno="116" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="s.URL__c" scope="" type="" rhsType="variable" rhs="urlToSave" lineno="117" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="s.Submit_Response__c" scope="" type="" rhsType="value" rhs="&apos;empty&apos;" lineno="118" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="s.thankYouText__c" scope="" type="" rhsType="variable" rhs="system.Label.LABS_SF_Survey_Submitted_Thank_you" lineno="119" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="s.thankYouLink__c" scope="" type="" rhsType="value" rhs="&apos;http://www.salesforce.com&apos;" lineno="120" />
+</AssignmentStatement>
+<TryStatement lineno="121">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="s" returnloc="" lineno="122" />
+<methodInvoke name="createAnonSurveyTaker" methodtype="normalmethod" returntype="String" parameters="s.Id" returnloc="#temp1161" lineno="123" />
+<ReturnBlock>
+<methodInvoke name="Pagereference" methodtype="constructormethod" returntype="newobject" parameters="&apos;/apex/SurveyManagerPage?id=&apos;+s.Id" returnloc="#temp1162" lineno="124" />
+<methodInvoke name="lib.stradd" methodtype="constructormethod" returntype="String" parameters="newPagereference(&apos;/apex/SurveyManagerPage?id=&apos;+s.Id)" returnloc="#temp1163" lineno="124" />
+<return expression="newPagereference(&apos;/apex/SurveyManagerPage?id=&apos;+s.Id)" expressiontype="@newobject" lineno="124" />
+</ReturnBlock>
+</body>
+<CatchStatement type="Exception" name="e" lineno="125">
+<body>
+<curlybrace exists="true"/>
+<ReturnBlock>
+<return expression="null" expressiontype="@value" lineno="126" />
+</ReturnBlock>
+</body>
+</CatchStatement>
+</TryStatement>
+<methodendline lineno="128"/>
+</body>
+</method>
+<method returntype="void" name="createAnonSurveyTaker" parameters="surveyId:string" isTestMethod="false" lineno="130" throws="" modifiers="private,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id from SurveyTaker__c where Survey__c = :surveyId and Contact__c = null and Case__c = null]" returnloc="#temp1164" lineno="131" />
+<varDeclaration name="sTakers" scope="methodvar" location="GSurveysController" type="list&amp;lt;SurveyTaker__c&amp;gt;" lineno="131" />
+<assignHeap name="sTakers" scope="methodvar" type="list&amp;lt;SurveyTaker__c&amp;gt;" rhsType="query" rhs="[select id from SurveyTaker__c where Survey__c = :surveyId and Contact__c = null and Case__c = null]" lineno="131" />
+</VariableDeclaration>
+<if type="simpleif" lineno="132">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="sTakers" RHStype="" RHS="null" Operator="!="/>
+<conditionalExpr>
+<methodInvoke name="#temp1164.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1165" lineno="132" />
+<ConditionalStatement LHStype="" LHS="sTakers.size()" RHStype="" RHS="0" Operator="&gt;"/>
+<ConditionalStatement LHStype="methodinvoke" LHS="0" RHStype="sTakers.size()&gt;0" RHS="sTakers.size()&gt;0" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "sTakers!=null&amp;&amp;sTakers.size()&gt;0"/>
+<true>
+<body>
+<ReturnBlock>
+</ReturnBlock>
+</body>
+</true>
+</if>
+<VariableDeclaration>
+<methodInvoke name="SurveyTaker__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1166" lineno="134" />
+<varDeclaration name="st" scope="methodvar" location="GSurveysController" type="SurveyTaker__c" lineno="134" />
+<assignHeap name="st" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyTaker__c()" lineno="134" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="st.Case__c" scope="" type="" rhsType="methodinvoke" rhs="null" lineno="135" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="st.Survey__c" scope="" type="" rhsType="variable" rhs="surveyId" lineno="136" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="st.Contact__c" scope="" type="" rhsType="value" rhs="null" lineno="137" />
+</AssignmentStatement>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="st" returnloc="" lineno="138" />
+<methodendline lineno="139"/>
+</body>
+</method>
+<method returntype="string" name="setupDomainForSurvey" parameters="pod:string" isTestMethod="false" lineno="141" throws="" modifiers="private">
+<body>
+<if type="simpleif" lineno="142">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="pod" RHStype="" RHS="&apos;NO_POD&apos;" Operator="!="/>
+<conditionalExpr>
+<ConditionalStatement LHStype="variable" LHS="useTopLevelDomain" RHStype="!useTopLevelDomain" RHS="!useTopLevelDomain" Operator="AND"/>
+</conditionalExpr>
+<conditionalExpr>
+<methodInvoke name="checkSubdomain" methodtype="normalmethod" returntype="String" parameters="subdomain" returnloc="#temp1167" lineno="142" />
+<ConditionalStatement LHStype="variable" LHS="subdomain" RHStype="checkSubdomain(subdomain)" RHS="checkSubdomain(subdomain)" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "pod!=&apos;NO_POD&apos;&amp;&amp;!useTopLevelDomain&amp;&amp;checkSubdomain(subdomain)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ReturnBlock>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="&apos;.force.com&apos;" returnloc="#temp1168" lineno="143" />
+<return expression="&apos;http://&apos;+subdomain+&apos;.&apos;+pod+&apos;.force.com&apos;" expressiontype="@alias" lineno="143" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="145">
+<body>
+<if type="elseif" lineno="145">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="pod" RHStype="" RHS="&apos;NO_POD&apos;" Operator="!="/>
+<conditionalExpr>
+<ConditionalStatement LHStype="variable" LHS="#temp1168.useTopLevelDomain" RHStype="useTopLevelDomain" RHS="useTopLevelDomain" Operator="AND"/>
+</conditionalExpr>
+<conditionalExpr>
+<methodInvoke name="#temp1168.checkSubdomain" methodtype="normalmethod" returntype="String" parameters="subdomain" returnloc="#temp1169" lineno="145" />
+<ConditionalStatement LHStype="variable" LHS="#temp1168.subdomain" RHStype="checkSubdomain(subdomain)" RHS="checkSubdomain(subdomain)" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "pod!=&apos;NO_POD&apos;&amp;&amp;useTopLevelDomain&amp;&amp;checkSubdomain(subdomain)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ReturnBlock>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="pod" returnloc="#temp1170" lineno="146" />
+<return expression="&apos;http://&apos;+subdomain+&apos;.&apos;+pod" expressiontype="@stradd" lineno="146" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="148">
+<body>
+<if type="elseif" lineno="148">
+<conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "useTopLevelDomain"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ReturnBlock>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="subdomain" returnloc="#temp1171" lineno="149" />
+<return expression="&apos;http://&apos;+subdomain" expressiontype="@stradd" lineno="149" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="151">
+<body>
+<curlybrace exists="true"/>
+<ReturnBlock>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="&apos;.force.com&apos;" returnloc="#temp1172" lineno="152" />
+<return expression="&apos;http://&apos;+subdomain+&apos;.force.com&apos;" expressiontype="@alias" lineno="152" />
+</ReturnBlock>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+<methodendline lineno="154"/>
+</body>
+</method>
+<method returntype="boolean" name="checkSubdomain" parameters="subdomain:string" isTestMethod="false" lineno="156" throws="" modifiers="private">
+<body>
+<if type="simpleif" lineno="157">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="subdomain" RHStype="" RHS="null" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "subdomain==null"/>
+<true>
+<body>
+<ReturnBlock>
+<return expression="false" expressiontype="@value" lineno="158" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="159">
+<body>
+<if type="elseif" lineno="159">
+<conditionalExpr>
+<methodInvoke name="#temp1172.contains" methodtype="normalmethod" returntype="String" parameters="&apos;developer-edition&apos;" returnloc="#temp1173" lineno="159" />
+</conditionalExpr>
+<ifcondition expression= "subdomain.contains(&apos;developer-edition&apos;)"/>
+<true>
+<body>
+<ReturnBlock>
+<return expression="true" expressiontype="@methodinvoke" lineno="160" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="161">
+<body>
+<ReturnBlock>
+<return expression="false" expressiontype="@methodinvoke" lineno="162" />
+</ReturnBlock>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+<methodendline lineno="163"/>
+</body>
+</method>
+<method returntype="string" name="setupUrlPrefix" parameters="site:string" isTestMethod="false" lineno="165" throws="" modifiers="private">
+<body>
+<if type="simpleif" lineno="166">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="site" RHStype="" RHS="null" Operator="=="/>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="site" RHStype="" RHS="&apos;EMPTY&apos;" Operator="=="/>
+<ConditionalStatement LHStype="value" LHS="&apos;EMPTY&apos;" RHStype="site==&apos;EMPTY&apos;" RHS="site==&apos;EMPTY&apos;" Operator="OR"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "site==null||site==&apos;EMPTY&apos;"/>
+<true>
+<body>
+<ReturnBlock>
+<return expression="&apos;&apos;" expressiontype="@value" lineno="167" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="168">
+<body>
+<ReturnBlock>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="&apos;/&apos;" returnloc="#temp1174" lineno="169" />
+<return expression="site+&apos;/&apos;" expressiontype="@alias" lineno="169" />
+</ReturnBlock>
+</body>
+</false>
+</if>
+<methodendline lineno="170"/>
+</body>
+</method>
+<method returntype="Pagereference" name="doSurveyReset" parameters="" isTestMethod="false" lineno="172" throws="" modifiers="public">
+<body>
+<methodInvoke name="setAllSurveys" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1175" lineno="173" />
+<ReturnBlock>
+<return expression="null" expressiontype="@methodinvoke" lineno="174" />
+</ReturnBlock>
+<methodendline lineno="175"/>
+</body>
+</method>
+<method returntype="void" name="testMakeNewSurvey" parameters="" isTestMethod="true" lineno="177" throws="" modifiers="private,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SurveyTestingUtil" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1176" lineno="178" />
+<varDeclaration name="tu" scope="methodvar" location="GSurveysController" type="SurveyTestingUtil" lineno="178" />
+<assignHeap name="tu" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyTestingUtil()" lineno="178" />
+</VariableDeclaration>
+<methodInvoke name="Apexpages.currentPage" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1177" lineno="179" />
+<methodInvoke name="Apexpages.currentPage(.getParameters" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1178" lineno="179" />
+<methodInvoke name="#temp1178.getUserId" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1179" lineno="179" />
+<methodInvoke name="Apexpages.currentPage(.getParameters(.put" methodtype="normalmethod" returntype="String" parameters="&apos;uId&apos;,Userinfo.getUserId()" returnloc="#temp1180" lineno="179" />
+<VariableDeclaration>
+<varDeclaration name="stc" scope="methodvar" location="GSurveysController" type="Apexpages.Standardcontroller" lineno="180" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="GSurveysController" methodtype="constructormethod" returntype="newobject" parameters="stc" returnloc="#temp1181" lineno="181" />
+<varDeclaration name="sc" scope="methodvar" location="GSurveysController" type="GSurveysController" lineno="181" />
+<assignHeap name="sc" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newGSurveysController(stc)" lineno="181" />
+</VariableDeclaration>
+<ExpressionStatement expression="sc.makeNewSurvey()==null" key="assert" lineno="182"/>
+<AssignmentStatement>
+<assignHeap name="sc.surveySite" scope="" type="" rhsType="value" rhs="&apos;--select SITE--&apos;" lineno="183" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="sc.newSurveyName" scope="" type="" rhsType="value" rhs="&apos;TestMakeNewSurvey&apos;" lineno="184" />
+</AssignmentStatement>
+<ExpressionStatement expression="sc.makeNewSurvey()==null" key="assert" lineno="185"/>
+<AssignmentStatement>
+<assignHeap name="sc.surveySite" scope="" type="" rhsType="value" rhs="&apos;blah&apos;" lineno="186" />
+</AssignmentStatement>
+<ExpressionStatement expression="sc.makeNewSurvey()!=null" key="assert" lineno="187"/>
+<methodInvoke name="sc.doSurveyReset" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1182" lineno="188" />
+<methodendline lineno="189"/>
+</body>
+</method>
+<method returntype="string" name="deleteSurvey" parameters="deleteId:string" isTestMethod="false" lineno="191" throws="" modifiers="public,static,webservice">
+<body>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Id, Name from Survey__c where Id =:deleteId]" returnloc="#temp1183" lineno="192" />
+<varDeclaration name="s" scope="methodvar" location="GSurveysController" type="Survey__c" lineno="192" />
+<assignHeap name="s" scope="methodvar" type="Survey__c" rhsType="query" rhs="[select Id, Name from Survey__c where Id =:deleteId]" lineno="192" />
+</VariableDeclaration>
+<methodInvoke name="lib.dml.delete" methodtype="" returntype="" parameters="s" returnloc="" lineno="193" />
+<ReturnBlock>
+<return expression="&apos;true&apos;" expressiontype="@value" lineno="195" />
+</ReturnBlock>
+<methodendline lineno="196"/>
+</body>
+</method>
+<method returntype="void" name="testDeleteSurvey" parameters="" isTestMethod="true" lineno="198" throws="" modifiers="private,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="SurveyTestingUtil" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1184" lineno="199" />
+<varDeclaration name="tu" scope="methodvar" location="GSurveysController" type="SurveyTestingUtil" lineno="199" />
+<assignHeap name="tu" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSurveyTestingUtil()" lineno="199" />
+</VariableDeclaration>
+<methodInvoke name="Apexpages.currentPage" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1185" lineno="200" />
+<methodInvoke name="Apexpages.currentPage(.getParameters" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1186" lineno="200" />
+<methodInvoke name="#temp1186.getUserId" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1187" lineno="200" />
+<methodInvoke name="Apexpages.currentPage(.getParameters(.put" methodtype="normalmethod" returntype="String" parameters="&apos;uId&apos;,Userinfo.getUserId()" returnloc="#temp1188" lineno="200" />
+<VariableDeclaration>
+<varDeclaration name="stc" scope="methodvar" location="GSurveysController" type="Apexpages.Standardcontroller" lineno="201" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="GSurveysController" methodtype="constructormethod" returntype="newobject" parameters="stc" returnloc="#temp1189" lineno="202" />
+<varDeclaration name="sc" scope="methodvar" location="GSurveysController" type="GSurveysController" lineno="202" />
+<assignHeap name="sc" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newGSurveysController(stc)" lineno="202" />
+</VariableDeclaration>
+<ExpressionStatement expression="GSurveysController.deleteSurvey(tu.surveyId),&apos;true&apos;" key="assertequals" lineno="203"/>
+<methodendline lineno="204"/>
+</body>
+</method>
+<class name="miniSurvey" sharing="default" implements="" isenum="false" lineno="206" modifiers="public">
+<classbody>
+<varDeclaration name="sName" scope="instancevar" location="miniSurvey" type="string" lineno="207" />
+<VariableProperties name="sName">
+<getterMethod name="sName" returntype="string" modifiers="" lineno="207">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="sName" modifiers="" lineno="207">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="sId" scope="instancevar" location="miniSurvey" type="string" lineno="208" />
+<VariableProperties name="sId">
+<getterMethod name="sId" returntype="string" modifiers="" lineno="208">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="sId" modifiers="" lineno="208">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<method returntype="" name="miniSurvey" parameters="miniName:string,miniId:string" isTestMethod="false" lineno="210" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<assignHeap name="sName" scope="" type="" rhsType="variable" rhs="miniName" lineno="211" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="sId" scope="" type="" rhsType="variable" rhs="miniId" lineno="212" />
+</AssignmentStatement>
+<methodendline lineno="213"/>
+</body>
+</method>
+</classbody>
+</class>
+</classbody>
+</class>
+<comments single="[33, 34]" multi="[47-61]" empty="[2, 14, 16, 23, 24, 46, 70, 73, 84, 92, 104, 105, 106, 114, 129, 140, 155, 164, 171, 176, 190, 194, 197, 205, 209, 214]" singlebrace="[22, 29, 44, 45, 56, 59, 60, 65, 68, 69, 76, 79, 82, 83, 91, 98, 103, 111, 113, 127, 128, 139, 144, 147, 150, 153, 154, 163, 170, 175, 189, 196, 204, 213, 215, 216]"/>
+</stac>

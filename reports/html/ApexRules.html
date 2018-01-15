@@ -1,0 +1,1305 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<title>Apex rules</title>
+<meta name="generator" content="PSPad editor, www.pspad.com">
+<style type="text/css" media="screen">
+p.two {
+    font-family: 'courier new';
+    font-size: 13px;
+    /* This adds the border */
+    padding: 10px;
+    border: solid;
+    border-color: #dddddd #dddddd #aaaaaa #aaaaaa;
+    border-width: 2px 6px 6px 3px;
+    background-color: white;
+}
+
+.ridge {
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-style: double;
+    border-bottom-style: double;
+    border-top-color: LightGrey;
+    border-bottom-color: LightGrey;
+    padding: 6px 0px;
+}
+
+.right {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 6px 6px 0px;
+    background-color: #9FB2C1;
+    border-top-width: 2px;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width: 2px;
+    border-style: solid;
+    border-color: #082F70;
+}
+
+.post { /* This centers the image */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* This adds the border */
+    padding: 10px;
+    border: solid;
+    border-color: #dddddd #aaaaaa #B5EAAA #B5EAAA;
+    border-width: 1px 4px 4px 1px;
+    background-color: white;
+}
+
+h1 {
+    color: #FFF5EE;
+    background-color: #66CDAA;
+    font-family: verdana;
+    font-size: x-large;
+    /* This adds the border */
+    padding: 2px;
+    border: solid;
+    border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
+    border-width: 1px 2px 2px 1px;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: large;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    color: #900;
+    background-color: #C0C0C0;
+    /* This adds the border */
+    padding: 4px;
+    border: 1px solid #aaa;
+    border-width: 5px 5px 5px 5px;
+    border-height: 50px;
+}
+
+table {
+    border-collapse: collapse;
+    border: 0 px;
+    padding-right: 50px;
+}
+
+table,td,th {
+    border: 1px solid white;
+    background-color: #C0C0C0;
+    color: #FFF5EE;
+    width: 338px;
+    height: 18px;
+    text-align: left;
+    padding: 4px 4px;
+    font-size: 14px;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+td {
+    color: black;
+}
+
+h4 {
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F2F2F2;
+    color: #747170;
+    /* This adds the border */
+    padding: 2px;
+    border: solid;
+    border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
+    border-width: 1px 2px 2px 1px;
+}
+
+p.one {
+    background-color: #A2A2A2;
+    min-height: 40px;
+    color: #FFF5EE;
+    /* This adds the border */
+    padding: 2px;
+    border: solid;
+    border-color: #dddddd #aaaaaa #dddddd;
+    border-width: 1px 2px 2px 1px;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    font-size: xx-large;
+}
+
+font {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+p.priority {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #900;
+    float: right;
+    padding: 4px;
+    margin: 10px;
+}
+
+p.top {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #808080;
+    float: right;
+    padding: 6px;
+    margin: 15px;
+}
+</style>
+</head>
+
+<body>
+
+    <img src="images/header.png" width="100%" height="100%">
+
+
+
+    <a name="top"></a>
+
+
+    <h1>
+        <a name="top">Index : Ruleset</a>
+    </h1>
+
+    <ul type="disc">
+        <li><a href="#basic"><font><b>Basic</b></font></a></li>
+    </ul>
+    <ul type="disc">
+        <li><a href="#design"><font><b>Design</b></font></a></li>
+    </ul>
+    <ul type="disc">
+        <li><a href="#database"><font><b>Database</b></font></a></li>
+    </ul>
+    <ul type="disc">
+        <li><a href="#emptycode"><font><b>Empty Code</b></font></a></li>
+    </ul>
+    <ul type="disc">
+        <li><a href="#naming"><font><b>Naming</b></font></a></li>
+    </ul>
+    <ul type="disc">
+        <li><a href="#unittest"><font><b>Unit Test</b></font></a></li>
+    </ul>
+
+    <p class="top">
+        <a href="#top"> [Go To Index] </a>
+    </p>
+
+    <dl>
+        <dt>
+            <a name="basic"></a>
+        </dt>
+
+        <p class="one">
+            <b>Basic</b>
+        </p>
+
+    </dl>
+
+    <p class="priority">
+        <b>Priority - P1</b>
+    </p>
+
+    <h2>Avoid HardCoded URLs</h2>
+
+    <ul type="disc">
+
+        <li><font> Especially, SalesForce server instances.</font></li>
+        <li><font> If the server instance address changes, there is every possibility of code being
+                broken due to wrong URL.</font></li>
+    </ul>
+
+    <h4>Example:</h4>
+</body>
+<p class="two">
+    &nbsp;&nbsp;&nbsp; Server server = new Server();<br> <br> &nbsp;&nbsp;&nbsp;<span
+        style="color: red;"><b>//Bad Practice</b></span><br> &nbsp;&nbsp;&nbsp; server. accessURL
+    ='.ns1.com';
+</p>
+
+
+<p class="priority">
+    <b>Priority - P1</b>
+</p>
+
+<h2>Hard Coding Fields</h2>
+
+<ul type="disc">
+    <li><font>Hard Coding of field names and values should be avoided.</font></li>
+    <li><h32> <font>Instead of directly hard coding values , it is Best practice to declare
+            them as final static variables or as Enum and use them across all the classes.</font></h32></li>
+    <li><h32> <font>If single hard coded string which is used only in Apex then use constant
+            variable.</font></h32></li>
+    <li><h32> <font>If group of hard coded string which are used only in Apex then use Enum.</font></h32></li>
+    <li><h32> <font>If a hard coded string is available which will be shown in UI then use
+            Custom Label.</font></h32></li>
+    <li><h32> <font>If a hard coded string is available which will vary in environment to
+            environment then use Custom Settings.</font></h32></li>
+
+</ul>
+
+<h4>Example:</h4>
+<p class="two">
+
+    public class HardCodingFields {<br> <br> &nbsp;&nbsp;&nbsp;<span style="color: red;"><b>//Bad
+            Practice</b></span><br> &nbsp;&nbsp;&nbsp;public void HardCodingFieldsMethod(){<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account acc = new Account();<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;acc.Name ="Acme" <br> &nbsp;&nbsp;&nbsp;} <br>
+    &nbsp;&nbsp;&nbsp;<span style="color: green;"><b>//Best Practice</b></span><br>
+    &nbsp;&nbsp;&nbsp;public void HardCodingFieldsMethod {<br> <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: gray;"><b>//1. example to use of Constant
+            Class for hard coded strings.</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account acc = new
+    Account();<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;acc.Name=UTIL_Constant.ACC_NAME;<br> <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: gray;"><b>//2. example to use of Custom
+            Labels for hard coded strings.</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ApexPages.addMessage(new
+    ApexPages.Message(ApexPages.Severity.ERROR, LABEL.CL_0000)); <br> <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: gray;"><b> //3. example to use of ENUM
+            for hard coded strings.</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String errorStatus =
+    ErrorStatus.DMLEXCEPTION;<br> &nbsp;&nbsp;&nbsp;} <br> }<br>
+
+
+</p>
+
+<h4>Exceptions:</h4>
+<br>
+<body>
+
+
+    <p class="two">
+        <font> &nbsp;- Only String literals to be considered. <br> &nbsp;- String literals in
+            System.debug statements to be ignored.<br> &nbsp;- String literals in System.assert statements
+            to be ignored.<br> &nbsp;- Static Final variables will be ignored.
+        </font>
+    </p>
+    <p class="priority">
+        <b>Priority - P1</b>
+    </p>
+
+    <h2>Initialise Collections</h2>
+
+    <ul type="disc">
+
+        <li><font>All collections should be initialized.</font></li>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+
+        public class InitialiseCollections {<br> <br> &nbsp; <span style="color: red;"><b>//Bad
+                Practice</b></span><br> &nbsp; List
+        <String> my_list ;<br>
+        &nbsp; Set<String> accountNames ;<br>
+        &nbsp; Map<String , String> country_currencies ;<br>
+        <br>
+
+        &nbsp; <span style="color: green;"><b>//Best practice</b></span> <br>
+        &nbsp; List<String> my_list = new List<String>();<br>
+        &nbsp; Set<String> accountNames = new Set<String>{'Acme','Sales + Force'};<br>
+        &nbsp; Map<String , String> country_currencies = new Map<String , String>();<br>
+        <br>
+        } 
+    </p>
+
+
+
+    <p class="priority">
+        <b>Priority - P1</b>
+    </p>
+    <h2>Precede Null Check</h2>
+    <ul type="disc">
+        <li><font>All Null checks should precede the IsEmpty check.</font></li>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+        public class PrecedeNullCheck {<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public void
+        precedeNullCheckMethod(){<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: gray;"><b>//Do some activity</b></span><br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: red;"><b>//Bad
+                Practice</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If (accountName!= ''){<br>
+        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: gray;"><b>//Do some activity</b></span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: green;"><b>//Best
+                Practice.</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If
+        (!accountName.isNULL() && accountName!= '') {<br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: gray;"><b>//Do
+                some activity</b></span><br> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: green;"><b>//Best
+                Practice.</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If (accountName! = NULL
+        && accountName!= ''){<br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: gray;"><b>//Do
+                some activity</b></span><br> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: green;"><b>//Best
+                Practice</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If
+        (!accountName.isEmpty()){<br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: gray;"><b>//Do
+                some activity</b></span> <br> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br> }
+
+    </p>
+    <p class="priority">
+        <b>Priority - P2</b>
+    </p>
+    <h2>Avoid Unused Method Variables/Trigger Variables</h2>
+    <ul type="disc">
+        <li><font>Avoid unused method/Trigger Variables.</font></li>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+        public class AvoidUnusedMethodVariables { <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: red;"><b>//Bad practice: Here "unusedVariable" variable is never used in
+                the method.</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public void
+        AvoidUnusedMethodVariablesMethod(String parameter1) {<br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String unusedVariable = parameter1; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(parameter1.equals('New')){<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: gray;"><b>//do
+                some activity</b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: green;"><b>//Best practice: Here
+                "usedVariable" variable is used in the method.</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public
+        AvoidUnusedMethodVariablesMethod(String parameter1) {<br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String usedVariable = parameter1;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(usedVariable.equals('New')){<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: gray;"><b>//do
+                some activity</b></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br> }
+        </p>
+    <p class="priority">
+        <b>Priority - P2</b>
+    </p>
+    <h2>Avoid using "==" for comparison</h2>
+    <ul type="disc">
+        <li><font>Avoid using "==" for comparison. Instead use <b>“equals” </b>or <b>“equalsIgnoreCase”.</b></font></li>
+        <li><font>It is applicable only for <b>"string"</b> &nbsp;variables.
+        </font></li>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+        public class UseEqualsToComparision { <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: red;"><b>///Bad Practice </b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;public void
+        UseEqualsToComparisionMethod(String search) { <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if
+        (search=='mySearch') {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: gray;"><b>///Do some activity</b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;}<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: green;"><b>///Best practice example where we compare using equals rather
+                than ==</b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;public void UseEqualsToComparisionMethod(String search)
+        {<br> <BR> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (search.equals('mySearch')) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: gray;"><b>///Do
+                some activity</b></span> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br> &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        }
+    </p>
+
+    <p class="priority">
+        <b>Priority - P2</b>
+    </p>
+    <h2>Declare Private</h2>
+    <ul type="disc">
+        <li><font> Instance Variables should be declared Private.</font></li>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+        public class DeclarePrivate { <br> <br> <span style="color: red;"><b>&nbsp;&nbsp;&nbsp;&nbsp;//Bad
+                practice </b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;public String accountName; <br>&nbsp;&nbsp;&nbsp;&nbsp;public
+        Boolean isAccountExists; <br> <br> <span style="color: green;"><b>&nbsp;&nbsp;&nbsp;&nbsp;//Best
+                Practice</b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;private String accountName; <br>&nbsp;&nbsp;&nbsp;&nbsp;private
+        Boolean isAccountExists; <br>}
+    </p>
+
+    <p class="priority">
+        <b>Priority - P2</b>
+    </p>
+    <h2>Finish if-else if block with else condition</h2>
+    <ul type="disc">
+        <li><font>Finish if-else if block with else condition.</font></li>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+        public class IfElseIfElse { <br> <br>&nbsp;&nbsp;&nbsp;<span style="color: red;"><b>//Bad
+                practice</b></span> <br>&nbsp;&nbsp;&nbsp;public void IfElseIfElseMethod(String place) {<br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (place.equalsIgnoreCase('First')) { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;medalColor=
+        'gold'; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if (place.equalsIgnoreCase('Second')) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;medalColor= 'silver'; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+        else if (place.equalsIgnoreCase('Third')) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;medalColor= 'bronze';<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if (place.equalsIgnoreCase('')){ <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;medalColor=
+        null;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br> &nbsp;&nbsp;&nbsp;}<br> <br>
+        &nbsp;&nbsp;&nbsp;<span style="color: green;"><b>//Best practice</b></span><br>
+        &nbsp;&nbsp;&nbsp;public void IfElseIfElseMethod(String place) {<br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (place.equalsIgnoreCase('First')) { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;medalColor=
+        'gold';<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if (place.equalsIgnoreCase('Second')) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;medalColor= 'silver';<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if (place.equalsIgnoreCase('Third')) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;medalColor= 'bronze';<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;medalColor=
+        null;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br> &nbsp;&nbsp;&nbsp;}<br> }
+
+    </p>
+    <p class="priority">
+        <b>Priority - P2</b>
+    </p>
+    <h2>Required Documentation</h2>
+    <ul type="disc">
+        <li><font>Multi line documentation comments need to be provided for Classes,Triggers and Methods. Empty lines just before the declaration are also considered as violation of the rule.</font></li>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+
+        <span style="color: gray;"><b>/* This class explains the bad and best practices of writing
+                block comments for Classes, Triggers and Methods. <br>*/
+        </b></span><br> public class ReqDocumentation {<br> <br> &nbsp;&nbsp;&nbsp;<span style="color: red;"><b>//Bad
+                practice - No block comments are available for the method</b></span><br> <br> &nbsp;&nbsp;&nbsp;
+        public List
+        <Account> getAccountList(String accName) {<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: gray;"><b>//querying the
+                account based on account name</b></span> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;accList = [Select Id from Account where Name=:accName];<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: gray"><b>//returning the list
+                of account obtained</b></span> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return accList;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        <br>
+        &nbsp;&nbsp;&nbsp; <span style="color: green;"><b>//Best Practice - Block comments are
+                available for the method.</span> </b> <br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: gray;"><b>/*@methodName- setListAccount</b><br>
+            &nbsp;&nbsp;&nbsp; <b>*@description- method is used to retrieve the account list based on the
+                account name<br>
+        </b> &nbsp;&nbsp;&nbsp; <b> *@param- String to know the name of account</b><br> </b>&nbsp;&nbsp;&nbsp; <b>*@return-
+                List<Account> retrieved account list <br>
+                &nbsp;&nbsp;&nbsp; */<br>
+        </b></span> &nbsp;&nbsp;&nbsp;&nbsp;public List<Account> setListAccount(String accName) {<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: gray;"> <b>//querying the
+                account based on account name</b></span> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;accList = [Select Id from Account where Name=:accName];<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: gray;"><b>//returning the
+                list of account obtained</span> </b> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return accList;<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        } 
+    </p>
+
+
+    <p class="priority">
+        <b>Priority - P2</b>
+    </p>
+    <h2>Use Curly Braces</h2>
+    <ul type="disc">
+        <li><font>Avoid using if and loop statements without curly braces.</font></li>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+        public class UseCurlyBraces { <br> <br>&nbsp;&nbsp;&nbsp;<span style="color: red;"><b>//Bad
+                Practice</b></span> <br>&nbsp;&nbsp;&nbsp;public void useCurlyBracesMethod(Account acc) { <br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: gray;"><b>//Do
+                some activity</b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(acc.Id==null)
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result =
+        Database.insert(acc);<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result
+        = Database.upsert(acc); <br>&nbsp;&nbsp;&nbsp;}<br> <br> &nbsp;&nbsp;&nbsp;<span
+            style="color: green;"><b>//Best Practice.</b></span><br> &nbsp;&nbsp;&nbsp;public void
+        useCurlyBracesMethod(Account acc) {<br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: gray;"><b>//Do
+                some activity</b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(acc.Id==null)
+        { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result =
+        Database.insert(acc));<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result
+        = Database.upsert(acc); <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br> }
+    </p>
+
+
+    <p class="priority">
+        <b>Priority - P3</b>
+    </p>
+    <h2>Avoid overriding Variable names</h2>
+    <ul type="disc">
+        <li><font>Avoid overriding variable names with in the same Class</font>.</li>
+    </ul>
+    <h4>Examples:</h4>
+    <p class="two">
+
+        public class AvoidOverridingVariableNames { <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String
+        classLevelVariable='testClassLevel';<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: red;"><b>// Bad practice: Class level variables used in the method</b></span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public void avoidOverridingVariableNamesMethod(){ <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String
+        classLevelVariable='testMethodLevel'; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: red;"><b>// Bad practice: Method level variables reused in the method.</b></span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public void avoidOverridingVariableNamesMethod(){<br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String
+        methodLevelVariable='testMethodLevel'; <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for
+        (int i=0;i<10;i++){ <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String
+        methodLevelVariable='testMethodLevel'; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: green;"><b>// Best practice</b></span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public void avoidOverridingVariableNamesMethod(){ <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String
+        someOtherVariable='testSomeOtherVariable';<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>}
+    </p>
+
+    <h4>Exceptions:</h4>
+    <p class="two">
+        &nbsp;-<font> Initial condition of same level For loops to be ignored.</font>
+    </p>
+
+
+    <p class="priority">
+        <b>Priority - P3</b>
+    </p>
+    <h2>Initialise Local Variables</h2>
+    <ul type="disc">
+        <li><font> Initialise all local variables of a method.</font></li>
+    </ul>
+    <h4>Examples:</h4>
+    <p class="two">
+        public class InitializeLocalVariables { <br> <br>&nbsp;&nbsp;&nbsp;<span style="color: RED;"><b>//Bad
+                Practice </b></span> <br>&nbsp;&nbsp;&nbsp;public void InitializeLocalVariablesMethod() {<br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String description; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Boolean
+        isSuccess; <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Below line will throw a null pointer
+        exception <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(!isSuccess){<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Do some activity <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+        <br>&nbsp;&nbsp;&nbsp;} <br> <br>&nbsp;&nbsp;&nbsp;<span style="color: green;"><b>//Best
+                practice</b></span><br> &nbsp;&nbsp;&nbsp;public void InitializeLocalVariablesMethod(){ <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String
+        description='';<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Boolean isSuccess=false; <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Below
+        line will not throw a null pointer exception <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(!isSuccess){
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: grAY;"><b>//Do
+                some activity</b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>&nbsp;&nbsp;&nbsp;}<br>
+        }
+    </p>
+
+    <h4>Exceptions:</h4>
+    <p class="two">
+        &nbsp;- <font>ignore List, Set and Map in methods as they will be covered under a rule called
+            Initialize Collections.</font>
+    </p>
+
+
+    <p class="priority">
+        <b>Priority - P3</b>
+    </p>
+    <h2>Multiple Exit points</h2>
+    <ul type="disc">
+        <li><font> Multiple Exit points from a Single Method (eg: Multiple return statements in a
+                single method) should be avoided.<font></li>
+        <li><font>Instead of returning multiple exit points, it is Best practice to assign the value
+                to a variable and return that variable only once.</font></li>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+        public class MultipleExitPoints { <br> <br>&nbsp;&nbsp;public Boolean
+        MultipleExitPointsMethod(Integer accountBalance){ <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;Boolean
+        notEnoughBalance =false; <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: RED;"><b>//Bad
+                practice - Multiple return statements</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;if (accountBalance <1000)
+        {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return true; <br>&nbsp;&nbsp;&nbsp;&nbsp;}
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;else { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+        false;<br> &nbsp;&nbsp;&nbsp;&nbsp;}<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: green;"><b>//Best Practice - Single return statement.</b></span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;If (accountBalance <1000) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;notEnoughBalance=true;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br>&nbsp;&nbsp;&nbsp;&nbsp;else { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;notEnoughBalance=false;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br> &nbsp;&nbsp;&nbsp;&nbsp;return notEnoughBalance;<br>
+        &nbsp;&nbsp;}<br> }
+    </p>
+
+    <p class="top">
+        <a href="#top"> [Go To Index] </a>
+    </p>
+    <dl>
+        <dt>
+            <a name="design"></a>
+        </dt>
+        <p class="one">
+            <b>Design</b>
+        </p>
+
+    </dl>
+
+    <p class="priority">
+        <b>Priority - P1</b>
+    </p>
+    <h2>Object creation in loop</h2>
+    <ul type="disc">
+        <li><font> Avoid creating objects in a loop.<br></font></li>
+        <li><font>New objects(All SalesForce objects and all generic class instances) created within
+                loops should be checked to see if they can be created outside the loop and reused.</font></li>
+    </ul>
+
+    <h4>Example:</h4>
+    <p class="two">
+        public class ObjectCreationInLoop { <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;public void
+        ObjectCreationInLoopMethod( ) { <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for
+        (int i = 0; i < accountSize; i++) {<br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: RED;"><b>//Bad
+                Practice </b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List
+        contactList= new List();<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;} <br>}
+    </p>
+
+    <p class="priority">
+        <b>Priority - P1</b>
+    </p>
+    <h2>Avoid three or more nested loops</h2>
+    <ul type="disc">
+        <li><font>Avoid three or more nested loops.</font></li>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+        public class AvoidThreeOrMoreNestedLoops {<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: red;"><b>//Bad Practice</b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;public void
+        avoidThreeOrMoreNestedLoopsMethod() {<br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for ( Integer i=0;i<10;i++) { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: GRAY;"><b>//Do some activity</b></span> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for ( Integer
+        j=0;j<10;j++) { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: GRAY;"><b>//Do some activity </b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for
+        ( Integer k=0;k<10;k++ ) { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: GRAY;"><b>//Do some activity</b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br> &nbsp;&nbsp;&nbsp;&nbsp;} <br>}
+    </p>
+
+
+    <font>This rule has the following properties:</font>
+    <br>
+    <table style="width: 800px;">
+        <tr>
+            <th style="width: 200px;">Name</th>
+            <th style="width: 200px;">Default Value</th>
+        </tr>
+        <tr>
+            <td style="width: 200px; background-color: #D3D3D3">Nested Loops<br></td>
+            <td style="width: 200px; background-color: #D3D3D3">3</td>
+        </tr>
+    </table>
+    </p>
+
+    <p class="priority">
+        <b>Priority - P1</b>
+    </p>
+    <h2>Avoid Finally block with out Catch block</h2>
+    <ul type="disc">
+        <li><font>Avoid Finally block with out Catch block</font></li>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+        public class AvoidFinallyBlockWithoutCatchBlock { <br> <br>&nbsp;&nbsp;&nbsp;<span
+            style="color: RED;"><b>//Bad Practice</b></span> <br>&nbsp;&nbsp;&nbsp;public void
+        avoidFinallyBlockWithoutCatchBlockMethod() { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: GRAY;"><b>//performing
+                certain operation that might cause exception</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;finally { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: GRAY;"><b>//
+                Perform some clean up.</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;}<br> <br> &nbsp;&nbsp;&nbsp;<span style="color: Green;"><b>//Best
+                Practice</b></span><br> &nbsp;&nbsp;&nbsp;public void avoidFinallyBlockWithoutCatchBlockMethod() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: GRAY;"><b>//performing
+                certain operation that might cause exception.</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch(DmlException e) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: GRAY;"><b>//
+                DmlException handling code here.</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;finally { <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: GRAY;"><b>// Perform some clean up.</b></span> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br> &nbsp;&nbsp;&nbsp;}<br> }
+    </p>
+
+
+    <p class="priority">
+        <b>Priority - P2</b>
+    </p>
+    <h2>Avoid SOQL/DML inside a Trigger</h2>
+    <ul type="disc">
+        <li><font>Avoid SOQL/DML inside a Trigger</font></li>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+        trigger AvoidSoqlDmlInsideTrigger on Account(before insert) { <br> <br>&nbsp;&nbsp;&nbsp;List
+        accList = Trigger.new; <br>&nbsp;&nbsp;&nbsp;List userList = new List();<br>
+        &nbsp;&nbsp;&nbsp;User u; <br> <br>&nbsp;&nbsp;&nbsp;<span style="color: red;"><b>//Bad
+                Practice</b></span> <br>&nbsp;&nbsp;&nbsp;if(accList.size()>10) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(Account acc:accList ) { <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u
+        = [SELECT Id FROM user WHERE name =:acc.Name];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userList.add(u); <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;database.upsert(userList);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br> <br>&nbsp;&nbsp;&nbsp;<span style="color: Green;"><b>//Best
+                Practice: <br>&nbsp;&nbsp;&nbsp;creating a seperate class to handle the trigger operations
+                where the DML/SOQLs should be handled
+        </b></span> <br>&nbsp;&nbsp;&nbsp;SoqlDmlTrigger goodPrac = new SoqlDmlTrigger(); <br>&nbsp;&nbsp;&nbsp;if(accList.size()>10)
+        { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;goodPrac.updateUser(accList); <br>&nbsp;&nbsp;&nbsp;}<br>
+        }
+
+
+    </p>
+    <p class="priority">
+        <b>Priority - P2</b>
+    </p>
+    <h2>Avoid SOQL/DML in Constructors</h2>
+    <ul type="disc">
+        <li><font>Avoid using SOQL/DML statements inside Constructors</font></li>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+        public class AvoidSOQLDMLInConstructors { <br> <br>&nbsp;&nbsp;&nbsp;<span style="color: red;"><b>//Bad
+                practice</b></span><br> &nbsp;&nbsp;&nbsp;public AvoidSOQLDMLInConstructors() { <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account
+        acc=[Select Id, Name from Account where name='Sample Test' limit 1];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;acc.Name='Test Account';<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;update acc; <br>&nbsp;&nbsp;&nbsp;}<br> <br>
+        &nbsp;&nbsp;&nbsp;<span style="color: GReen;"><b> //Best Practice - Do initializations and
+                use them further. </b></span> <br>&nbsp;&nbsp;&nbsp;public AvoidSOQLDMLInConstructors() { <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myFlag=false;<br>
+        &nbsp;&nbsp;&nbsp;}<br> <br> &nbsp;&nbsp;&nbsp;public void init() {<br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!myFlag){<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account acc=[Select Id, Name from
+        Account where name='Carol' limit 1]; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;acc.Name='Test Account';<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;insert acc;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myFlag=true;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br> &nbsp;&nbsp;&nbsp;}<br> }
+    </p>
+
+
+    <p class="priority">
+        <b>Priority - P2</b>
+    </p>
+    <h2>Avoid exceeding 30 lines per Method</h2>
+    <ul type="disc">
+        <li><font>Avoid exceeding 30 lines per Method.</font></li>
+    </ul>
+    <h4>Exception:</h4>
+    <p class="two">
+        &nbsp;- <font>Comments, single line braces and empty lines are ignored</font>
+    </p>
+    <p>
+        <font>This rule has the following properties:</font>
+    </p>
+    <table style="width: 899px;">
+        <tr>
+            <th style="width: 200px;">Name</th>
+            <th style="width: 200px;">Default Value</th>
+        </tr>
+        <tr>
+            <td style="width: 200px; background-color: #D3D3D3">Lines per Methods<br></td>
+            <td style="width: 200px; background-color: #D3D3D3">30</td>
+        </tr>
+    </table>
+    </p>
+    <p class="priority">
+        <b>Priority - P2</b>
+    </p>
+    <h2>Avoid exceeding 2000 lines per Class</h2>
+    <ul type="disc">
+        <li><font>Avoid exceeding 2000 lines per Class.</font></li>
+    </ul>
+    <h4>Exception:</h4>
+    <p class="two">
+        &nbsp;- <font>Comments, single line braces and empty lines are ignored</font>
+    </p>
+    <p>
+        <font>This rule has the following properties:</font>
+    </p>
+    <table style="width: 899px;">
+        <tr>
+            <th style="width: 200px;">Name</th>
+            <th style="width: 200px;">Default Value</th>
+        </tr>
+        <tr>
+            <td style="width: 200px; background-color: #D3D3D3">Lines per Class</td>
+            <td style="width: 200px; background-color: #D3D3D3">2000</td>
+        </tr>
+    </table>
+    </p>
+    <p class="priority">
+        <b>Priority - P2</b>
+    </p>
+    <h2>Avoid exceeding 200 lines per Trigger</h2>
+    <ul type="disc">
+        <li><font> Avoid exceeding 200 lines per Trigger.</font></li>
+    </ul>
+    <h4>Exception:</h4>
+    <p class="two">
+        &nbsp;- <font>Comments, single line braces and empty lines are ignored.</font>
+    </p>
+    <p>
+        <font>This rule has the following properties:</font>
+    </p>
+    <table style="width: 899px;">
+        <tr>
+            <th style="width: 200px;">Name</th>
+            <th style="width: 200px;">Default Value</th>
+        </tr>
+        <tr>
+            <td style="width: 200px; background-color: #D3D3D3">Lines per Trigger</td>
+            <td style="width: 200px; background-color: #D3D3D3">200</td>
+        </tr>
+    </table>
+    </p>
+    <p class="priority">
+        <b>Priority - P2</b>
+    </p>
+    <h2>Assign Global access specifier</h2>
+    <ul type="disc">
+        <li><font>Assign Global access specifier for all WebServices, Batch and Schedulable Classes</font>
+        </li>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+        <span style="color: GReen;"><b>//Best Practice</b></span> <br> <span style="color: GRay;"><b>//When
+                WebService is used at method or variable level, then the class should be declared with Global
+                access modifier.</b></span><br> global class WebServiceClass { <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;webService
+        static string webServiceMethod() {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: GRay;"><b>// Do some activity</b></span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br> }<br> <br> <span style="color: GRay;"><b>//Assign
+                global access specifiers for Batchable class and all it's constructors, start, execute and
+                finish methods.</b></span><br> global class BatchClass implements Database.batchable
+        <Account>{ <br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global Iterable<Account> start(Database.batchableContext
+        info){ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: GRay;"><b>// Do
+                some activity</b></span> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global void execute(Database.batchableContext info, List<Account>
+        scope){<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: GRay;"><b>// Do
+                some activity</b></span> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global void finish(Database.batchableContext info){<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: GRay;"><b>// Do
+                some activity</b></span> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        }<br>
+        <br>
+
+        <span style="color: GRay;"><b>//Assign global access specifiers for Schedulable class and all
+                it's constructors and execute method</b></span> <br>
+        global class ScheduleClass implements Schedulable{ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global void execute(SchedulableContext SC) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: GRay;"><b>//Do some
+                activity </b></span> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        } 
+    </p>
+    <p class="priority">
+        <b>Priority - P2</b>
+    </p>
+    <h2>No Test method for utility Class</h2>
+    <ul type="disc">
+        <li><font>No test method required for Utility Classes</font>.</li>
+        <li><font>Util class is a class which does not work independently. It is referred from other
+                classes .So the code is covered from the calling class's test class.</li>
+        </font>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+        public class NoTestMethodForUtilityClass { <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: RED;"><b>//Bad Practice - Use of Test method in Utility class.</b></span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;private static testMethod void NoTestMethodForUtilityClassMethod() {<br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: GRay;"><b>//Do
+                Some activity</b></span> <br> &nbsp;&nbsp;&nbsp;&nbsp;}<br> }
+
+    </p>
+
+
+    <p>
+        <font>This rule has the following properties:</font>
+    </p>
+    <table style="width: 899px;">
+        <tr>
+            <th style="width: 309px;">Name</th>
+            <th style="width: 309px;">Default Value</th>
+        </tr>
+        <tr>
+            <td style="width: 309px; background-color: #D3D3D3">Utility Class Name begins with</td>
+            <td style="width: 309px; background-color: #D3D3D3">Util_, Utils_, Utility_, AP_</td>
+        </tr>
+    </table>
+    </p>
+
+    <p class="priority">
+        <b>Priority - P1</b>
+    </p>
+    <h2>Avoid Unused Methods</h2>
+    <ul type="disc">
+        <li><font> Avoid unused Methods.<br></font></li>
+    </ul>
+
+    <h4>Example:</h4>
+    <p class="two">
+
+        <span style="color: GRAY;"><b>// Example with in the same class</b></span> <br>public class
+        AvoidUnusedMethods { <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;public callAnotherMethod () { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;usedMethod();
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;} <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: red;"><b>//Bad
+                Practice - Unused method in the same class</b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;private void
+        unusedMethod() { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Do some activity <br>&nbsp;&nbsp;&nbsp;&nbsp;}
+        <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: GREEN;"><b>//Best practice
+                -This method is invoked from the method "callAnotherMethod()".</b></span><br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private void usedMethod(){ <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Do
+        some activity <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br> } <br> <br> <span
+            style="color: GRAY;"><b>//Example across classes</b></span> <br> <br>public class
+        AvoidUnusedMethods1 {<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: red;"><b>//Bad
+                practice - Methods in the class never called "method2()" of class "AvoidUnusedMethods2"</b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;public
+        void method1(){ <br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: GRAY;"><b>//Do some
+                activity</b></span> <br>&nbsp;&nbsp;&nbsp;}<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: GREEN;"><b>//Best Practice - Call "method2()" of class
+                "AvoidUnusedMethods2"</b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;public void method1(){ <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AvoidUnusedMethods2
+        avoidUnusedMethods2Var= new AvoidUnusedMethods2(); <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;avoidUnusedMethods2Var.method2();
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: GRAY;"><b>//Do some activity.</b></span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br> }<br> public class AvoidUnusedMethods2 {<br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: red;"><b>//Bad practice - Methods in the class
+                never called "method1()" of class "AvoidUnusedMethods1".</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;public
+        void method2(){<br> &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: GRAY;"><b>//Do some
+                activity</b></span><br> &nbsp;&nbsp;&nbsp;}<br> &nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: GREEN;"><b>//Best Practice - Call "method1()" of class
+                "AvoidUnusedMethods1".</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;public void method2(){ <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AvoidUnusedMethods1
+        avoidUnusedMethods1Var= new AvoidUnusedMethods1();<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;avoidUnusedMethods1Var.method1();<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: GRAY;"><b>//Do some activity</b></span> <br>&nbsp;&nbsp;&nbsp;}
+        <br>}
+    </p>
+    <h4>Exception:</h4>
+    <p class="two">
+        &nbsp;-<font> Test classes shall be ignored.</font><br> &nbsp;-<font> Methods with return
+            type as <b>&quot;PageReference&quot;</b> are ignored as they are assumed to be called from <b>VisualForce
+                pages.</b>
+        </font><br>&nbsp;-<font> Start, finish, execute methods in Batchable and Schedulable classes will
+            be ignored. </font>
+    </p>
+    </p>
+    </p>
+
+
+    <p class="priority">
+        <b>Priority - P4</b>
+    </p>
+
+    <h2>Minimize Statics</h2>
+    <ul type="disc">
+        <li><font>Minimize Statics (except for static final constants).</font></li>
+        <li><font>Try to minimize use of static classes, variables and methods.</font></li>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+        public class MinimizeStatics {<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: RED;"><b>//
+                Bad Practice -Creating Static Class Variables and Methods.</b></span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;public static String accountName; <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;public
+        static void MinimizeStaticsMethod () { <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: GRay;"><b>//Do some activity</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;} <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: GREEN;"><b>// Best Practice -Avoid Creating Static Class Variables and
+                Methods.</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;public String accountName;<br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;public void MinimizeStaticsMethod () { <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: GRay;"><b>//Do some activity</b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;}<br> }
+    </p>
+
+    <h4>Exception:</h4>
+    <p class="two">
+        &nbsp;- <font>Variables which are static and final and are initialized to constant values are
+            ignored. Classes with single static method are also ignored. Test Classes are ignored.</font>
+    </p>
+
+
+    <p class="priority">
+        <b>Priority - P4</b>
+    </p>
+
+    <h2>Avoid Reassigning Parameters:</h2>
+    <ul type="disc">
+        <li><h34> <font>Reassigning values to parameters passed to Methods should be avoided.</font>
+            <h34></li>
+        <li><font>Reassigning values to incoming parameters is not recommended. Use temporary local
+                variables instead.</font></li>
+    </ul>
+
+    <h4>Example:</h4>
+    <p class="two">
+        public class AvoidReassigningParameters { <br> <br>&nbsp;&nbsp;&nbsp;public void
+        avoidReassigningParametersMethod(String accountName) { <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: RED;"><b>//Bad Practice</b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;accountName
+        = AccountNames.Acme;<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: GREEN;"><b>//Best
+                Practice</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String tempAccountName= AccountNames.Acme;<br>
+        &nbsp;&nbsp;&nbsp;}<br> }
+    </p>
+
+
+
+    <p class="top">
+        <a href="#top"> [Go To Index] </a>
+    </p>
+    <dl>
+        <dt>
+            <a name="database"></a>
+        </dt>
+
+        <p class="one">
+            <b>DataBase</b>
+        </p>
+
+    </dl>
+
+    <p class="priority">
+        <b>Governor Limit Priority - P1</b>
+    </p>
+    <h2>SOQL in Loops</h2>
+
+    <p>
+        <font>Avoid SOQL or DML statements in loops.Rewrite code that executes queries inside for loops
+            by moving the query outside of the loop and extending it to query all necessary data.<br>By
+            moving queries outside of for loops, your code will run faster, and is less likely to exceed
+            governor limits. A common mistake is that queries are placed inside a <b>"for" </b>loop. There is a
+            governor limit that enforces a maximum number of SOQL queries. When queries are placed inside a <b>"for"</b>
+            loop, a query is executed on each iteration and governor limit is easily reached. Instead, move the
+            SOQL query outside of the for loop and retrieve all the necessary data in a single query.
+        </font>
+    </p>
+
+    <div>
+        <h4>Example:Bad Practice</h4>
+        <br> <img src="images/SOQL-Loops-1.jpg" width="70%" height="50%" class="right">
+    </div>
+    <br>
+    <div>
+        <h4>Example:Best practice</h4>
+        <br> <img src="images/SOQL-Loops-2.jpg" width="70%" height="50%" class="right">
+    </div>
+    </p>
+
+    <p class="priority">
+        <b>Priority - P2</b>
+    </p>
+
+    <h2>Use Database Method</h2>
+    <ul type="disc">
+        <li><font>Use Database prefix before all database statements like
+                insert/update/delete/undelete/upsert.</font></li>
+        <li><font>Using Database Method allows developer to traverse through the DML result and also
+                can perform the appropriate error handling case by case basis. <br> <br>For more
+                details , refer the link <br> <a
+                href="http://www.salesforce.com/us/developer/docs/apexcode/Content/apex_dml_insert.htm">http://www.salesforce.com/us/developer/docs/apexcode/Content/apex_dml_insert.htm</a>
+        </font>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+        public class UseDatabase { <br> <br>&nbsp;&nbsp;&nbsp;public void useDatabaseMethod() { <br>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account account = new Account();<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: GRAY;"><b>//Do some
+                activity</b></span> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: RED;"><b>//Bad Practice</b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;insert
+        account<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: GREEN;"><b>//Best Practice</b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;database.insert
+        account<br> &nbsp;&nbsp;&nbsp;}<br> }
+    </p>
+    <p class="priority">
+        <b>Governor Limit Priority - P2</b>
+    </p>
+    <h2>Use Limit Keyword:</h2>
+    <ul type="disc">
+        <li><font>SOQL Queries are supposed to use limit keyword.</font></li>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+        public class Uselimitkeyword { <br> <br>&nbsp;&nbsp;&nbsp;public void uselimitkeywordMethod(){
+        <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: RED;"><b>//Bad
+                Practice</b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account account= [SELECT
+        Name FROM Account WHERE NumberOfEmployees > 10]): <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: GREEN;"><b>//Best Practice</b></span> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account
+        account= [SELECT Name FROM Account WHERE NumberOfEmployees > 10 LIMIT 1]); <br>&nbsp;&nbsp;&nbsp;}<br>
+        }
+    </p>
+
+
+    <p class="top">
+        <a href="#top"> [Go To Index] </a>
+    </p>
+
+    <dl>
+        <dt>
+            <a name="emptycode""></a>
+        </dt>
+
+        <p class="one">
+            <b>Empty Code</b>
+        </p>
+
+    </dl>
+    <p class="priority">
+        <b>Priority - P2</b>
+    </p>
+
+    <h2>Empty catch blocks</h2>
+    <div>
+        <ul type="disc">
+
+            <li><font> Avoid having empty catch blocks.</li>
+            </font>
+            <li><font>Empty Catch Block finds instances where an exception is caught,but nothing is
+                    done.</li>
+            </font>
+            <li><font>In most circumstances, this swallows an exception which should either be acted
+                    on or reported.</li>
+            </font>
+        </ul>
+    </div>
+    <h4>Example:</h4>
+
+    <p class="two">
+
+        public class EmptyCatchBlock { <br> <br> &nbsp; &nbsp; public void EmptyCatchBlockMethod(){ <br>
+        <br> &nbsp; &nbsp; &nbsp; &nbsp;try {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
+            style="color: GRAY;"><b>// Create a list with two references to the same Object element.</b></span><br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Account a = new Account();<br> &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp;Account[] accs = new Account[]{a, a};<br> <br> &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: GRAY;"><b>// Attempt to insert it.... Will
+                throw exception.</b></span> <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;insert accs; <br>
+        &nbsp; &nbsp; &nbsp; &nbsp;}<br> <br> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: RED;"><b>//Bad
+                practice - Doing nothing after the exception is thrown.</b></span><br> &nbsp; &nbsp; &nbsp;
+        &nbsp;catch (ListException e) { <br>&nbsp; &nbsp; &nbsp; &nbsp;}<br> <br> &nbsp; &nbsp;
+        &nbsp; &nbsp;<span style="color: GREEN;"><b>//Best Practice -Doing something with the
+                exception caught.<br>
+        </b></span> &nbsp; &nbsp; &nbsp; &nbsp;catch (ListException e) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp;throw new ApplicationException(e)<br> &nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp; }<br>
+        }
+
+    </p>
+    <h4>Exceptions:</h4>
+    <p class="two">
+        <font> - System.debug statements should be ignored while checking the empty catch blocks.</font>
+    </p>
+
+    <p class="top">
+        <a href="#top"> [Go To Index] </a>
+    </p>
+    <dl>
+        <dt>
+            <a name="naming"></a>
+        </dt>
+
+        <p class="one">
+            <b>Naming</b>
+        </p>
+
+    </dl>
+    <p class="priority">
+        <b>Priority - P3</b>
+    </p>
+
+    <h2>Use LowerCase</h2>
+    <ul type="disc">
+        <li><font> Method names and variables names should begin with LowerCase.</font></li>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+        public class UseLowerCase { <br> <br>&nbsp;&nbsp;&nbsp;<span style="color: red;"><b>//Bad
+                practice: Variable names should not be starting with upperCase letter</b></span> <br>&nbsp;&nbsp;&nbsp;public
+        Integer NumberOfEmployees; <br>&nbsp;&nbsp;&nbsp;public Boolean IsSuccess; <br> <br>&nbsp;&nbsp;&nbsp;<span
+            style="color: GREEN;"><b>//Best practice: Variable names should always use camelCase and
+                the first letter should be in lower case</b></span> <br>&nbsp;&nbsp;&nbsp;public Integer
+        numberOfEmployees;<br> &nbsp;&nbsp;&nbsp;public Boolean isSuccess;<br> <br>
+        &nbsp;&nbsp;&nbsp;<span style="color: red;"><b>//Bad practice: Method names should not be
+                starting with upperCase letter</b></span> <br>&nbsp;&nbsp;&nbsp;public void UseLowerCaseMethod() {<br>
+        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: GRay;"><b>//Do
+                some activity</b></span> <br> <br>&nbsp;&nbsp;&nbsp;}<br> <br> &nbsp;&nbsp;&nbsp;<span
+            style="color: GREEN;"><b>//Best practice: Method names should always use camelCase and
+                the first letter should be in lower case.</b></span><br> &nbsp;&nbsp;&nbsp;public void
+        useLowerCaseMethod() { <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: GRay;"><b>//Do some activity</b></span> <br> <br>&nbsp;&nbsp;&nbsp;}<br>
+        }
+    </p>
+
+
+
+    <p class="priority">
+        <b>Priority - P1</b>
+    </p>
+    <h2>Use proper Test Class signature</h2>
+    <ul type="disc">
+        <li><font>Use proper test class signature.</font></li>
+        <li><font>All test class names should end with Test and must be annotated with @isTest and
+                must be declared private.</font></li>
+        <li><font>All the methods in Test Class should be test methods .</font></li>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+        <span style="color: GREEN;"><b>//Best Practice</b></span> <br>@isTest<br> private class
+        UseProperTestClassSignature_Test {<br> <br> &nbsp;&nbsp;&nbsp;private static testMethod void
+        UseProperTestClassSignatureMethod() { <br> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
+            style="color: GRay;"><b>//create test data.</b></span><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: GRay;"><b>//perform actions for testing specific class.</b></span><br>
+        &nbsp;&nbsp;&nbsp;}<br> }
+
+    </p>
+    <p class="priority">
+        <b>Priority - P3</b>
+    </p>
+    <h2>Use UpperCase Static Final</h2>
+    <ul type="disc">
+        <li><font>Static Final variable names should be in UpperCase.</font></li>
+    </ul>
+
+    <h4>Example:</h4>
+    <p class="two">
+        public class UseUpperCaseStatic {<br> <br> &nbsp;&nbsp;&nbsp;<span style="color: red;"><b>//Bad
+                practice</b></span><br> &nbsp;&nbsp;&nbsp;public static final String Redirect_Page = 'www.google.com';<br>
+        &nbsp;&nbsp;&nbsp;public static final String userName = 'abcd@accenture.com'; <br> <br>&nbsp;&nbsp;&nbsp;<span
+            style="color: green;"><b>//Best practice</b></span><br> &nbsp;&nbsp;&nbsp;public static final
+        String REDIRECT_PAGE ='www.google.com'; <br>&nbsp;&nbsp;&nbsp;public static final String USERNAME =
+        'abcd@accenture.com';<br> }
+
+    </p>
+
+    <p class="priority">
+        <b>Priority - P3</b>
+    </p>
+
+    <h2>Use UpperCase</h2>
+    <ul type="disc">
+        <li><font>Class names should begin with UpperCase.</font></li>
+    </ul>
+    <h4>Example:</h4>
+    <p class="two">
+        <span style="color: red;"><b>//Bad Practice: Class names should not be starting with
+                lowercase letter.</b></span><br> public class useUpperCaseClass{<br> <br> &nbsp;&nbsp;&nbsp;<span
+            style="color: gray;"><b>// Do some activity</b></span> <br>}<br> <br> <span
+            style="color: green;"><b>//Best Practice: Class names should always use camelCase and the
+                first letter should be in upper case</b></span> <br>public class UseUpperCaseClass{<br> <br>
+        &nbsp;&nbsp;&nbsp;<span style="color: gray;"><b>// Do some activity</b></span><br> }
+
+    </p>
+    <p class="top">
+        <a href="#top"> [Go To Index] </a>
+    </p>
+
+    <dl>
+        <dt>
+            <a name="unittest"></a>
+        </dt>
+
+        <p class="one">
+            <b>Unit Test</b>
+        </p>
+
+    </dl>
+
+    <p class="priority">
+        <b>Priority - P4</b>
+    </p>
+
+    <h2>Use Assert</h2>
+    <div>
+        <ul type="disc">
+            <li><font>Test Classes should have Assert statements.</li>
+            </font>
+        </ul>
+    </div>
+
+    <h4>Example:</h4>
+    <p class="two">
+        @isTest <br>private class UseAssert_Test { <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static
+        testMethod void useAssertMethod() { <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Integer
+        accountBalance=90;<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+            style="color: green;"><b>//Best practice</b></span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.assertEquals(90, accountBalance);<br>
+        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br> }
+    </p>
+
+    <img src="images/footer.png" width="100%" height="100%">
+</body>

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="ReportScannerUtility.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="7 KB">
+<class name="ReportScannerUtility" sharing="with" implements="" isenum="false" lineno="1" modifiers="public">
+<classbody>
+<VariableDeclaration>
+<methodInvoke name="map&lt;string,Scan_Metric_Data__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1446" lineno="3" />
+<varDeclaration name="insertMap" scope="methodvar" location="ReportScannerUtility" type="map&amp;lt;string,Scan_Metric_Data__c&amp;gt;" lineno="3" modifiers="public,static" />
+<assignHeap name="insertMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newmap&lt;string,Scan_Metric_Data__c&gt;()" lineno="3" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="sortOrder" scope="methodvar" location="ReportScannerUtility" type="integer" lineno="4" modifiers="public,static" />
+</VariableDeclaration>
+<method returntype="void" name="extractDataForKey" parameters="results:Reports.reportResults,reportToScan:Scan_Metric__c,portfolio:AIES_ACCENTURE__Portfolio__c" isTestMethod="false" lineno="6" throws="" modifiers="public,static">
+<body>
+<VariableDeclaration>
+<varDeclaration name="AggrIdx" scope="methodvar" location="ReportScannerUtility" type="integer" lineno="9" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="rowCountIdx" scope="methodvar" location="ReportScannerUtility" type="integer" lineno="9" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1446.getReportMetadata" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1447" lineno="10" />
+<methodInvoke name="#temp1447.getAggregates" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1448" lineno="10" />
+<varDeclaration name="aggColNames" scope="methodvar" location="ReportScannerUtility" type="List&amp;lt;string&amp;gt;" lineno="10" />
+<assignHeap name="aggColNames" scope="methodvar" type="List&amp;lt;string&amp;gt;" rhsType="methodinvoke" rhs="results.getReportMetadata().getAggregates()" lineno="10" />
+</VariableDeclaration>
+<loop type="simplefor" lineno="11">
+<initialExpr>
+<VariableDeclaration>
+<varDeclaration name="i" scope="methodvar" location="ReportScannerUtility" type="integer" lineno="11" />
+<assignHeap name="i" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="11" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1448.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1449" lineno="11" />
+<varDeclaration name="cnt" scope="methodvar" location="ReportScannerUtility" type="integer" lineno="11" />
+<assignHeap name="cnt" scope="methodvar" type="integer" rhsType="methodinvoke" rhs="aggColNames.size()" lineno="11" />
+</VariableDeclaration>
+</initialExpr>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="i" RHStype="" RHS="cnt" Operator="&lt;"/>
+</conditionalExpr>
+<incrementExpr>
+</incrementExpr>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="#temp1449.get" methodtype="normalmethod" returntype="String" parameters="i" returnloc="#temp1450" lineno="13" />
+<varDeclaration name="aggColName" scope="methodvar" location="ReportScannerUtility" type="string" lineno="13" />
+<assignHeap name="aggColName" scope="methodvar" type="string" rhsType="variable" rhs="aggColNames.get(i)" lineno="13" />
+</VariableDeclaration>
+<if type="simpleif" lineno="14">
+<conditionalExpr>
+<methodInvoke name="#temp1450.equals" methodtype="normalmethod" returntype="String" parameters="reportToScan.Salesforce_Report_Value1_Column__c" returnloc="#temp1451" lineno="14" />
+</conditionalExpr>
+<ifcondition expression= "aggColName.equals(reportToScan.Salesforce_Report_Value1_Column__c)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="AggrIdx" scope="" type="" rhsType="methodinvoke" rhs="i" lineno="15" />
+</AssignmentStatement>
+<ExpressionStatement expression="break" key="break" label=""/>
+</body>
+</true>
+</if>
+</body>
+</loop>
+<ExpressionStatement expression="&apos;AggrIdx@@@@&apos;+AggrIdx" key="debug" lineno="20"/>
+<VariableDeclaration>
+<varDeclaration name="groupLvl" scope="methodvar" location="ReportScannerUtility" type="integer" lineno="23" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="results.getReportMetadata" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1452" lineno="24" />
+<varDeclaration name="rm" scope="methodvar" location="ReportScannerUtility" type="Reports.ReportMetadata" lineno="24" />
+<assignHeap name="rm" scope="methodvar" type="Reports.ReportMetadata" rhsType="methodinvoke" rhs="results.getReportMetadata()" lineno="24" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="keyColumn" scope="methodvar" location="ReportScannerUtility" type="string" lineno="25" />
+<assignHeap name="keyColumn" scope="methodvar" type="string" rhsType="variable" rhs="reportToScan.Salesforce_Report_Key1_Column__c" lineno="25" />
+</VariableDeclaration>
+<if type="simpleif" lineno="28">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="keyColumn" RHStype="" RHS="null" Operator="!="/>
+<conditionalExpr>
+<methodInvoke name="#temp1452.isNumeric" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1453" lineno="28" />
+<ConditionalStatement LHStype="methodinvoke" LHS="#temp1452.isNumeric(" RHStype="keycolumn.isNumeric()" RHS="keycolumn.isNumeric()" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "keyColumn!=null&amp;&amp;keycolumn.isNumeric()"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="integer#temp1453integer.valueof" methodtype="normalmethod" returntype="String" parameters="keyColumn" returnloc="#temp1454" lineno="29" />
+<assignHeap name="groupLvl" scope="" type="" rhsType="methodinvoke" rhs="integer.valueof(keyColumn)" lineno="29" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="31">
+<body>
+<curlybrace exists="true"/>
+<loop type="simplefor" lineno="32">
+<initialExpr>
+<VariableDeclaration>
+<varDeclaration name="count" scope="methodvar" location="ReportScannerUtility" type="integer" lineno="32" />
+<assignHeap name="count" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="32" />
+</VariableDeclaration>
+</initialExpr>
+<conditionalExpr>
+<methodInvoke name="rm.getGroupingsDown" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1455" lineno="32" />
+<methodInvoke name="#temp1455.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1456" lineno="32" />
+<ConditionalStatement LHStype="" LHS="count" RHStype="" RHS="rm.getGroupingsDown().size()" Operator="&lt;="/>
+</conditionalExpr>
+<incrementExpr>
+</incrementExpr>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="#temp1456.getGroupingsDown" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1457" lineno="34" />
+<varDeclaration name="gInfo" scope="methodvar" location="ReportScannerUtility" type="Reports.GroupingInfo" lineno="34" />
+<assignHeap name="gInfo" scope="methodvar" type="Reports.GroupingInfo" rhsType="variable" rhs="rm.getGroupingsDown()[count]" lineno="34" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;gInfo*****&apos;+gInfo.getname()" key="debug" lineno="35"/>
+<ExpressionStatement expression="&apos;reportToScan.Salesforce_Report_Key1_Column__c*****&apos;+reportToScan.Salesforce_Report_Key1_Column__c" key="debug" lineno="36"/>
+<if type="simpleif" lineno="38">
+<conditionalExpr>
+<methodInvoke name="gInfo.getName" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1458" lineno="38" />
+<methodInvoke name="gInfo.getName(.equals" methodtype="normalmethod" returntype="String" parameters="reportToScan.Salesforce_Report_Key1_Column__c" returnloc="#temp1459" lineno="38" />
+</conditionalExpr>
+<ifcondition expression= "gInfo.getName().equals(reportToScan.Salesforce_Report_Key1_Column__c)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="groupLvl" scope="" type="" rhsType="methodinvoke" rhs="count" lineno="40" />
+</AssignmentStatement>
+<ExpressionStatement expression="break" key="break" label=""/>
+</body>
+</true>
+</if>
+</body>
+</loop>
+</body>
+</false>
+</if>
+<ExpressionStatement expression="&apos;groupLvl@@@@@&apos;+groupLvl" key="debug" lineno="46"/>
+<VariableDeclaration>
+<varDeclaration name="level" scope="methodvar" location="ReportScannerUtility" type="integer" lineno="47" />
+<assignHeap name="level" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="47" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="results.getGroupingsDown" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1460" lineno="49" />
+<varDeclaration name="groupingsDown" scope="methodvar" location="ReportScannerUtility" type="Reports.Dimension" lineno="49" />
+<assignHeap name="groupingsDown" scope="methodvar" type="Reports.Dimension" rhsType="methodinvoke" rhs="results.getGroupingsDown()" lineno="49" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;groupingsDown****&apos;+groupingsDown" key="debug" lineno="51"/>
+<VariableDeclaration>
+<methodInvoke name="results.getFactMap" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1461" lineno="53" />
+<varDeclaration name="factMap" scope="methodvar" location="ReportScannerUtility" type="Map&amp;lt;string,Reports.ReportFact&amp;gt;" lineno="53" />
+<assignHeap name="factMap" scope="methodvar" type="Map&amp;lt;string,Reports.ReportFact&amp;gt;" rhsType="methodinvoke" rhs="results.getFactMap()" lineno="53" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="55">
+<methodInvoke name="#temp1461.getGroupings" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1462" lineno="55" />
+<Iterator type="Reports.GroupingValue" name="grouping1" on="groupingsDown.getGroupings()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;grouping1****&apos;+grouping1" key="debug" lineno="57"/>
+<methodInvoke name="setGroupLevelData" methodtype="normalmethod" returntype="String" parameters="grouping1,factMap,reportToScan,portfolio,groupLvl,level,AggrIdx" returnloc="#temp1463" lineno="58" />
+</body>
+</loop>
+<methodendline lineno="62"/>
+</body>
+</method>
+<method returntype="void" name="setGroupLevelData" parameters="grouping1:Reports.GroupingValue,factMap:Map&amp;lt;string,Reports.ReportFact&amp;gt;,reportToScan:Scan_Metric__c,portfolio:AIES_ACCENTURE__Portfolio__c,groupLvl:integer,level:integer,AggrIdx:integer" isTestMethod="false" lineno="65" throws="" modifiers="public,static">
+<body>
+<ExpressionStatement expression="&apos;groupLvl!!!!!&apos;+groupLvl" key="debug" lineno="67"/>
+<ExpressionStatement expression="&apos;level!!!!!&apos;+level" key="debug" lineno="68"/>
+<if type="simpleif" lineno="69">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="groupLvl" RHStype="" RHS="level" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "groupLvl==level"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;anurag***&apos;" key="debug" lineno="79"/>
+<VariableDeclaration>
+<methodInvoke name="grouping1.getLabel" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1464" lineno="80" />
+<varDeclaration name="stage" scope="methodvar" location="ReportScannerUtility" type="string" lineno="80" />
+<assignHeap name="stage" scope="methodvar" type="string" rhsType="methodinvoke" rhs="(string)grouping1.getLabel()" lineno="80" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1464.getKey" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1465" lineno="81" />
+<methodInvoke name="#temp1464.get" methodtype="normalmethod" returntype="String" parameters="grouping1.getKey()+&apos;!T&apos;" returnloc="#temp1466" lineno="81" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="#temp1466" returnloc="#temp1467" lineno="81" />
+<varDeclaration name="fact" scope="methodvar" location="ReportScannerUtility" type="Reports.ReportFact" lineno="81" />
+<assignHeap name="fact" scope="methodvar" type="Reports.ReportFact" rhsType="value" rhs="factMap.get(grouping1.getKey()+&apos;!T&apos;)" lineno="81" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;fact*****&apos;+fact" key="debug" lineno="82"/>
+<ExpressionStatement expression="&apos;stage******&apos;+stage" key="debug" lineno="84"/>
+<ExpressionStatement expression="&apos;amount******&apos;+fact.getAggregates().get(AggrIdx).getValue()" key="debug" lineno="85"/>
+<VariableDeclaration>
+<methodInvoke name="Scan_Metric_Data__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1468" lineno="87" />
+<varDeclaration name="reportData" scope="methodvar" location="ReportScannerUtility" type="Scan_Metric_Data__c" lineno="87" />
+<assignHeap name="reportData" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newScan_Metric_Data__c()" lineno="87" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="reportData.Metric_Master__c" scope="" type="" rhsType="methodinvoke" rhs="reportToScan.id" lineno="88" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="reportData.Portfolio__c" scope="" type="" rhsType="variable" rhs="portfolio.id" lineno="89" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="grouping1.getLabel" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1469" lineno="90" />
+<assignHeap name="reportData.Key__c" scope="" type="" rhsType="methodinvoke" rhs="(string)grouping1.getLabel()" lineno="90" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="fact.getAggregates" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1470" lineno="91" />
+<methodInvoke name="#temp1470.get" methodtype="normalmethod" returntype="String" parameters="AggrIdx" returnloc="#temp1471" lineno="91" />
+<methodInvoke name="#temp1471.getValue" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1472" lineno="91" />
+<assignHeap name="reportData.Value__c" scope="" type="" rhsType="methodinvoke" rhs="(decimal)fact.getAggregates().get(AggrIdx).getValue()" lineno="91" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="grouping1.getKey" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1473" lineno="92" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="#temp1473" returnloc="#temp1474" lineno="92" />
+<assignHeap name="reportData.External_Id__c" scope="" type="" rhsType="stradd" rhs="portfolio.name+&apos;::&apos;+reportToScan.Name+&apos;::&apos;+(string)grouping1.getKey()" lineno="92" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="reportData.Sort_Order__c" scope="" type="" rhsType="variable" rhs="sortOrder" lineno="93" />
+</AssignmentStatement>
+<VariableDeclaration>
+<methodInvoke name="insertMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1475" lineno="95" />
+<varDeclaration name="beforeInsertSize" scope="methodvar" location="ReportScannerUtility" type="integer" lineno="95" />
+<assignHeap name="beforeInsertSize" scope="methodvar" type="integer" rhsType="methodinvoke" rhs="insertMap.size()" lineno="95" />
+</VariableDeclaration>
+<methodInvoke name="insertMap.put" methodtype="normalmethod" returntype="String" parameters="reportData.External_Id__c,reportData" returnloc="#temp1476" lineno="96" />
+<VariableDeclaration>
+<methodInvoke name="insertMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1477" lineno="97" />
+<varDeclaration name="afterInsertSize" scope="methodvar" location="ReportScannerUtility" type="integer" lineno="97" />
+<assignHeap name="afterInsertSize" scope="methodvar" type="integer" rhsType="methodinvoke" rhs="insertMap.size()" lineno="97" />
+</VariableDeclaration>
+<if type="simpleif" lineno="98">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="afterInsertSize" RHStype="" RHS="beforeInsertSize" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "afterInsertSize==beforeInsertSize"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+</body>
+</true>
+</if>
+<ReturnBlock>
+</ReturnBlock>
+</body>
+</true>
+</if>
+<loop type="advancedfor" lineno="108">
+<methodInvoke name="grouping1.getGroupings" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1478" lineno="108" />
+<Iterator type="Reports.GroupingValue" name="grouping2" on="grouping1.getGroupings()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="setGroupLevelData" methodtype="normalmethod" returntype="String" parameters="grouping2,factMap,reportToScan,portfolio,groupLvl,level,AggrIdx" returnloc="#temp1479" lineno="112" />
+</body>
+</loop>
+<methodendline lineno="116"/>
+</body>
+</method>
+<method returntype="void" name="extractDataForTabularReport" parameters="results:Reports.reportResults,reportToScan:Scan_Metric__c,portfolio:AIES_ACCENTURE__Portfolio__c" isTestMethod="false" lineno="118" throws="" modifiers="public,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="Scan_Metric_Data__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1480" lineno="120" />
+<varDeclaration name="reportData" scope="methodvar" location="ReportScannerUtility" type="Scan_Metric_Data__c" lineno="120" />
+<assignHeap name="reportData" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newScan_Metric_Data__c()" lineno="120" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="reportData.Metric_Master__c" scope="" type="" rhsType="methodinvoke" rhs="reportToScan.id" lineno="121" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="reportData.Portfolio__c" scope="" type="" rhsType="variable" rhs="portfolio.id" lineno="122" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="reportData.Key__c" scope="" type="" rhsType="variable" rhs="reportToScan.Salesforce_Report_Key1_Column__c" lineno="124" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="results.getFactMap" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1481" lineno="125" />
+<methodInvoke name="#temp1481.get" methodtype="normalmethod" returntype="String" parameters="&apos;T!T&apos;" returnloc="#temp1482" lineno="125" />
+<methodInvoke name="#temp1482.getAggregates" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1483" lineno="125" />
+<assignHeap name="reportData.Value__c" scope="" type="" rhsType="methodinvoke" rhs="(decimal)results.getFactMap().get(&apos;T!T&apos;).getAggregates()[0].getValue()" lineno="125" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="reportData.Key__c" returnloc="#temp1484" lineno="126" />
+<assignHeap name="reportData.External_Id__c" scope="" type="" rhsType="stradd" rhs="portfolio.name+&apos;::&apos;+reportToScan.Name+&apos;::&apos;+reportData.Key__c" lineno="126" />
+</AssignmentStatement>
+<methodInvoke name="insertMap.put" methodtype="normalmethod" returntype="String" parameters="reportData.External_Id__c,reportData" returnloc="#temp1485" lineno="127" />
+<methodendline lineno="128"/>
+</body>
+</method>
+<method returntype="List&amp;lt;Scan_Metric_Data__c&amp;gt;" name="InsertReportData" parameters="results:Reports.reportResults,currentReport:Scan_Metric__c,portfolio:AIES_ACCENTURE__Portfolio__c" isTestMethod="false" lineno="132" throws="" modifiers="public,static">
+<body>
+<VariableDeclaration>
+<varDeclaration name="keyGroupingLevel" scope="methodvar" location="ReportScannerUtility" type="integer" lineno="134" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="valuePosition" scope="methodvar" location="ReportScannerUtility" type="integer" lineno="134" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="keyPosition" scope="methodvar" location="ReportScannerUtility" type="integer" lineno="134" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="JSON.serializePretty" methodtype="normalmethod" returntype="String" parameters="results" returnloc="#temp1486" lineno="135" />
+<varDeclaration name="resultsJson" scope="methodvar" location="ReportScannerUtility" type="string" lineno="135" />
+<assignHeap name="resultsJson" scope="methodvar" type="string" rhsType="variable" rhs="JSON.serializePretty(results)" lineno="135" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;resultsJson&apos;+resultsJson" key="debug" lineno="136"/>
+<ExpressionStatement expression="&apos;currentReport.Salesforce_Report_Type__c.toLowerCase()*****&apos;+currentReport.Salesforce_Report_Type__c.toLowerCase()" key="debug" lineno="137"/>
+<if type="simpleif" lineno="139">
+<conditionalExpr>
+<methodInvoke name="" methodtype="normalmethod" returntype="String" parameters=".toLowerCase(" returnloc="#temp1487" lineno="139" />
+<ConditionalStatement LHStype="" LHS="currentReport.Salesforce_Report_Type__c.toLowerCase()" RHStype="" RHS="&apos;summary&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "currentReport.Salesforce_Report_Type__c.toLowerCase()==&apos;summary&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="sortOrder" scope="" type="" rhsType="methodinvoke" rhs="1" lineno="141" />
+</AssignmentStatement>
+<methodInvoke name="extractDataForKey" methodtype="normalmethod" returntype="String" parameters="results,currentReport,portfolio" returnloc="#temp1488" lineno="142" />
+</body>
+</true>
+<false type="" lineno="144">
+<body>
+<if type="elseif" lineno="144">
+<conditionalExpr>
+<methodInvoke name="" methodtype="normalmethod" returntype="String" parameters=".toLowerCase(" returnloc="#temp1489" lineno="144" />
+<ConditionalStatement LHStype="" LHS="currentReport.Salesforce_Report_Type__c.toLowerCase()" RHStype="" RHS="&apos;tabular&apos;" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "currentReport.Salesforce_Report_Type__c.toLowerCase()==&apos;tabular&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="extractDataForTabularReport" methodtype="normalmethod" returntype="String" parameters="results,currentReport,portfolio" returnloc="#temp1490" lineno="150" />
+</body>
+</true>
+</if>
+</body>
+</false>
+</if>
+<ReturnBlock>
+<methodInvoke name="insertMap.values" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1491" lineno="154" />
+<return expression="insertMap.values()" expressiontype="@methodinvoke" lineno="154" />
+</ReturnBlock>
+<methodendline lineno="156"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[22, 27, 72, 73, 74, 76, 77, 78, 83, 84, 85, 86, 105, 110, 146, 147, 148, 149, 153]" multi="[]" empty="[5, 8, 19, 21, 26, 30, 37, 45, 48, 50, 52, 54, 60, 61, 63, 64, 71, 75, 102, 104, 107, 113, 115, 117, 123, 129, 130, 131, 138, 151, 155]" singlebrace="[2, 7, 12, 17, 18, 33, 39, 42, 43, 44, 56, 59, 62, 66, 70, 99, 101, 106, 109, 114, 116, 119, 128, 133, 140, 143, 145, 152, 156, 157]"/>
+</stac>

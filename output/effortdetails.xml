@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="effortdetails.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="2 KB">
+<class name="effortdetails" sharing="default" implements="" isenum="false" lineno="10" modifiers="public">
+<classbody>
+<varDeclaration name="requirementGatheringEstimate" scope="instancevar" location="effortdetails" type="double" lineno="15" />
+<VariableProperties name="requirementGatheringEstimate">
+<getterMethod name="requirementGatheringEstimate" returntype="double" modifiers="" lineno="15">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="requirementGatheringEstimate" modifiers="" lineno="15">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="sitEstimate" scope="instancevar" location="effortdetails" type="double" lineno="16" />
+<VariableProperties name="sitEstimate">
+<getterMethod name="sitEstimate" returntype="double" modifiers="" lineno="16">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="sitEstimate" modifiers="" lineno="16">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="butEstimate" scope="instancevar" location="effortdetails" type="double" lineno="17" />
+<VariableProperties name="butEstimate">
+<getterMethod name="butEstimate" returntype="double" modifiers="" lineno="17">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="butEstimate" modifiers="" lineno="17">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="uatEstimate" scope="instancevar" location="effortdetails" type="double" lineno="18" />
+<VariableProperties name="uatEstimate">
+<getterMethod name="uatEstimate" returntype="double" modifiers="" lineno="18">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="uatEstimate" modifiers="" lineno="18">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="designEstimate" scope="instancevar" location="effortdetails" type="double" lineno="19" />
+<VariableProperties name="designEstimate">
+<getterMethod name="designEstimate" returntype="double" modifiers="" lineno="19">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="designEstimate" modifiers="" lineno="19">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="traindepEstimate" scope="instancevar" location="effortdetails" type="double" lineno="20" />
+<VariableProperties name="traindepEstimate">
+<getterMethod name="traindepEstimate" returntype="double" modifiers="" lineno="20">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="traindepEstimate" modifiers="" lineno="20">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="adaptEstimate" scope="instancevar" location="effortdetails" type="double" lineno="21" />
+<VariableProperties name="adaptEstimate">
+<getterMethod name="adaptEstimate" returntype="double" modifiers="" lineno="21">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="adaptEstimate" modifiers="" lineno="21">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="totalEstimate" scope="instancevar" location="effortdetails" type="double" lineno="22" />
+<VariableProperties name="totalEstimate">
+<getterMethod name="totalEstimate" returntype="double" modifiers="" lineno="22">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="totalEstimate" modifiers="" lineno="22">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<VariableDeclaration>
+<methodInvoke name="Release__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1050" lineno="25" />
+<varDeclaration name="release" scope="methodvar" location="effortdetails" type="Release__c" lineno="25" modifiers="private" />
+<assignHeap name="release" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newRelease__c()" lineno="25" />
+</VariableDeclaration>
+<method returntype="" name="effortdetails" parameters="controller:ApexPages.StandardController" isTestMethod="false" lineno="34" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<assignHeap name="requirementGatheringEstimate" scope="" type="" rhsType="methodinvoke" rhs="0.0" lineno="38" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="sitEstimate" scope="" type="" rhsType="value" rhs="0.0" lineno="39" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="butEstimate" scope="" type="" rhsType="value" rhs="0.0" lineno="40" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uatEstimate" scope="" type="" rhsType="value" rhs="0.0" lineno="41" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="designEstimate" scope="" type="" rhsType="value" rhs="0.0" lineno="42" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="traindepEstimate" scope="" type="" rhsType="value" rhs="0.0" lineno="43" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="adaptEstimate" scope="" type="" rhsType="value" rhs="0.0" lineno="44" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="totalEstimate" scope="" type="" rhsType="value" rhs="0.0" lineno="45" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="controller.getRecord" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1051" lineno="48" />
+<assignHeap name="release" scope="" type="" rhsType="methodinvoke" rhs="(Release__c)controller.getRecord()" lineno="48" />
+</AssignmentStatement>
+<loop type="advancedfor" lineno="51">
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select TotEst__c,Adapt__c, BUT__c, Des__c, Req__c,
+        							 			SIT__c, TrnDep__c, UAT__c 
+        						 		 from Request__c 
+        						 		 where Release__c=: release.Id]" returnloc="#temp1052" lineno="51" />
+<Iterator type="Request__c" name="currentRequest" on="[select TotEst__c,Adapt__c, BUT__c, Des__c, Req__c,
+        							 			SIT__c, TrnDep__c, UAT__c 
+        						 		 from Request__c 
+        						 		 where Release__c=: release.Id]">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="currentRequest.Req__c" returnloc="#temp1053" lineno="58" />
+<assignHeap name="requirementGatheringEstimate" scope="" type="" rhsType="stradd" rhs="requirementGatheringEstimate+currentRequest.Req__c" lineno="58" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="currentRequest.SIT__c" returnloc="#temp1054" lineno="59" />
+<assignHeap name="sitEstimate" scope="" type="" rhsType="stradd" rhs="sitEstimate+currentRequest.SIT__c" lineno="59" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="currentRequest.BUT__c" returnloc="#temp1055" lineno="60" />
+<assignHeap name="butEstimate" scope="" type="" rhsType="stradd" rhs="butEstimate+currentRequest.BUT__c" lineno="60" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="currentRequest.UAT__c" returnloc="#temp1056" lineno="61" />
+<assignHeap name="uatEstimate" scope="" type="" rhsType="stradd" rhs="uatEstimate+currentRequest.UAT__c" lineno="61" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="currentRequest.Des__c" returnloc="#temp1057" lineno="62" />
+<assignHeap name="designEstimate" scope="" type="" rhsType="stradd" rhs="designEstimate+currentRequest.Des__c" lineno="62" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="currentRequest.TrnDep__c" returnloc="#temp1058" lineno="63" />
+<assignHeap name="traindepEstimate" scope="" type="" rhsType="stradd" rhs="traindepEstimate+currentRequest.TrnDep__c" lineno="63" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="currentRequest.Adapt__c" returnloc="#temp1059" lineno="64" />
+<assignHeap name="adaptEstimate" scope="" type="" rhsType="stradd" rhs="adaptEstimate+currentRequest.Adapt__c" lineno="64" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="currentRequest.TotEst__c" returnloc="#temp1060" lineno="65" />
+<assignHeap name="totalEstimate" scope="" type="" rhsType="stradd" rhs="totalEstimate+currentRequest.TotEst__c" lineno="65" />
+</AssignmentStatement>
+</body>
+</loop>
+<methodendline lineno="67"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[13, 14, 24, 36, 37, 47, 50, 57]" multi="[1-9, 27-33]" empty="[12, 23, 26, 35, 46, 49, 56]" singlebrace="[11, 55, 66, 67, 68]"/>
+</stac>

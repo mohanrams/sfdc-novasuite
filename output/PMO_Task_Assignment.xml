@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="PMO_Task_Assignment.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="7 KB">
+<class name="PMO_Task_Assignment" sharing="default" implements="" isenum="false" lineno="16" modifiers="public">
+<classbody>
+<method returntype="void" name="PMO_Task_Assignment" parameters="idcTasksList:List&amp;lt;IDC_Task__c&amp;gt;" isTestMethod="false" lineno="30" throws="" modifiers="public,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="PMO_TaskAssignment__c.getAll" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1271" lineno="34" />
+<varDeclaration name="allTasksCustomSettingMap" scope="methodvar" location="PMO_Task_Assignment" type="Map&amp;lt;string,PMO_TaskAssignment__c&amp;gt;" lineno="34" />
+<assignHeap name="allTasksCustomSettingMap" scope="methodvar" type="Map&amp;lt;string,PMO_TaskAssignment__c&amp;gt;" rhsType="methodinvoke" rhs="PMO_TaskAssignment__c.getAll()" lineno="34" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;IDC_Task__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1272" lineno="37" />
+<varDeclaration name="newIdcTasksList" scope="methodvar" location="PMO_Task_Assignment" type="List&amp;lt;IDC_Task__c&amp;gt;" lineno="37" />
+<assignHeap name="newIdcTasksList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;IDC_Task__c&gt;()" lineno="37" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;Defect__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1273" lineno="40" />
+<varDeclaration name="newDefectList" scope="methodvar" location="PMO_Task_Assignment" type="List&amp;lt;Defect__c&amp;gt;" lineno="40" />
+<assignHeap name="newDefectList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;Defect__c&gt;()" lineno="40" />
+</VariableDeclaration>
+<TryStatement lineno="42">
+<body>
+<curlybrace exists="true"/>
+<loop type="advancedfor" lineno="45">
+<methodInvoke name="#temp1273.values" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1274" lineno="45" />
+<Iterator type="PMO_TaskAssignment__c" name="currentCustomSettingTask" on="allTasksCustomSettingMap.values()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<loop type="advancedfor" lineno="49">
+<Iterator type="IDC_Task__c" name="currentidcTask" on="idcTasksList">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="55">
+<conditionalExpr>
+<methodInvoke name="#temp1274.getInstance" methodtype="normalmethod" returntype="String" parameters="currentCustomSettingTask.name" returnloc="#temp1275" lineno="55" />
+<methodInvoke name="#temp1275.Preceding_Task__c" methodtype="normalmethod" returntype="String" parameters="currentCustomSettingTask.name" returnloc="#temp1276" lineno="55" />
+<ConditionalStatement LHStype="" LHS="currentidcTask.Task_Type__c" RHStype="" RHS="PMO_TaskAssignment__c.getInstance(currentCustomSettingTask.name).Preceding_Task__c" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "currentidcTask.Task_Type__c==PMO_TaskAssignment__c.getInstance(currentCustomSettingTask.name).Preceding_Task__c"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="59">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="currentCustomSettingTask.name" RHStype="" RHS="system.label.PMO_Task_CodeReview" Operator="!="/>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="currentCustomSettingTask.name" RHStype="" RHS="system.label.PMO_Task_CodeReview" Operator="=="/>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="currentidcTask.Build_Task_Type__c" RHStype="" RHS="system.label.PMO_TaskType_Customization" Operator="=="/>
+<ConditionalStatement LHStype="variable" LHS="#temp1276.system" RHStype="currentidcTask.Build_Task_Type__c==system.label.PMO_TaskType_Customization" RHS="currentidcTask.Build_Task_Type__c==system.label.PMO_TaskType_Customization" Operator="AND"/>
+</conditionalExpr>
+<ConditionalStatement LHStype="variable" LHS="#temp1276.system" RHStype="(currentCustomSettingTask.name==system.label.PMO_Task_CodeReview&amp;&amp;currentidcTask.Build_Task_Type__c==system.label.PMO_TaskType_Customization)" RHS="(currentCustomSettingTask.name==system.label.PMO_Task_CodeReview&amp;&amp;currentidcTask.Build_Task_Type__c==system.label.PMO_TaskType_Customization)" Operator="OR"/>
+</conditionalExpr>
+<conditionalExpr>
+<conditionalExpr>
+<methodInvoke name="" methodtype="normalmethod" returntype="String" parameters=".contains(system.label.PMO_Task_Review" returnloc="#temp1277" lineno="63" />
+<conditionalExpr>
+<methodInvoke name="" methodtype="normalmethod" returntype="String" parameters=".contains(system.label.PMO_Task_Execution" returnloc="#temp1278" lineno="64" />
+<ConditionalStatement LHStype="variable" LHS="#temp1277.system" RHStype="currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Execution)" RHS="currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Execution)" Operator="OR"/>
+</conditionalExpr>
+<ConditionalStatement LHStype="variable" LHS="#temp1277.system" RHStype="(currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Review)||currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Execution))" RHS="(currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Review)||currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Execution))" Operator="AND"/>
+</conditionalExpr>
+<conditionalExpr>
+<methodInvoke name="" methodtype="normalmethod" returntype="String" parameters=".contains(system.label.PMO_Task_Review" returnloc="#temp1279" lineno="65" />
+<conditionalExpr>
+<methodInvoke name="" methodtype="normalmethod" returntype="String" parameters=".contains(system.label.PMO_Task_Execution" returnloc="#temp1280" lineno="66" />
+<ConditionalStatement LHStype="variable" LHS="#temp1279.system" RHStype="!currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Execution)" RHS="!currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Execution)" Operator="AND"/>
+</conditionalExpr>
+<ConditionalStatement LHStype="variable" LHS="#temp1279.system" RHStype="(!currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Review)&amp;&amp;!currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Execution))" RHS="(!currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Review)&amp;&amp;!currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Execution))" Operator="OR"/>
+</conditionalExpr>
+<ConditionalStatement LHStype="variable" LHS="#temp1279.system" RHStype="((currentidcTask.Defect_Found__c&amp;&amp;(currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Review)||currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Execution)))||(!currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Review)&amp;&amp;!currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Execution)))" RHS="((currentidcTask.Defect_Found__c&amp;&amp;(currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Review)||currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Execution)))||(!currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Review)&amp;&amp;!currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Execution)))" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "(currentCustomSettingTask.name!=system.label.PMO_Task_CodeReview||(currentCustomSettingTask.name==system.label.PMO_Task_CodeReview&amp;&amp;currentidcTask.Build_Task_Type__c==system.label.PMO_TaskType_Customization))&amp;&amp;((currentidcTask.Defect_Found__c&amp;&amp;(currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Review)||currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Execution)))||(!currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Review)&amp;&amp;!currentidcTask.Task_Type__c.contains(system.label.PMO_Task_Execution)))"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="IDC_Task__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1281" lineno="70" />
+<varDeclaration name="newIdcTask" scope="methodvar" location="PMO_Task_Assignment" type="IDC_Task__c" lineno="70" />
+<assignHeap name="newIdcTask" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newIDC_Task__c()" lineno="70" />
+</VariableDeclaration>
+<if type="simpleif" lineno="73">
+<conditionalExpr>
+<methodInvoke name="#temp1281.getInstance" methodtype="normalmethod" returntype="String" parameters="currentCustomSettingTask.name" returnloc="#temp1282" lineno="73" />
+<methodInvoke name="#temp1282.Owner_Queue__c" methodtype="normalmethod" returntype="String" parameters="currentCustomSettingTask.name" returnloc="#temp1283" lineno="73" />
+<ConditionalStatement LHStype="" LHS="PMO_TaskAssignment__c.getInstance(currentCustomSettingTask.name).Owner_Queue__c" RHStype="" RHS="null" Operator="!="/>
+</conditionalExpr>
+<ifcondition expression= "PMO_TaskAssignment__c.getInstance(currentCustomSettingTask.name).Owner_Queue__c!=null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="PMO_TaskAssignment__c#temp1283PMO_TaskAssignment__c.getInstance" methodtype="normalmethod" returntype="String" parameters="currentCustomSettingTask.name" returnloc="#temp1284" lineno="75" />
+<methodInvoke name="#temp1284.Owner_Queue__c" methodtype="normalmethod" returntype="String" parameters="currentCustomSettingTask.name" returnloc="#temp1285" lineno="75" />
+<assignHeap name="newIdcTask.OwnerId" scope="" type="" rhsType="methodinvoke" rhs="PMO_TaskAssignment__c.getInstance(currentCustomSettingTask.name).Owner_Queue__c" lineno="75" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+<AssignmentStatement>
+<methodInvoke name="system.today" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1286" lineno="79" />
+<assignHeap name="newIdcTask.Assigned_Date__c" scope="" type="" rhsType="methodinvoke" rhs="system.today()" lineno="79" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="newIdcTask.Task_Type__c" scope="" type="" rhsType="variable" rhs="currentCustomSettingTask.name" lineno="80" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="newIdcTask.IDC_Task__c" scope="" type="" rhsType="variable" rhs="currentidcTask.id" lineno="81" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="newIdcTask.Track__c" scope="" type="" rhsType="variable" rhs="currentidcTask.Track__c" lineno="82" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="newIdcTask.Request__c" scope="" type="" rhsType="variable" rhs="currentidcTask.Request__c" lineno="83" />
+</AssignmentStatement>
+<methodInvoke name="newIdcTasksList.add" methodtype="normalmethod" returntype="String" parameters="newIdcTask" returnloc="#temp1287" lineno="86" />
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="92">
+<conditionalExpr>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="currentidcTask.Defect_Description__c" RHStype="" RHS="null" Operator="!="/>
+<ConditionalStatement LHStype="value" LHS="null" RHStype="currentidcTask.Defect_Description__c!=null" RHS="currentidcTask.Defect_Description__c!=null" Operator="AND"/>
+</conditionalExpr>
+<conditionalExpr>
+<methodInvoke name="PMO_CreateDefect__c.getInstance" methodtype="normalmethod" returntype="String" parameters="currentidcTask.Task_Type__c" returnloc="#temp1288" lineno="94" />
+<methodInvoke name="currentidcTask.Task_Type__c.Create_Defect__c" methodtype="normalmethod" returntype="String" parameters="currentidcTask.Task_Type__c" returnloc="#temp1289" lineno="94" />
+<ConditionalStatement LHStype="variable" LHS="currentidcTask.Task_Type__c.Create_Defect__c" RHStype="PMO_CreateDefect__c.getInstance(currentidcTask.Task_Type__c).Create_Defect__c" RHS="PMO_CreateDefect__c.getInstance(currentidcTask.Task_Type__c).Create_Defect__c" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "currentidcTask.Defect_Found__c&amp;&amp;currentidcTask.Defect_Description__c!=null&amp;&amp;PMO_CreateDefect__c.getInstance(currentidcTask.Task_Type__c).Create_Defect__c"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="Defect__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1290" lineno="98" />
+<varDeclaration name="newDefect" scope="methodvar" location="PMO_Task_Assignment" type="Defect__c" lineno="98" />
+<assignHeap name="newDefect" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newDefect__c()" lineno="98" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="currentidcTask.Request_Name__c" returnloc="#temp1291" lineno="101" />
+<assignHeap name="newDefect.subject__c" scope="" type="" rhsType="stradd" rhs="system.label.PMO_Defect_Subject+currentidcTask.Request_Name__c" lineno="101" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="newDefect.status__c" scope="" type="" rhsType="variable" rhs="system.label.PMO_Defect_Open" lineno="102" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="newDefect.Defect_Detected__c" scope="" type="" rhsType="variable" rhs="currentidcTask.Task_Type__c" lineno="103" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="newDefect.Detailed_Description__c" scope="" type="" rhsType="variable" rhs="currentidcTask.Defect_Description__c" lineno="104" />
+</AssignmentStatement>
+<if type="simpleif" lineno="107">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="currentidcTask.Request__c" RHStype="" RHS="null" Operator="!="/>
+</conditionalExpr>
+<ifcondition expression= "currentidcTask.Request__c!=null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="newDefect.Related_Request__c" scope="" type="" rhsType="variable" rhs="currentidcTask.Request__c" lineno="109" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+<methodInvoke name="newDefectList.add" methodtype="normalmethod" returntype="String" parameters="newDefect" returnloc="#temp1292" lineno="113" />
+</body>
+</true>
+</if>
+</body>
+</true>
+</if>
+</body>
+</loop>
+</body>
+</loop>
+<if type="simpleif" lineno="121">
+<conditionalExpr>
+<methodInvoke name="newIdcTasksList.isEmpty" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1293" lineno="121" />
+</conditionalExpr>
+<ifcondition expression= "!newIdcTasksList.isEmpty()"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="newIdcTasksList" returnloc="" lineno="123" />
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="127">
+<conditionalExpr>
+<methodInvoke name="newDefectList.isEmpty" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1294" lineno="127" />
+</conditionalExpr>
+<ifcondition expression= "!newDefectList.isEmpty()"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="newDefectList" returnloc="" lineno="129" />
+</body>
+</true>
+</if>
+</body>
+<CatchStatement type="Exception" name="ex" lineno="134">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="ex.setMessage" methodtype="normalmethod" returntype="String" parameters="system.label.PMO_Task_Error" returnloc="#temp1295" lineno="136" />
+</body>
+</CatchStatement>
+</TryStatement>
+<methodendline lineno="138"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[33, 36, 39, 44, 48, 52, 53, 54, 58, 69, 72, 78, 85, 90, 91, 97, 100, 106, 112, 120, 126, 133]" multi="[1-15, 18-29]" empty="[3, 5, 7, 11, 13, 32, 35, 38, 41, 47, 51, 57, 68, 71, 77, 84, 87, 89, 96, 99, 105, 111, 114, 119, 125, 132]" singlebrace="[17, 31, 43, 46, 50, 56, 67, 74, 76, 88, 95, 108, 110, 115, 116, 117, 118, 122, 124, 128, 130, 131, 135, 137, 138, 139]"/>
+</stac>

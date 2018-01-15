@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="Utildemo.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="18 KB">
+<class name="Utildemo" sharing="with" implements="" isenum="false" lineno="1" modifiers="global">
+<classbody>
+<VariableDeclaration>
+<methodInvoke name="AIES_Accenture__portfolioid__c.getInstance" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2717" lineno="4" />
+<methodInvoke name="AIES_Accenture__portfolioid__c.getInstance(.get" methodtype="normalmethod" returntype="String" parameters="&apos;AIES_Accenture__ID__C&apos;" returnloc="#temp2718" lineno="4" />
+<methodInvoke name="string.valueof" methodtype="normalmethod" returntype="String" parameters="AIES_Accenture__portfolioid__c.getInstance().get(&apos;AIES_Accenture__ID__C&apos;)" returnloc="#temp2719" lineno="4" />
+<varDeclaration name="Portfolio" scope="methodvar" location="Utildemo" type="string" lineno="4" modifiers="global,static" />
+<assignHeap name="Portfolio" scope="methodvar" type="string" rhsType="methodinvoke" rhs="string.valueof(AIES_Accenture__portfolioid__c.getInstance().get(&apos;AIES_Accenture__ID__C&apos;))" lineno="4" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="communityUserlicenses" scope="methodvar" location="Utildemo" type="List&amp;lt;string&amp;gt;" lineno="5" modifiers="global,static" />
+<assignHeap name="communityUserlicenses" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;{&apos;SSP&apos;,&apos;POWER_SSP&apos;,&apos;PID_Customer_Portal_Standard&apos;,&apos;PID_Customer_Portal_Basic&apos;,&apos;High_Volume_Customer_Portal_User&apos;,&apos;PID_Partner_Community&apos;,&apos;PID_Customer_Community_Login&apos;,&apos;PID_Partner_Community_Login&apos;,&apos;PID_Customer_Community&apos;}" lineno="5" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="salesUserlicenses" scope="methodvar" location="Utildemo" type="List&amp;lt;string&amp;gt;" lineno="8" modifiers="global,static" />
+<assignHeap name="salesUserlicenses" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;{&apos;SFDC&apos;}" lineno="8" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="charterUserlicenses" scope="methodvar" location="Utildemo" type="List&amp;lt;string&amp;gt;" lineno="10" modifiers="global,static" />
+<assignHeap name="charterUserlicenses" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;{&apos;CSN_External_User&apos;,&apos;PID_CHATTER&apos;,&apos;CSN_User&apos;}" lineno="10" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="forceUserlicenses" scope="methodvar" location="Utildemo" type="List&amp;lt;string&amp;gt;" lineno="12" modifiers="global,static" />
+<assignHeap name="forceUserlicenses" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;{&apos;FDC_ONE&apos;}" lineno="12" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp2723.today" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2724" lineno="16" />
+<methodInvoke name="#temp2724.toStartOfMonth" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2725" lineno="16" />
+<methodInvoke name="#temp2725.adddays" methodtype="normalmethod" returntype="String" parameters="-1" returnloc="#temp2726" lineno="16" />
+<varDeclaration name="d00" scope="methodvar" location="Utildemo" type="date" lineno="16" modifiers="global,static" />
+<assignHeap name="d00" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="system.today().toStartOfMonth().adddays(-1)" lineno="16" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp2726.addmonths" methodtype="normalmethod" returntype="String" parameters="-1" returnloc="#temp2727" lineno="17" />
+<varDeclaration name="d01" scope="methodvar" location="Utildemo" type="date" lineno="17" modifiers="global,static" />
+<assignHeap name="d01" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="d00.addmonths(-1)" lineno="17" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp2727.addmonths" methodtype="normalmethod" returntype="String" parameters="-2" returnloc="#temp2728" lineno="18" />
+<varDeclaration name="d02" scope="methodvar" location="Utildemo" type="date" lineno="18" modifiers="global,static" />
+<assignHeap name="d02" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="d00.addmonths(-2)" lineno="18" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp2728.addmonths" methodtype="normalmethod" returntype="String" parameters="-3" returnloc="#temp2729" lineno="19" />
+<varDeclaration name="d03" scope="methodvar" location="Utildemo" type="date" lineno="19" modifiers="global,static" />
+<assignHeap name="d03" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="d00.addmonths(-3)" lineno="19" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp2729.addmonths" methodtype="normalmethod" returntype="String" parameters="-4" returnloc="#temp2730" lineno="20" />
+<varDeclaration name="d04" scope="methodvar" location="Utildemo" type="date" lineno="20" modifiers="global,static" />
+<assignHeap name="d04" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="d00.addmonths(-4)" lineno="20" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp2730.addmonths" methodtype="normalmethod" returntype="String" parameters="-5" returnloc="#temp2731" lineno="21" />
+<varDeclaration name="d05" scope="methodvar" location="Utildemo" type="date" lineno="21" modifiers="global,static" />
+<assignHeap name="d05" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="d00.addmonths(-5)" lineno="21" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp2731.addmonths" methodtype="normalmethod" returntype="String" parameters="-6" returnloc="#temp2732" lineno="22" />
+<varDeclaration name="d06" scope="methodvar" location="Utildemo" type="date" lineno="22" modifiers="global,static" />
+<assignHeap name="d06" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="d00.addmonths(-6)" lineno="22" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp2732.addmonths" methodtype="normalmethod" returntype="String" parameters="+1" returnloc="#temp2733" lineno="23" />
+<varDeclaration name="d07" scope="methodvar" location="Utildemo" type="date" lineno="23" modifiers="global,static" />
+<assignHeap name="d07" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="d00.addmonths(+1)" lineno="23" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="timeDiff" scope="methodvar" location="Utildemo" type="long" lineno="24" modifiers="global,static" />
+</VariableDeclaration>
+<method returntype="long" name="SubtractDate" parameters="highDate:datetime,lowDate:datetime" isTestMethod="false" lineno="26" throws="" modifiers="global,static">
+<body>
+<AssignmentStatement>
+<methodInvoke name="highDate#temp2733highDate.getTime" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2734" lineno="27" />
+<methodInvoke name="#temp2734.getTime" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2735" lineno="27" />
+<assignHeap name="timeDiff" scope="" type="" rhsType="methodinvoke" rhs="highDate.getTime()-lowDate.getTime()" lineno="27" />
+</AssignmentStatement>
+<ReturnBlock>
+<return expression="timeDiff/(3600*1000)" expressiontype="@value" lineno="28" />
+</ReturnBlock>
+<methodendline lineno="30"/>
+</body>
+</method>
+<method returntype="string" name="dateYear" parameters="d:date" isTestMethod="false" lineno="31" throws="" modifiers="global,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="string.valueof" methodtype="normalmethod" returntype="String" parameters="d" returnloc="#temp2736" lineno="34" />
+<methodInvoke name="d.substring" methodtype="normalmethod" returntype="String" parameters="0,4" returnloc="#temp2737" lineno="34" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="#temp2737" returnloc="#temp2738" lineno="34" />
+<varDeclaration name="result" scope="methodvar" location="Utildemo" type="string" lineno="34" />
+<assignHeap name="result" scope="methodvar" type="string" rhsType="methodinvoke" rhs="&apos;-&apos;+string.valueof(d).substring(0,4)" lineno="34" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;date&apos;+result" key="debug" lineno="35"/>
+<ReturnBlock>
+<return expression="result" expressiontype="@alias" lineno="36" />
+</ReturnBlock>
+<methodendline lineno="37"/>
+</body>
+</method>
+<method returntype="integer" name="drillYear" parameters="d:date" isTestMethod="false" lineno="39" throws="" modifiers="global,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="string.valueof" methodtype="normalmethod" returntype="String" parameters="d" returnloc="#temp2739" lineno="42" />
+<methodInvoke name="d.substring" methodtype="normalmethod" returntype="String" parameters="0,4" returnloc="#temp2740" lineno="42" />
+<varDeclaration name="result" scope="methodvar" location="Utildemo" type="string" lineno="42" />
+<assignHeap name="result" scope="methodvar" type="string" rhsType="methodinvoke" rhs="string.valueof(d).substring(0,4)" lineno="42" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;date&apos;+result" key="debug" lineno="43"/>
+<ReturnBlock>
+<methodInvoke name="integer.valueOf" methodtype="normalmethod" returntype="String" parameters="result" returnloc="#temp2741" lineno="44" />
+<return expression="integer.valueOf(result)" expressiontype="@alias" lineno="44" />
+</ReturnBlock>
+<methodendline lineno="45"/>
+</body>
+</method>
+<method returntype="date" name="chooseDate" parameters="d:datetime" isTestMethod="false" lineno="47" throws="" modifiers="global,static">
+<body>
+<if type="simpleif" lineno="52">
+<conditionalExpr>
+<methodInvoke name="#temp2741.adddays" methodtype="normalmethod" returntype="String" parameters="1" returnloc="#temp2742" lineno="52" />
+<ConditionalStatement LHStype="" LHS="d" RHStype="" RHS="d00.adddays(1)" Operator="&lt;"/>
+<conditionalExpr>
+<methodInvoke name="#temp2742.adddays" methodtype="normalmethod" returntype="String" parameters="1" returnloc="#temp2743" lineno="52" />
+<ConditionalStatement LHStype="" LHS="d" RHStype="" RHS="d01.adddays(1)" Operator="&gt;="/>
+<ConditionalStatement LHStype="methodinvoke" LHS="#temp2742" RHStype="d&gt;=d01.adddays(1)" RHS="d&gt;=d01.adddays(1)" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "d&lt;d00.adddays(1)&amp;&amp;d&gt;=d01.adddays(1)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ReturnBlock>
+<return expression="d00" expressiontype="@alias" lineno="54" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="56">
+<body>
+<if type="elseif" lineno="56">
+<conditionalExpr>
+<methodInvoke name="#temp2743.adddays" methodtype="normalmethod" returntype="String" parameters="1" returnloc="#temp2744" lineno="56" />
+<ConditionalStatement LHStype="" LHS="d" RHStype="" RHS="d01.adddays(1)" Operator="&lt;"/>
+<conditionalExpr>
+<methodInvoke name="#temp2744.adddays" methodtype="normalmethod" returntype="String" parameters="1" returnloc="#temp2745" lineno="56" />
+<ConditionalStatement LHStype="" LHS="d" RHStype="" RHS="d02.adddays(1)" Operator="&gt;="/>
+<ConditionalStatement LHStype="methodinvoke" LHS="#temp2744" RHStype="d&gt;=d02.adddays(1)" RHS="d&gt;=d02.adddays(1)" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "d&lt;d01.adddays(1)&amp;&amp;d&gt;=d02.adddays(1)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ReturnBlock>
+<return expression="d01" expressiontype="@alias" lineno="58" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="60">
+<body>
+<if type="elseif" lineno="60">
+<conditionalExpr>
+<methodInvoke name="#temp2745.adddays" methodtype="normalmethod" returntype="String" parameters="1" returnloc="#temp2746" lineno="60" />
+<ConditionalStatement LHStype="" LHS="d" RHStype="" RHS="d02.adddays(1)" Operator="&lt;"/>
+<conditionalExpr>
+<methodInvoke name="#temp2746.adddays" methodtype="normalmethod" returntype="String" parameters="1" returnloc="#temp2747" lineno="60" />
+<ConditionalStatement LHStype="" LHS="d" RHStype="" RHS="d03.adddays(1)" Operator="&gt;="/>
+<ConditionalStatement LHStype="methodinvoke" LHS="#temp2746" RHStype="d&gt;=d03.adddays(1)" RHS="d&gt;=d03.adddays(1)" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "d&lt;d02.adddays(1)&amp;&amp;d&gt;=d03.adddays(1)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ReturnBlock>
+<return expression="d02" expressiontype="@alias" lineno="62" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="64">
+<body>
+<if type="elseif" lineno="64">
+<conditionalExpr>
+<methodInvoke name="#temp2747.adddays" methodtype="normalmethod" returntype="String" parameters="1" returnloc="#temp2748" lineno="64" />
+<ConditionalStatement LHStype="" LHS="d" RHStype="" RHS="d03.adddays(1)" Operator="&lt;"/>
+<conditionalExpr>
+<methodInvoke name="#temp2748.adddays" methodtype="normalmethod" returntype="String" parameters="1" returnloc="#temp2749" lineno="64" />
+<ConditionalStatement LHStype="" LHS="d" RHStype="" RHS="d04.adddays(1)" Operator="&gt;="/>
+<ConditionalStatement LHStype="methodinvoke" LHS="#temp2748" RHStype="d&gt;=d04.adddays(1)" RHS="d&gt;=d04.adddays(1)" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "d&lt;d03.adddays(1)&amp;&amp;d&gt;=d04.adddays(1)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ReturnBlock>
+<return expression="d03" expressiontype="@alias" lineno="66" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="68">
+<body>
+<if type="elseif" lineno="68">
+<conditionalExpr>
+<methodInvoke name="#temp2749.adddays" methodtype="normalmethod" returntype="String" parameters="1" returnloc="#temp2750" lineno="68" />
+<ConditionalStatement LHStype="" LHS="d" RHStype="" RHS="d04.adddays(1)" Operator="&lt;"/>
+<conditionalExpr>
+<methodInvoke name="#temp2750.adddays" methodtype="normalmethod" returntype="String" parameters="1" returnloc="#temp2751" lineno="68" />
+<ConditionalStatement LHStype="" LHS="d" RHStype="" RHS="d05.adddays(1)" Operator="&gt;="/>
+<ConditionalStatement LHStype="methodinvoke" LHS="#temp2750" RHStype="d&gt;=d05.adddays(1)" RHS="d&gt;=d05.adddays(1)" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "d&lt;d04.adddays(1)&amp;&amp;d&gt;=d05.adddays(1)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ReturnBlock>
+<return expression="d04" expressiontype="@alias" lineno="70" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="72">
+<body>
+<if type="elseif" lineno="72">
+<conditionalExpr>
+<methodInvoke name="#temp2751.adddays" methodtype="normalmethod" returntype="String" parameters="1" returnloc="#temp2752" lineno="72" />
+<ConditionalStatement LHStype="" LHS="d" RHStype="" RHS="d05.adddays(1)" Operator="&lt;"/>
+<conditionalExpr>
+<methodInvoke name="#temp2752.adddays" methodtype="normalmethod" returntype="String" parameters="1" returnloc="#temp2753" lineno="72" />
+<ConditionalStatement LHStype="" LHS="d" RHStype="" RHS="d06.adddays(1)" Operator="&gt;="/>
+<ConditionalStatement LHStype="methodinvoke" LHS="#temp2752" RHStype="d&gt;=d06.adddays(1)" RHS="d&gt;=d06.adddays(1)" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "d&lt;d05.adddays(1)&amp;&amp;d&gt;=d06.adddays(1)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ReturnBlock>
+<return expression="d05" expressiontype="@alias" lineno="74" />
+</ReturnBlock>
+</body>
+</true>
+<false type="" lineno="77">
+<body>
+<if type="elseif" lineno="77">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="d" RHStype="" RHS="d00" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "d&gt;d00"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ReturnBlock>
+<return expression="d07" expressiontype="@alias" lineno="79" />
+</ReturnBlock>
+</body>
+</true>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+<ReturnBlock>
+<return expression="null" expressiontype="@value" lineno="81" />
+</ReturnBlock>
+<methodendline lineno="82"/>
+</body>
+</method>
+<method returntype="string" name="monthName" parameters="d:date" isTestMethod="false" lineno="84" throws="" modifiers="global,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="Map&lt;integer,string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2754" lineno="86" />
+<varDeclaration name="monthMap" scope="methodvar" location="Utildemo" type="Map&amp;lt;integer,string&amp;gt;" lineno="86" />
+<assignHeap name="monthMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;integer,string&gt;()" lineno="86" />
+</VariableDeclaration>
+<methodInvoke name="monthMap.put" methodtype="normalmethod" returntype="String" parameters="1,&apos;JAN&apos;" returnloc="#temp2755" lineno="87" />
+<methodInvoke name="monthMap.put" methodtype="normalmethod" returntype="String" parameters="2,&apos;FEB&apos;" returnloc="#temp2756" lineno="88" />
+<methodInvoke name="monthMap.put" methodtype="normalmethod" returntype="String" parameters="3,&apos;MAR&apos;" returnloc="#temp2757" lineno="89" />
+<methodInvoke name="monthMap.put" methodtype="normalmethod" returntype="String" parameters="4,&apos;APR&apos;" returnloc="#temp2758" lineno="90" />
+<methodInvoke name="monthMap.put" methodtype="normalmethod" returntype="String" parameters="5,&apos;MAY&apos;" returnloc="#temp2759" lineno="91" />
+<methodInvoke name="monthMap.put" methodtype="normalmethod" returntype="String" parameters="6,&apos;JUN&apos;" returnloc="#temp2760" lineno="92" />
+<methodInvoke name="monthMap.put" methodtype="normalmethod" returntype="String" parameters="7,&apos;JUL&apos;" returnloc="#temp2761" lineno="93" />
+<methodInvoke name="monthMap.put" methodtype="normalmethod" returntype="String" parameters="8,&apos;AUG&apos;" returnloc="#temp2762" lineno="94" />
+<methodInvoke name="monthMap.put" methodtype="normalmethod" returntype="String" parameters="9,&apos;SEP&apos;" returnloc="#temp2763" lineno="95" />
+<methodInvoke name="monthMap.put" methodtype="normalmethod" returntype="String" parameters="10,&apos;OCT&apos;" returnloc="#temp2764" lineno="96" />
+<methodInvoke name="monthMap.put" methodtype="normalmethod" returntype="String" parameters="11,&apos;NOV&apos;" returnloc="#temp2765" lineno="97" />
+<methodInvoke name="monthMap.put" methodtype="normalmethod" returntype="String" parameters="12,&apos;DEC&apos;" returnloc="#temp2766" lineno="98" />
+<ReturnBlock>
+<methodInvoke name="d.month" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2767" lineno="100" />
+<methodInvoke name="monthMap.get" methodtype="normalmethod" returntype="String" parameters="d.month()" returnloc="#temp2768" lineno="100" />
+<methodInvoke name="#temp2768.year" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2769" lineno="100" />
+<methodInvoke name="#temp2768.valueOf" methodtype="normalmethod" returntype="String" parameters="d.year()" returnloc="#temp2770" lineno="100" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="(monthMap.get(d.month())+&apos;-&apos;+string.valueOf(d.year()))" returnloc="#temp2771" lineno="100" />
+<return expression="(monthMap.get(d.month())+&apos;-&apos;+string.valueOf(d.year()))" expressiontype="@methodinvoke" lineno="100" />
+</ReturnBlock>
+<methodendline lineno="102"/>
+</body>
+</method>
+<method returntype="AIES_Accenture__AIESMetricMaster__c" name="getMetricMaster" parameters="metricName:string" isTestMethod="false" lineno="104" throws="" modifiers="global,static">
+<body>
+<VariableDeclaration>
+<varDeclaration name="mmetricMasterList" scope="methodvar" location="Utildemo" type="AIES_Accenture__AIESMetricMaster__c" lineno="106" />
+</VariableDeclaration>
+<TryStatement lineno="108">
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id, name from AIES_Accenture__AIESMetricMaster__c where name =: metricName limit 1]" returnloc="#temp2772" lineno="109" />
+<assignHeap name="mmetricMasterList" scope="" type="" rhsType="soqlquery" rhs="[select id, name from AIES_Accenture__AIESMetricMaster__c where name =: metricName limit 1]" lineno="109" />
+</AssignmentStatement>
+</body>
+<CatchStatement type="Exception" name="e" lineno="110">
+<body>
+<curlybrace exists="true"/>
+</body>
+</CatchStatement>
+</TryStatement>
+<ReturnBlock>
+<return expression="mmetricMasterList" expressiontype="@alias" lineno="112" />
+</ReturnBlock>
+<methodendline lineno="113"/>
+</body>
+</method>
+<method returntype="AIES_Accenture__AIESMetricMaster__c" name="createMetricMaster" parameters="metricName:string,title:string,labelX:string,labelY:string" isTestMethod="false" lineno="157" throws="" modifiers="global,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="AIES_Accenture__AIESMetricMaster__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2773" lineno="159" />
+<varDeclaration name="m" scope="methodvar" location="Utildemo" type="AIES_Accenture__AIESMetricMaster__c" lineno="159" />
+<assignHeap name="m" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_Accenture__AIESMetricMaster__c()" lineno="159" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id, name from AIES_Accenture__AIESMetricMaster__c where name =: metricName]" returnloc="#temp2774" lineno="169" />
+<varDeclaration name="mmetricMasterList" scope="methodvar" location="Utildemo" type="List&amp;lt;AIES_Accenture__AIESMetricMaster__c&amp;gt;" lineno="169" />
+<assignHeap name="mmetricMasterList" scope="methodvar" type="List&amp;lt;AIES_Accenture__AIESMetricMaster__c&amp;gt;" rhsType="query" rhs="[select id, name from AIES_Accenture__AIESMetricMaster__c where name =: metricName]" lineno="169" />
+</VariableDeclaration>
+<if type="simpleif" lineno="171">
+<conditionalExpr>
+<methodInvoke name="#temp2774.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2775" lineno="171" />
+<ConditionalStatement LHStype="" LHS="mmetricMasterList.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "mmetricMasterList.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="m" scope="" type="" rhsType="methodinvoke" rhs="mmetricMasterList[0]" lineno="172" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="173">
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="m.name" scope="" type="" rhsType="variable" rhs="metricName" lineno="174" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="m.AIES_Accenture__Title__c" scope="" type="" rhsType="variable" rhs="title" lineno="175" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="m.AIES_Accenture__Label_X__c" scope="" type="" rhsType="variable" rhs="labelX" lineno="176" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="m.AIES_Accenture__Label_Y__c" scope="" type="" rhsType="variable" rhs="labelY" lineno="177" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="m.AIES_Accenture__MetricType__c" scope="" type="" rhsType="value" rhs="&apos;Chart&apos;" lineno="178" />
+</AssignmentStatement>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="m" returnloc="" lineno="179" />
+</body>
+</false>
+</if>
+<ReturnBlock>
+<return expression="m" expressiontype="@alias" lineno="181" />
+</ReturnBlock>
+<methodendline lineno="182"/>
+</body>
+</method>
+<method returntype="AIES_Accenture__AIESMetricData__c" name="createMetricData" parameters="key:string,value:decimal,m:AIES_Accenture__AIESMetricMaster__c" isTestMethod="false" lineno="184" throws="" modifiers="global,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="AIES_Accenture__AIESMetricData__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2777" lineno="186" />
+<varDeclaration name="a" scope="methodvar" location="Utildemo" type="AIES_Accenture__AIESMetricData__c" lineno="186" />
+<assignHeap name="a" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_Accenture__AIESMetricData__c()" lineno="186" />
+</VariableDeclaration>
+<TryStatement lineno="187">
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="a.AIES_Accenture__Key__c" scope="" type="" rhsType="methodinvoke" rhs="key" lineno="188" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="value.setScale" methodtype="normalmethod" returntype="String" parameters="2" returnloc="#temp2778" lineno="189" />
+<assignHeap name="a.AIES_Accenture__Value__c" scope="" type="" rhsType="methodinvoke" rhs="value.setScale(2)" lineno="189" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="a.AIES_Accenture__Portfolio__c" scope="" type="" rhsType="variable" rhs="Portfolio" lineno="190" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="a.AIES_Accenture__MetricMaster__c" scope="" type="" rhsType="variable" rhs="m.id" lineno="191" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="a.AIES_Accenture__Key__c" returnloc="#temp2779" lineno="192" />
+<assignHeap name="a.AIES_Accenture__External_Id__c" scope="" type="" rhsType="stradd" rhs="a.AIES_Accenture__Portfolio__c+&apos;::&apos;+m.name+&apos;::&apos;+a.AIES_Accenture__Key__c" lineno="192" />
+</AssignmentStatement>
+</body>
+<CatchStatement type="Exception" name="e" lineno="195">
+<body>
+<curlybrace exists="true"/>
+</body>
+</CatchStatement>
+</TryStatement>
+<ReturnBlock>
+<return expression="a" expressiontype="@alias" lineno="197" />
+</ReturnBlock>
+<methodendline lineno="198"/>
+</body>
+</method>
+<method returntype="AIES_Accenture__AIESMetricData__c" name="createMetricData" parameters="key:string,value:decimal,m:AIES_Accenture__AIESMetricMaster__c,seq:integer" isTestMethod="false" lineno="200" throws="" modifiers="global,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="AIES_Accenture__AIESMetricData__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2780" lineno="202" />
+<varDeclaration name="a" scope="methodvar" location="Utildemo" type="AIES_Accenture__AIESMetricData__c" lineno="202" />
+<assignHeap name="a" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_Accenture__AIESMetricData__c()" lineno="202" />
+</VariableDeclaration>
+<TryStatement lineno="203">
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="a.AIES_Accenture__Key__c" scope="" type="" rhsType="methodinvoke" rhs="key" lineno="204" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="value.setScale" methodtype="normalmethod" returntype="String" parameters="2" returnloc="#temp2781" lineno="205" />
+<assignHeap name="a.AIES_Accenture__Value__c" scope="" type="" rhsType="methodinvoke" rhs="value.setScale(2)" lineno="205" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="a.AIES_Accenture__Portfolio__c" scope="" type="" rhsType="variable" rhs="Portfolio" lineno="206" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="a.AIES_Accenture__MetricMaster__c" scope="" type="" rhsType="variable" rhs="m.id" lineno="207" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="a.AIES_Accenture__Key__c" returnloc="#temp2782" lineno="208" />
+<assignHeap name="a.AIES_Accenture__External_Id__c" scope="" type="" rhsType="stradd" rhs="a.AIES_Accenture__Portfolio__c+&apos;::&apos;+m.name+&apos;::&apos;+a.AIES_Accenture__Key__c" lineno="208" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="a.AIES_Accenture__SortOrder__c" scope="" type="" rhsType="variable" rhs="seq" lineno="209" />
+</AssignmentStatement>
+</body>
+<CatchStatement type="Exception" name="e" lineno="212">
+<body>
+<curlybrace exists="true"/>
+</body>
+</CatchStatement>
+</TryStatement>
+<ReturnBlock>
+<return expression="a" expressiontype="@alias" lineno="214" />
+</ReturnBlock>
+<methodendline lineno="215"/>
+</body>
+</method>
+<method returntype="AIES_Accenture__AIESMetricData__c" name="createMetricData" parameters="key:string,value:decimal,value2:decimal,m:AIES_Accenture__AIESMetricMaster__c" isTestMethod="false" lineno="217" throws="" modifiers="global,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="AIES_Accenture__AIESMetricData__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2783" lineno="219" />
+<varDeclaration name="a" scope="methodvar" location="Utildemo" type="AIES_Accenture__AIESMetricData__c" lineno="219" />
+<assignHeap name="a" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_Accenture__AIESMetricData__c()" lineno="219" />
+</VariableDeclaration>
+<TryStatement lineno="220">
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="a.AIES_Accenture__Key__c" scope="" type="" rhsType="methodinvoke" rhs="key" lineno="221" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="value.setScale" methodtype="normalmethod" returntype="String" parameters="2" returnloc="#temp2784" lineno="222" />
+<assignHeap name="a.AIES_Accenture__Value__c" scope="" type="" rhsType="methodinvoke" rhs="value.setScale(2)" lineno="222" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="value2.setScale" methodtype="normalmethod" returntype="String" parameters="2" returnloc="#temp2785" lineno="223" />
+<assignHeap name="a.AIES_Accenture__Value2__c" scope="" type="" rhsType="methodinvoke" rhs="value2.setScale(2)" lineno="223" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="a.AIES_Accenture__Portfolio__c" scope="" type="" rhsType="variable" rhs="Portfolio" lineno="224" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="a.AIES_Accenture__MetricMaster__c" scope="" type="" rhsType="variable" rhs="m.id" lineno="225" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="a.AIES_Accenture__Key__c" returnloc="#temp2786" lineno="226" />
+<assignHeap name="a.AIES_Accenture__External_Id__c" scope="" type="" rhsType="stradd" rhs="a.AIES_Accenture__Portfolio__c+&apos;::&apos;+m.name+&apos;::&apos;+a.AIES_Accenture__Key__c" lineno="226" />
+</AssignmentStatement>
+</body>
+<CatchStatement type="Exception" name="e" lineno="228">
+<body>
+<curlybrace exists="true"/>
+</body>
+</CatchStatement>
+</TryStatement>
+<ReturnBlock>
+<return expression="a" expressiontype="@alias" lineno="230" />
+</ReturnBlock>
+<methodendline lineno="231"/>
+</body>
+</method>
+<method returntype="AIES_Accenture__AIESMetricData__c" name="createMetricData" parameters="key:string,value:integer,Org:string,m:AIES_Accenture__AIESMetricMaster__c,seq:integer" isTestMethod="false" lineno="233" throws="" modifiers="global,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="AIES_Accenture__AIESMetricData__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2787" lineno="235" />
+<varDeclaration name="a" scope="methodvar" location="Utildemo" type="AIES_Accenture__AIESMetricData__c" lineno="235" />
+<assignHeap name="a" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_Accenture__AIESMetricData__c()" lineno="235" />
+</VariableDeclaration>
+<TryStatement lineno="236">
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="a.AIES_Accenture__Key__c" scope="" type="" rhsType="methodinvoke" rhs="key" lineno="237" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="a.AIES_Accenture__Value__c" scope="" type="" rhsType="variable" rhs="value" lineno="238" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="a.AIES_Accenture__Portfolio__c" scope="" type="" rhsType="variable" rhs="Portfolio" lineno="239" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="a.AIES_Accenture__Category__c" scope="" type="" rhsType="variable" rhs="Org" lineno="240" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="a.AIES_Accenture__MetricMaster__c" scope="" type="" rhsType="variable" rhs="m.id" lineno="241" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="a.AIES_Accenture__Category__c" returnloc="#temp2788" lineno="242" />
+<assignHeap name="a.AIES_Accenture__External_Id__c" scope="" type="" rhsType="stradd" rhs="a.AIES_Accenture__Portfolio__c+&apos;::&apos;+m.name+&apos;::&apos;+a.AIES_Accenture__Key__c+&apos;::&apos;+a.AIES_Accenture__Category__c" lineno="242" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="a.AIES_Accenture__SortOrder__c" scope="" type="" rhsType="variable" rhs="seq" lineno="243" />
+</AssignmentStatement>
+</body>
+<CatchStatement type="Exception" name="e" lineno="245">
+<body>
+<curlybrace exists="true"/>
+</body>
+</CatchStatement>
+</TryStatement>
+<ReturnBlock>
+<return expression="a" expressiontype="@alias" lineno="247" />
+</ReturnBlock>
+<methodendline lineno="248"/>
+</body>
+</method>
+<method returntype="list&amp;lt;SelectOption&amp;gt;" name="getPicklistValues" parameters="obj:sobject,fld:string" isTestMethod="false" lineno="250" throws="" modifiers="global,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="list&lt;SelectOption&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2789" lineno="252" />
+<varDeclaration name="options" scope="methodvar" location="Utildemo" type="list&amp;lt;SelectOption&amp;gt;" lineno="252" />
+<assignHeap name="options" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newlist&lt;SelectOption&gt;()" lineno="252" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp2789.getSObjectType" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2790" lineno="254" />
+<varDeclaration name="objType" scope="methodvar" location="Utildemo" type="Schema.sObjectType" lineno="254" />
+<assignHeap name="objType" scope="methodvar" type="Schema.sObjectType" rhsType="methodinvoke" rhs="obj.getSObjectType()" lineno="254" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp2790.getDescribe" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2791" lineno="256" />
+<varDeclaration name="objDescribe" scope="methodvar" location="Utildemo" type="Schema.DescribeSObjectResult" lineno="256" />
+<assignHeap name="objDescribe" scope="methodvar" type="Schema.DescribeSObjectResult" rhsType="methodinvoke" rhs="objType.getDescribe()" lineno="256" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="" methodtype="normalmethod" returntype="String" parameters=".getMap(" returnloc="#temp2792" lineno="258" />
+<varDeclaration name="fieldMap" scope="methodvar" location="Utildemo" type="map&amp;lt;string,Schema.SObjectField&amp;gt;" lineno="258" />
+<assignHeap name="fieldMap" scope="methodvar" type="map&amp;lt;string,Schema.SObjectField&amp;gt;" rhsType="methodinvoke" rhs="objDescribe.fields.getMap()" lineno="258" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp2792.get" methodtype="normalmethod" returntype="String" parameters="fld" returnloc="#temp2793" lineno="261" />
+<methodInvoke name="#temp2793.getDescribe" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2794" lineno="261" />
+<methodInvoke name="#temp2794.getPickListValues" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2795" lineno="261" />
+<varDeclaration name="values" scope="methodvar" location="Utildemo" type="list&amp;lt;Schema.PicklistEntry&amp;gt;" lineno="260" />
+<assignHeap name="values" scope="methodvar" type="list&amp;lt;Schema.PicklistEntry&amp;gt;" rhsType="methodinvoke" rhs="fieldMap.get(fld).getDescribe().getPickListValues()" lineno="260" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="263">
+<Iterator type="Schema.PicklistEntry" name="a" on="values">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="a.getLabel" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2796" lineno="265" />
+<methodInvoke name="#temp2796.getValue" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2797" lineno="265" />
+<methodInvoke name="SelectOption" methodtype="constructormethod" returntype="newobject" parameters="a.getLabel(),a.getValue()" returnloc="#temp2798" lineno="265" />
+<methodInvoke name="options.add" methodtype="normalmethod" returntype="String" parameters="newSelectOption(a.getLabel(),a.getValue())" returnloc="#temp2799" lineno="265" />
+</body>
+</loop>
+<ReturnBlock>
+<return expression="options" expressiontype="@alias" lineno="267" />
+</ReturnBlock>
+<methodendline lineno="268"/>
+</body>
+</method>
+<method returntype="void" name="exceptionHandler" parameters="e:Exception,className:string,methodName:string" isTestMethod="false" lineno="271" throws="" modifiers="global,static">
+<body>
+<methodendline lineno="273"/>
+</body>
+</method>
+<method returntype="void" name="upsertMetricData" parameters="metricdataList:List&amp;lt;AIES_Accenture__AIESMetricData__c&amp;gt;" isTestMethod="false" lineno="275" throws="" modifiers="global,static">
+<body>
+<TryStatement lineno="277">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="lib.dml.upsert" methodtype="" returntype="" parameters="metricdataList" returnloc="" lineno="279" />
+</body>
+<CatchStatement type="exception" name="e" lineno="282">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="exceptionHandler" methodtype="normalmethod" returntype="String" parameters="e,&apos;Util&apos;,&apos;upsertMetricData&apos;" returnloc="#temp2800" lineno="284" />
+</body>
+</CatchStatement>
+</TryStatement>
+<methodendline lineno="288"/>
+</body>
+</method>
+<method returntype="void" name="upsertMetricData" parameters="metricdata:AIES_Accenture__AIESMetricData__c" isTestMethod="false" lineno="289" throws="" modifiers="global,static">
+<body>
+<TryStatement lineno="290">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="lib.dml.upsert" methodtype="" returntype="" parameters="metricdata" returnloc="" lineno="292" />
+</body>
+<CatchStatement type="exception" name="e" lineno="295">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="exceptionHandler" methodtype="normalmethod" returntype="String" parameters="e,&apos;Util&apos;,&apos;upsertMetricData&apos;" returnloc="#temp2801" lineno="297" />
+</body>
+</CatchStatement>
+</TryStatement>
+<methodendline lineno="302"/>
+</body>
+</method>
+<method returntype="void" name="insertCustomSettingData" parameters="" isTestMethod="false" lineno="304" throws="" modifiers="global,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="List&lt;AIES_Accenture__ChartType__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2802" lineno="305" />
+<varDeclaration name="chartTypeList" scope="methodvar" location="Utildemo" type="List&amp;lt;AIES_Accenture__ChartType__c&amp;gt;" lineno="305" />
+<assignHeap name="chartTypeList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_Accenture__ChartType__c&gt;()" lineno="305" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="Map&lt;string,string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2803" lineno="307" />
+<varDeclaration name="map_customsettingChartLabel" scope="methodvar" location="Utildemo" type="Map&amp;lt;string,string&amp;gt;" lineno="307" />
+<assignHeap name="map_customsettingChartLabel" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;string,string&gt;()" lineno="307" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="Map&lt;string,string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2804" lineno="308" />
+<varDeclaration name="map_customsettingType" scope="methodvar" location="Utildemo" type="Map&amp;lt;string,string&amp;gt;" lineno="308" />
+<assignHeap name="map_customsettingType" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;string,string&gt;()" lineno="308" />
+</VariableDeclaration>
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Funnel&apos;,&apos;Funnel&apos;" returnloc="#temp2805" lineno="310" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Thermometer&apos;,&apos;Thermometer&apos;" returnloc="#temp2806" lineno="311" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Vled&apos;,&apos;Vertilcal Lead&apos;" returnloc="#temp2807" lineno="312" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Bar2D&apos;,&apos;Bar 2D&apos;" returnloc="#temp2808" lineno="313" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Line&apos;,&apos;Line&apos;" returnloc="#temp2809" lineno="314" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Doughnut3D&apos;,&apos;Doughnut 3D&apos;" returnloc="#temp2810" lineno="315" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Column3D&apos;,&apos;Column 3D&apos;" returnloc="#temp2811" lineno="316" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Bulb&apos;,&apos;Bulb&apos;" returnloc="#temp2812" lineno="317" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Bar3D&apos;,&apos;Bar 3D&apos;" returnloc="#temp2813" lineno="318" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Pie3D&apos;,&apos;Pie 3D&apos;" returnloc="#temp2814" lineno="319" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Pareto2D&apos;,&apos;Pareto 2D&apos;" returnloc="#temp2815" lineno="320" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;AngularGauge&apos;,&apos;Angular Gauge&apos;" returnloc="#temp2816" lineno="321" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Pyramid&apos;,&apos;Pyramid&apos;" returnloc="#temp2817" lineno="322" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Column2D&apos;,&apos;Column 2D&apos;" returnloc="#temp2818" lineno="323" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Pie2D&apos;,&apos;Pie 2D&apos;" returnloc="#temp2819" lineno="324" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Area2D&apos;,&apos;Area 2D&apos;" returnloc="#temp2820" lineno="325" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Doughnut2D&apos;,&apos;Doughnut 2D&apos;" returnloc="#temp2821" lineno="326" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;HLinearGauge&apos;,&apos;HLinear Gauge&apos;" returnloc="#temp2822" lineno="327" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Hled&apos;,&apos;Horizontal Lead&apos;" returnloc="#temp2823" lineno="328" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Pareto3D&apos;,&apos;Pareto 3D&apos;" returnloc="#temp2824" lineno="329" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Cylinder&apos;,&apos;Cylinder&apos;" returnloc="#temp2825" lineno="330" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;ZoomLine&apos;,&apos;Zoom Line&apos;" returnloc="#temp2826" lineno="331" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;MSColumn3D&apos;,&apos;Column 3D&apos;" returnloc="#temp2827" lineno="332" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;StackedColumn3D&apos;,&apos;Stacked Column3D&apos;" returnloc="#temp2828" lineno="333" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;MSLine&apos;,&apos;Line&apos;" returnloc="#temp2829" lineno="334" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;MSBar2D&apos;,&apos;Bar 2D&apos;" returnloc="#temp2830" lineno="335" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;Marimekko&apos;,&apos;Marimekko&apos;" returnloc="#temp2831" lineno="336" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;MSArea&apos;,&apos;Area&apos;" returnloc="#temp2832" lineno="337" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;MSColumn2D&apos;,&apos;Column 2D&apos;" returnloc="#temp2833" lineno="338" />
+<methodInvoke name="map_customsettingChartLabel.put" methodtype="normalmethod" returntype="String" parameters="&apos;MSBar3D&apos;,&apos;Bar 3D&apos;" returnloc="#temp2834" lineno="339" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Funnel&apos;,&apos;keyPair&apos;" returnloc="#temp2835" lineno="343" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Thermometer&apos;,&apos;Score&apos;" returnloc="#temp2836" lineno="344" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Vled&apos;,&apos;Score&apos;" returnloc="#temp2837" lineno="345" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Bar2D&apos;,&apos;keyPair&apos;" returnloc="#temp2838" lineno="346" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Line&apos;,&apos;keyPair&apos;" returnloc="#temp2839" lineno="347" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Doughnut3D&apos;,&apos;keyPair&apos;" returnloc="#temp2840" lineno="348" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Column3D&apos;,&apos;keyPair&apos;" returnloc="#temp2841" lineno="349" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Bulb&apos;,&apos;Score&apos;" returnloc="#temp2842" lineno="350" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Bar3D&apos;,&apos;keyPair&apos;" returnloc="#temp2843" lineno="351" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Pie3D&apos;,&apos;keyPair&apos;" returnloc="#temp2844" lineno="352" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Pareto2D&apos;,&apos;keyPair&apos;" returnloc="#temp2845" lineno="353" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;AngularGauge&apos;,&apos;Score&apos;" returnloc="#temp2846" lineno="354" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Pyramid&apos;,&apos;keyPair&apos;" returnloc="#temp2847" lineno="355" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Column2D&apos;,&apos;keyPair&apos;" returnloc="#temp2848" lineno="356" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Pie2D&apos;,&apos;keyPair&apos;" returnloc="#temp2849" lineno="357" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Area2D&apos;,&apos;keyPair&apos;" returnloc="#temp2850" lineno="358" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Doughnut 2D&apos;,&apos;keyPair&apos;" returnloc="#temp2851" lineno="359" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;HLinearGauge&apos;,&apos;Score&apos;" returnloc="#temp2852" lineno="360" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Hled&apos;,&apos;Score&apos;" returnloc="#temp2853" lineno="361" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Pareto3D&apos;,&apos;keyPair&apos;" returnloc="#temp2854" lineno="362" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Cylinder&apos;,&apos;Score&apos;" returnloc="#temp2855" lineno="363" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;ZoomLine&apos;,&apos;multiSeries&apos;" returnloc="#temp2856" lineno="364" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;MSColumn3D&apos;,&apos;multiSeries&apos;" returnloc="#temp2857" lineno="365" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;StackedColumn3D&apos;,&apos;multiSeries&apos;" returnloc="#temp2858" lineno="366" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;MSLine&apos;,&apos;multiSeries&apos;" returnloc="#temp2859" lineno="367" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;MSBar2D&apos;,&apos;multiSeries&apos;" returnloc="#temp2860" lineno="368" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;Marimekko&apos;,&apos;multiSeries&apos;" returnloc="#temp2861" lineno="369" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;MSArea&apos;,&apos;multiSeries&apos;" returnloc="#temp2862" lineno="370" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;MSColumn2D&apos;,&apos;multiSeries&apos;" returnloc="#temp2863" lineno="371" />
+<methodInvoke name="map_customsettingType.put" methodtype="normalmethod" returntype="String" parameters="&apos;MSBar3D&apos;,&apos;multiSeries&apos;" returnloc="#temp2864" lineno="372" />
+<VariableDeclaration>
+<methodInvoke name="List&lt;AIES_Accenture__ChartType__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2865" lineno="376" />
+<varDeclaration name="chartTypeListToInsert" scope="methodvar" location="Utildemo" type="List&amp;lt;AIES_Accenture__ChartType__c&amp;gt;" lineno="376" />
+<assignHeap name="chartTypeListToInsert" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_Accenture__ChartType__c&gt;()" lineno="376" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="AIES_Accenture__ChartType__c#temp2865AIES_Accenture__ChartType__c.getall" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2866" lineno="377" />
+<methodInvoke name="#temp2866.values" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2867" lineno="377" />
+<assignHeap name="chartTypeList" scope="" type="" rhsType="methodinvoke" rhs="AIES_Accenture__ChartType__c.getall().values()" lineno="377" />
+</AssignmentStatement>
+<VariableDeclaration>
+<methodInvoke name="set&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2868" lineno="378" />
+<varDeclaration name="customSettingSet" scope="methodvar" location="Utildemo" type="set&amp;lt;string&amp;gt;" lineno="378" />
+<assignHeap name="customSettingSet" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newset&lt;string&gt;()" lineno="378" />
+</VariableDeclaration>
+<loop type="simplefor" lineno="379">
+<initialExpr>
+<VariableDeclaration>
+<varDeclaration name="i" scope="methodvar" location="Utildemo" type="integer" lineno="379" />
+<assignHeap name="i" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="379" />
+</VariableDeclaration>
+</initialExpr>
+<conditionalExpr>
+<methodInvoke name="#temp2868.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2869" lineno="379" />
+<ConditionalStatement LHStype="" LHS="i" RHStype="" RHS="chartTypeList.size()" Operator="&lt;"/>
+</conditionalExpr>
+<incrementExpr>
+</incrementExpr>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="customSettingSet.add" methodtype="normalmethod" returntype="String" parameters="chartTypeList.name" returnloc="#temp2870" lineno="380" />
+</body>
+</loop>
+<loop type="advancedfor" lineno="382">
+<methodInvoke name="map_customsettingChartLabel.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2871" lineno="382" />
+<Iterator type="string" name="sx" on="map_customsettingChartLabel.keySet()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="383">
+<conditionalExpr>
+<methodInvoke name="#temp2871.contains" methodtype="normalmethod" returntype="String" parameters="sx" returnloc="#temp2872" lineno="383" />
+</conditionalExpr>
+<ifcondition expression= "customSettingSet.contains(sx)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+</body>
+</true>
+<false type="" lineno="386">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="map_customsettingChartLabel.get" methodtype="normalmethod" returntype="String" parameters="sx" returnloc="#temp2873" lineno="387" />
+<methodInvoke name="#temp2873.get" methodtype="normalmethod" returntype="String" parameters="sx" returnloc="#temp2874" lineno="387" />
+<methodInvoke name="AIES_Accenture__ChartType__c" methodtype="constructormethod" returntype="newobject" parameters="Name=sx,AIES_Accenture__ChartLabel__c=map_customsettingChartLabel.get(sx),AIES_Accenture__Type__c=map_customsettingType.get(sx)" returnloc="#temp2875" lineno="387" />
+<methodInvoke name="chartTypeListToInsert.add" methodtype="normalmethod" returntype="String" parameters="newAIES_Accenture__ChartType__c(Name=sx,AIES_Accenture__ChartLabel__c=map_customsettingChartLabel.get(sx),AIES_Accenture__Type__c=map_customsettingType.get(sx))" returnloc="#temp2876" lineno="387" />
+<assignHeap name="#temp2873.sx" scope="" type="newobject" rhsType="constructorInvoke" rhs="map_customsettingType.get(sx)" lineno="387" />
+</body>
+</false>
+</if>
+</body>
+</loop>
+<if type="simpleif" lineno="390">
+<conditionalExpr>
+<methodInvoke name="chartTypeListToInsert.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2877" lineno="390" />
+<ConditionalStatement LHStype="" LHS="chartTypeListToInsert.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "chartTypeListToInsert.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="lib.dml.Database.insert" methodtype="" returntype="" parameters="chartTypeListToInsert" returnloc="" lineno="391" />
+</body>
+</true>
+</if>
+<methodendline lineno="393"/>
+</body>
+</method>
+<method returntype="string" name="createOverviewRecommendData" parameters="currentPortfolioId:Id" isTestMethod="false" lineno="395" throws="" modifiers="webservice,static">
+<body>
+<VariableDeclaration>
+<methodInvoke name="list&lt;AIES_Accenture__Overview_Recommendation__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2878" lineno="399" />
+<varDeclaration name="finalRecordList" scope="methodvar" location="Utildemo" type="list&amp;lt;AIES_Accenture__Overview_Recommendation__c&amp;gt;" lineno="399" />
+<assignHeap name="finalRecordList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newlist&lt;AIES_Accenture__Overview_Recommendation__c&gt;()" lineno="399" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;AIES_Accenture__Overview_Recommendation__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2879" lineno="400" />
+<varDeclaration name="overviewRecommendationTemplate" scope="methodvar" location="Utildemo" type="List&amp;lt;AIES_Accenture__Overview_Recommendation__c&amp;gt;" lineno="400" />
+<assignHeap name="overviewRecommendationTemplate" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_Accenture__Overview_Recommendation__c&gt;()" lineno="400" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id, name, AIES_Accenture__Portfolio__c,AIES_Accenture__Overview__c,AIES_Accenture__IsTemplate__c,
+                                           AIES_Accenture__Recommendation__c,AIES_Accenture__SME_Recommendation__c,AIES_Accenture__Summary__c from AIES_Accenture__Overview_Recommendation__c 
+                                           where AIES_Accenture__IsTemplate__c=true and AIES_Accenture__Portfolio__c=null limit 20]" returnloc="#temp2880" lineno="401" />
+<assignHeap name="overviewRecommendationTemplate" scope="" type="" rhsType="soqlquery" rhs="[select id, name, AIES_Accenture__Portfolio__c,AIES_Accenture__Overview__c,AIES_Accenture__IsTemplate__c,
+                                           AIES_Accenture__Recommendation__c,AIES_Accenture__SME_Recommendation__c,AIES_Accenture__Summary__c from AIES_Accenture__Overview_Recommendation__c 
+                                           where AIES_Accenture__IsTemplate__c=true and AIES_Accenture__Portfolio__c=null limit 20]" lineno="401" />
+</AssignmentStatement>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id, name, AIES_Accenture__Portfolio__c,AIES_Accenture__Recommendation__c,
+                                                                        AIES_Accenture__SME_Recommendation__c,AIES_Accenture__Summary__c from AIES_Accenture__Overview_Recommendation__c 
+                                                                        where AIES_Accenture__IsTemplate__c=false and AIES_Accenture__Portfolio__c=:currentPortfolioId limit 20]" returnloc="#temp2881" lineno="404" />
+<varDeclaration name="ExistingRecommendationsData" scope="methodvar" location="Utildemo" type="List&amp;lt;AIES_Accenture__Overview_Recommendation__c&amp;gt;" lineno="404" />
+<assignHeap name="ExistingRecommendationsData" scope="methodvar" type="List&amp;lt;AIES_Accenture__Overview_Recommendation__c&amp;gt;" rhsType="query" rhs="[select id, name, AIES_Accenture__Portfolio__c,AIES_Accenture__Recommendation__c,
+                                                                        AIES_Accenture__SME_Recommendation__c,AIES_Accenture__Summary__c from AIES_Accenture__Overview_Recommendation__c 
+                                                                        where AIES_Accenture__IsTemplate__c=false and AIES_Accenture__Portfolio__c=:currentPortfolioId limit 20]" lineno="404" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="returnval" scope="methodvar" location="Utildemo" type="string" lineno="407" />
+<assignHeap name="returnval" scope="methodvar" type="string" rhsType="value" rhs="&apos;&apos;" lineno="407" />
+</VariableDeclaration>
+<TryStatement lineno="409">
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="410">
+<conditionalExpr>
+<methodInvoke name="overviewRecommendationTemplate.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2882" lineno="410" />
+<ConditionalStatement LHStype="" LHS="overviewRecommendationTemplate.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "overviewRecommendationTemplate.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="412">
+<conditionalExpr>
+<methodInvoke name="#temp2882.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp2883" lineno="412" />
+<ConditionalStatement LHStype="" LHS="ExistingRecommendationsData.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "ExistingRecommendationsData.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="returnval" scope="" type="" rhsType="methodinvoke" rhs="&apos;update&apos;" lineno="414" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="416">
+<body>
+<curlybrace exists="true"/>
+<loop type="advancedfor" lineno="417">
+<Iterator type="AIES_Accenture__Overview_Recommendation__c" name="overRec" on="overviewRecommendationTemplate">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="AIES_Accenture__Overview_Recommendation__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp2884" lineno="419" />
+<varDeclaration name="overviewRecommendation" scope="methodvar" location="Utildemo" type="AIES_Accenture__Overview_Recommendation__c" lineno="419" />
+<assignHeap name="overviewRecommendation" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_Accenture__Overview_Recommendation__c()" lineno="419" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="overviewRecommendation.Name" scope="" type="" rhsType="methodinvoke" rhs="overRec.Name" lineno="420" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="overviewRecommendation.AIES_Accenture__Portfolio__c" scope="" type="" rhsType="variable" rhs="currentPortfolioId" lineno="421" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="overviewRecommendation.AIES_Accenture__Recommendation__c" scope="" type="" rhsType="variable" rhs="overRec.AIES_Accenture__Recommendation__c" lineno="422" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="overviewRecommendation.AIES_Accenture__SME_Recommendation__c" scope="" type="" rhsType="variable" rhs="overRec.AIES_Accenture__SME_Recommendation__c" lineno="423" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="overviewRecommendation.AIES_Accenture__Summary__c" scope="" type="" rhsType="variable" rhs="overRec.AIES_Accenture__Summary__c" lineno="424" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="overviewRecommendation.AIES_Accenture__Overview__c" scope="" type="" rhsType="variable" rhs="overRec.AIES_Accenture__Overview__c" lineno="425" />
+</AssignmentStatement>
+<methodInvoke name="finalRecordList.add" methodtype="normalmethod" returntype="String" parameters="overviewRecommendation" returnloc="#temp2885" lineno="426" />
+</body>
+</loop>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="finalRecordList" returnloc="" lineno="428" />
+<AssignmentStatement>
+<assignHeap name="returnval" scope="" type="" rhsType="value" rhs="&apos;insert&apos;" lineno="429" />
+</AssignmentStatement>
+</body>
+</false>
+</if>
+</body>
+</true>
+</if>
+</body>
+<CatchStatement type="Exception" name="e" lineno="434">
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="returnval" scope="" type="" rhsType="value" rhs="&apos;error&apos;" lineno="435" />
+</AssignmentStatement>
+<ExpressionStatement expression="&apos;error Message :&apos;+e.getMessage()" key="debug" lineno="436"/>
+</body>
+</CatchStatement>
+</TryStatement>
+<ReturnBlock>
+<return expression="returnval" expressiontype="@alias" lineno="439" />
+</ReturnBlock>
+<methodendline lineno="440"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[28, 49, 50, 161, 190, 206, 224, 239, 253, 255, 257, 259, 262, 374, 375, 384, 395]" multi="[116-156, 162-167]" empty="[2, 3, 7, 9, 11, 13, 14, 15, 25, 29, 32, 38, 40, 46, 51, 76, 83, 85, 99, 101, 103, 105, 107, 114, 115, 121, 127, 129, 135, 141, 143, 149, 155, 158, 160, 168, 170, 183, 185, 193, 194, 199, 201, 210, 211, 216, 218, 227, 232, 234, 244, 249, 269, 270, 272, 274, 276, 281, 285, 287, 294, 298, 300, 301, 303, 306, 309, 340, 341, 342, 373, 394, 397, 398, 408, 413, 432, 438]" singlebrace="[30, 33, 37, 41, 45, 48, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 78, 80, 82, 102, 111, 113, 117, 119, 122, 124, 126, 128, 131, 133, 136, 138, 140, 142, 145, 147, 150, 152, 154, 166, 180, 182, 196, 198, 213, 215, 229, 231, 246, 248, 251, 264, 266, 268, 273, 278, 280, 283, 286, 288, 291, 293, 296, 299, 302, 381, 385, 388, 389, 392, 393, 396, 411, 415, 418, 427, 430, 431, 433, 437, 440, 441]"/>
+</stac>

@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="runScan.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="12 KB">
+<class name="runScan" sharing="default" implements="" isenum="false" lineno="1" modifiers="public">
+<classbody>
+<varDeclaration name="lst" scope="instancevar" location="runScan" type="string" lineno="4" />
+<VariableProperties name="lst">
+<getterMethod name="lst" returntype="string" modifiers="" lineno="4">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="lst" modifiers="" lineno="4">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<VariableDeclaration>
+<methodInvoke name="List&lt;AIES_ACCENTURE__Portfolio__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1492" lineno="5" />
+<varDeclaration name="PortfolioTemp" scope="methodvar" location="runScan" type="List&amp;lt;AIES_ACCENTURE__Portfolio__c&amp;gt;" lineno="5" modifiers="public" />
+<assignHeap name="PortfolioTemp" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_ACCENTURE__Portfolio__c&gt;()" lineno="5" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="map&lt;string,AIES_ACCENTURE__AIESMetricData__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1493" lineno="6" />
+<varDeclaration name="insertMap" scope="methodvar" location="runScan" type="map&amp;lt;string,AIES_ACCENTURE__AIESMetricData__c&amp;gt;" lineno="6" modifiers="public" />
+<assignHeap name="insertMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newmap&lt;string,AIES_ACCENTURE__AIESMetricData__c&gt;()" lineno="6" />
+</VariableDeclaration>
+<varDeclaration name="reportListToScanList" scope="instancevar" location="runScan" type="List&amp;lt;AIES_ACCENTURE__AIESMetricMaster__c&amp;gt;" lineno="7" />
+<VariableProperties name="reportListToScanList">
+<getterMethod name="reportListToScanList" returntype="List&amp;lt;AIES_ACCENTURE__AIESMetricMaster__c&amp;gt;" modifiers="" lineno="7">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="reportListToScanList" modifiers="" lineno="7">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<VariableDeclaration>
+<methodInvoke name="Map&lt;string,id&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1494" lineno="8" />
+<varDeclaration name="reportMap" scope="methodvar" location="runScan" type="Map&amp;lt;string,id&amp;gt;" lineno="8" modifiers="public" />
+<assignHeap name="reportMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;string,id&gt;()" lineno="8" />
+</VariableDeclaration>
+<varDeclaration name="reportIsRunning" scope="instancevar" location="runScan" type="boolean" lineno="9" />
+<VariableProperties name="reportIsRunning">
+<getterMethod name="reportIsRunning" returntype="boolean" modifiers="" lineno="9">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="reportIsRunning" modifiers="" lineno="9">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="results" scope="instancevar" location="runScan" type="Reports.ReportResults" lineno="10" />
+<VariableProperties name="results">
+<getterMethod name="results" returntype="Reports.ReportResults" modifiers="" lineno="10">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="results" modifiers="" lineno="10">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<VariableDeclaration>
+<varDeclaration name="instanceId" scope="methodvar" location="runScan" type="List&amp;lt;id&amp;gt;" lineno="11" modifiers="public" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="reportResults" scope="methodvar" location="runScan" type="Reports.ReportResults" lineno="12" modifiers="private,transient" />
+</VariableDeclaration>
+<method returntype="" name="runScan" parameters="" isTestMethod="false" lineno="14" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<methodInvoke name="ApexPages#temp1494ApexPages.currentPage" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1495" lineno="15" />
+<methodInvoke name="#temp1495.getParameters" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1496" lineno="15" />
+<methodInvoke name="#temp1496.get" methodtype="normalmethod" returntype="String" parameters="&apos;Id&apos;" returnloc="#temp1497" lineno="15" />
+<assignHeap name="lst" scope="" type="" rhsType="methodinvoke" rhs="ApexPages.currentPage().getParameters().get(&apos;Id&apos;)" lineno="15" />
+</AssignmentStatement>
+<methodendline lineno="17"/>
+</body>
+</method>
+<method returntype="PageReference" name="ExtractReport" parameters="" isTestMethod="false" lineno="19" throws="" modifiers="public">
+<body>
+<methodInvoke name="InsertReportData" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1498" lineno="21" />
+<ReturnBlock>
+<return expression="null" expressiontype="@methodinvoke" lineno="22" />
+</ReturnBlock>
+<methodendline lineno="24"/>
+</body>
+</method>
+<method returntype="integer" name="findAggregatePosition" parameters="aggreagateColumns:string[],valueColumn:string" isTestMethod="false" lineno="29" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<varDeclaration name="position" scope="methodvar" location="runScan" type="integer" lineno="31" />
+<assignHeap name="position" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="31" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="32">
+<Iterator type="string" name="currentAggColumn" on="aggreagateColumns">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="34">
+<conditionalExpr>
+<methodInvoke name="currentAggColumn.equals" methodtype="normalmethod" returntype="String" parameters="valueColumn" returnloc="#temp1499" lineno="34" />
+</conditionalExpr>
+<ifcondition expression= "currentAggColumn.equals(valueColumn)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="break" key="break" label=""/>
+</body>
+</true>
+</if>
+</body>
+</loop>
+<ReturnBlock>
+<return expression="(position)" expressiontype="@alias" lineno="40" />
+</ReturnBlock>
+<methodendline lineno="41"/>
+</body>
+</method>
+<method returntype="void" name="extractDataForKey" parameters="Salesforce_Report_Key_Column:string,valuePosition:integer,results:Reports.reportResults,reportToScan:AIES_ACCENTURE__AIESMetricMaster__c,reportDataList:List&amp;lt;AIES_ACCENTURE__AIESMetricData__c&amp;gt;,portfolio:AIES_ACCENTURE__Portfolio__c,ReportType:string" isTestMethod="false" lineno="43" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<varDeclaration name="CheckValue" scope="methodvar" location="runScan" type="string" lineno="46" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="checkary" scope="methodvar" location="runScan" type="string[]" lineno="47" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="values" scope="methodvar" location="runScan" type="string[]" lineno="48" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="countcomma" scope="methodvar" location="runScan" type="integer" lineno="49" />
+<assignHeap name="countcomma" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="49" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="toFind_1_level" scope="methodvar" location="runScan" type="string" lineno="50" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="toFind_3_levelary" scope="methodvar" location="runScan" type="string[]" lineno="53" />
+</VariableDeclaration>
+<if type="simpleif" lineno="55">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="ReportType" RHStype="" RHS="&apos;Summary&apos;" Operator="=="/>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="ReportType" RHStype="" RHS="&apos;matrix&apos;" Operator="=="/>
+<ConditionalStatement LHStype="value" LHS="&apos;matrix&apos;" RHStype="ReportType==&apos;matrix&apos;" RHS="ReportType==&apos;matrix&apos;" Operator="OR"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "ReportType==&apos;Summary&apos;||ReportType==&apos;matrix&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="results.getGroupingsDown" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1500" lineno="56" />
+<varDeclaration name="dim" scope="methodvar" location="runScan" type="Reports.Dimension" lineno="56" />
+<assignHeap name="dim" scope="methodvar" type="Reports.Dimension" rhsType="methodinvoke" rhs="results.getGroupingsDown()" lineno="56" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="set&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1501" lineno="57" />
+<varDeclaration name="setKeys" scope="methodvar" location="runScan" type="set&amp;lt;string&amp;gt;" lineno="57" />
+<assignHeap name="setKeys" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newset&lt;string&gt;()" lineno="57" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1501.serializePretty" methodtype="normalmethod" returntype="String" parameters="dim" returnloc="#temp1502" lineno="58" />
+<varDeclaration name="resultsJson" scope="methodvar" location="runScan" type="string" lineno="58" />
+<assignHeap name="resultsJson" scope="methodvar" type="string" rhsType="variable" rhs="JSON.serializePretty(dim)" lineno="58" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="map&lt;string,string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1503" lineno="59" />
+<varDeclaration name="finalmapkeyval" scope="methodvar" location="runScan" type="map&amp;lt;string,string&amp;gt;" lineno="59" />
+<assignHeap name="finalmapkeyval" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newmap&lt;string,string&gt;()" lineno="59" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="list&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1504" lineno="60" />
+<varDeclaration name="listMap" scope="methodvar" location="runScan" type="list&amp;lt;string&amp;gt;" lineno="60" />
+<assignHeap name="listMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newlist&lt;string&gt;()" lineno="60" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="levelkey_1" scope="methodvar" location="runScan" type="string" lineno="61" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="levelVal1" scope="methodvar" location="runScan" type="string" lineno="62" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="groupSymbol" scope="methodvar" location="runScan" type="string" lineno="63" />
+<assignHeap name="groupSymbol" scope="methodvar" type="string" rhsType="value" rhs="&apos;!T&apos;" lineno="63" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;--------results----------&apos;+results" key="debug" lineno="64"/>
+<loop type="advancedfor" lineno="66">
+<methodInvoke name="dim.getGroupings" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1505" lineno="66" />
+<Iterator type="Reports.GroupingValue" name="firstLevelGrouping" on="dim.getGroupings()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="firstLevelGrouping#temp1505firstLevelGrouping.getKey" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1506" lineno="67" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="groupSymbol" returnloc="#temp1507" lineno="67" />
+<assignHeap name="levelkey_1" scope="" type="" rhsType="stradd" rhs="firstLevelGrouping.getKey()+groupSymbol" lineno="67" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="firstLevelGrouping#temp1507firstLevelGrouping.getValue" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1508" lineno="68" />
+<methodInvoke name="string.valueOf" methodtype="normalmethod" returntype="String" parameters="firstLevelGrouping.getValue()" returnloc="#temp1509" lineno="68" />
+<assignHeap name="levelVal1" scope="" type="" rhsType="methodinvoke" rhs="string.valueOf(firstLevelGrouping.getValue())" lineno="68" />
+</AssignmentStatement>
+<methodInvoke name="finalmapkeyval.put" methodtype="normalmethod" returntype="String" parameters="levelkey_1,levelVal1" returnloc="#temp1510" lineno="69" />
+</body>
+</loop>
+<ExpressionStatement expression="&apos;######## grouping Keys&apos;+finalmapkeyval.keySet()" key="debug" lineno="72"/>
+<methodInvoke name="finalmapkeyval.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1511" lineno="76" />
+<methodInvoke name="listMap.addAll" methodtype="normalmethod" returntype="String" parameters="finalmapkeyval.keySet()" returnloc="#temp1512" lineno="76" />
+<methodInvoke name="listMap.sort" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1513" lineno="77" />
+<VariableDeclaration>
+<methodInvoke name="list&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1514" lineno="79" />
+<varDeclaration name="listMap1" scope="methodvar" location="runScan" type="list&amp;lt;string&amp;gt;" lineno="79" />
+<assignHeap name="listMap1" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newlist&lt;string&gt;()" lineno="79" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="list&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1515" lineno="80" />
+<varDeclaration name="listMap2" scope="methodvar" location="runScan" type="list&amp;lt;string&amp;gt;" lineno="80" />
+<assignHeap name="listMap2" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newlist&lt;string&gt;()" lineno="80" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="81">
+<Iterator type="string" name="getMapKey1" on="listMap">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="82">
+<conditionalExpr>
+<methodInvoke name="#temp1515.contains" methodtype="normalmethod" returntype="String" parameters="&apos;_&apos;" returnloc="#temp1516" lineno="82" />
+</conditionalExpr>
+<ifcondition expression= "getMapKey1.contains(&apos;_&apos;)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="listMap2.add" methodtype="normalmethod" returntype="String" parameters="getMapKey1" returnloc="#temp1517" lineno="83" />
+</body>
+</true>
+<false type="" lineno="85">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="listMap1.add" methodtype="normalmethod" returntype="String" parameters="getMapKey1" returnloc="#temp1518" lineno="86" />
+</body>
+</false>
+</if>
+</body>
+</loop>
+<VariableDeclaration>
+<methodInvoke name="Map&lt;string,decimal&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1519" lineno="90" />
+<varDeclaration name="finalMap" scope="methodvar" location="runScan" type="Map&amp;lt;string,decimal&amp;gt;" lineno="90" />
+<assignHeap name="finalMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;string,decimal&gt;()" lineno="90" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="92">
+<methodInvoke name="#temp1519.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1520" lineno="92" />
+<Iterator type="string" name="s" on="finalmapkeyval.keySet()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="#temp1520.contains" methodtype="normalmethod" returntype="String" parameters="&apos;_&apos;" returnloc="#temp1521" lineno="94" />
+<methodInvoke name="#temp1521.substring" methodtype="normalmethod" returntype="String" parameters="0,1" returnloc="#temp1522" lineno="94" />
+<methodInvoke name="#temp1521.get" methodtype="normalmethod" returntype="String" parameters="s.substring(0,1)+&apos;!T&apos;" returnloc="#temp1523" lineno="94" />
+<methodInvoke name="#temp1523.get" methodtype="normalmethod" returntype="String" parameters="s" returnloc="#temp1524" lineno="94" />
+<methodInvoke name="#temp1524.get" methodtype="normalmethod" returntype="String" parameters="s" returnloc="#temp1525" lineno="94" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="(s.contains(&apos;_&apos;)?finalmapkeyval.get(s.substring(0,1)+&apos;!T&apos;)+&apos;__&apos;+finalmapkeyval.get(s):finalmapkeyval.get(s))" returnloc="#temp1526" lineno="94" />
+<varDeclaration name="Key_1" scope="methodvar" location="runScan" type="string" lineno="94" />
+<assignHeap name="Key_1" scope="methodvar" type="string" rhsType="variable" rhs="(s.contains(&apos;_&apos;)?finalmapkeyval.get(s.substring(0,1)+&apos;!T&apos;)+&apos;__&apos;+finalmapkeyval.get(s):finalmapkeyval.get(s))" lineno="94" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Aravind: Key value is &apos;+Key_1" key="debug" lineno="95"/>
+<VariableDeclaration>
+<methodInvoke name="results.getFactMap" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1527" lineno="96" />
+<methodInvoke name="results.getFactMap(.get" methodtype="normalmethod" returntype="String" parameters="s" returnloc="#temp1528" lineno="96" />
+<varDeclaration name="factDetails" scope="methodvar" location="runScan" type="Reports.ReportFactWithDetails" lineno="96" />
+<assignHeap name="factDetails" scope="methodvar" type="Reports.ReportFactWithDetails" rhsType="variable" rhs="(Reports.ReportFactWithDetails)results.getFactMap().get(s)" lineno="96" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1528.getAggregates" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1529" lineno="97" />
+<varDeclaration name="sumVal" scope="methodvar" location="runScan" type="Reports.SummaryValue" lineno="97" />
+<assignHeap name="sumVal" scope="methodvar" type="Reports.SummaryValue" rhsType="variable" rhs="factDetails.getAggregates()[valuePosition]" lineno="97" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1529.getValue" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1530" lineno="98" />
+<methodInvoke name="#temp1529.valueof" methodtype="normalmethod" returntype="String" parameters="sumVal.getValue()" returnloc="#temp1531" lineno="98" />
+<methodInvoke name="#temp1529.valueOf" methodtype="normalmethod" returntype="String" parameters="string.valueof(sumVal.getValue())" returnloc="#temp1532" lineno="98" />
+<varDeclaration name="Value" scope="methodvar" location="runScan" type="decimal" lineno="98" />
+<assignHeap name="Value" scope="methodvar" type="decimal" rhsType="methodinvoke" rhs="decimal.valueOf(string.valueof(sumVal.getValue()))" lineno="98" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Aravind: Value is &apos;+Key_1" key="debug" lineno="99"/>
+</body>
+</loop>
+<ExpressionStatement expression="&apos;final Results to be Inserted/updated&apos;+finalMap.keySet()" key="debug" lineno="107"/>
+<loop type="advancedfor" lineno="109">
+<methodInvoke name="finalMap.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1533" lineno="109" />
+<Iterator type="string" name="getMapKey" on="finalMap.keySet()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<TryStatement lineno="111">
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="AIES_ACCENTURE__AIESMetricData__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1534" lineno="112" />
+<varDeclaration name="reportData" scope="methodvar" location="runScan" type="AIES_ACCENTURE__AIESMetricData__c" lineno="112" />
+<assignHeap name="reportData" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_ACCENTURE__AIESMetricData__c()" lineno="112" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="reportData.AIES_ACCENTURE__MetricMaster__c" scope="" type="" rhsType="methodinvoke" rhs="reportToScan.id" lineno="113" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="reportData.AIES_ACCENTURE__Portfolio__c" scope="" type="" rhsType="variable" rhs="lst" lineno="114" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="reportData.AIES_ACCENTURE__Key__c" scope="" type="" rhsType="variable" rhs="getMapKey" lineno="115" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="finalMap.get" methodtype="normalmethod" returntype="String" parameters="getMapKey" returnloc="#temp1535" lineno="116" />
+<assignHeap name="reportData.AIES_ACCENTURE__value__c" scope="" type="" rhsType="methodinvoke" rhs="finalMap.get(getMapKey)" lineno="116" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="reportData.AIES_ACCENTURE__Key__c" returnloc="#temp1536" lineno="118" />
+<assignHeap name="reportData.AIES_ACCENTURE__External_Id__c" scope="" type="" rhsType="stradd" rhs="portfolio.name+&apos;::&apos;+reportToScan.Name+&apos;::&apos;+reportData.AIES_ACCENTURE__Key__c" lineno="118" />
+</AssignmentStatement>
+<methodInvoke name="insertMap.put" methodtype="normalmethod" returntype="String" parameters="reportData.AIES_ACCENTURE__External_Id__c,reportData" returnloc="#temp1537" lineno="119" />
+</body>
+<CatchStatement type="exception" name="e" lineno="121">
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;Excetion:--&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&apos;+e.getMessage()+&apos;@line:---&apos;+e.getLineNumber()" key="debug" lineno="122"/>
+</body>
+</CatchStatement>
+</TryStatement>
+</body>
+</loop>
+</body>
+</true>
+</if>
+<methodendline lineno="126"/>
+</body>
+</method>
+<method returntype="void" name="InsertReportData" parameters="" isTestMethod="false" lineno="130" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<varDeclaration name="keyGroupingLevel" scope="methodvar" location="runScan" type="integer" lineno="132" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="valuePosition" scope="methodvar" location="runScan" type="integer" lineno="132" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;AIES_ACCENTURE__AIESMetricData__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1538" lineno="133" />
+<varDeclaration name="reportDataList" scope="methodvar" location="runScan" type="List&amp;lt;AIES_ACCENTURE__AIESMetricData__c&amp;gt;" lineno="133" />
+<assignHeap name="reportDataList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_ACCENTURE__AIESMetricData__c&gt;()" lineno="133" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;AIES_ACCENTURE__AIESMetricMaster__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1539" lineno="134" />
+<varDeclaration name="scanReportList" scope="methodvar" location="runScan" type="List&amp;lt;AIES_ACCENTURE__AIESMetricMaster__c&amp;gt;" lineno="134" />
+<assignHeap name="scanReportList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_ACCENTURE__AIESMetricMaster__c&gt;()" lineno="134" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select name from AIES_ACCENTURE__portfolio__c where id  = : lst]" returnloc="#temp1540" lineno="135" />
+<varDeclaration name="portfolio" scope="methodvar" location="runScan" type="AIES_ACCENTURE__Portfolio__c" lineno="135" />
+<assignHeap name="portfolio" scope="methodvar" type="AIES_ACCENTURE__Portfolio__c" rhsType="query" rhs="[select name from AIES_ACCENTURE__portfolio__c where id  = : lst]" lineno="135" />
+</VariableDeclaration>
+<TryStatement lineno="136">
+<body>
+<curlybrace exists="true"/>
+<loop type="advancedfor" lineno="137">
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id, developername from Report]" returnloc="#temp1541" lineno="137" />
+<Iterator type="Report" name="currentReport" on="[select id, developername from Report]">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="reportMap.put" methodtype="normalmethod" returntype="String" parameters="currentReport.developername,currentReport.id" returnloc="#temp1542" lineno="139" />
+</body>
+</loop>
+<AssignmentStatement>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id, name, AIES_ACCENTURE__Salesforce_Report_Key_Column__c,
+                                    AIES_ACCENTURE__Salesforce_Report_Type__c,AIES_ACCENTURE__Salesforce_Report_Reference__c, 
+                                    AIES_ACCENTURE__Salesforce_Report_Value_Column__c,AIES_ACCENTURE__Salesforce_Report_Scan_Date__c from AIES_ACCENTURE__AIESMetricMaster__c 
+                                    where zTesting__c= true ]" returnloc="#temp1543" lineno="141" />
+<assignHeap name="reportListToScanList" scope="" type="" rhsType="soqlquery" rhs="[select id, name, AIES_ACCENTURE__Salesforce_Report_Key_Column__c,
+                                    AIES_ACCENTURE__Salesforce_Report_Type__c,AIES_ACCENTURE__Salesforce_Report_Reference__c, 
+                                    AIES_ACCENTURE__Salesforce_Report_Value_Column__c,AIES_ACCENTURE__Salesforce_Report_Scan_Date__c from AIES_ACCENTURE__AIESMetricMaster__c 
+                                    where zTesting__c= true ]" lineno="141" />
+</AssignmentStatement>
+<VariableDeclaration>
+<methodInvoke name="Map&lt;id,AIES_ACCENTURE__AIESMetricMaster__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="reportListToScanList" returnloc="#temp1544" lineno="146" />
+<varDeclaration name="reportListToScanMap" scope="methodvar" location="runScan" type="Map&amp;lt;id,AIES_ACCENTURE__AIESMetricMaster__c&amp;gt;" lineno="146" />
+<assignHeap name="reportListToScanMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;id,AIES_ACCENTURE__AIESMetricMaster__c&gt;(reportListToScanList)" lineno="146" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id, name, AIES_ACCENTURE__External_Id__c, 
+            AIES_ACCENTURE__MetricMaster__c,AIES_ACCENTURE__Portfolio__c,AIES_ACCENTURE__Key__c,AIES_ACCENTURE__Value__c from 
+                                                  AIES_ACCENTURE__AIESMetricData__c where AIES_ACCENTURE__MetricMaster__c = :reportListToScanMap.keyset()]" returnloc="#temp1545" lineno="147" />
+<varDeclaration name="DeletereportData" scope="methodvar" location="runScan" type="List&amp;lt;AIES_ACCENTURE__AIESMetricData__c&amp;gt;" lineno="147" />
+<assignHeap name="DeletereportData" scope="methodvar" type="List&amp;lt;AIES_ACCENTURE__AIESMetricData__c&amp;gt;" rhsType="query" rhs="[select id, name, AIES_ACCENTURE__External_Id__c, 
+            AIES_ACCENTURE__MetricMaster__c,AIES_ACCENTURE__Portfolio__c,AIES_ACCENTURE__Key__c,AIES_ACCENTURE__Value__c from 
+                                                  AIES_ACCENTURE__AIESMetricData__c where AIES_ACCENTURE__MetricMaster__c = :reportListToScanMap.keyset()]" lineno="147" />
+</VariableDeclaration>
+<methodInvoke name="lib.dml.delete" methodtype="" returntype="" parameters="DeletereportData" returnloc="" lineno="150" />
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id, name,AIES_ACCENTURE__External_Id__c, 
+            AIES_ACCENTURE__MetricMaster__c,AIES_ACCENTURE__Portfolio__c,AIES_ACCENTURE__Key__c,AIES_ACCENTURE__Value__c from 
+                                                  AIES_ACCENTURE__AIESMetricData__c where AIES_ACCENTURE__MetricMaster__c = :reportListToScanMap.keyset()]" returnloc="#temp1546" lineno="151" />
+<varDeclaration name="reportData" scope="methodvar" location="runScan" type="List&amp;lt;AIES_ACCENTURE__AIESMetricData__c&amp;gt;" lineno="151" />
+<assignHeap name="reportData" scope="methodvar" type="List&amp;lt;AIES_ACCENTURE__AIESMetricData__c&amp;gt;" rhsType="query" rhs="[select id, name,AIES_ACCENTURE__External_Id__c, 
+            AIES_ACCENTURE__MetricMaster__c,AIES_ACCENTURE__Portfolio__c,AIES_ACCENTURE__Key__c,AIES_ACCENTURE__Value__c from 
+                                                  AIES_ACCENTURE__AIESMetricData__c where AIES_ACCENTURE__MetricMaster__c = :reportListToScanMap.keyset()]" lineno="151" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="Map&lt;string,AIES_ACCENTURE__AIESMetricData__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1547" lineno="155" />
+<varDeclaration name="reportDataMap" scope="methodvar" location="runScan" type="Map&amp;lt;string,AIES_ACCENTURE__AIESMetricData__c&amp;gt;" lineno="155" />
+<assignHeap name="reportDataMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;string,AIES_ACCENTURE__AIESMetricData__c&gt;()" lineno="155" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="156">
+<Iterator type="AIES_ACCENTURE__AIESMetricData__c" name="currentReportData" on="reportData">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="reportDataMap.put" methodtype="normalmethod" returntype="String" parameters="currentReportData.AIES_ACCENTURE__External_Id__c,currentReportData" returnloc="#temp1548" lineno="158" />
+</body>
+</loop>
+<AssignmentStatement>
+<methodInvoke name="List&lt;id&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1549" lineno="161" />
+<assignHeap name="instanceId" scope="" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;id&gt;()" lineno="161" />
+</AssignmentStatement>
+<loop type="advancedfor" lineno="163">
+<Iterator type="AIES_ACCENTURE__AIESMetricMaster__c" name="currentReport" on="reportListToScanList">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&apos;+reportMap.get(currentReport.AIES_ACCENTURE__Salesforce_Report_Reference__c)" key="debug" lineno="167"/>
+<ExpressionStatement expression="&apos;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;currentReport&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&apos;+currentReport.AIES_ACCENTURE__Salesforce_Report_Reference__c" key="debug" lineno="168"/>
+<VariableDeclaration>
+<methodInvoke name="reportMap.get" methodtype="normalmethod" returntype="String" parameters="currentReport.AIES_ACCENTURE__Salesforce_Report_Reference__c" returnloc="#temp1550" lineno="170" />
+<methodInvoke name="" methodtype="normalmethod" returntype="String" parameters=".runAsyncReport(reportMap.get(currentReport.AIES_ACCENTURE__Salesforce_Report_Reference__c),true" returnloc="#temp1551" lineno="170" />
+<varDeclaration name="instance" scope="methodvar" location="runScan" type="Reports.ReportInstance" lineno="170" />
+<assignHeap name="instance" scope="methodvar" type="Reports.ReportInstance" rhsType="value" rhs="Reports.ReportManager.runAsyncReport(reportMap.get(currentReport.AIES_ACCENTURE__Salesforce_Report_Reference__c),true)" lineno="170" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Null check for Instance&apos;+instance" key="debug" lineno="172"/>
+<methodInvoke name="instance.getID" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1552" lineno="173" />
+<methodInvoke name="instanceId.add" methodtype="normalmethod" returntype="String" parameters="instance.getID()" returnloc="#temp1553" lineno="173" />
+<ExpressionStatement expression="&apos;First Loop Instance List&apos;+instanceId" key="debug" lineno="174"/>
+<AssignmentStatement>
+<methodInvoke name="instance.getStatus" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1554" lineno="175" />
+<conditionalExpr>
+<methodInvoke name="#temp1554.getStatus" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1555" lineno="175" />
+<ConditionalStatement LHStype="methodinvoke" LHS="&apos;New&apos;" RHStype="instance.getStatus()==&apos;New&apos;" RHS="instance.getStatus()==&apos;New&apos;" Operator="OR"/>
+</conditionalExpr>
+<assignHeap name="reportIsRunning" scope="" type="" rhsType="methodinvoke" rhs="instance.getStatus()==&apos;Running&apos;||instance.getStatus()==&apos;New&apos;" lineno="175" />
+</AssignmentStatement>
+<ExpressionStatement expression="&apos;First Run Status&apos;+instance.getStatus()" key="debug" lineno="177"/>
+<if type="simpleif" lineno="179">
+<conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "!reportIsRunning"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="instance.getReportResults" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1556" lineno="181" />
+<varDeclaration name="results" scope="methodvar" location="runScan" type="Reports.ReportResults" lineno="181" />
+<assignHeap name="results" scope="methodvar" type="Reports.ReportResults" rhsType="methodinvoke" rhs="instance.getReportResults()" lineno="181" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Result &apos;+results" key="debug" lineno="183"/>
+</body>
+</true>
+</if>
+</body>
+</loop>
+</body>
+<CatchStatement type="Exception" name="e" lineno="189">
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="e.getMessage()" key="debug" lineno="189"/>
+</body>
+</CatchStatement>
+</TryStatement>
+<methodendline lineno="192"/>
+</body>
+</method>
+<method returntype="PageReference" name="checkForReportResults" parameters="" isTestMethod="false" lineno="194" throws="" modifiers="public">
+<body>
+<loop type="advancedfor" lineno="196">
+<Iterator type="id" name="d" on="instanceId">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="" methodtype="normalmethod" returntype="String" parameters=".getReportInstance(d" returnloc="#temp1557" lineno="197" />
+<varDeclaration name="reportInstance" scope="methodvar" location="runScan" type="Reports.ReportInstance" lineno="197" />
+<assignHeap name="reportInstance" scope="methodvar" type="Reports.ReportInstance" rhsType="variable" rhs="Reports.ReportManager.getReportInstance(d)" lineno="197" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Instance Inside checkForReportResults Method&apos;+reportInstance" key="debug" lineno="198"/>
+<methodInvoke name="processInstance" methodtype="normalmethod" returntype="String" parameters="reportInstance" returnloc="#temp1558" lineno="199" />
+</body>
+</loop>
+<ReturnBlock>
+<return expression="null" expressiontype="@value" lineno="201" />
+</ReturnBlock>
+<methodendline lineno="202"/>
+</body>
+</method>
+<method returntype="void" name="processInstance" parameters="reportInstance:Reports.ReportInstance" isTestMethod="false" lineno="204" throws="" modifiers="private">
+<body>
+<VariableDeclaration>
+<varDeclaration name="keyGroupingLevel" scope="methodvar" location="runScan" type="integer" lineno="205" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="valuePosition" scope="methodvar" location="runScan" type="integer" lineno="205" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;AIES_ACCENTURE__AIESMetricMaster__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1559" lineno="206" />
+<varDeclaration name="scanReportList" scope="methodvar" location="runScan" type="List&amp;lt;AIES_ACCENTURE__AIESMetricMaster__c&amp;gt;" lineno="206" />
+<assignHeap name="scanReportList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_ACCENTURE__AIESMetricMaster__c&gt;()" lineno="206" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select name from AIES_ACCENTURE__portfolio__c where id  = : lst]" returnloc="#temp1560" lineno="207" />
+<varDeclaration name="portfolio" scope="methodvar" location="runScan" type="AIES_ACCENTURE__Portfolio__c" lineno="207" />
+<assignHeap name="portfolio" scope="methodvar" type="AIES_ACCENTURE__Portfolio__c" rhsType="query" rhs="[select name from AIES_ACCENTURE__portfolio__c where id  = : lst]" lineno="207" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;AIES_ACCENTURE__AIESMetricData__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1561" lineno="208" />
+<varDeclaration name="reportDataList" scope="methodvar" location="runScan" type="List&amp;lt;AIES_ACCENTURE__AIESMetricData__c&amp;gt;" lineno="208" />
+<assignHeap name="reportDataList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_ACCENTURE__AIESMetricData__c&gt;()" lineno="208" />
+</VariableDeclaration>
+<methodInvoke name="insertMap.clear" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1562" lineno="209" />
+<ExpressionStatement expression="&apos;Beginnging : InsertMap- should be null&apos;+insertMap.keySet()+&apos;Values&apos;+insertMap.values()" key="debug" lineno="211"/>
+<ExpressionStatement expression="&apos;Beginnging : scanReportList - should be null&apos;+scanReportList" key="debug" lineno="212"/>
+<TryStatement lineno="214">
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="reportInstance.getStatus" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1563" lineno="215" />
+<conditionalExpr>
+<methodInvoke name="#temp1563.getStatus" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1564" lineno="215" />
+<ConditionalStatement LHStype="methodinvoke" LHS="&apos;New&apos;" RHStype="reportInstance.getStatus()==&apos;New&apos;" RHS="reportInstance.getStatus()==&apos;New&apos;" Operator="OR"/>
+</conditionalExpr>
+<assignHeap name="reportIsRunning" scope="" type="" rhsType="methodinvoke" rhs="reportInstance.getStatus()==&apos;Running&apos;||reportInstance.getStatus()==&apos;New&apos;" lineno="215" />
+</AssignmentStatement>
+<ExpressionStatement expression="&apos;Second Run Status&apos;+reportInstance.getStatus()" key="debug" lineno="216"/>
+<if type="simpleif" lineno="217">
+<conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "!reportIsRunning"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="reportInstance.getReportResults" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1565" lineno="219" />
+<assignHeap name="reportResults" scope="" type="" rhsType="methodinvoke" rhs="reportInstance.getReportResults()" lineno="219" />
+</AssignmentStatement>
+<ExpressionStatement expression="&apos;## ReportResults&apos;+reportResults" key="debug" lineno="220"/>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select developername from Report where id=: reportInstance.getReportID() limit 1]" returnloc="#temp1566" lineno="222" />
+<varDeclaration name="reportToProcess" scope="methodvar" location="runScan" type="Report" lineno="222" />
+<assignHeap name="reportToProcess" scope="methodvar" type="Report" rhsType="query" rhs="[select developername from Report where id=: reportInstance.getReportID() limit 1]" lineno="222" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;reportToProcess &apos;+reportToProcess.developerName" key="debug" lineno="223"/>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id, name,AIES_ACCENTURE__Salesforce_Report_Key_Column__c,
+        AIES_ACCENTURE__Salesforce_Report_Type__c,AIES_ACCENTURE__Salesforce_Report_Reference__c,
+        AIES_ACCENTURE__Salesforce_Report_Value_Column__c,AIES_ACCENTURE__Salesforce_Report_Scan_Date__c 
+        from AIES_ACCENTURE__AIESMetricMaster__c where AIES_ACCENTURE__Salesforce_Report_Reference__c =: reportToProcess.developername ]" returnloc="#temp1567" lineno="224" />
+<varDeclaration name="currentReport" scope="methodvar" location="runScan" type="AIES_ACCENTURE__AIESMetricMaster__c" lineno="224" />
+<assignHeap name="currentReport" scope="methodvar" type="AIES_ACCENTURE__AIESMetricMaster__c" rhsType="query" rhs="[select id, name,AIES_ACCENTURE__Salesforce_Report_Key_Column__c,
+        AIES_ACCENTURE__Salesforce_Report_Type__c,AIES_ACCENTURE__Salesforce_Report_Reference__c,
+        AIES_ACCENTURE__Salesforce_Report_Value_Column__c,AIES_ACCENTURE__Salesforce_Report_Scan_Date__c 
+        from AIES_ACCENTURE__AIESMetricMaster__c where AIES_ACCENTURE__Salesforce_Report_Reference__c =: reportToProcess.developername ]" lineno="224" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="JSON.serializePretty" methodtype="normalmethod" returntype="String" parameters="reportResults" returnloc="#temp1568" lineno="229" />
+<varDeclaration name="resultsJson" scope="methodvar" location="runScan" type="string" lineno="229" />
+<assignHeap name="resultsJson" scope="methodvar" type="string" rhsType="variable" rhs="JSON.serializePretty(reportResults)" lineno="229" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1568.getReportMetadata" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1569" lineno="230" />
+<varDeclaration name="reportMetadata" scope="methodvar" location="runScan" type="Reports.ReportMetadata" lineno="230" />
+<assignHeap name="reportMetadata" scope="methodvar" type="Reports.ReportMetadata" rhsType="methodinvoke" rhs="reportResults.getReportMetadata()" lineno="230" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp1569.getaggregates" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1570" lineno="231" />
+<varDeclaration name="aggreagateColumns" scope="methodvar" location="runScan" type="string[]" lineno="231" />
+<assignHeap name="aggreagateColumns" scope="methodvar" type="string[]" rhsType="methodinvoke" rhs="reportMetadata.getaggregates()" lineno="231" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="findAggregatePosition" methodtype="normalmethod" returntype="String" parameters="aggreagateColumns,currentReport.AIES_ACCENTURE__Salesforce_Report_Value_Column__c" returnloc="#temp1571" lineno="232" />
+<assignHeap name="valuePosition" scope="" type="" rhsType="methodinvoke" rhs="findAggregatePosition(aggreagateColumns,currentReport.AIES_ACCENTURE__Salesforce_Report_Value_Column__c)" lineno="232" />
+</AssignmentStatement>
+<VariableDeclaration>
+<methodInvoke name="reportResults.getFactMap" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1572" lineno="233" />
+<varDeclaration name="factMap" scope="methodvar" location="runScan" type="Map&amp;lt;string,Reports.ReportFact&amp;gt;" lineno="233" />
+<assignHeap name="factMap" scope="methodvar" type="Map&amp;lt;string,Reports.ReportFact&amp;gt;" rhsType="methodinvoke" rhs="reportResults.getFactMap()" lineno="233" />
+</VariableDeclaration>
+<if type="simpleif" lineno="234">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="currentReport.AIES_ACCENTURE__Salesforce_Report_Type__c" RHStype="" RHS="&apos;Summary&apos;" Operator="=="/>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="currentReport.AIES_ACCENTURE__Salesforce_Report_Type__c" RHStype="" RHS="&apos;matrix&apos;" Operator="=="/>
+<ConditionalStatement LHStype="value" LHS="&apos;matrix&apos;" RHStype="currentReport.AIES_ACCENTURE__Salesforce_Report_Type__c==&apos;matrix&apos;" RHS="currentReport.AIES_ACCENTURE__Salesforce_Report_Type__c==&apos;matrix&apos;" Operator="OR"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "currentReport.AIES_ACCENTURE__Salesforce_Report_Type__c==&apos;Summary&apos;||currentReport.AIES_ACCENTURE__Salesforce_Report_Type__c==&apos;matrix&apos;"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="#temp1572.getreportExtendedMetadata" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1573" lineno="235" />
+<varDeclaration name="reportExtendedMetadata" scope="methodvar" location="runScan" type="Reports.reportExtendedMetadata" lineno="235" />
+<assignHeap name="reportExtendedMetadata" scope="methodvar" type="Reports.reportExtendedMetadata" rhsType="methodinvoke" rhs="reportResults.getreportExtendedMetadata()" lineno="235" />
+</VariableDeclaration>
+<methodInvoke name="extractDataForKey" methodtype="normalmethod" returntype="String" parameters="currentReport.AIES_ACCENTURE__Salesforce_Report_Key_Column__c,valuePosition,reportResults,currentReport,reportDataList,portfolio,currentReport.AIES_ACCENTURE__Salesforce_Report_Type__c" returnloc="#temp1574" lineno="236" />
+</body>
+</true>
+</if>
+<AssignmentStatement>
+<methodInvoke name="system.now" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1575" lineno="240" />
+<assignHeap name="currentReport.AIES_ACCENTURE__Salesforce_Report_Scan_Date__c" scope="" type="" rhsType="methodinvoke" rhs="system.now()" lineno="240" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="system.now" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1576" lineno="241" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="&apos; Success&apos;" returnloc="#temp1577" lineno="241" />
+<assignHeap name="currentReport.AIES_ACCENTURE__Salesforce_Report_Scan_Result__c" scope="" type="" rhsType="stradd" rhs="system.now()+&apos; Success&apos;" lineno="241" />
+</AssignmentStatement>
+<methodInvoke name="scanReportList.add" methodtype="normalmethod" returntype="String" parameters="currentReport" returnloc="#temp1578" lineno="242" />
+</body>
+</true>
+</if>
+<methodInvoke name="insertMap.values" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1579" lineno="247" />
+<methodInvoke name="lib.dml.upsert" methodtype="" returntype="" parameters="insertMap.values()" returnloc="" lineno="247" />
+<methodInvoke name="lib.dml.update" methodtype="" returntype="" parameters="scanReportList" returnloc="" lineno="248" />
+</body>
+<CatchStatement type="Exception" name="e" lineno="250">
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="e.getMessage()" key="debug" lineno="251"/>
+</body>
+</CatchStatement>
+</TryStatement>
+<methodendline lineno="253"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[15, 22, 51, 52, 56, 58, 65, 74, 78, 100, 101, 103, 166, 171]" multi="[]" empty="[3, 13, 16, 18, 23, 25, 26, 27, 28, 42, 54, 71, 73, 75, 89, 91, 93, 102, 104, 106, 108, 117, 127, 128, 129, 145, 154, 160, 162, 165, 169, 176, 178, 180, 182, 187, 188, 190, 193, 195, 203, 210, 213, 218, 221, 228, 237, 239, 243, 244, 245, 249]" singlebrace="[2, 17, 20, 24, 30, 33, 35, 37, 39, 41, 45, 70, 84, 87, 88, 105, 110, 120, 123, 124, 125, 126, 131, 138, 140, 157, 159, 164, 184, 185, 186, 191, 192, 200, 202, 238, 246, 252, 253, 254]"/>
+</stac>

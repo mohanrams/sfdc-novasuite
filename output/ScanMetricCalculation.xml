@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="ScanMetricCalculation.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="22 KB">
+<class name="ScanMetricCalculation" sharing="default" implements="" isenum="false" lineno="1" modifiers="global">
+<classbody>
+<VariableDeclaration>
+<methodInvoke name="map&lt;string,id&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1633" lineno="3" />
+<varDeclaration name="AiesMetricMaster" scope="methodvar" location="ScanMetricCalculation" type="map&amp;lt;string,id&amp;gt;" lineno="3" modifiers="public" />
+<assignHeap name="AiesMetricMaster" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newmap&lt;string,id&gt;()" lineno="3" />
+</VariableDeclaration>
+<method returntype="boolean" name="doProcess" parameters="pid:string" isTestMethod="false" lineno="5" throws="" modifiers="global">
+<body>
+<ExpressionStatement expression="&apos;Going to Calculate&apos;" key="debug" lineno="6"/>
+<VariableDeclaration>
+<varDeclaration name="inputMetrics" scope="methodvar" location="ScanMetricCalculation" type="List&amp;lt;string&amp;gt;" lineno="7" />
+<assignHeap name="inputMetrics" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newlist&lt;string&gt;{&apos;BSM_Won_Opportunity_1&apos;,&apos;BSM_Total_Opportunities_1&apos;,&apos;BSM_Won_lost_Opportunity_1&apos;,&apos;ASD_Opportunity_Overdue_1&apos;,&apos;ASD_Opportunity_Overdue_2&apos;,&apos;SM_BulletLeadConversion_1&apos;,&apos;SerM_UsersClosingCasePerOrigin_1&apos;,&apos;SeM_TotalCasesClosed_1&apos;,&apos;BP_Lead_Conversion_rate_1&apos;,&apos;BP_Lead_Conversion_rate_2&apos;,&apos;ASD_Qualified_pipeline_size_Improvemen_1&apos;,&apos;SeM_TotalCasesClosed_1&apos;,&apos;SeM_TotalCasesClosed_2&apos;,&apos;SM_BulletCaseResRateInc_1&apos;,&apos;SM_BulletSalesVolInc_1&apos;,&apos;ASD_Users_converting_Lead_1&apos;,&apos;ASD_Users_converting_Lead_2&apos;,&apos;AEU_User_Creating_Account_1&apos;,&apos;AEU_User_Creating_Account_2&apos;,&apos;AEU_User_Creating_Contact_1&apos;,&apos;AEU_User_Creating_Contact_2&apos;,&apos;AEU_User_Creating_Lead_1&apos;,&apos;AEU_User_Creating_Lead_2&apos;,&apos;AEU_User_Creating_Opportunity_1&apos;,&apos;AEU_User_Creating_Opportunity_2&apos;,&apos;AEU_User_Creating_Cases_1&apos;,&apos;AEU_User_Creating_Cases_2&apos;,&apos;ASD_Leads_converted_per_User_1&apos;,&apos;ASD_Leads_converted_per_User_2&apos;,&apos;ASD_Users_Winning_opportunities_1&apos;,&apos;ASD_Users_Winning_opportunities_2&apos;,&apos;ASD_Users_Managing_Opportunites_1&apos;,&apos;ASD_Users_Managing_Opportunites_2&apos;,&apos;ASD_Service_Metric_Case_Closure_1&apos;,&apos;ASD_Service_Metric_Case_Closure_2&apos;}" lineno="7" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="Map&lt;string,Map&lt;string,Scan_Metric_Data__c&gt;&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1635" lineno="10" />
+<varDeclaration name="inputMetricData" scope="methodvar" location="ScanMetricCalculation" type="Map&amp;lt;string,Map&amp;lt;string,Scan_Metric_Data__c&amp;gt;&amp;gt;" lineno="10" />
+<assignHeap name="inputMetricData" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;string,Map&lt;string,Scan_Metric_Data__c&gt;&gt;()" lineno="10" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="getMetricData" methodtype="normalmethod" returntype="String" parameters="inputMetrics,pid" returnloc="#temp1636" lineno="11" />
+<assignHeap name="inputMetricData" scope="" type="" rhsType="methodinvoke" rhs="getMetricData(inputMetrics,pid)" lineno="11" />
+</AssignmentStatement>
+<methodInvoke name="getMetricMasterIds" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1637" lineno="12" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;ASD_Opportunity_Overdue_1&apos;" returnloc="#temp1638" lineno="19" />
+<methodInvoke name="#temp1638.get" methodtype="normalmethod" returntype="String" parameters="&apos;ASD_Opportunity_Overdue_2&apos;" returnloc="#temp1639" lineno="19" />
+<methodInvoke name="doDivisionCalculation" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;ASD_Opportunity_Overdue_1&apos;),inputMetricData.get(&apos;ASD_Opportunity_Overdue_2&apos;),&apos;ASD_Opportunity_Overdue&apos;,pid" returnloc="#temp1640" lineno="19" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;BP_Lead_Conversion_rate_1&apos;" returnloc="#temp1641" lineno="20" />
+<methodInvoke name="#temp1641.get" methodtype="normalmethod" returntype="String" parameters="&apos;BP_Lead_Conversion_rate_2&apos;" returnloc="#temp1642" lineno="20" />
+<methodInvoke name="doDivisionCalculation" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;BP_Lead_Conversion_rate_1&apos;),inputMetricData.get(&apos;BP_Lead_Conversion_rate_2&apos;),&apos;BP_Lead_Conversion_rate&apos;,pid" returnloc="#temp1643" lineno="20" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;SeM_TotalCasesClosed_1&apos;" returnloc="#temp1644" lineno="21" />
+<methodInvoke name="#temp1644.get" methodtype="normalmethod" returntype="String" parameters="&apos;SeM_TotalCasesClosed_2&apos;" returnloc="#temp1645" lineno="21" />
+<methodInvoke name="doDivisionCalculation" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;SeM_TotalCasesClosed_1&apos;),inputMetricData.get(&apos;SeM_TotalCasesClosed_2&apos;),&apos;ASD_Service_Metric_Case_Closure&apos;,pid" returnloc="#temp1646" lineno="21" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;AEU_User_Creating_Account_1&apos;" returnloc="#temp1647" lineno="24" />
+<methodInvoke name="#temp1647.get" methodtype="normalmethod" returntype="String" parameters="&apos;AEU_User_Creating_Account_2&apos;" returnloc="#temp1648" lineno="24" />
+<methodInvoke name="doDivisionWithOneValue" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;AEU_User_Creating_Account_1&apos;),inputMetricData.get(&apos;AEU_User_Creating_Account_2&apos;),&apos;AEU_User_Creating_Account&apos;,pid" returnloc="#temp1649" lineno="24" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;AEU_User_Creating_Contact_1&apos;" returnloc="#temp1650" lineno="25" />
+<methodInvoke name="#temp1650.get" methodtype="normalmethod" returntype="String" parameters="&apos;AEU_User_Creating_Contact_2&apos;" returnloc="#temp1651" lineno="25" />
+<methodInvoke name="doDivisionWithOneValue" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;AEU_User_Creating_Contact_1&apos;),inputMetricData.get(&apos;AEU_User_Creating_Contact_2&apos;),&apos;AEU_User_Creating_Contact&apos;,pid" returnloc="#temp1652" lineno="25" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;AEU_User_Creating_Lead_1&apos;" returnloc="#temp1653" lineno="26" />
+<methodInvoke name="#temp1653.get" methodtype="normalmethod" returntype="String" parameters="&apos;AEU_User_Creating_Lead_2&apos;" returnloc="#temp1654" lineno="26" />
+<methodInvoke name="doDivisionWithOneValue" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;AEU_User_Creating_Lead_1&apos;),inputMetricData.get(&apos;AEU_User_Creating_Lead_2&apos;),&apos;AEU_User_Creating_Lead&apos;,pid" returnloc="#temp1655" lineno="26" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;AEU_User_Creating_Opportunity_1&apos;" returnloc="#temp1656" lineno="27" />
+<methodInvoke name="#temp1656.get" methodtype="normalmethod" returntype="String" parameters="&apos;AEU_User_Creating_Opportunity_2&apos;" returnloc="#temp1657" lineno="27" />
+<methodInvoke name="doDivisionWithOneValue" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;AEU_User_Creating_Opportunity_1&apos;),inputMetricData.get(&apos;AEU_User_Creating_Opportunity_2&apos;),&apos;AEU_User_Creating_Opportunity&apos;,pid" returnloc="#temp1658" lineno="27" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;ASD_Leads_converted_per_User_1&apos;" returnloc="#temp1659" lineno="28" />
+<methodInvoke name="#temp1659.get" methodtype="normalmethod" returntype="String" parameters="&apos;ASD_Leads_converted_per_User_2&apos;" returnloc="#temp1660" lineno="28" />
+<methodInvoke name="doDivisionWithOneValue" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;ASD_Leads_converted_per_User_1&apos;),inputMetricData.get(&apos;ASD_Leads_converted_per_User_2&apos;),&apos;ASD_Leads_converted_per_User&apos;,pid" returnloc="#temp1661" lineno="28" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;AEU_User_Creating_Cases_1&apos;" returnloc="#temp1662" lineno="31" />
+<methodInvoke name="#temp1662.get" methodtype="normalmethod" returntype="String" parameters="&apos;AEU_User_Creating_Cases_2&apos;" returnloc="#temp1663" lineno="31" />
+<methodInvoke name="doDivisionWithOneValueInPercentage" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;AEU_User_Creating_Cases_1&apos;),inputMetricData.get(&apos;AEU_User_Creating_Cases_2&apos;),&apos;AEU_User_Creating_Cases&apos;,pid" returnloc="#temp1664" lineno="31" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;ASD_Users_converting_Lead_1&apos;" returnloc="#temp1665" lineno="32" />
+<methodInvoke name="#temp1665.get" methodtype="normalmethod" returntype="String" parameters="&apos;ASD_Users_converting_Lead_2&apos;" returnloc="#temp1666" lineno="32" />
+<methodInvoke name="doDivisionWithOneValueInPercentage" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;ASD_Users_converting_Lead_1&apos;),inputMetricData.get(&apos;ASD_Users_converting_Lead_2&apos;),&apos;ASD_Users_converting_Lead&apos;,pid" returnloc="#temp1667" lineno="32" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;ASD_Users_Winning_opportunities_1&apos;" returnloc="#temp1668" lineno="33" />
+<methodInvoke name="#temp1668.get" methodtype="normalmethod" returntype="String" parameters="&apos;ASD_Users_Winning_opportunities_2&apos;" returnloc="#temp1669" lineno="33" />
+<methodInvoke name="doDivisionWithOneValueInPercentage" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;ASD_Users_Winning_opportunities_1&apos;),inputMetricData.get(&apos;ASD_Users_Winning_opportunities_2&apos;),&apos;ASD_Users_Winning_opportunities&apos;,pid" returnloc="#temp1670" lineno="33" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;ASD_Users_Managing_Opportunites_1&apos;" returnloc="#temp1671" lineno="34" />
+<methodInvoke name="#temp1671.get" methodtype="normalmethod" returntype="String" parameters="&apos;ASD_Users_Managing_Opportunites_2&apos;" returnloc="#temp1672" lineno="34" />
+<methodInvoke name="doDivisionWithOneValueInPercentage" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;ASD_Users_Managing_Opportunites_1&apos;),inputMetricData.get(&apos;ASD_Users_Managing_Opportunites_2&apos;),&apos;ASD_Users_Managing_Opportunites&apos;,pid" returnloc="#temp1673" lineno="34" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;BSM_Won_Opportunity_1&apos;" returnloc="#temp1674" lineno="40" />
+<methodInvoke name="#temp1674.get" methodtype="normalmethod" returntype="String" parameters="&apos;BSM_Won_lost_Opportunity_1&apos;" returnloc="#temp1675" lineno="40" />
+<methodInvoke name="doRateCalculation" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;BSM_Won_Opportunity_1&apos;),inputMetricData.get(&apos;BSM_Won_lost_Opportunity_1&apos;),&apos;BSM_Win_Rate&apos;,pid" returnloc="#temp1676" lineno="40" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;SerM_UsersClosingCasePerOrigin_1&apos;" returnloc="#temp1677" lineno="41" />
+<methodInvoke name="#temp1677.get" methodtype="normalmethod" returntype="String" parameters="&apos;SeM_TotalCasesClosed_1&apos;" returnloc="#temp1678" lineno="41" />
+<methodInvoke name="doRateCalculation" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;SerM_UsersClosingCasePerOrigin_1&apos;),inputMetricData.get(&apos;SeM_TotalCasesClosed_1&apos;),&apos;SerM_UsersClosingCasePerOrigin&apos;,pid" returnloc="#temp1679" lineno="41" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;SeM_TotalCasesClosed_1&apos;" returnloc="#temp1680" lineno="44" />
+<methodInvoke name="#temp1680.get" methodtype="normalmethod" returntype="String" parameters="&apos;SeM_TotalCasesClosed_2&apos;" returnloc="#temp1681" lineno="44" />
+<methodInvoke name="doRateCalculation" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;SeM_TotalCasesClosed_1&apos;),inputMetricData.get(&apos;SeM_TotalCasesClosed_2&apos;),&apos;SeM_TotalCasesClosed&apos;,pid" returnloc="#temp1682" lineno="44" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;SM_BulletLeadConversion_1&apos;" returnloc="#temp1683" lineno="47" />
+<methodInvoke name="doRateIncreaseCalculation" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;SM_BulletLeadConversion_1&apos;),&apos;SM_BulletLeadConversion&apos;,pid" returnloc="#temp1684" lineno="47" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;ASD_Qualified_pipeline_size_Improvemen_1&apos;" returnloc="#temp1685" lineno="48" />
+<methodInvoke name="doRateIncreaseCalculation" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;ASD_Qualified_pipeline_size_Improvemen_1&apos;),&apos;ASD_Qualified_pipeline_size_Improvement&apos;,pid" returnloc="#temp1686" lineno="48" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;SM_BulletSalesVolInc_1&apos;" returnloc="#temp1687" lineno="49" />
+<methodInvoke name="doRateIncreaseCalculation" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;SM_BulletSalesVolInc_1&apos;),&apos;SM_BulletSalesVolInc&apos;,pid" returnloc="#temp1688" lineno="49" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;SM_BulletCaseResRateInc_1&apos;" returnloc="#temp1689" lineno="50" />
+<methodInvoke name="doRateIncreaseCalculation" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;SM_BulletCaseResRateInc_1&apos;),&apos;SM_BulletCaseResRateInc&apos;,pid" returnloc="#temp1690" lineno="50" />
+<methodInvoke name="inputMetricData.get" methodtype="normalmethod" returntype="String" parameters="&apos;BSM_Won_Opportunity_1&apos;" returnloc="#temp1691" lineno="53" />
+<methodInvoke name="#temp1691.get" methodtype="normalmethod" returntype="String" parameters="&apos;BSM_Won_lost_Opportunity_1&apos;" returnloc="#temp1692" lineno="53" />
+<methodInvoke name="doBulletWinRateImprovementCalculation" methodtype="normalmethod" returntype="String" parameters="inputMetricData.get(&apos;BSM_Won_Opportunity_1&apos;),inputMetricData.get(&apos;BSM_Won_lost_Opportunity_1&apos;),&apos;SM_BulletWinRate&apos;,pid" returnloc="#temp1693" lineno="53" />
+<methodInvoke name="doWinRateImprovementCalculation" methodtype="normalmethod" returntype="String" parameters="&apos;BSM_Win_Rate&apos;,&apos;BSM_Win_Rate_Improvement&apos;,pid" returnloc="#temp1694" lineno="55" />
+<ReturnBlock>
+<return expression="true" expressiontype="@value" lineno="56" />
+</ReturnBlock>
+<methodendline lineno="58"/>
+</body>
+</method>
+<method returntype="void" name="doRateCalculation" parameters="variableA:Map&amp;lt;string,Scan_Metric_Data__c&amp;gt;,variableB:Map&amp;lt;string,Scan_Metric_Data__c&amp;gt;,metricName:string,Pfolio:string" isTestMethod="false" lineno="62" throws="" modifiers="public">
+<body>
+<ExpressionStatement expression="&apos;VariableA is &apos;+variableA" key="debug" lineno="63"/>
+<ExpressionStatement expression="&apos;VariableB is &apos;+variableB" key="debug" lineno="64"/>
+<VariableDeclaration>
+<methodInvoke name="List&lt;AIES_Accenture__AIESMetricData__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1695" lineno="66" />
+<varDeclaration name="metricdataList" scope="methodvar" location="ScanMetricCalculation" type="List&amp;lt;AIES_Accenture__AIESMetricData__c&amp;gt;" lineno="66" />
+<assignHeap name="metricdataList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_Accenture__AIESMetricData__c&gt;()" lineno="66" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Metric name is &apos;+metricName" key="debug" lineno="69"/>
+<loop type="advancedfor" lineno="70">
+<methodInvoke name="variableA.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1696" lineno="70" />
+<Iterator type="string" name="key" on="variableA.keySet()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="71">
+<conditionalExpr>
+<methodInvoke name="#temp1696.get" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1697" lineno="71" />
+<ConditionalStatement LHStype="" LHS="variableB.get(key)" RHStype="" RHS="null" Operator="!="/>
+</conditionalExpr>
+<ifcondition expression= "variableB.get(key)!=null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="#temp1697.get" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1698" lineno="72" />
+<methodInvoke name="#temp1698.Value__c" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1699" lineno="72" />
+<methodInvoke name="#temp1699.get" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1700" lineno="72" />
+<methodInvoke name="#temp1700.Value__c" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1701" lineno="72" />
+<varDeclaration name="keyResult" scope="methodvar" location="ScanMetricCalculation" type="decimal" lineno="72" />
+<assignHeap name="keyResult" scope="methodvar" type="decimal" rhsType="value" rhs="(variableA.get(key).Value__c/variableB.get(key).Value__c)*100" lineno="72" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="metricName" returnloc="#temp1702" lineno="74" />
+<varDeclaration name="cpk" scope="methodvar" location="ScanMetricCalculation" type="string" lineno="74" />
+<assignHeap name="cpk" scope="methodvar" type="string" rhsType="variable" rhs="pfolio+&apos;::&apos;+key+&apos;::&apos;+metricName" lineno="74" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="AIES_Accenture__AIESMetricData__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1703" lineno="75" />
+<varDeclaration name="metricdata" scope="methodvar" location="ScanMetricCalculation" type="AIES_Accenture__AIESMetricData__c" lineno="75" />
+<assignHeap name="metricdata" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_Accenture__AIESMetricData__c()" lineno="75" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="metricData.AIES_ACCENTURE__Key__c" scope="" type="" rhsType="methodinvoke" rhs="key" lineno="76" />
+</AssignmentStatement>
+<ExpressionStatement expression="&apos;Key is &apos;+key" key="debug" lineno="78"/>
+<ExpressionStatement expression="&apos;Value is &apos;+keyResult" key="debug" lineno="79"/>
+<AssignmentStatement>
+<methodInvoke name="keyResult.setScale" methodtype="normalmethod" returntype="String" parameters="2" returnloc="#temp1704" lineno="81" />
+<assignHeap name="metricData.AIES_ACCENTURE__Value__c" scope="" type="" rhsType="methodinvoke" rhs="keyResult.setScale(2)" lineno="81" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="variableA.get" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1705" lineno="82" />
+<methodInvoke name="#temp1705.Sort_Order__c" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1706" lineno="82" />
+<assignHeap name="metricData.AIES_ACCENTURE__SortOrder__c" scope="" type="" rhsType="methodinvoke" rhs="variableA.get(key).Sort_Order__c" lineno="82" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="metricData.AIES_ACCENTURE__Portfolio__c" scope="" type="" rhsType="variable" rhs="Pfolio" lineno="83" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="AiesMetricMaster.get" methodtype="normalmethod" returntype="String" parameters="metricName" returnloc="#temp1707" lineno="84" />
+<assignHeap name="metricData.AIES_ACCENTURE__MetricMaster__c" scope="" type="" rhsType="methodinvoke" rhs="AiesMetricMaster.get(metricName)" lineno="84" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="metricData.AIES_ACCENTURE__External_Id__c" scope="" type="" rhsType="variable" rhs="cpk" lineno="85" />
+</AssignmentStatement>
+<methodInvoke name="metricdataList.add" methodtype="normalmethod" returntype="String" parameters="metricData" returnloc="#temp1708" lineno="86" />
+<ExpressionStatement expression="&apos;Metric Data&apos;+metricData" key="debug" lineno="87"/>
+</body>
+</true>
+</if>
+</body>
+</loop>
+<methodInvoke name="lib.dml.upsert" methodtype="" returntype="" parameters="metricdataList" returnloc="" lineno="91" />
+<methodendline lineno="92"/>
+</body>
+</method>
+<method returntype="void" name="doWinRateImprovementCalculation" parameters="metricName:string,resultmetric:string,Pfolio:string" isTestMethod="false" lineno="99" throws="" modifiers="public">
+<body>
+<ExpressionStatement expression="&apos;in doWinRateImprovementCalculation&apos;" key="debug" lineno="100"/>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select AIES_ACCENTURE__Category__c,AIES_ACCENTURE__External_Id__c,AIES_ACCENTURE__Key__c,AIES_ACCENTURE__MetricMaster__c,AIES_ACCENTURE__Portfolio__c,AIES_ACCENTURE__Recommendation__c,AIES_ACCENTURE__SM_Review_Comment__c,AIES_ACCENTURE__SortOrder__c,AIES_ACCENTURE__Value2__c,AIES_ACCENTURE__Value3__c,AIES_ACCENTURE__Value4__c,AIES_ACCENTURE__Value__c,Id,Name from AIES_ACCENTURE__AIESMetricData__c where AIES_ACCENTURE__MetricMaster__r.name = :metricName order by AIES_ACCENTURE__SortOrder__c asc]" returnloc="#temp1709" lineno="102" />
+<varDeclaration name="metricdataList" scope="methodvar" location="ScanMetricCalculation" type="List&amp;lt;AIES_Accenture__AIESMetricData__c&amp;gt;" lineno="102" />
+<assignHeap name="metricdataList" scope="methodvar" type="List&amp;lt;AIES_Accenture__AIESMetricData__c&amp;gt;" rhsType="query" rhs="[select AIES_ACCENTURE__Category__c,AIES_ACCENTURE__External_Id__c,AIES_ACCENTURE__Key__c,AIES_ACCENTURE__MetricMaster__c,AIES_ACCENTURE__Portfolio__c,AIES_ACCENTURE__Recommendation__c,AIES_ACCENTURE__SM_Review_Comment__c,AIES_ACCENTURE__SortOrder__c,AIES_ACCENTURE__Value2__c,AIES_ACCENTURE__Value3__c,AIES_ACCENTURE__Value4__c,AIES_ACCENTURE__Value__c,Id,Name from AIES_ACCENTURE__AIESMetricData__c where AIES_ACCENTURE__MetricMaster__r.name = :metricName order by AIES_ACCENTURE__SortOrder__c asc]" lineno="102" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;AIES_Accenture__AIESMetricData__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1710" lineno="103" />
+<varDeclaration name="metricdataResult" scope="methodvar" location="ScanMetricCalculation" type="List&amp;lt;AIES_Accenture__AIESMetricData__c&amp;gt;" lineno="103" />
+<assignHeap name="metricdataResult" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_Accenture__AIESMetricData__c&gt;()" lineno="103" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="counter" scope="methodvar" location="ScanMetricCalculation" type="integer" lineno="104" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="Sortorder" scope="methodvar" location="ScanMetricCalculation" type="integer" lineno="105" />
+<assignHeap name="Sortorder" scope="methodvar" type="integer" rhsType="value" rhs="1" lineno="105" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;size is &apos;+metricdataList.size()" key="debug" lineno="106"/>
+<loop type="simplefor" lineno="107">
+<initialExpr>
+<VariableDeclaration>
+<methodInvoke name="metricdataList.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1711" lineno="107" />
+<varDeclaration name="counter" scope="methodvar" location="ScanMetricCalculation" type="" lineno="107" />
+<assignHeap name="counter" scope="methodvar" type="" rhsType="methodinvoke" rhs="metricdataList.size()-1" lineno="107" />
+</VariableDeclaration>
+</initialExpr>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="counter" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<incrementExpr>
+</incrementExpr>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;counter is &apos;+counter" key="debug" lineno="108"/>
+<ExpressionStatement expression="&apos;Value a  &apos;+metricdataList[counter].AIES_ACCENTURE__Value__c" key="debug" lineno="109"/>
+<ExpressionStatement expression="&apos;Value b  &apos;+metricdataList[counter-1].AIES_ACCENTURE__Value__c" key="debug" lineno="110"/>
+<VariableDeclaration>
+<varDeclaration name="resultValue" scope="methodvar" location="ScanMetricCalculation" type="decimal" lineno="111" />
+<assignHeap name="resultValue" scope="methodvar" type="decimal" rhsType="value" rhs="((metricdataList[counter].AIES_ACCENTURE__Value__c-metricdataList[counter-1].AIES_ACCENTURE__Value__c)/metricdataList[counter].AIES_ACCENTURE__Value__c)*100" lineno="111" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="AIES_Accenture__AIESMetricData__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1715" lineno="112" />
+<varDeclaration name="singleResult" scope="methodvar" location="ScanMetricCalculation" type="AIES_Accenture__AIESMetricData__c" lineno="112" />
+<assignHeap name="singleResult" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_Accenture__AIESMetricData__c()" lineno="112" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="metricdataList[counter].AIES_ACCENTURE__Key__c" returnloc="#temp1717" lineno="113" />
+<varDeclaration name="cpk" scope="methodvar" location="ScanMetricCalculation" type="string" lineno="113" />
+<assignHeap name="cpk" scope="methodvar" type="string" rhsType="variable" rhs="pfolio+&apos; :: &apos;+metricname+&apos; :: &apos;+metricdataList[counter].AIES_ACCENTURE__Key__c" lineno="113" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;cpk is &apos;+cpk" key="debug" lineno="114"/>
+<AssignmentStatement>
+<assignHeap name="singleResult.AIES_ACCENTURE__Key__c" scope="" type="" rhsType="variable" rhs="metricdataList[counter].AIES_ACCENTURE__Key__c" lineno="115" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="resultValue.setScale" methodtype="normalmethod" returntype="String" parameters="2" returnloc="#temp1719" lineno="116" />
+<assignHeap name="singleResult.AIES_ACCENTURE__Value__c" scope="" type="" rhsType="methodinvoke" rhs="resultValue.setScale(2)" lineno="116" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="singleResult.AIES_ACCENTURE__SortOrder__c" scope="" type="" rhsType="variable" rhs="metricdataList[counter].AIES_ACCENTURE__SortOrder__c" lineno="117" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="singleResult.AIES_ACCENTURE__Portfolio__c" scope="" type="" rhsType="variable" rhs="Pfolio" lineno="118" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="AiesMetricMaster.get" methodtype="normalmethod" returntype="String" parameters="resultmetric" returnloc="#temp1721" lineno="119" />
+<assignHeap name="singleResult.AIES_ACCENTURE__MetricMaster__c" scope="" type="" rhsType="methodinvoke" rhs="AiesMetricMaster.get(resultmetric)" lineno="119" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="singleResult.AIES_ACCENTURE__External_Id__c" scope="" type="" rhsType="variable" rhs="cpk" lineno="120" />
+</AssignmentStatement>
+<methodInvoke name="metricdataResult.add" methodtype="normalmethod" returntype="String" parameters="singleResult" returnloc="#temp1722" lineno="122" />
+</body>
+</loop>
+<methodInvoke name="lib.dml.upsert" methodtype="" returntype="" parameters="metricdataResult" returnloc="" lineno="124" />
+<methodendline lineno="126"/>
+</body>
+</method>
+<method returntype="void" name="doBulletWinRateImprovementCalculation" parameters="variableA:Map&amp;lt;string,Scan_Metric_Data__c&amp;gt;,variableB:Map&amp;lt;string,Scan_Metric_Data__c&amp;gt;,metricName:string,Pfolio:string" isTestMethod="false" lineno="128" throws="" modifiers="public">
+<body>
+<ExpressionStatement expression="&apos;VariableA is &apos;+variableA" key="debug" lineno="129"/>
+<ExpressionStatement expression="&apos;VariableB is &apos;+variableB" key="debug" lineno="130"/>
+<ExpressionStatement expression="&apos;Metric name is &apos;+metricName" key="debug" lineno="134"/>
+<VariableDeclaration>
+<methodInvoke name="list&lt;decimal&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1723" lineno="135" />
+<varDeclaration name="winrate" scope="methodvar" location="ScanMetricCalculation" type="List&amp;lt;decimal&amp;gt;" lineno="135" />
+<assignHeap name="winrate" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newlist&lt;decimal&gt;()" lineno="135" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="sortOrder" scope="methodvar" location="ScanMetricCalculation" type="integer" lineno="136" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="137">
+<methodInvoke name="#temp1723.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1724" lineno="137" />
+<Iterator type="string" name="key" on="variableA.keySet()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="138">
+<conditionalExpr>
+<methodInvoke name="#temp1724.get" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1725" lineno="138" />
+<ConditionalStatement LHStype="" LHS="variableB.get(key)" RHStype="" RHS="null" Operator="!="/>
+</conditionalExpr>
+<ifcondition expression= "variableB.get(key)!=null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="#temp1725.get" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1726" lineno="139" />
+<methodInvoke name="#temp1726.Value__c" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1727" lineno="139" />
+<methodInvoke name="#temp1727.get" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1728" lineno="139" />
+<methodInvoke name="#temp1728.Value__c" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1729" lineno="139" />
+<varDeclaration name="keyResult" scope="methodvar" location="ScanMetricCalculation" type="decimal" lineno="139" />
+<assignHeap name="keyResult" scope="methodvar" type="decimal" rhsType="value" rhs="(variableA.get(key).Value__c/variableB.get(key).Value__c)*100" lineno="139" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="variableA#temp1729variableA.get" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1730" lineno="140" />
+<methodInvoke name="#temp1730.Sort_Order__c" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1731" lineno="140" />
+<assignHeap name="sortOrder" scope="" type="" rhsType="methodinvoke" rhs="(integer)variableA.get(key).Sort_Order__c" lineno="140" />
+</AssignmentStatement>
+<methodInvoke name="keyResult.setScale" methodtype="normalmethod" returntype="String" parameters="2" returnloc="#temp1732" lineno="141" />
+<methodInvoke name="winrate.add" methodtype="normalmethod" returntype="String" parameters="keyResult.setScale(2)" returnloc="#temp1733" lineno="141" />
+</body>
+</true>
+</if>
+</body>
+</loop>
+<ExpressionStatement expression="&apos;Win Rate is &apos;+winrate" key="debug" lineno="144"/>
+<VariableDeclaration>
+<methodInvoke name="winrate.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1734" lineno="145" />
+<varDeclaration name="totalWinRates" scope="methodvar" location="ScanMetricCalculation" type="integer" lineno="145" />
+<assignHeap name="totalWinRates" scope="methodvar" type="integer" rhsType="methodinvoke" rhs="winrate.size()" lineno="145" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Win Rate Size is  &apos;+totalWinRates" key="debug" lineno="146"/>
+<VariableDeclaration>
+<varDeclaration name="WinRateImprovement" scope="methodvar" location="ScanMetricCalculation" type="decimal" lineno="147" />
+</VariableDeclaration>
+<if type="simpleif" lineno="148">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="totalWinRates" RHStype="" RHS="1" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "totalWinRates&gt;1"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="winrate.get" methodtype="normalmethod" returntype="String" parameters="totalWinRates-1" returnloc="#temp1735" lineno="149" />
+<methodInvoke name="#temp1735.get" methodtype="normalmethod" returntype="String" parameters="totalWinRates-2" returnloc="#temp1736" lineno="149" />
+<methodInvoke name="#temp1736.get" methodtype="normalmethod" returntype="String" parameters="totalWinRates-1" returnloc="#temp1737" lineno="149" />
+<assignHeap name="WinRateImprovement" scope="" type="" rhsType="methodinvoke" rhs="((winrate.get(totalWinRates-1)-winrate.get(totalWinRates-2))/winrate.get(totalWinRates-1))*100" lineno="149" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+<ExpressionStatement expression="&apos;Value is &apos;+WinRateImprovement" key="debug" lineno="151"/>
+<VariableDeclaration>
+<methodInvoke name="AIES_Accenture__AIESMetricData__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1738" lineno="152" />
+<varDeclaration name="metricdata" scope="methodvar" location="ScanMetricCalculation" type="AIES_Accenture__AIESMetricData__c" lineno="152" />
+<assignHeap name="metricdata" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_Accenture__AIESMetricData__c()" lineno="152" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="metricName" returnloc="#temp1739" lineno="153" />
+<varDeclaration name="cpk" scope="methodvar" location="ScanMetricCalculation" type="string" lineno="153" />
+<assignHeap name="cpk" scope="methodvar" type="string" rhsType="variable" rhs="pfolio+&apos;::Win rate improvement::&apos;+metricName" lineno="153" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="metricData.AIES_ACCENTURE__Key__c" scope="" type="" rhsType="methodinvoke" rhs="&apos;WinRate Improvement&apos;" lineno="154" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="metricData.AIES_ACCENTURE__Value__c" scope="" type="" rhsType="variable" rhs="WinRateImprovement" lineno="155" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="metricData.AIES_ACCENTURE__SortOrder__c" scope="" type="" rhsType="value" rhs="0" lineno="156" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="metricData.AIES_ACCENTURE__Portfolio__c" scope="" type="" rhsType="variable" rhs="Pfolio" lineno="157" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="AiesMetricMaster.get" methodtype="normalmethod" returntype="String" parameters="metricName" returnloc="#temp1740" lineno="158" />
+<assignHeap name="metricData.AIES_ACCENTURE__MetricMaster__c" scope="" type="" rhsType="methodinvoke" rhs="AiesMetricMaster.get(metricName)" lineno="158" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="metricData.AIES_ACCENTURE__External_Id__c" scope="" type="" rhsType="variable" rhs="cpk" lineno="159" />
+</AssignmentStatement>
+<methodInvoke name="lib.dml.upsert" methodtype="" returntype="" parameters="metricData" returnloc="" lineno="160" />
+<methodendline lineno="161"/>
+</body>
+</method>
+<method returntype="void" name="doDivisionCalculation" parameters="variableA:Map&amp;lt;string,Scan_Metric_Data__c&amp;gt;,variableB:Map&amp;lt;string,Scan_Metric_Data__c&amp;gt;,metricName:string,Pfolio:string" isTestMethod="false" lineno="164" throws="" modifiers="public">
+<body>
+<ExpressionStatement expression="&apos;VariableA is &apos;+variableA" key="debug" lineno="165"/>
+<ExpressionStatement expression="&apos;VariableB is &apos;+variableB" key="debug" lineno="166"/>
+<VariableDeclaration>
+<methodInvoke name="List&lt;AIES_Accenture__AIESMetricData__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1741" lineno="167" />
+<varDeclaration name="metricdataList" scope="methodvar" location="ScanMetricCalculation" type="List&amp;lt;AIES_Accenture__AIESMetricData__c&amp;gt;" lineno="167" />
+<assignHeap name="metricdataList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_Accenture__AIESMetricData__c&gt;()" lineno="167" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Metric name is &apos;+metricName+&apos; and id is &apos;+AiesMetricMaster.get(metricName)" key="debug" lineno="169"/>
+<loop type="advancedfor" lineno="170">
+<methodInvoke name="variableA.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1742" lineno="170" />
+<Iterator type="string" name="key" on="variableA.keySet()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="171">
+<conditionalExpr>
+<methodInvoke name="#temp1742.get" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1743" lineno="171" />
+<ConditionalStatement LHStype="" LHS="variableB.get(key)" RHStype="" RHS="null" Operator="!="/>
+</conditionalExpr>
+<ifcondition expression= "variableB.get(key)!=null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="#temp1743.get" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1744" lineno="172" />
+<methodInvoke name="#temp1744.Value__c" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1745" lineno="172" />
+<methodInvoke name="#temp1745.get" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1746" lineno="172" />
+<methodInvoke name="#temp1746.Value__c" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1747" lineno="172" />
+<varDeclaration name="keyResult" scope="methodvar" location="ScanMetricCalculation" type="decimal" lineno="172" />
+<assignHeap name="keyResult" scope="methodvar" type="decimal" rhsType="variable" rhs="variableA.get(key).Value__c/variableB.get(key).Value__c" lineno="172" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1748" lineno="174" />
+<varDeclaration name="cpk" scope="methodvar" location="ScanMetricCalculation" type="string" lineno="174" />
+<assignHeap name="cpk" scope="methodvar" type="string" rhsType="variable" rhs="pfolio+&apos;::&apos;+metricName+&apos;::&apos;+key" lineno="174" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="AIES_Accenture__AIESMetricData__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1749" lineno="175" />
+<varDeclaration name="metricdata" scope="methodvar" location="ScanMetricCalculation" type="AIES_Accenture__AIESMetricData__c" lineno="175" />
+<assignHeap name="metricdata" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_Accenture__AIESMetricData__c()" lineno="175" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="metricData.AIES_ACCENTURE__Key__c" scope="" type="" rhsType="methodinvoke" rhs="key" lineno="176" />
+</AssignmentStatement>
+<ExpressionStatement expression="&apos;Key is &apos;+key" key="debug" lineno="178"/>
+<ExpressionStatement expression="&apos;Value is &apos;+keyResult" key="debug" lineno="179"/>
+<AssignmentStatement>
+<methodInvoke name="keyResult.setScale" methodtype="normalmethod" returntype="String" parameters="2" returnloc="#temp1750" lineno="181" />
+<assignHeap name="metricData.AIES_ACCENTURE__Value__c" scope="" type="" rhsType="methodinvoke" rhs="keyResult.setScale(2)" lineno="181" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="variableA.get" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1751" lineno="182" />
+<methodInvoke name="#temp1751.Sort_Order__c" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1752" lineno="182" />
+<assignHeap name="metricData.AIES_ACCENTURE__SortOrder__c" scope="" type="" rhsType="methodinvoke" rhs="variableA.get(key).Sort_Order__c" lineno="182" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="metricData.AIES_ACCENTURE__Portfolio__c" scope="" type="" rhsType="variable" rhs="Pfolio" lineno="183" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="AiesMetricMaster.get" methodtype="normalmethod" returntype="String" parameters="metricName" returnloc="#temp1753" lineno="184" />
+<assignHeap name="metricData.AIES_ACCENTURE__MetricMaster__c" scope="" type="" rhsType="methodinvoke" rhs="AiesMetricMaster.get(metricName)" lineno="184" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="metricData.AIES_ACCENTURE__External_Id__c" scope="" type="" rhsType="variable" rhs="cpk" lineno="185" />
+</AssignmentStatement>
+<methodInvoke name="metricdataList.add" methodtype="normalmethod" returntype="String" parameters="metricData" returnloc="#temp1754" lineno="186" />
+<ExpressionStatement expression="metricData" key="debug" lineno="187"/>
+</body>
+</true>
+</if>
+</body>
+</loop>
+<methodInvoke name="lib.dml.upsert" methodtype="" returntype="" parameters="metricdataList" returnloc="" lineno="191" />
+<methodendline lineno="192"/>
+</body>
+</method>
+<method returntype="void" name="doDivisionWithOneValue" parameters="variableA:Map&amp;lt;string,Scan_Metric_Data__c&amp;gt;,variableB:Map&amp;lt;string,Scan_Metric_Data__c&amp;gt;,metricName:string,Pfolio:string" isTestMethod="false" lineno="196" throws="" modifiers="public">
+<body>
+<ExpressionStatement expression="&apos;VariableA is &apos;+variableA" key="debug" lineno="197"/>
+<ExpressionStatement expression="&apos;VariableB is &apos;+variableB" key="debug" lineno="198"/>
+<VariableDeclaration>
+<methodInvoke name="List&lt;AIES_Accenture__AIESMetricData__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1755" lineno="199" />
+<varDeclaration name="metricdataList" scope="methodvar" location="ScanMetricCalculation" type="List&amp;lt;AIES_Accenture__AIESMetricData__c&amp;gt;" lineno="199" />
+<assignHeap name="metricdataList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_Accenture__AIESMetricData__c&gt;()" lineno="199" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Metric name is &apos;+metricName" key="debug" lineno="201"/>
+<VariableDeclaration>
+<varDeclaration name="variableBvalue" scope="methodvar" location="ScanMetricCalculation" type="decimal" lineno="202" />
+<assignHeap name="variableBvalue" scope="methodvar" type="decimal" rhsType="value" rhs="0.0" lineno="202" />
+</VariableDeclaration>
+<if type="simpleif" lineno="203">
+<conditionalExpr>
+<methodInvoke name="variableB.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1756" lineno="203" />
+<ConditionalStatement LHStype="" LHS="variableB.size()" RHStype="" RHS="1" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "variableB.size()==1"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="list&lt;Scan_Metric_Data__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1757" lineno="204" />
+<varDeclaration name="scandata" scope="methodvar" location="ScanMetricCalculation" type="list&amp;lt;Scan_Metric_Data__c&amp;gt;" lineno="204" />
+<assignHeap name="scandata" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newlist&lt;Scan_Metric_Data__c&gt;()" lineno="204" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="variableB#temp1757variableB.values" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1758" lineno="205" />
+<assignHeap name="scandata" scope="" type="" rhsType="methodinvoke" rhs="variableB.values()" lineno="205" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="variableBvalue" scope="" type="" rhsType="value" rhs="scandata[0].Value__c" lineno="206" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+<ExpressionStatement expression="&apos;Variable b value is &apos;+variableBvalue" key="debug" lineno="208"/>
+<loop type="advancedfor" lineno="209">
+<methodInvoke name="variableA.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1760" lineno="209" />
+<Iterator type="string" name="key" on="variableA.keySet()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="210">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="variableBvalue" RHStype="" RHS="0" Operator="!="/>
+</conditionalExpr>
+<ifcondition expression= "variableBvalue!=0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="#temp1760.get" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1761" lineno="211" />
+<methodInvoke name="#temp1761.Value__c" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1762" lineno="211" />
+<varDeclaration name="keyResult" scope="methodvar" location="ScanMetricCalculation" type="decimal" lineno="211" />
+<assignHeap name="keyResult" scope="methodvar" type="decimal" rhsType="variable" rhs="variableA.get(key).Value__c/variableBvalue" lineno="211" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1763" lineno="213" />
+<varDeclaration name="cpk" scope="methodvar" location="ScanMetricCalculation" type="string" lineno="213" />
+<assignHeap name="cpk" scope="methodvar" type="string" rhsType="variable" rhs="pfolio+&apos;::&apos;+metricName+&apos;::&apos;+key" lineno="213" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="AIES_Accenture__AIESMetricData__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1764" lineno="214" />
+<varDeclaration name="metricdata" scope="methodvar" location="ScanMetricCalculation" type="AIES_Accenture__AIESMetricData__c" lineno="214" />
+<assignHeap name="metricdata" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_Accenture__AIESMetricData__c()" lineno="214" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="metricData.AIES_ACCENTURE__Key__c" scope="" type="" rhsType="methodinvoke" rhs="key" lineno="215" />
+</AssignmentStatement>
+<ExpressionStatement expression="&apos;Key is &apos;+key" key="debug" lineno="216"/>
+<ExpressionStatement expression="&apos;Value is &apos;+keyResult" key="debug" lineno="217"/>
+<AssignmentStatement>
+<methodInvoke name="keyResult.setScale" methodtype="normalmethod" returntype="String" parameters="2" returnloc="#temp1765" lineno="219" />
+<assignHeap name="metricData.AIES_ACCENTURE__Value__c" scope="" type="" rhsType="methodinvoke" rhs="keyResult.setScale(2)" lineno="219" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="variableA.get" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1766" lineno="220" />
+<methodInvoke name="#temp1766.Sort_Order__c" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1767" lineno="220" />
+<assignHeap name="metricData.AIES_ACCENTURE__SortOrder__c" scope="" type="" rhsType="methodinvoke" rhs="variableA.get(key).Sort_Order__c" lineno="220" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="metricData.AIES_ACCENTURE__Portfolio__c" scope="" type="" rhsType="variable" rhs="Pfolio" lineno="221" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="AiesMetricMaster.get" methodtype="normalmethod" returntype="String" parameters="metricName" returnloc="#temp1768" lineno="222" />
+<assignHeap name="metricData.AIES_ACCENTURE__MetricMaster__c" scope="" type="" rhsType="methodinvoke" rhs="AiesMetricMaster.get(metricName)" lineno="222" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="metricData.AIES_ACCENTURE__External_Id__c" scope="" type="" rhsType="variable" rhs="cpk" lineno="223" />
+</AssignmentStatement>
+<methodInvoke name="metricdataList.add" methodtype="normalmethod" returntype="String" parameters="metricData" returnloc="#temp1769" lineno="224" />
+<ExpressionStatement expression="metricData" key="debug" lineno="225"/>
+</body>
+</true>
+</if>
+</body>
+</loop>
+<if type="simpleif" lineno="229">
+<conditionalExpr>
+<methodInvoke name="metricdataList.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1770" lineno="229" />
+<ConditionalStatement LHStype="" LHS="metricdataList.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "metricdataList.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="lib.dml.upsert" methodtype="" returntype="" parameters="metricdataList" returnloc="" lineno="230" />
+</body>
+</true>
+</if>
+<methodendline lineno="232"/>
+</body>
+</method>
+<method returntype="void" name="doDivisionWithOneValueInPercentage" parameters="variableA:Map&amp;lt;string,Scan_Metric_Data__c&amp;gt;,variableB:Map&amp;lt;string,Scan_Metric_Data__c&amp;gt;,metricName:string,Pfolio:string" isTestMethod="false" lineno="236" throws="" modifiers="public">
+<body>
+<ExpressionStatement expression="&apos;VariableA is &apos;+variableA" key="debug" lineno="237"/>
+<ExpressionStatement expression="&apos;VariableB is &apos;+variableB" key="debug" lineno="238"/>
+<VariableDeclaration>
+<methodInvoke name="List&lt;AIES_Accenture__AIESMetricData__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1771" lineno="239" />
+<varDeclaration name="metricdataList" scope="methodvar" location="ScanMetricCalculation" type="List&amp;lt;AIES_Accenture__AIESMetricData__c&amp;gt;" lineno="239" />
+<assignHeap name="metricdataList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_Accenture__AIESMetricData__c&gt;()" lineno="239" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Metric name is &apos;+metricName" key="debug" lineno="241"/>
+<VariableDeclaration>
+<varDeclaration name="variableBvalue" scope="methodvar" location="ScanMetricCalculation" type="decimal" lineno="242" />
+<assignHeap name="variableBvalue" scope="methodvar" type="decimal" rhsType="value" rhs="0.0" lineno="242" />
+</VariableDeclaration>
+<if type="simpleif" lineno="243">
+<conditionalExpr>
+<methodInvoke name="variableB.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1772" lineno="243" />
+<ConditionalStatement LHStype="" LHS="variableB.size()" RHStype="" RHS="1" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "variableB.size()==1"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="list&lt;Scan_Metric_Data__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1773" lineno="244" />
+<varDeclaration name="scandata" scope="methodvar" location="ScanMetricCalculation" type="list&amp;lt;Scan_Metric_Data__c&amp;gt;" lineno="244" />
+<assignHeap name="scandata" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newlist&lt;Scan_Metric_Data__c&gt;()" lineno="244" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="variableB#temp1773variableB.values" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1774" lineno="245" />
+<assignHeap name="scandata" scope="" type="" rhsType="methodinvoke" rhs="variableB.values()" lineno="245" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="variableBvalue" scope="" type="" rhsType="value" rhs="scandata[0].Value__c" lineno="246" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+<ExpressionStatement expression="&apos;Variable b value is &apos;+variableBvalue" key="debug" lineno="248"/>
+<loop type="advancedfor" lineno="249">
+<methodInvoke name="variableA.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1776" lineno="249" />
+<Iterator type="string" name="key" on="variableA.keySet()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="250">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="variableBvalue" RHStype="" RHS="0" Operator="!="/>
+</conditionalExpr>
+<ifcondition expression= "variableBvalue!=0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="#temp1776.get" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1777" lineno="251" />
+<methodInvoke name="#temp1777.Value__c" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1778" lineno="251" />
+<varDeclaration name="keyResult" scope="methodvar" location="ScanMetricCalculation" type="decimal" lineno="251" />
+<assignHeap name="keyResult" scope="methodvar" type="decimal" rhsType="value" rhs="(variableA.get(key).Value__c/variableBvalue)*100" lineno="251" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1779" lineno="253" />
+<varDeclaration name="cpk" scope="methodvar" location="ScanMetricCalculation" type="string" lineno="253" />
+<assignHeap name="cpk" scope="methodvar" type="string" rhsType="variable" rhs="pfolio+&apos;::&apos;+metricName+&apos;::&apos;+key" lineno="253" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="AIES_Accenture__AIESMetricData__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1780" lineno="254" />
+<varDeclaration name="metricdata" scope="methodvar" location="ScanMetricCalculation" type="AIES_Accenture__AIESMetricData__c" lineno="254" />
+<assignHeap name="metricdata" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_Accenture__AIESMetricData__c()" lineno="254" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="metricData.AIES_ACCENTURE__Key__c" scope="" type="" rhsType="methodinvoke" rhs="key" lineno="255" />
+</AssignmentStatement>
+<ExpressionStatement expression="&apos;Key is &apos;+key" key="debug" lineno="256"/>
+<ExpressionStatement expression="&apos;Value is &apos;+keyResult" key="debug" lineno="257"/>
+<AssignmentStatement>
+<methodInvoke name="keyResult.setScale" methodtype="normalmethod" returntype="String" parameters="2" returnloc="#temp1781" lineno="259" />
+<assignHeap name="metricData.AIES_ACCENTURE__Value__c" scope="" type="" rhsType="methodinvoke" rhs="keyResult.setScale(2)" lineno="259" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="variableA.get" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1782" lineno="260" />
+<methodInvoke name="#temp1782.Sort_Order__c" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1783" lineno="260" />
+<assignHeap name="metricData.AIES_ACCENTURE__SortOrder__c" scope="" type="" rhsType="methodinvoke" rhs="variableA.get(key).Sort_Order__c" lineno="260" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="metricData.AIES_ACCENTURE__Portfolio__c" scope="" type="" rhsType="variable" rhs="Pfolio" lineno="261" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="AiesMetricMaster.get" methodtype="normalmethod" returntype="String" parameters="metricName" returnloc="#temp1784" lineno="262" />
+<assignHeap name="metricData.AIES_ACCENTURE__MetricMaster__c" scope="" type="" rhsType="methodinvoke" rhs="AiesMetricMaster.get(metricName)" lineno="262" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="metricData.AIES_ACCENTURE__External_Id__c" scope="" type="" rhsType="variable" rhs="cpk" lineno="263" />
+</AssignmentStatement>
+<methodInvoke name="metricdataList.add" methodtype="normalmethod" returntype="String" parameters="metricData" returnloc="#temp1785" lineno="264" />
+<ExpressionStatement expression="metricData" key="debug" lineno="265"/>
+</body>
+</true>
+</if>
+</body>
+</loop>
+<if type="simpleif" lineno="269">
+<conditionalExpr>
+<methodInvoke name="metricdataList.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1786" lineno="269" />
+<ConditionalStatement LHStype="" LHS="metricdataList.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "metricdataList.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="lib.dml.upsert" methodtype="" returntype="" parameters="metricdataList" returnloc="" lineno="270" />
+</body>
+</true>
+</if>
+<methodendline lineno="272"/>
+</body>
+</method>
+<method returntype="void" name="doRateIncreaseCalculation" parameters="variableA:Map&amp;lt;string,Scan_Metric_Data__c&amp;gt;,metricName:string,Pfolio:string" isTestMethod="false" lineno="276" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="List&lt;AIES_Accenture__AIESMetricData__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1787" lineno="278" />
+<varDeclaration name="metricdataList" scope="methodvar" location="ScanMetricCalculation" type="List&amp;lt;AIES_Accenture__AIESMetricData__c&amp;gt;" lineno="278" />
+<assignHeap name="metricdataList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_Accenture__AIESMetricData__c&gt;()" lineno="278" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Metric name is &apos;+metricName" key="debug" lineno="280"/>
+<VariableDeclaration>
+<methodInvoke name="Map&lt;integer,decimal&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1788" lineno="283" />
+<varDeclaration name="SortOrderWithValue" scope="methodvar" location="ScanMetricCalculation" type="Map&amp;lt;integer,decimal&amp;gt;" lineno="283" />
+<assignHeap name="SortOrderWithValue" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;integer,decimal&gt;()" lineno="283" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="284">
+<methodInvoke name="#temp1788.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1789" lineno="284" />
+<Iterator type="string" name="key" on="variableA.keySet()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="variableA.get" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1790" lineno="285" />
+<methodInvoke name="key.Sort_Order__c" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1791" lineno="285" />
+<methodInvoke name="integer.valueof" methodtype="normalmethod" returntype="String" parameters="variableA.get(key).Sort_Order__c" returnloc="#temp1792" lineno="285" />
+<methodInvoke name="#temp1792.get" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1793" lineno="285" />
+<methodInvoke name="#temp1793.Value__c" methodtype="normalmethod" returntype="String" parameters="key" returnloc="#temp1794" lineno="285" />
+<methodInvoke name="SortOrderWithValue.put" methodtype="normalmethod" returntype="String" parameters="integer.valueof(variableA.get(key).Sort_Order__c),variableA.get(key).Value__c" returnloc="#temp1795" lineno="285" />
+</body>
+</loop>
+<VariableDeclaration>
+<varDeclaration name="i" scope="methodvar" location="ScanMetricCalculation" type="integer" lineno="288" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Order value is &apos;+SortOrderWithValue" key="debug" lineno="289"/>
+<VariableDeclaration>
+<varDeclaration name="improvementValue" scope="methodvar" location="ScanMetricCalculation" type="decimal" lineno="290" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="Map&lt;integer,decimal&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1796" lineno="291" />
+<varDeclaration name="SortOrderWithImprovementValue" scope="methodvar" location="ScanMetricCalculation" type="Map&amp;lt;integer,decimal&amp;gt;" lineno="291" />
+<assignHeap name="SortOrderWithImprovementValue" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;integer,decimal&gt;()" lineno="291" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;size is &apos;+SortOrderWithValue.size()" key="debug" lineno="292"/>
+<loop type="simplefor" lineno="295">
+<initialExpr>
+<VariableDeclaration>
+<methodInvoke name="SortOrderWithValue.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1797" lineno="295" />
+<varDeclaration name="i" scope="methodvar" location="ScanMetricCalculation" type="" lineno="295" />
+<assignHeap name="i" scope="methodvar" type="" rhsType="methodinvoke" rhs="SortOrderWithValue.size()" lineno="295" />
+</VariableDeclaration>
+</initialExpr>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="i" RHStype="" RHS="1" Operator="&gt;"/>
+</conditionalExpr>
+<incrementExpr>
+</incrementExpr>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<varDeclaration name="j" scope="methodvar" location="ScanMetricCalculation" type="integer" lineno="296" />
+<assignHeap name="j" scope="methodvar" type="integer" rhsType="value" rhs="i-1" lineno="296" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;i value is &apos;+i" key="debug" lineno="297"/>
+<ExpressionStatement expression="SortOrderWithValue.get(i)+&apos;-&apos;+SortOrderWithValue.get(j)" key="debug" lineno="298"/>
+<AssignmentStatement>
+<methodInvoke name="SortOrderWithValue.get" methodtype="normalmethod" returntype="String" parameters="i" returnloc="#temp1798" lineno="299" />
+<methodInvoke name="#temp1798.get" methodtype="normalmethod" returntype="String" parameters="j" returnloc="#temp1799" lineno="299" />
+<methodInvoke name="#temp1799.get" methodtype="normalmethod" returntype="String" parameters="i" returnloc="#temp1800" lineno="299" />
+<assignHeap name="improvementValue" scope="" type="" rhsType="methodinvoke" rhs="((SortOrderWithValue.get(i)-SortOrderWithValue.get(j))/SortOrderWithValue.get(i))*100" lineno="299" />
+</AssignmentStatement>
+<methodInvoke name="improvementValue.setScale" methodtype="normalmethod" returntype="String" parameters="2" returnloc="#temp1801" lineno="300" />
+<methodInvoke name="SortOrderWithImprovementValue.put" methodtype="normalmethod" returntype="String" parameters="i,improvementValue.setScale(2)" returnloc="#temp1802" lineno="300" />
+</body>
+</loop>
+<ExpressionStatement expression="&apos;Improvement value is &apos;+SortOrderWithImprovementValue" key="debug" lineno="302"/>
+<loop type="advancedfor" lineno="305">
+<methodInvoke name="variableA.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1803" lineno="305" />
+<Iterator type="string" name="keyValue" on="variableA.keySet()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="AIES_Accenture__AIESMetricData__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1804" lineno="306" />
+<varDeclaration name="metricdata" scope="methodvar" location="ScanMetricCalculation" type="AIES_Accenture__AIESMetricData__c" lineno="306" />
+<assignHeap name="metricdata" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_Accenture__AIESMetricData__c()" lineno="306" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="keyValue" returnloc="#temp1805" lineno="307" />
+<assignHeap name="metricData.AIES_ACCENTURE__Key__c" scope="" type="" rhsType="stradd" rhs="&apos;Rate increase&apos;+keyValue" lineno="307" />
+</AssignmentStatement>
+<VariableDeclaration>
+<methodInvoke name="variableA.get" methodtype="normalmethod" returntype="String" parameters="keyValue" returnloc="#temp1806" lineno="308" />
+<methodInvoke name="keyValue.Sort_Order__c" methodtype="normalmethod" returntype="String" parameters="keyValue" returnloc="#temp1807" lineno="308" />
+<methodInvoke name="integer.valueof" methodtype="normalmethod" returntype="String" parameters="variableA.get(keyValue).Sort_Order__c" returnloc="#temp1808" lineno="308" />
+<varDeclaration name="sortOrderKey" scope="methodvar" location="ScanMetricCalculation" type="integer" lineno="308" />
+<assignHeap name="sortOrderKey" scope="methodvar" type="integer" rhsType="variable" rhs="integer.valueof(variableA.get(keyValue).Sort_Order__c)" lineno="308" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Key is &apos;+keyValue" key="debug" lineno="309"/>
+<ExpressionStatement expression="&apos;Value is &apos;+SortOrderWithImprovementValue.get(sortOrderKey)" key="debug" lineno="310"/>
+<AssignmentStatement>
+<methodInvoke name="SortOrderWithImprovementValue.get" methodtype="normalmethod" returntype="String" parameters="sortOrderKey" returnloc="#temp1809" lineno="312" />
+<assignHeap name="metricData.AIES_ACCENTURE__Value__c" scope="" type="" rhsType="methodinvoke" rhs="SortOrderWithImprovementValue.get(sortOrderKey)" lineno="312" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="variableA.get" methodtype="normalmethod" returntype="String" parameters="keyValue" returnloc="#temp1810" lineno="313" />
+<methodInvoke name="#temp1810.Sort_Order__c" methodtype="normalmethod" returntype="String" parameters="keyValue" returnloc="#temp1811" lineno="313" />
+<assignHeap name="metricData.AIES_ACCENTURE__SortOrder__c" scope="" type="" rhsType="methodinvoke" rhs="variableA.get(keyValue).Sort_Order__c" lineno="313" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="metricData.AIES_ACCENTURE__Portfolio__c" scope="" type="" rhsType="variable" rhs="Pfolio" lineno="314" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="AiesMetricMaster.get" methodtype="normalmethod" returntype="String" parameters="metricName" returnloc="#temp1812" lineno="315" />
+<assignHeap name="metricData.AIES_ACCENTURE__MetricMaster__c" scope="" type="" rhsType="methodinvoke" rhs="AiesMetricMaster.get(metricName)" lineno="315" />
+</AssignmentStatement>
+<VariableDeclaration>
+<methodInvoke name="SortOrderWithImprovementValue.get" methodtype="normalmethod" returntype="String" parameters="sortOrderKey" returnloc="#temp1813" lineno="316" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="#temp1813" returnloc="#temp1814" lineno="316" />
+<varDeclaration name="cpk" scope="methodvar" location="ScanMetricCalculation" type="string" lineno="316" />
+<assignHeap name="cpk" scope="methodvar" type="string" rhsType="variable" rhs="pfolio+&apos;::&apos;+metricName+&apos;::&apos;+SortOrderWithImprovementValue.get(sortOrderKey)" lineno="316" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="metricData.AIES_ACCENTURE__External_Id__c" scope="" type="" rhsType="methodinvoke" rhs="cpk" lineno="317" />
+</AssignmentStatement>
+<if type="simpleif" lineno="320">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="metricData.AIES_ACCENTURE__Value__c" RHStype="" RHS="null" Operator="!="/>
+</conditionalExpr>
+<ifcondition expression= "metricData.AIES_ACCENTURE__Value__c!=null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="metricdataList.add" methodtype="normalmethod" returntype="String" parameters="metricData" returnloc="#temp1815" lineno="321" />
+</body>
+</true>
+</if>
+<ExpressionStatement expression="metricData" key="debug" lineno="324"/>
+</body>
+</loop>
+<methodInvoke name="lib.dml.upsert" methodtype="" returntype="" parameters="metricdataList" returnloc="" lineno="327" />
+<methodendline lineno="328"/>
+</body>
+</method>
+<method returntype="Map&amp;lt;string,Map&amp;lt;string,Scan_Metric_Data__c&amp;gt;&amp;gt;" name="getMetricData" parameters="inputMetricName:list&amp;lt;string&amp;gt;,Pfolio:string" isTestMethod="false" lineno="331" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="Map&lt;string,Map&lt;string,Scan_Metric_Data__c&gt;&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1816" lineno="332" />
+<varDeclaration name="inputMetricData" scope="methodvar" location="ScanMetricCalculation" type="Map&amp;lt;string,Map&amp;lt;string,Scan_Metric_Data__c&amp;gt;&amp;gt;" lineno="332" />
+<assignHeap name="inputMetricData" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;string,Map&lt;string,Scan_Metric_Data__c&gt;&gt;()" lineno="332" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Portfolio is &apos;+Pfolio" key="debug" lineno="333"/>
+<loop type="advancedfor" lineno="335">
+<Iterator type="string" name="metric" on="inputMetricName">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="Map&lt;string,Scan_Metric_Data__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1817" lineno="336" />
+<varDeclaration name="keyvalue" scope="methodvar" location="ScanMetricCalculation" type="Map&amp;lt;string,Scan_Metric_Data__c&amp;gt;" lineno="336" />
+<assignHeap name="keyvalue" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;string,Scan_Metric_Data__c&gt;()" lineno="336" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Id,Key__c,Metric_Master__c,Value__c,Sort_Order__c from Scan_Metric_Data__c where Metric_Master__r.name = :metric and Portfolio__c= :Pfolio ORDER BY Sort_Order__c ASC]" returnloc="#temp1818" lineno="337" />
+<varDeclaration name="ScanMetricData" scope="methodvar" location="ScanMetricCalculation" type="list&amp;lt;Scan_Metric_Data__c&amp;gt;" lineno="337" />
+<assignHeap name="ScanMetricData" scope="methodvar" type="list&amp;lt;Scan_Metric_Data__c&amp;gt;" rhsType="query" rhs="[select Id,Key__c,Metric_Master__c,Value__c,Sort_Order__c from Scan_Metric_Data__c where Metric_Master__r.name = :metric and Portfolio__c= :Pfolio ORDER BY Sort_Order__c ASC]" lineno="337" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="338">
+<Iterator type="Scan_Metric_Data__c" name="metricdata" on="ScanMetricData">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="keyvalue.put" methodtype="normalmethod" returntype="String" parameters="metricdata.Key__c,metricdata" returnloc="#temp1819" lineno="339" />
+</body>
+</loop>
+<methodInvoke name="inputMetricData.put" methodtype="normalmethod" returntype="String" parameters="metric,keyvalue" returnloc="#temp1820" lineno="341" />
+</body>
+</loop>
+<ExpressionStatement expression="&apos;Metric data &apos;+inputMetricData" key="debug" lineno="344"/>
+<ReturnBlock>
+<return expression="inputMetricData" expressiontype="@alias" lineno="345" />
+</ReturnBlock>
+<methodendline lineno="346"/>
+</body>
+</method>
+<method returntype="void" name="getMetricMasterIds" parameters="" isTestMethod="false" lineno="348" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id,name from AIES_Accenture__AIESMetricMaster__c]" returnloc="#temp1821" lineno="349" />
+<varDeclaration name="masterList" scope="methodvar" location="ScanMetricCalculation" type="List&amp;lt;AIES_Accenture__AIESMetricMaster__c&amp;gt;" lineno="349" />
+<assignHeap name="masterList" scope="methodvar" type="List&amp;lt;AIES_Accenture__AIESMetricMaster__c&amp;gt;" rhsType="query" rhs="[select id,name from AIES_Accenture__AIESMetricMaster__c]" lineno="349" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="350">
+<Iterator type="AIES_Accenture__AIESMetricMaster__c" name="master" on="masterList">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="AiesMetricMaster.put" methodtype="normalmethod" returntype="String" parameters="master.name,master.id" returnloc="#temp1822" lineno="351" />
+</body>
+</loop>
+<methodendline lineno="353"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[16, 17, 18, 23, 30, 39, 42, 43, 46, 52, 54, 61, 67, 95, 96, 101, 132, 133, 163, 168, 195, 200, 235, 240, 275, 279, 282, 294, 304, 319]" multi="[]" empty="[2, 4, 13, 14, 15, 22, 29, 35, 36, 37, 38, 45, 51, 57, 59, 60, 65, 68, 73, 77, 80, 90, 93, 94, 97, 98, 125, 127, 131, 162, 173, 177, 180, 190, 193, 194, 212, 218, 228, 233, 234, 252, 258, 268, 273, 274, 277, 281, 287, 293, 303, 311, 318, 323, 326, 329, 330, 334, 343, 347, 354]" singlebrace="[58, 88, 89, 92, 123, 126, 142, 143, 150, 161, 188, 189, 192, 207, 226, 227, 231, 232, 247, 266, 267, 271, 272, 286, 301, 322, 325, 328, 340, 342, 346, 352, 353, 355]"/>
+</stac>

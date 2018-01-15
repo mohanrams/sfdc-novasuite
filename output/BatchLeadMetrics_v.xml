@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="BatchLeadMetrics_v.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="10 KB">
+<class name="BatchLeadMetrics_v" sharing="default" implements="Database.batchable&lt;sobject&gt;,Database.stateful" isenum="false" lineno="16" modifiers="global">
+<classbody>
+<VariableDeclaration>
+<varDeclaration name="totLeads" scope="methodvar" location="BatchLeadMetrics_v" type="string" lineno="18" />
+<assignHeap name="totLeads" scope="methodvar" type="string" rhsType="value" rhs="&apos;totLeads&apos;" lineno="18" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="closureRate" scope="methodvar" location="BatchLeadMetrics_v" type="string" lineno="19" />
+<assignHeap name="closureRate" scope="methodvar" type="string" rhsType="value" rhs="&apos;closureRate&apos;" lineno="19" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="aging" scope="methodvar" location="BatchLeadMetrics_v" type="string" lineno="20" />
+<assignHeap name="aging" scope="methodvar" type="string" rhsType="value" rhs="&apos;aging&apos;" lineno="20" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="totalQuarterLead" scope="methodvar" location="BatchLeadMetrics_v" type="string" lineno="21" />
+<assignHeap name="totalQuarterLead" scope="methodvar" type="string" rhsType="value" rhs="&apos;totalQuarterLead&apos;" lineno="21" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="map&lt;string,integer&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp636" lineno="26" />
+<varDeclaration name="countbyLeadsource" scope="methodvar" location="BatchLeadMetrics_v" type="map&amp;lt;string,integer&amp;gt;" lineno="26" />
+<assignHeap name="countbyLeadsource" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newmap&lt;string,integer&gt;()" lineno="26" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="map&lt;string,integer&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp637" lineno="27" />
+<varDeclaration name="convertedCountbyLeadsource" scope="methodvar" location="BatchLeadMetrics_v" type="map&amp;lt;string,integer&amp;gt;" lineno="27" />
+<assignHeap name="convertedCountbyLeadsource" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newmap&lt;string,integer&gt;()" lineno="27" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="map&lt;date,map&lt;string,integer&gt;&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp638" lineno="28" />
+<varDeclaration name="countMap" scope="methodvar" location="BatchLeadMetrics_v" type="map&amp;lt;date,map&amp;lt;string,integer&amp;gt;&amp;gt;" lineno="28" />
+<assignHeap name="countMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newmap&lt;date,map&lt;string,integer&gt;&gt;()" lineno="28" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="map&lt;date,map&lt;string,integer&gt;&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp639" lineno="29" />
+<varDeclaration name="quarterCountMap" scope="methodvar" location="BatchLeadMetrics_v" type="map&amp;lt;date,map&amp;lt;string,integer&amp;gt;&amp;gt;" lineno="29" />
+<assignHeap name="quarterCountMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newmap&lt;date,map&lt;string,integer&gt;&gt;()" lineno="29" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;sobject&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp640" lineno="30" />
+<varDeclaration name="oppCloseList" scope="methodvar" location="BatchLeadMetrics_v" type="List&amp;lt;sobject&amp;gt;" lineno="30" />
+<assignHeap name="oppCloseList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;sobject&gt;()" lineno="30" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d0" scope="methodvar" location="BatchLeadMetrics_v" type="date" lineno="32" />
+<assignHeap name="d0" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="Util.d00" lineno="32" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d1" scope="methodvar" location="BatchLeadMetrics_v" type="date" lineno="33" />
+<assignHeap name="d1" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="Util.d01" lineno="33" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d2" scope="methodvar" location="BatchLeadMetrics_v" type="date" lineno="34" />
+<assignHeap name="d2" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="Util.d02" lineno="34" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d3" scope="methodvar" location="BatchLeadMetrics_v" type="date" lineno="35" />
+<assignHeap name="d3" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="Util.d03" lineno="35" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d4" scope="methodvar" location="BatchLeadMetrics_v" type="date" lineno="36" />
+<assignHeap name="d4" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="Util.d04" lineno="36" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d5" scope="methodvar" location="BatchLeadMetrics_v" type="date" lineno="37" />
+<assignHeap name="d5" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="Util.d05" lineno="37" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="d6" scope="methodvar" location="BatchLeadMetrics_v" type="date" lineno="38" />
+<assignHeap name="d6" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="Util.d06" lineno="38" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp640.today" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp641" lineno="40" />
+<varDeclaration name="dt" scope="methodvar" location="BatchLeadMetrics_v" type="date" lineno="40" />
+<assignHeap name="dt" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="date.today()" lineno="40" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp641.month" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp642" lineno="41" />
+<varDeclaration name="currentMnt" scope="methodvar" location="BatchLeadMetrics_v" type="integer" lineno="41" />
+<assignHeap name="currentMnt" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="dt.month()" lineno="41" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.stradd" methodtype="constructormethod" returntype="String" parameters="1" returnloc="#temp643" lineno="42" />
+<varDeclaration name="currentQ" scope="methodvar" location="BatchLeadMetrics_v" type="integer" lineno="42" />
+<assignHeap name="currentQ" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="((currentMnt-1)/3)+1" lineno="42" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp643.year" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp644" lineno="44" />
+<methodInvoke name="#temp643.newInstance" methodtype="normalmethod" returntype="String" parameters="dt.year(),currentMnt+(4-(currentMnt-((currentQ-2)*3))),1" returnloc="#temp645" lineno="44" />
+<methodInvoke name="1.addDays" methodtype="normalmethod" returntype="String" parameters="-1" returnloc="#temp646" lineno="44" />
+<methodInvoke name="lib.stradd" methodtype="constructormethod" returntype="String" parameters="#temp646" returnloc="#temp647" lineno="44" />
+<varDeclaration name="d00" scope="methodvar" location="BatchLeadMetrics_v" type="date" lineno="44" />
+<assignHeap name="d00" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="date.newInstance(dt.year(),currentMnt+(4-(currentMnt-((currentQ-2)*3))),1).addDays(-1)" lineno="44" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp647.year" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp648" lineno="45" />
+<methodInvoke name="#temp647.newInstance" methodtype="normalmethod" returntype="String" parameters="dt.year(),currentMnt+(4-(currentMnt-((currentQ-3)*3))),1" returnloc="#temp649" lineno="45" />
+<methodInvoke name="1.addDays" methodtype="normalmethod" returntype="String" parameters="-1" returnloc="#temp650" lineno="45" />
+<methodInvoke name="lib.stradd" methodtype="constructormethod" returntype="String" parameters="#temp650" returnloc="#temp651" lineno="45" />
+<varDeclaration name="d01" scope="methodvar" location="BatchLeadMetrics_v" type="date" lineno="45" />
+<assignHeap name="d01" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="date.newInstance(dt.year(),currentMnt+(4-(currentMnt-((currentQ-3)*3))),1).addDays(-1)" lineno="45" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp651.year" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp652" lineno="46" />
+<methodInvoke name="#temp651.newInstance" methodtype="normalmethod" returntype="String" parameters="dt.year(),currentMnt+(4-(currentMnt-((currentQ-4)*3))),1" returnloc="#temp653" lineno="46" />
+<methodInvoke name="1.addDays" methodtype="normalmethod" returntype="String" parameters="-1" returnloc="#temp654" lineno="46" />
+<methodInvoke name="lib.stradd" methodtype="constructormethod" returntype="String" parameters="#temp654" returnloc="#temp655" lineno="46" />
+<varDeclaration name="d02" scope="methodvar" location="BatchLeadMetrics_v" type="date" lineno="46" />
+<assignHeap name="d02" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="date.newInstance(dt.year(),currentMnt+(4-(currentMnt-((currentQ-4)*3))),1).addDays(-1)" lineno="46" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp655.year" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp656" lineno="47" />
+<methodInvoke name="#temp655.newInstance" methodtype="normalmethod" returntype="String" parameters="dt.year(),currentMnt+(4-(currentMnt-((currentQ-5)*3))),1" returnloc="#temp657" lineno="47" />
+<methodInvoke name="1.addDays" methodtype="normalmethod" returntype="String" parameters="-1" returnloc="#temp658" lineno="47" />
+<methodInvoke name="lib.stradd" methodtype="constructormethod" returntype="String" parameters="#temp658" returnloc="#temp659" lineno="47" />
+<varDeclaration name="d03" scope="methodvar" location="BatchLeadMetrics_v" type="date" lineno="47" />
+<assignHeap name="d03" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="date.newInstance(dt.year(),currentMnt+(4-(currentMnt-((currentQ-5)*3))),1).addDays(-1)" lineno="47" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp659.year" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp660" lineno="48" />
+<methodInvoke name="#temp659.newInstance" methodtype="normalmethod" returntype="String" parameters="dt.year(),currentMnt+(4-(currentMnt-((currentQ-6)*3))),1" returnloc="#temp661" lineno="48" />
+<methodInvoke name="1.addDays" methodtype="normalmethod" returntype="String" parameters="-1" returnloc="#temp662" lineno="48" />
+<methodInvoke name="lib.stradd" methodtype="constructormethod" returntype="String" parameters="#temp662" returnloc="#temp663" lineno="48" />
+<varDeclaration name="d04" scope="methodvar" location="BatchLeadMetrics_v" type="date" lineno="48" />
+<assignHeap name="d04" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="date.newInstance(dt.year(),currentMnt+(4-(currentMnt-((currentQ-6)*3))),1).addDays(-1)" lineno="48" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp663.year" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp664" lineno="49" />
+<methodInvoke name="#temp663.newInstance" methodtype="normalmethod" returntype="String" parameters="dt.year(),currentMnt+(4-(currentMnt-((currentQ-7)*3))),1" returnloc="#temp665" lineno="49" />
+<methodInvoke name="1.addDays" methodtype="normalmethod" returntype="String" parameters="-1" returnloc="#temp666" lineno="49" />
+<methodInvoke name="lib.stradd" methodtype="constructormethod" returntype="String" parameters="#temp666" returnloc="#temp667" lineno="49" />
+<varDeclaration name="d05" scope="methodvar" location="BatchLeadMetrics_v" type="date" lineno="49" />
+<assignHeap name="d05" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="date.newInstance(dt.year(),currentMnt+(4-(currentMnt-((currentQ-7)*3))),1).addDays(-1)" lineno="49" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp667.year" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp668" lineno="50" />
+<methodInvoke name="#temp667.newInstance" methodtype="normalmethod" returntype="String" parameters="dt.year(),currentMnt+(4-(currentMnt-((currentQ-8)*3))),1" returnloc="#temp669" lineno="50" />
+<methodInvoke name="1.addDays" methodtype="normalmethod" returntype="String" parameters="-1" returnloc="#temp670" lineno="50" />
+<methodInvoke name="lib.stradd" methodtype="constructormethod" returntype="String" parameters="#temp670" returnloc="#temp671" lineno="50" />
+<varDeclaration name="d06" scope="methodvar" location="BatchLeadMetrics_v" type="date" lineno="50" />
+<assignHeap name="d06" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="date.newInstance(dt.year(),currentMnt+(4-(currentMnt-((currentQ-8)*3))),1).addDays(-1)" lineno="50" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp671.year" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp672" lineno="52" />
+<methodInvoke name="#temp671.newInstance" methodtype="normalmethod" returntype="String" parameters="dt.year(),currentMnt+(4-(currentMnt-((currentQ-1)*3))),1" returnloc="#temp673" lineno="52" />
+<methodInvoke name="1.addDays" methodtype="normalmethod" returntype="String" parameters="-1" returnloc="#temp674" lineno="52" />
+<methodInvoke name="lib.stradd" methodtype="constructormethod" returntype="String" parameters="#temp674" returnloc="#temp675" lineno="52" />
+<varDeclaration name="d07" scope="methodvar" location="BatchLeadMetrics_v" type="date" lineno="52" />
+<assignHeap name="d07" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="date.newInstance(dt.year(),currentMnt+(4-(currentMnt-((currentQ-1)*3))),1).addDays(-1)" lineno="52" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="months" scope="methodvar" location="BatchLeadMetrics_v" type="List&amp;lt;date&amp;gt;" lineno="54" />
+<assignHeap name="months" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;date&gt;{d1,d2,d3,d4,d5,d6}" lineno="54" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="quarters" scope="methodvar" location="BatchLeadMetrics_v" type="List&amp;lt;date&amp;gt;" lineno="55" />
+<assignHeap name="quarters" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;date&gt;{d00,d01,d02,d03,d04,d05}" lineno="55" />
+</VariableDeclaration>
+<curlybrace exists="true"/>
+<TryStatement lineno="61">
+<body>
+<curlybrace exists="true"/>
+<loop type="simplefor" lineno="62">
+<initialExpr>
+<VariableDeclaration>
+<varDeclaration name="i" scope="methodvar" location="BatchLeadMetrics_v" type="integer" lineno="62" />
+<assignHeap name="i" scope="methodvar" type="integer" rhsType="value" rhs="1" lineno="62" />
+</VariableDeclaration>
+</initialExpr>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="i" RHStype="" RHS="6" Operator="&lt;="/>
+</conditionalExpr>
+<incrementExpr>
+</incrementExpr>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<varDeclaration name="n" scope="methodvar" location="BatchLeadMetrics_v" type="Map&amp;lt;string,integer&amp;gt;" lineno="64" />
+<assignHeap name="n" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMap&lt;string,integer&gt;{totLeads=&gt;0,aging=&gt;0}" lineno="64" />
+</VariableDeclaration>
+</body>
+</loop>
+<loop type="advancedfor" lineno="67">
+<Iterator type="date" name="currentDate" on="quarters">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<varDeclaration name="n" scope="methodvar" location="BatchLeadMetrics_v" type="map&amp;lt;string,integer&amp;gt;" lineno="69" />
+<assignHeap name="n" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newmap&lt;string,integer&gt;{totalQuarterLead=&gt;0}" lineno="69" />
+</VariableDeclaration>
+<methodInvoke name="quarterCountMap.put" methodtype="normalmethod" returntype="String" parameters="currentDate,n" returnloc="#temp680" lineno="70" />
+</body>
+</loop>
+<loop type="advancedfor" lineno="72">
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select count(id), LeadSource from opportunity where iswon = true and isclosed = true and createddate = LAST_N_Months:6 and leadsource !=null group by LeadSource]" returnloc="#temp681" lineno="72" />
+<Iterator type="sobject" name="s" on="[select count(id), LeadSource from opportunity where iswon = true and isclosed = true and createddate = LAST_N_Months:6 and leadsource !=null group by LeadSource]">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="oppCloseList.add" methodtype="normalmethod" returntype="String" parameters="s" returnloc="#temp682" lineno="73" />
+</body>
+</loop>
+</body>
+<CatchStatement type="Exception" name="e" lineno="75">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="util.ExceptionHandler" methodtype="normalmethod" returntype="String" parameters="e,&apos;BatchLeadMetrics&apos;,&apos;start&apos;" returnloc="#temp683" lineno="76" />
+</body>
+</CatchStatement>
+</TryStatement>
+<ReturnBlock>
+<methodInvoke name="Database.getquerylocator" methodtype="normalmethod" returntype="String" parameters="&apos;select leadsource, createddate, ConvertedDate, isconverted from lead where createddate &gt;= :d06 and createddate &lt;: d07&apos;" returnloc="#temp684" lineno="78" />
+<return expression="Database.getquerylocator(&apos;select leadsource, createddate, ConvertedDate, isconverted from lead where createddate &gt;= :d06 and createddate &lt;: d07&apos;)" expressiontype="@methodinvoke" lineno="78" />
+</ReturnBlock>
+<method returntype="void" name="execute" parameters="BC:Database.batchablecontext,scope:List&amp;lt;Lead&amp;gt;" isTestMethod="false" lineno="82" throws="" modifiers="public">
+<body>
+<TryStatement lineno="83">
+<body>
+<curlybrace exists="true"/>
+<loop type="advancedfor" lineno="84">
+<Iterator type="Lead" name="s" on="scope">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="86">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.LeadSource" RHStype="" RHS="null" Operator="!="/>
+</conditionalExpr>
+<ifcondition expression= "s.LeadSource!=null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="87">
+<conditionalExpr>
+<methodInvoke name="#temp684.containskey" methodtype="normalmethod" returntype="String" parameters="s.leadsource" returnloc="#temp685" lineno="87" />
+</conditionalExpr>
+<ifcondition expression= "countbyLeadsource.containskey(s.leadsource)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="countbyLeadsource.get" methodtype="normalmethod" returntype="String" parameters="s.leadsource" returnloc="#temp686" lineno="88" />
+<methodInvoke name="countbyLeadsource.put" methodtype="normalmethod" returntype="String" parameters="s.leadsource,countbyLeadsource.get(s.leadsource)+1" returnloc="#temp687" lineno="88" />
+</body>
+</true>
+<false type="" lineno="89">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="countbyLeadsource.put" methodtype="normalmethod" returntype="String" parameters="s.leadsource,1" returnloc="#temp688" lineno="90" />
+</body>
+</false>
+</if>
+<if type="simpleif" lineno="92">
+<conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "s.isConverted"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="93">
+<conditionalExpr>
+<methodInvoke name="convertedCountbyLeadsource.containskey" methodtype="normalmethod" returntype="String" parameters="s.leadsource" returnloc="#temp689" lineno="93" />
+</conditionalExpr>
+<ifcondition expression= "convertedCountbyLeadsource.containskey(s.leadsource)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="convertedCountbyLeadsource.get" methodtype="normalmethod" returntype="String" parameters="s.leadsource" returnloc="#temp690" lineno="94" />
+<methodInvoke name="convertedCountbyLeadsource.put" methodtype="normalmethod" returntype="String" parameters="s.leadsource,convertedCountbyLeadsource.get(s.leadsource)+1" returnloc="#temp691" lineno="94" />
+</body>
+</true>
+<false type="" lineno="95">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="convertedCountbyLeadsource.put" methodtype="normalmethod" returntype="String" parameters="s.leadsource,1" returnloc="#temp692" lineno="96" />
+</body>
+</false>
+</if>
+</body>
+</true>
+</if>
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="107">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.createddate" RHStype="" RHS="d0" Operator="&lt;"/>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.createddate" RHStype="" RHS="d1" Operator="&gt;="/>
+<ConditionalStatement LHStype="variable" LHS="d1" RHStype="s.createddate&gt;=d1" RHS="s.createddate&gt;=d1" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "s.createddate&lt;d0&amp;&amp;s.createddate&gt;=d1"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="calc" methodtype="normalmethod" returntype="String" parameters="s,d1" returnloc="#temp693" lineno="108" />
+</body>
+</true>
+<false type="" lineno="109">
+<body>
+<if type="elseif" lineno="109">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.createddate" RHStype="" RHS="d1" Operator="&lt;"/>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.createddate" RHStype="" RHS="d2" Operator="&gt;="/>
+<ConditionalStatement LHStype="variable" LHS="d2" RHStype="s.createddate&gt;=d2" RHS="s.createddate&gt;=d2" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "s.createddate&lt;d1&amp;&amp;s.createddate&gt;=d2"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="calc" methodtype="normalmethod" returntype="String" parameters="s,d2" returnloc="#temp694" lineno="110" />
+</body>
+</true>
+<false type="" lineno="111">
+<body>
+<if type="elseif" lineno="111">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.createddate" RHStype="" RHS="d2" Operator="&lt;"/>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.createddate" RHStype="" RHS="d3" Operator="&gt;="/>
+<ConditionalStatement LHStype="variable" LHS="d3" RHStype="s.createddate&gt;=d3" RHS="s.createddate&gt;=d3" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "s.createddate&lt;d2&amp;&amp;s.createddate&gt;=d3"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="calc" methodtype="normalmethod" returntype="String" parameters="s,d3" returnloc="#temp695" lineno="112" />
+</body>
+</true>
+<false type="" lineno="113">
+<body>
+<if type="elseif" lineno="113">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.createddate" RHStype="" RHS="d3" Operator="&lt;"/>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.createddate" RHStype="" RHS="d4" Operator="&gt;="/>
+<ConditionalStatement LHStype="variable" LHS="d4" RHStype="s.createddate&gt;=d4" RHS="s.createddate&gt;=d4" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "s.createddate&lt;d3&amp;&amp;s.createddate&gt;=d4"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="calc" methodtype="normalmethod" returntype="String" parameters="s,d4" returnloc="#temp696" lineno="114" />
+</body>
+</true>
+<false type="" lineno="115">
+<body>
+<if type="elseif" lineno="115">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.createddate" RHStype="" RHS="d4" Operator="&lt;"/>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.createddate" RHStype="" RHS="d5" Operator="&gt;="/>
+<ConditionalStatement LHStype="variable" LHS="d5" RHStype="s.createddate&gt;=d5" RHS="s.createddate&gt;=d5" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "s.createddate&lt;d4&amp;&amp;s.createddate&gt;=d5"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="calc" methodtype="normalmethod" returntype="String" parameters="s,d5" returnloc="#temp697" lineno="116" />
+</body>
+</true>
+<false type="" lineno="117">
+<body>
+<if type="elseif" lineno="117">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.createddate" RHStype="" RHS="d5" Operator="&lt;"/>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.createddate" RHStype="" RHS="d6" Operator="&gt;="/>
+<ConditionalStatement LHStype="variable" LHS="d6" RHStype="s.createddate&gt;=d6" RHS="s.createddate&gt;=d6" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "s.createddate&lt;d5&amp;&amp;s.createddate&gt;=d6"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="calc" methodtype="normalmethod" returntype="String" parameters="s,d6" returnloc="#temp698" lineno="118" />
+</body>
+</true>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+</body>
+</false>
+</if>
+<if type="simpleif" lineno="121">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.createddate" RHStype="" RHS="d01" Operator="&gt;"/>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.createddate" RHStype="" RHS="d00" Operator="&lt;="/>
+<ConditionalStatement LHStype="variable" LHS="d00" RHStype="s.createddate&lt;=d00" RHS="s.createddate&lt;=d00" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "s.createddate&gt;d01&amp;&amp;s.createddate&lt;=d00"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="calcQuarter" methodtype="normalmethod" returntype="String" parameters="s,d00" returnloc="#temp699" lineno="122" />
+</body>
+</true>
+<false type="" lineno="124">
+<body>
+<if type="elseif" lineno="124">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.createddate" RHStype="" RHS="d02" Operator="&gt;"/>
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="s.createddate" RHStype="" RHS="d01" Operator="&lt;="/>
+<ConditionalStatement LHStype="variable" LHS="d01" RHStype="s.createddate&lt;=d01" RHS="s.createddate&lt;=d01" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "s.createddate&gt;d02&amp;&amp;s.createddate&lt;=d01"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="calcQuarter" methodtype="normalmethod" returntype="String" parameters="s,d01" returnloc="#temp700" lineno="125" />
+</body>
+</true>
+</if>
+</body>
+</false>
+</if>
+</body>
+</loop>
+</body>
+<CatchStatement type="Exception" name="e" lineno="129">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="util.ExceptionHandler" methodtype="normalmethod" returntype="String" parameters="e,&apos;BatchLeadMetrics&apos;,&apos;execute&apos;" returnloc="#temp701" lineno="130" />
+</body>
+</CatchStatement>
+</TryStatement>
+<methodendline lineno="132"/>
+</body>
+</method>
+<method returntype="void" name="finish" parameters="BC:Database.batchablecontext" isTestMethod="false" lineno="135" throws="" modifiers="public">
+<body>
+<TryStatement lineno="136">
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="List&lt;AIES_ACCENTurE__AIESMetricData__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp702" lineno="138" />
+<varDeclaration name="obj" scope="methodvar" location="BatchLeadMetrics_v" type="AIES_ACCENTurE__AIESMetricData__c[]" lineno="138" />
+<assignHeap name="obj" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_ACCENTurE__AIESMetricData__c&gt;()" lineno="138" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp702.getMetricMaster" methodtype="normalmethod" returntype="String" parameters="&apos;BP_Lead_Aging_Trend&apos;" returnloc="#temp703" lineno="140" />
+<varDeclaration name="m" scope="methodvar" location="BatchLeadMetrics_v" type="AIES_ACCENTurE__AIESMetricMaster__c" lineno="140" />
+<assignHeap name="m" scope="methodvar" type="AIES_ACCENTurE__AIESMetricMaster__c" rhsType="methodinvoke" rhs="Util.getMetricMaster(&apos;BP_Lead_Aging_Trend&apos;)" lineno="140" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="i" scope="methodvar" location="BatchLeadMetrics_v" type="integer" lineno="141" />
+<assignHeap name="i" scope="methodvar" type="integer" rhsType="value" rhs="1" lineno="141" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="142">
+<Iterator type="date" name="d" on="months">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="Util.monthName" methodtype="normalmethod" returntype="String" parameters="d" returnloc="#temp704" lineno="143" />
+<methodInvoke name="#temp704.get" methodtype="normalmethod" returntype="String" parameters="d" returnloc="#temp705" lineno="143" />
+<methodInvoke name="#temp705.get" methodtype="normalmethod" returntype="String" parameters="aging" returnloc="#temp706" lineno="143" />
+<methodInvoke name="Util.createMetricData" methodtype="normalmethod" returntype="String" parameters="Util.monthName(d),countmap.get(d).get(aging),m,i" returnloc="#temp707" lineno="143" />
+<methodInvoke name="obj.add" methodtype="normalmethod" returntype="String" parameters="Util.createMetricData(Util.monthName(d),countmap.get(d).get(aging),m,i)" returnloc="#temp708" lineno="143" />
+</body>
+</loop>
+<VariableDeclaration>
+<methodInvoke name="Util.getMetricMaster" methodtype="normalmethod" returntype="String" parameters="&apos;BP_Lead_count&apos;" returnloc="#temp709" lineno="147" />
+<varDeclaration name="m1" scope="methodvar" location="BatchLeadMetrics_v" type="AIES_ACCENTurE__AIESMetricMaster__c" lineno="147" />
+<assignHeap name="m1" scope="methodvar" type="AIES_ACCENTurE__AIESMetricMaster__c" rhsType="methodinvoke" rhs="Util.getMetricMaster(&apos;BP_Lead_count&apos;)" lineno="147" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="i" scope="" type="" rhsType="methodinvoke" rhs="1" lineno="148" />
+</AssignmentStatement>
+<loop type="advancedfor" lineno="149">
+<methodInvoke name="countbyLeadsource.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp710" lineno="149" />
+<Iterator type="string" name="d" on="countbyLeadsource.keySet()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="countbyLeadsource.get" methodtype="normalmethod" returntype="String" parameters="d" returnloc="#temp711" lineno="150" />
+<methodInvoke name="Util.createMetricData" methodtype="normalmethod" returntype="String" parameters="d,countbyLeadsource.get(d),m1,i" returnloc="#temp712" lineno="150" />
+<methodInvoke name="obj.add" methodtype="normalmethod" returntype="String" parameters="Util.createMetricData(d,countbyLeadsource.get(d),m1,i)" returnloc="#temp713" lineno="150" />
+</body>
+</loop>
+<VariableDeclaration>
+<methodInvoke name="Util.getMetricMaster" methodtype="normalmethod" returntype="String" parameters="&apos;BP_Lead_Conversion_rate&apos;" returnloc="#temp714" lineno="154" />
+<varDeclaration name="m2" scope="methodvar" location="BatchLeadMetrics_v" type="AIES_ACCENTurE__AIESMetricMaster__c" lineno="154" />
+<assignHeap name="m2" scope="methodvar" type="AIES_ACCENTurE__AIESMetricMaster__c" rhsType="methodinvoke" rhs="Util.getMetricMaster(&apos;BP_Lead_Conversion_rate&apos;)" lineno="154" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="i" scope="" type="" rhsType="methodinvoke" rhs="1" lineno="155" />
+</AssignmentStatement>
+<loop type="advancedfor" lineno="156">
+<methodInvoke name="convertedCountbyLeadsource.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp715" lineno="156" />
+<Iterator type="string" name="d" on="convertedCountbyLeadsource.keySet()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="countbyLeadsource.get" methodtype="normalmethod" returntype="String" parameters="d" returnloc="#temp716" lineno="157" />
+<ConditionalStatement LHStype="" LHS="countbyLeadsource.get(d)" RHStype="" RHS="0" Operator="=="/>
+<methodInvoke name="#temp716.get" methodtype="normalmethod" returntype="String" parameters="d" returnloc="#temp717" lineno="157" />
+<methodInvoke name="#temp717.get" methodtype="normalmethod" returntype="String" parameters="d" returnloc="#temp718" lineno="157" />
+<methodInvoke name="Util.createMetricData" methodtype="normalmethod" returntype="String" parameters="d,(countbyLeadsource.get(d)==0?0:(100*(convertedCountbyLeadsource.get(d)/countbyLeadsource.get(d)))),m2,i" returnloc="#temp719" lineno="157" />
+<methodInvoke name="obj.add" methodtype="normalmethod" returntype="String" parameters="Util.createMetricData(d,(countbyLeadsource.get(d)==0?0:(100*(convertedCountbyLeadsource.get(d)/countbyLeadsource.get(d)))),m2,i)" returnloc="#temp720" lineno="157" />
+</body>
+</loop>
+<VariableDeclaration>
+<methodInvoke name="Util.getMetricMaster" methodtype="normalmethod" returntype="String" parameters="&apos;SM_BulletSalesVolInc&apos;" returnloc="#temp721" lineno="163" />
+<varDeclaration name="m3" scope="methodvar" location="BatchLeadMetrics_v" type="AIES_ACCENTurE__AIESMetricMaster__c" lineno="163" />
+<assignHeap name="m3" scope="methodvar" type="AIES_ACCENTurE__AIESMetricMaster__c" rhsType="methodinvoke" rhs="Util.getMetricMaster(&apos;SM_BulletSalesVolInc&apos;)" lineno="163" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp721.get" methodtype="normalmethod" returntype="String" parameters="d00" returnloc="#temp722" lineno="168" />
+<methodInvoke name="#temp722.get" methodtype="normalmethod" returntype="String" parameters="totalQuarterLead" returnloc="#temp723" lineno="168" />
+<varDeclaration name="currentQuarterCount" scope="methodvar" location="BatchLeadMetrics_v" type="decimal" lineno="168" />
+<assignHeap name="currentQuarterCount" scope="methodvar" type="decimal" rhsType="variable" rhs="quarterCountMap.get(d00).get(totalQuarterLead)" lineno="168" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="#temp723.get" methodtype="normalmethod" returntype="String" parameters="d01" returnloc="#temp724" lineno="169" />
+<methodInvoke name="#temp724.get" methodtype="normalmethod" returntype="String" parameters="totalQuarterLead" returnloc="#temp725" lineno="169" />
+<varDeclaration name="previousQuarterCount" scope="methodvar" location="BatchLeadMetrics_v" type="decimal" lineno="169" />
+<assignHeap name="previousQuarterCount" scope="methodvar" type="decimal" rhsType="variable" rhs="quarterCountMap.get(d01).get(totalQuarterLead)" lineno="169" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="leadVolumeIncrease" scope="methodvar" location="BatchLeadMetrics_v" type="decimal" lineno="171" />
+<assignHeap name="leadVolumeIncrease" scope="methodvar" type="decimal" rhsType="value" rhs="0.0" lineno="171" />
+</VariableDeclaration>
+<if type="simpleif" lineno="173">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="previousQuarterCount" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "previousQuarterCount&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="leadVolumeIncrease" scope="" type="" rhsType="methodinvoke" rhs="((currentQuarterCount-previousQuarterCount)*100/previousQuarterCount)" lineno="175" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+<methodInvoke name="Util.createMetricData" methodtype="normalmethod" returntype="String" parameters="&apos;Key&apos;,leadVolumeIncrease,m3" returnloc="#temp726" lineno="178" />
+<methodInvoke name="obj.add" methodtype="normalmethod" returntype="String" parameters="Util.createMetricData(&apos;Key&apos;,leadVolumeIncrease,m3)" returnloc="#temp727" lineno="178" />
+<VariableDeclaration>
+<methodInvoke name="Util.getMetricMaster" methodtype="normalmethod" returntype="String" parameters="&apos;BP_Opp_Won_Lead_Source&apos;" returnloc="#temp728" lineno="184" />
+<varDeclaration name="m6" scope="methodvar" location="BatchLeadMetrics_v" type="AIES_ACCENTurE__AIESMetricMaster__c" lineno="184" />
+<assignHeap name="m6" scope="methodvar" type="AIES_ACCENTurE__AIESMetricMaster__c" rhsType="methodinvoke" rhs="Util.getMetricMaster(&apos;BP_Opp_Won_Lead_Source&apos;)" lineno="184" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;oppCloseList**********&apos;+oppCloseList" key="debug" lineno="185"/>
+<AssignmentStatement>
+<assignHeap name="i" scope="" type="" rhsType="value" rhs="1" lineno="186" />
+</AssignmentStatement>
+<if type="simpleif" lineno="187">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="oppCloseList" RHStype="" RHS="null" Operator="!="/>
+</conditionalExpr>
+<ifcondition expression= "oppCloseList!=null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<loop type="advancedfor" lineno="189">
+<Iterator type="sobject" name="o" on="oppCloseList">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="o.get" methodtype="normalmethod" returntype="String" parameters="&apos;LeadSource&apos;" returnloc="#temp729" lineno="190" />
+<methodInvoke name="string.valueof" methodtype="normalmethod" returntype="String" parameters="o.get(&apos;LeadSource&apos;)" returnloc="#temp730" lineno="190" />
+<methodInvoke name="#temp730.get" methodtype="normalmethod" returntype="String" parameters="&apos;expr0&apos;" returnloc="#temp731" lineno="190" />
+<methodInvoke name="#temp730.valueof" methodtype="normalmethod" returntype="String" parameters="o.get(&apos;expr0&apos;)" returnloc="#temp732" lineno="190" />
+<methodInvoke name="#temp730.valueOf" methodtype="normalmethod" returntype="String" parameters="string.valueof(o.get(&apos;expr0&apos;))" returnloc="#temp733" lineno="190" />
+<methodInvoke name="Util.createMetricData" methodtype="normalmethod" returntype="String" parameters="string.valueof(o.get(&apos;LeadSource&apos;)),decimal.valueOf(string.valueof(o.get(&apos;expr0&apos;))),m6,i" returnloc="#temp734" lineno="190" />
+<methodInvoke name="obj.add" methodtype="normalmethod" returntype="String" parameters="Util.createMetricData(string.valueof(o.get(&apos;LeadSource&apos;)),decimal.valueOf(string.valueof(o.get(&apos;expr0&apos;))),m6,i)" returnloc="#temp735" lineno="190" />
+</body>
+</loop>
+</body>
+</true>
+</if>
+<methodInvoke name="lib.dml.upsert" methodtype="" returntype="" parameters="obj" returnloc="" lineno="195" />
+</body>
+<CatchStatement type="exception" name="e" lineno="197">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="util.exceptionHandler" methodtype="normalmethod" returntype="String" parameters="e,&apos;BatchLeadMetrics&apos;,&apos;finish&apos;" returnloc="#temp736" lineno="199" />
+</body>
+</CatchStatement>
+</TryStatement>
+<methodendline lineno="202"/>
+</body>
+</method>
+<method returntype="void" name="calcQuarter" parameters="s:Lead,d:date" isTestMethod="false" lineno="209" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="quarterCountMap.get" methodtype="normalmethod" returntype="String" parameters="d" returnloc="#temp737" lineno="211" />
+<varDeclaration name="quarterRec" scope="methodvar" location="BatchLeadMetrics_v" type="map&amp;lt;string,integer&amp;gt;" lineno="211" />
+<assignHeap name="quarterRec" scope="methodvar" type="map&amp;lt;string,integer&amp;gt;" rhsType="variable" rhs="quarterCountMap.get(d)" lineno="211" />
+</VariableDeclaration>
+<methodInvoke name="quarterRec.get" methodtype="normalmethod" returntype="String" parameters="totalQuarterLead" returnloc="#temp738" lineno="212" />
+<methodInvoke name="quarterRec.put" methodtype="normalmethod" returntype="String" parameters="totalQuarterLead,quarterRec.get(totalQuarterLead)+1" returnloc="#temp739" lineno="212" />
+<methodInvoke name="quarterCountMap.put" methodtype="normalmethod" returntype="String" parameters="d,quarterRec" returnloc="#temp740" lineno="213" />
+<methodendline lineno="214"/>
+</body>
+</method>
+<method returntype="void" name="calc" parameters="s:Lead,d:date" isTestMethod="false" lineno="223" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="countmap.get" methodtype="normalmethod" returntype="String" parameters="d" returnloc="#temp741" lineno="225" />
+<varDeclaration name="monthRec" scope="methodvar" location="BatchLeadMetrics_v" type="map&amp;lt;string,integer&amp;gt;" lineno="225" />
+<assignHeap name="monthRec" scope="methodvar" type="map&amp;lt;string,integer&amp;gt;" rhsType="variable" rhs="countmap.get(d)" lineno="225" />
+</VariableDeclaration>
+<methodInvoke name="monthRec.get" methodtype="normalmethod" returntype="String" parameters="totLeads" returnloc="#temp742" lineno="227" />
+<methodInvoke name="monthRec.put" methodtype="normalmethod" returntype="String" parameters="totLeads,monthRec.get(totLeads)+1" returnloc="#temp743" lineno="227" />
+<if type="simpleif" lineno="230">
+<conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "s.isConverted"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="monthRec.get" methodtype="normalmethod" returntype="String" parameters="aging" returnloc="#temp744" lineno="231" />
+<methodInvoke name="" methodtype="normalmethod" returntype="String" parameters=".date(" returnloc="#temp745" lineno="231" />
+<methodInvoke name="#temp745.daysbetween" methodtype="normalmethod" returntype="String" parameters="s.ConvertedDate" returnloc="#temp746" lineno="231" />
+<methodInvoke name="#temp744.createddate" methodtype="normalmethod" returntype="String" parameters="aging,monthRec.get(aging)+s.createddate.date().daysbetween(s.ConvertedDate)" returnloc="#temp747" lineno="231" />
+</body>
+</true>
+</if>
+<methodInvoke name="countMap.put" methodtype="normalmethod" returntype="String" parameters="d,monthRec" returnloc="#temp748" lineno="235" />
+<methodendline lineno="237"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[22, 23, 24, 44, 45, 46, 51, 60, 124, 161, 165, 166, 174, 233, 234]" multi="[1-14, 98-103, 180-183, 203-208, 215-222, 229-229]" empty="[13, 15, 17, 25, 31, 39, 43, 53, 56, 58, 59, 63, 68, 79, 81, 85, 106, 120, 127, 133, 134, 139, 146, 153, 160, 162, 164, 167, 170, 172, 177, 179, 194, 200, 210, 224, 226, 228, 236]" singlebrace="[66, 71, 74, 77, 80, 91, 97, 104, 105, 119, 123, 126, 128, 131, 132, 137, 145, 152, 159, 176, 188, 192, 193, 196, 198, 201, 202, 214, 232, 237, 238]"/>
+</stac>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="postMetricDataFromStage.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="1 KB">
+<class name="postMetricDataFromStage" sharing="default" implements="" isenum="false" lineno="1" modifiers="global">
+<classbody>
+<method returntype="void" name="copyMetricData" parameters="pid:string" isTestMethod="false" lineno="3" throws="" modifiers="global">
+<body>
+<ExpressionStatement expression="&apos;Pid is &apos;+pid" key="debug" lineno="4"/>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id,name,Metric_Master__c,Metric_Master__r.name from Scan_Metric__c where Store_Metric_in_AIESMetricData__c=true]" returnloc="#temp1297" lineno="5" />
+<varDeclaration name="scanMetricList" scope="methodvar" location="postMetricDataFromStage" type="List&amp;lt;Scan_Metric__c&amp;gt;" lineno="5" />
+<assignHeap name="scanMetricList" scope="methodvar" type="List&amp;lt;Scan_Metric__c&amp;gt;" rhsType="query" rhs="[select id,name,Metric_Master__c,Metric_Master__r.name from Scan_Metric__c where Store_Metric_in_AIESMetricData__c=true]" lineno="5" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Metric_master_c[0]&apos;+scanMetricList[0].Metric_Master__c" key="debug" lineno="6"/>
+<loop type="advancedfor" lineno="7">
+<Iterator type="Scan_Metric__c" name="metric" on="scanMetricList">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id,Name,Key__c,Metric_Master__c,Sort_Order__c,Portfolio__c,Value__c,External_Id__c from Scan_Metric_Data__c where Metric_Master__c=:metric.id and Portfolio__c=:pid]" returnloc="#temp1298" lineno="8" />
+<varDeclaration name="scanMetricDataList" scope="methodvar" location="postMetricDataFromStage" type="List&amp;lt;Scan_Metric_Data__c&amp;gt;" lineno="8" />
+<assignHeap name="scanMetricDataList" scope="methodvar" type="List&amp;lt;Scan_Metric_Data__c&amp;gt;" rhsType="query" rhs="[select id,Name,Key__c,Metric_Master__c,Sort_Order__c,Portfolio__c,Value__c,External_Id__c from Scan_Metric_Data__c where Metric_Master__c=:metric.id and Portfolio__c=:pid]" lineno="8" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;AIES_ACCENTURE__AIESMetricData__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1299" lineno="9" />
+<varDeclaration name="metricdataList" scope="methodvar" location="postMetricDataFromStage" type="List&amp;lt;AIES_ACCENTURE__AIESMetricData__c&amp;gt;" lineno="9" />
+<assignHeap name="metricdataList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_ACCENTURE__AIESMetricData__c&gt;()" lineno="9" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="11">
+<Iterator type="Scan_Metric_Data__c" name="stageMetricData" on="scanMetricDataList">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="AIES_ACCENTURE__AIESMetricData__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1300" lineno="12" />
+<varDeclaration name="metricdata" scope="methodvar" location="postMetricDataFromStage" type="AIES_ACCENTURE__AIESMetricData__c" lineno="12" />
+<assignHeap name="metricdata" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_ACCENTURE__AIESMetricData__c()" lineno="12" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="metricdata.AIES_ACCENTURE__MetricMaster__c" scope="" type="" rhsType="methodinvoke" rhs="metric.Metric_Master__c" lineno="13" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="metricdata.AIES_ACCENTURE__Key__c" scope="" type="" rhsType="variable" rhs="stageMetricData.Key__c" lineno="14" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="metricdata.AIES_ACCENTURE__Value__c" scope="" type="" rhsType="variable" rhs="stageMetricData.Value__c" lineno="15" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="metricdata.AIES_ACCENTURE__Portfolio__c" scope="" type="" rhsType="variable" rhs="stageMetricData.Portfolio__c" lineno="16" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="metricdata.AIES_ACCENTURE__SortOrder__c" scope="" type="" rhsType="variable" rhs="stageMetricData.Sort_Order__c" lineno="17" />
+</AssignmentStatement>
+<if type="simpleif" lineno="18">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="stageMetricData.External_Id__c" RHStype="" RHS="null" Operator="!="/>
+</conditionalExpr>
+<ifcondition expression= "stageMetricData.External_Id__c!=null"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="metricdata.AIES_ACCENTURE__External_Id__c" scope="" type="" rhsType="variable" rhs="stageMetricData.External_Id__c" lineno="19" />
+</AssignmentStatement>
+<methodInvoke name="metricdataList.add" methodtype="normalmethod" returntype="String" parameters="metricdata" returnloc="#temp1301" lineno="20" />
+</body>
+</true>
+</if>
+</body>
+</loop>
+<ExpressionStatement expression="&apos;Going to insert&apos;+metric.Metric_Master__r.name+&apos; metric data of size &apos;+metricdataList.size()" key="debug" lineno="23"/>
+<methodInvoke name="lib.dml.upsert" methodtype="" returntype="" parameters="metricdataList" returnloc="" lineno="24" />
+<ExpressionStatement expression="&apos;Successfully inserted data&apos;" key="debug" lineno="25"/>
+</body>
+</loop>
+<methodendline lineno="27"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[]" multi="[]" empty="[2, 10, 28]" singlebrace="[21, 22, 26, 27, 29]"/>
+</stac>

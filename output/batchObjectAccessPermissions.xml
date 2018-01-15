@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="batchObjectAccessPermissions.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="24 KB">
+<class name="batchObjectAccessPermissions" sharing="default" implements="Database.batchable&lt;sobject&gt;,Database.stateful" isenum="false" lineno="11" modifiers="global">
+<classbody>
+<VariableDeclaration>
+<varDeclaration name="x1" scope="methodvar" location="batchObjectAccessPermissions" type="string" lineno="13" />
+<assignHeap name="x1" scope="methodvar" type="string" rhsType="value" rhs="&apos;&apos;" lineno="13" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="create" scope="methodvar" location="batchObjectAccessPermissions" type="string" lineno="14" />
+<assignHeap name="create" scope="methodvar" type="string" rhsType="value" rhs="&apos;&apos;" lineno="14" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="c1" scope="methodvar" location="batchObjectAccessPermissions" type="integer" lineno="15" />
+<assignHeap name="c1" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="15" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="x2" scope="methodvar" location="batchObjectAccessPermissions" type="string" lineno="17" />
+<assignHeap name="x2" scope="methodvar" type="string" rhsType="value" rhs="&apos;&apos;" lineno="17" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="Edit" scope="methodvar" location="batchObjectAccessPermissions" type="string" lineno="18" />
+<assignHeap name="Edit" scope="methodvar" type="string" rhsType="value" rhs="&apos;&apos;" lineno="18" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="c2" scope="methodvar" location="batchObjectAccessPermissions" type="integer" lineno="19" />
+<assignHeap name="c2" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="19" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="x3" scope="methodvar" location="batchObjectAccessPermissions" type="string" lineno="21" />
+<assignHeap name="x3" scope="methodvar" type="string" rhsType="value" rhs="&apos;&apos;" lineno="21" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="CreateEdit" scope="methodvar" location="batchObjectAccessPermissions" type="string" lineno="22" />
+<assignHeap name="CreateEdit" scope="methodvar" type="string" rhsType="value" rhs="&apos;&apos;" lineno="22" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="c3" scope="methodvar" location="batchObjectAccessPermissions" type="integer" lineno="23" />
+<assignHeap name="c3" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="23" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="x4" scope="methodvar" location="batchObjectAccessPermissions" type="string" lineno="25" />
+<assignHeap name="x4" scope="methodvar" type="string" rhsType="value" rhs="&apos;&apos;" lineno="25" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="ConvertLeads" scope="methodvar" location="batchObjectAccessPermissions" type="string" lineno="26" />
+<assignHeap name="ConvertLeads" scope="methodvar" type="string" rhsType="value" rhs="&apos;&apos;" lineno="26" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="c4" scope="methodvar" location="batchObjectAccessPermissions" type="integer" lineno="27" />
+<assignHeap name="c4" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="27" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="x5" scope="methodvar" location="batchObjectAccessPermissions" type="string" lineno="29" />
+<assignHeap name="x5" scope="methodvar" type="string" rhsType="value" rhs="&apos;&apos;" lineno="29" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="ManageLeads" scope="methodvar" location="batchObjectAccessPermissions" type="string" lineno="30" />
+<assignHeap name="ManageLeads" scope="methodvar" type="string" rhsType="value" rhs="&apos;&apos;" lineno="30" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="c5" scope="methodvar" location="batchObjectAccessPermissions" type="integer" lineno="31" />
+<assignHeap name="c5" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="31" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="objects" scope="methodvar" location="batchObjectAccessPermissions" type="List&amp;lt;string&amp;gt;" lineno="33" />
+<assignHeap name="objects" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;{&apos;Account&apos;,&apos;Lead&apos;,&apos;Opportunity&apos;,&apos;Contact&apos;,&apos;Case&apos;}" lineno="33" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="accessType" scope="methodvar" location="batchObjectAccessPermissions" type="List&amp;lt;string&amp;gt;" lineno="34" />
+<assignHeap name="accessType" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;{&apos;Create&apos;,&apos;Edit&apos;,&apos;Create AND Edit&apos;,&apos;ConvertLeads&apos;,&apos;ManageLeads&apos;}" lineno="34" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="MAP&lt;string,integer&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp783" lineno="37" />
+<varDeclaration name="createAccessMap" scope="methodvar" location="batchObjectAccessPermissions" type="MAP&amp;lt;string,integer&amp;gt;" lineno="37" />
+<assignHeap name="createAccessMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMAP&lt;string,integer&gt;()" lineno="37" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="MAP&lt;string,integer&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp784" lineno="38" />
+<varDeclaration name="editAccessMap" scope="methodvar" location="batchObjectAccessPermissions" type="MAP&amp;lt;string,integer&amp;gt;" lineno="38" />
+<assignHeap name="editAccessMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMAP&lt;string,integer&gt;()" lineno="38" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="MAP&lt;string,integer&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp785" lineno="39" />
+<varDeclaration name="bothAccessMap" scope="methodvar" location="batchObjectAccessPermissions" type="MAP&amp;lt;string,integer&amp;gt;" lineno="39" />
+<assignHeap name="bothAccessMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMAP&lt;string,integer&gt;()" lineno="39" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="MAP&lt;string,integer&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp786" lineno="40" />
+<varDeclaration name="convertLeadAccessMap" scope="methodvar" location="batchObjectAccessPermissions" type="MAP&amp;lt;string,integer&amp;gt;" lineno="40" />
+<assignHeap name="convertLeadAccessMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMAP&lt;string,integer&gt;()" lineno="40" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="MAP&lt;string,integer&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp787" lineno="41" />
+<varDeclaration name="manageLeadAccessMap" scope="methodvar" location="batchObjectAccessPermissions" type="MAP&amp;lt;string,integer&amp;gt;" lineno="41" />
+<assignHeap name="manageLeadAccessMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMAP&lt;string,integer&gt;()" lineno="41" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="MAP&lt;string,integer&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp788" lineno="43" />
+<varDeclaration name="createOnlyAccessMap" scope="methodvar" location="batchObjectAccessPermissions" type="MAP&amp;lt;string,integer&amp;gt;" lineno="43" />
+<assignHeap name="createOnlyAccessMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMAP&lt;string,integer&gt;()" lineno="43" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="MAP&lt;string,integer&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp789" lineno="44" />
+<varDeclaration name="editOnlyAccessMap" scope="methodvar" location="batchObjectAccessPermissions" type="MAP&amp;lt;string,integer&amp;gt;" lineno="44" />
+<assignHeap name="editOnlyAccessMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMAP&lt;string,integer&gt;()" lineno="44" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="MAP&lt;string,integer&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp790" lineno="45" />
+<varDeclaration name="bothOnlyAccessMap" scope="methodvar" location="batchObjectAccessPermissions" type="MAP&amp;lt;string,integer&amp;gt;" lineno="45" />
+<assignHeap name="bothOnlyAccessMap" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newMAP&lt;string,integer&gt;()" lineno="45" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="totalUserCountCreate" scope="methodvar" location="batchObjectAccessPermissions" type="integer" lineno="47" />
+<assignHeap name="totalUserCountCreate" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="0" lineno="47" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="totalUserCountEdit" scope="methodvar" location="batchObjectAccessPermissions" type="integer" lineno="48" />
+<assignHeap name="totalUserCountEdit" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="0" lineno="48" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="totalUserCountBoth" scope="methodvar" location="batchObjectAccessPermissions" type="integer" lineno="49" />
+<assignHeap name="totalUserCountBoth" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="0" lineno="49" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="totalUserCountConvertLead" scope="methodvar" location="batchObjectAccessPermissions" type="integer" lineno="50" />
+<assignHeap name="totalUserCountConvertLead" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="0" lineno="50" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="totalUserCountManageLead" scope="methodvar" location="batchObjectAccessPermissions" type="integer" lineno="51" />
+<assignHeap name="totalUserCountManageLead" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="0" lineno="51" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="totalUserCountCreate1" scope="methodvar" location="batchObjectAccessPermissions" type="integer" lineno="53" />
+<assignHeap name="totalUserCountCreate1" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="0" lineno="53" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="totalUserCountEdit1" scope="methodvar" location="batchObjectAccessPermissions" type="integer" lineno="54" />
+<assignHeap name="totalUserCountEdit1" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="0" lineno="54" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="totalUserCountBoth1" scope="methodvar" location="batchObjectAccessPermissions" type="integer" lineno="55" />
+<assignHeap name="totalUserCountBoth1" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="0" lineno="55" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="query" scope="methodvar" location="batchObjectAccessPermissions" type="string" lineno="57" />
+<assignHeap name="query" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="&apos;&apos;" lineno="57" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="processingList" scope="methodvar" location="batchObjectAccessPermissions" type="Set&amp;lt;string&amp;gt;" lineno="58" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="objectName" scope="methodvar" location="batchObjectAccessPermissions" type="string" lineno="59" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp791" lineno="60" />
+<varDeclaration name="objectsList" scope="methodvar" location="batchObjectAccessPermissions" type="List&amp;lt;string&amp;gt;" lineno="60" />
+<assignHeap name="objectsList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;()" lineno="60" />
+</VariableDeclaration>
+<method returntype="void" name="DoProcess" parameters="" isTestMethod="false" lineno="61" throws="" modifiers="global">
+<body>
+<methodendline lineno="63"/>
+</body>
+</method>
+<method returntype="" name="batchObjectAccessPermissions" parameters="" isTestMethod="false" lineno="65" throws="" modifiers="global">
+<body>
+<methodInvoke name="DoProcess" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp792" lineno="67" />
+<methodendline lineno="68"/>
+</body>
+</method>
+<method returntype="" name="batchObjectAccessPermissions" parameters="objNames:SET&amp;lt;string&amp;gt;" isTestMethod="false" lineno="69" throws="" modifiers="global">
+<body>
+<AssignmentStatement>
+<assignHeap name="processingList" scope="" type="" rhsType="variable" rhs="objNames" lineno="81" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="List&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="objNames" returnloc="#temp793" lineno="82" />
+<assignHeap name="objectsList" scope="" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;(objNames)" lineno="82" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="objectName" scope="" type="" rhsType="value" rhs="objectsList[0]" lineno="83" />
+</AssignmentStatement>
+<methodendline lineno="85"/>
+</body>
+</method>
+<method returntype="Database.querylocator" name="start" parameters="BC:Database.batchablecontext" isTestMethod="false" lineno="89" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<varDeclaration name="s" scope="methodvar" location="batchObjectAccessPermissions" type="string" lineno="96" />
+<assignHeap name="s" scope="methodvar" type="string" rhsType="value" rhs="&apos;system administrator&apos;" lineno="96" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="string.escapeSingleQuotes" methodtype="normalmethod" returntype="String" parameters="s" returnloc="#temp795" lineno="97" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="&apos;\&apos; and isActive=true and Profile.PermissionsModifyAllData=false &apos;" returnloc="#temp796" lineno="97" />
+<varDeclaration name="query" scope="methodvar" location="batchObjectAccessPermissions" type="string" lineno="97" />
+<assignHeap name="query" scope="methodvar" type="string" rhsType="value" rhs="&apos;select id,Name from User where Profile.Name != \&apos;&apos;+string.escapeSingleQuotes(s)+&apos;\&apos; and isActive=true and Profile.PermissionsModifyAllData=false &apos;" lineno="97" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Query is&apos;+query" key="debug" lineno="98"/>
+<ReturnBlock>
+<methodInvoke name="Database.getquerylocator" methodtype="normalmethod" returntype="String" parameters="query" returnloc="#temp797" lineno="100" />
+<return expression="Database.getquerylocator(query)" expressiontype="@alias" lineno="100" />
+</ReturnBlock>
+<methodendline lineno="101"/>
+</body>
+</method>
+<method returntype="void" name="execute" parameters="BC:Database.batchablecontext,scope:list&amp;lt;User&amp;gt;" isTestMethod="false" lineno="105" throws="" modifiers="public">
+<body>
+<TryStatement lineno="108">
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="SET&lt;id&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp798" lineno="109" />
+<varDeclaration name="userIDs" scope="methodvar" location="batchObjectAccessPermissions" type="SET&amp;lt;id&amp;gt;" lineno="109" />
+<assignHeap name="userIDs" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newSET&lt;id&gt;()" lineno="109" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="110">
+<Iterator type="User" name="u" on="scope">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="userIDs.add" methodtype="normalmethod" returntype="String" parameters="u.id" returnloc="#temp799" lineno="111" />
+</body>
+</loop>
+<if type="simpleif" lineno="113">
+<conditionalExpr>
+<methodInvoke name="userIDs.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp800" lineno="113" />
+<ConditionalStatement LHStype="" LHS="userIDs.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "userIDs.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<loop type="advancedfor" lineno="114">
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select count(id),Assignee.id user_Name 
+                                            from PermissionSetAssignment where Assignee.isactive=true and PermissionSetId 
+                                            in (select ParentId from ObjectPermissions where SObjectType=: objectName
+                                            AND PermissionsCreate = true 
+                                            AND PermissionsEdit = false
+                                            AND Parent.PermissionsModifyAllData=false) 
+                                            AND AssigneeID in :userIDs group by Assignee.id]" returnloc="#temp801" lineno="114" />
+<Iterator type="AggregateResult" name="cr" on="[select count(id),Assignee.id user_Name 
+                                            from PermissionSetAssignment where Assignee.isactive=true and PermissionSetId 
+                                            in (select ParentId from ObjectPermissions where SObjectType=: objectName
+                                            AND PermissionsCreate = true 
+                                            AND PermissionsEdit = false
+                                            AND Parent.PermissionsModifyAllData=false) 
+                                            AND AssigneeID in :userIDs group by Assignee.id]">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="cr.get" methodtype="normalmethod" returntype="String" parameters="&apos;user_Name&apos;" returnloc="#temp802" lineno="122" />
+<assignHeap name="x1" scope="" type="" rhsType="methodinvoke" rhs="(string)cr.get(&apos;user_Name&apos;)" lineno="122" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="x1" returnloc="#temp803" lineno="123" />
+<assignHeap name="create" scope="" type="" rhsType="stradd" rhs="objectName+&apos;-&apos;+x1" lineno="123" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="createAccessMap.get" methodtype="normalmethod" returntype="String" parameters="create" returnloc="#temp804" lineno="124" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="(createAccessMap.get(create)!=null?totalUserCountCreate+0:totalUserCountCreate+1)" returnloc="#temp805" lineno="124" />
+<assignHeap name="c1" scope="" type="" rhsType="stradd" rhs="(createAccessMap.get(create)!=null?totalUserCountCreate+0:totalUserCountCreate+1)" lineno="124" />
+</AssignmentStatement>
+<methodInvoke name="createAccessMap.put" methodtype="normalmethod" returntype="String" parameters="create,c1" returnloc="#temp806" lineno="125" />
+</body>
+</loop>
+<loop type="advancedfor" lineno="127">
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select count(id) , Assignee.id user_Name1 
+                                            from PermissionSetAssignment where Assignee.isactive=true and PermissionSetId 
+                                            in (select ParentId from ObjectPermissions where SObjectType=: objectName
+                                            AND PermissionsCreate = false
+                                            AND PermissionsEdit = true
+                                            AND Parent.PermissionsModifyAllData=false)
+                                            AND AssigneeID in :userIDs group by Assignee.id]" returnloc="#temp807" lineno="127" />
+<Iterator type="AggregateResult" name="er" on="[select count(id) , Assignee.id user_Name1 
+                                            from PermissionSetAssignment where Assignee.isactive=true and PermissionSetId 
+                                            in (select ParentId from ObjectPermissions where SObjectType=: objectName
+                                            AND PermissionsCreate = false
+                                            AND PermissionsEdit = true
+                                            AND Parent.PermissionsModifyAllData=false)
+                                            AND AssigneeID in :userIDs group by Assignee.id]">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="er.get" methodtype="normalmethod" returntype="String" parameters="&apos;user_Name1&apos;" returnloc="#temp808" lineno="135" />
+<assignHeap name="x2" scope="" type="" rhsType="methodinvoke" rhs="(string)er.get(&apos;user_Name1&apos;)" lineno="135" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="x2" returnloc="#temp809" lineno="136" />
+<assignHeap name="Edit" scope="" type="" rhsType="stradd" rhs="objectName+&apos;-&apos;+x2" lineno="136" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="editAccessMap.get" methodtype="normalmethod" returntype="String" parameters="Edit" returnloc="#temp810" lineno="137" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="(editAccessMap.get(Edit)!=null?totalUserCountEdit+0:totalUserCountEdit+1)" returnloc="#temp811" lineno="137" />
+<assignHeap name="c2" scope="" type="" rhsType="stradd" rhs="(editAccessMap.get(Edit)!=null?totalUserCountEdit+0:totalUserCountEdit+1)" lineno="137" />
+</AssignmentStatement>
+<methodInvoke name="editAccessMap.put" methodtype="normalmethod" returntype="String" parameters="Edit,c2" returnloc="#temp812" lineno="138" />
+</body>
+</loop>
+<loop type="advancedfor" lineno="141">
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select count(id),Assignee.id user_Name2
+                                            from PermissionSetAssignment where Assignee.isactive=true and PermissionSetId 
+                                            in (select ParentId from ObjectPermissions where SObjectType=: objectName
+                                            AND PermissionsCreate = true 
+                                            AND PermissionsEdit = true
+                                            AND Parent.PermissionsModifyAllData=false)
+                                            AND AssigneeID in :userIDs group by Assignee.id]" returnloc="#temp813" lineno="141" />
+<Iterator type="AggregateResult" name="cer" on="[select count(id),Assignee.id user_Name2
+                                            from PermissionSetAssignment where Assignee.isactive=true and PermissionSetId 
+                                            in (select ParentId from ObjectPermissions where SObjectType=: objectName
+                                            AND PermissionsCreate = true 
+                                            AND PermissionsEdit = true
+                                            AND Parent.PermissionsModifyAllData=false)
+                                            AND AssigneeID in :userIDs group by Assignee.id]">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="cer.get" methodtype="normalmethod" returntype="String" parameters="&apos;user_Name2&apos;" returnloc="#temp814" lineno="149" />
+<assignHeap name="x3" scope="" type="" rhsType="methodinvoke" rhs="(string)cer.get(&apos;user_Name2&apos;)" lineno="149" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="x3" returnloc="#temp815" lineno="150" />
+<assignHeap name="CreateEdit" scope="" type="" rhsType="stradd" rhs="objectName+&apos;-&apos;+x3" lineno="150" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="bothAccessMap.get" methodtype="normalmethod" returntype="String" parameters="CreateEdit" returnloc="#temp816" lineno="151" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="(bothAccessMap.get(CreateEdit)!=null?totalUserCountBoth+0:totalUserCountBoth+1)" returnloc="#temp817" lineno="151" />
+<assignHeap name="c3" scope="" type="" rhsType="stradd" rhs="(bothAccessMap.get(CreateEdit)!=null?totalUserCountBoth+0:totalUserCountBoth+1)" lineno="151" />
+</AssignmentStatement>
+<methodInvoke name="bothAccessMap.put" methodtype="normalmethod" returntype="String" parameters="CreateEdit,c3" returnloc="#temp818" lineno="152" />
+</body>
+</loop>
+<if type="simpleif" lineno="155">
+<conditionalExpr>
+<methodInvoke name="objectName.equals" methodtype="normalmethod" returntype="String" parameters="&apos;Lead&apos;" returnloc="#temp819" lineno="155" />
+</conditionalExpr>
+<ifcondition expression= "objectName.equals(&apos;Lead&apos;)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<loop type="advancedfor" lineno="156">
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select count(id),Assignee.id user_Name3
+                                            from PermissionSetAssignment where Assignee.isactive=true and PermissionSetId 
+                                            in (select ParentId from ObjectPermissions where SObjectType=: objectName
+                                            AND PermissionsCreate = true 
+                                            AND PermissionsEdit = true 
+                                            AND Parent.PermissionsConvertLeads=true 
+                                            AND Parent.PermissionsModifyAllData=false)
+                                            AND AssigneeID in :userIDs group by Assignee.id]" returnloc="#temp820" lineno="156" />
+<Iterator type="AggregateResult" name="convertLeadResult" on="[select count(id),Assignee.id user_Name3
+                                            from PermissionSetAssignment where Assignee.isactive=true and PermissionSetId 
+                                            in (select ParentId from ObjectPermissions where SObjectType=: objectName
+                                            AND PermissionsCreate = true 
+                                            AND PermissionsEdit = true 
+                                            AND Parent.PermissionsConvertLeads=true 
+                                            AND Parent.PermissionsModifyAllData=false)
+                                            AND AssigneeID in :userIDs group by Assignee.id]">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="convertLeadResult#temp820convertLeadResult.get" methodtype="normalmethod" returntype="String" parameters="&apos;user_Name3&apos;" returnloc="#temp821" lineno="165" />
+<assignHeap name="x4" scope="" type="" rhsType="methodinvoke" rhs="(string)convertLeadResult.get(&apos;user_Name3&apos;)" lineno="165" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="x4" returnloc="#temp822" lineno="166" />
+<assignHeap name="ConvertLeads" scope="" type="" rhsType="stradd" rhs="objectName+&apos;-&apos;+x4" lineno="166" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="convertLeadAccessMap.get" methodtype="normalmethod" returntype="String" parameters="ConvertLeads" returnloc="#temp823" lineno="167" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="(convertLeadAccessMap.get(ConvertLeads)!=null?totalUserCountConvertLead+0:totalUserCountConvertLead+1)" returnloc="#temp824" lineno="167" />
+<assignHeap name="c4" scope="" type="" rhsType="stradd" rhs="(convertLeadAccessMap.get(ConvertLeads)!=null?totalUserCountConvertLead+0:totalUserCountConvertLead+1)" lineno="167" />
+</AssignmentStatement>
+<methodInvoke name="convertLeadAccessMap.put" methodtype="normalmethod" returntype="String" parameters="ConvertLeads,c4" returnloc="#temp825" lineno="168" />
+</body>
+</loop>
+<loop type="advancedfor" lineno="171">
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select count(id),Assignee.id user_Name4
+                                            from PermissionSetAssignment where Assignee.isactive=true and PermissionSetId 
+                                            in (select ParentId from ObjectPermissions where SObjectType=: objectName
+                                            AND PermissionsCreate = true 
+                                            AND PermissionsEdit = true 
+                                            AND Parent.PermissionsManageLeads=true 
+                                            AND Parent.PermissionsModifyAllData=false)
+                                            AND AssigneeID in :userIDs group by Assignee.id]" returnloc="#temp826" lineno="171" />
+<Iterator type="AggregateResult" name="manageLeadResult" on="[select count(id),Assignee.id user_Name4
+                                            from PermissionSetAssignment where Assignee.isactive=true and PermissionSetId 
+                                            in (select ParentId from ObjectPermissions where SObjectType=: objectName
+                                            AND PermissionsCreate = true 
+                                            AND PermissionsEdit = true 
+                                            AND Parent.PermissionsManageLeads=true 
+                                            AND Parent.PermissionsModifyAllData=false)
+                                            AND AssigneeID in :userIDs group by Assignee.id]">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="manageLeadResult.get" methodtype="normalmethod" returntype="String" parameters="&apos;user_Name4&apos;" returnloc="#temp827" lineno="180" />
+<assignHeap name="x5" scope="" type="" rhsType="methodinvoke" rhs="(string)manageLeadResult.get(&apos;user_Name4&apos;)" lineno="180" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="x5" returnloc="#temp828" lineno="181" />
+<assignHeap name="ManageLeads" scope="" type="" rhsType="stradd" rhs="objectName+&apos;-&apos;+x5" lineno="181" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="manageLeadAccessMap.get" methodtype="normalmethod" returntype="String" parameters="ManageLeads" returnloc="#temp829" lineno="182" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="(manageLeadAccessMap.get(ManageLeads)!=null?totalUserCountManageLead+0:totalUserCountManageLead+1)" returnloc="#temp830" lineno="182" />
+<assignHeap name="c5" scope="" type="" rhsType="stradd" rhs="(manageLeadAccessMap.get(ManageLeads)!=null?totalUserCountManageLead+0:totalUserCountManageLead+1)" lineno="182" />
+</AssignmentStatement>
+<methodInvoke name="manageLeadAccessMap.put" methodtype="normalmethod" returntype="String" parameters="ManageLeads,c5" returnloc="#temp831" lineno="183" />
+</body>
+</loop>
+</body>
+</true>
+</if>
+</body>
+</true>
+</if>
+</body>
+<CatchStatement type="Exception" name="e" lineno="193">
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;error Message Is :&apos;+e.getMessage()" key="debug" lineno="195"/>
+</body>
+</CatchStatement>
+</TryStatement>
+<methodendline lineno="200"/>
+</body>
+</method>
+<method returntype="void" name="finish" parameters="BC:Database.batchablecontext" isTestMethod="false" lineno="203" throws="" modifiers="public">
+<body>
+<TryStatement lineno="205">
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="List&lt;AIES_ACCENTURE__User_Object_Access__c&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp832" lineno="208" />
+<varDeclaration name="lsUOA" scope="methodvar" location="batchObjectAccessPermissions" type="List&amp;lt;AIES_ACCENTURE__User_Object_Access__c&amp;gt;" lineno="208" />
+<assignHeap name="lsUOA" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;AIES_ACCENTURE__User_Object_Access__c&gt;()" lineno="208" />
+</VariableDeclaration>
+<if type="simpleif" lineno="214">
+<conditionalExpr>
+<methodInvoke name="#temp832.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp833" lineno="214" />
+<ConditionalStatement LHStype="" LHS="createAccessMap.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "createAccessMap.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;Size of Create Access Map-Line No 137 &apos;+createAccessMap.size()+&apos;Keys&apos;+createAccessMap.keySet()" key="debug" lineno="216"/>
+<loop type="advancedfor" lineno="217">
+<methodInvoke name="createAccessMap.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp834" lineno="217" />
+<Iterator type="string" name="cc" on="createAccessMap.keySet()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="218">
+<conditionalExpr>
+<methodInvoke name="#temp834.containsKey" methodtype="normalmethod" returntype="String" parameters="cc" returnloc="#temp835" lineno="218" />
+<conditionalExpr>
+<methodInvoke name="#temp835.containsKey" methodtype="normalmethod" returntype="String" parameters="cc" returnloc="#temp836" lineno="218" />
+<ConditionalStatement LHStype="variable" LHS="#temp835.cc" RHStype="!bothAccessMap.containsKey(cc)" RHS="!bothAccessMap.containsKey(cc)" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "!editAccessMap.containsKey(cc)&amp;&amp;!bothAccessMap.containsKey(cc)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos; Inside Create if condition - before Create Only Map insert-Line No 140 &apos;" key="debug" lineno="219"/>
+<methodInvoke name="createOnlyAccessMap.put" methodtype="normalmethod" returntype="String" parameters="cc,1" returnloc="#temp837" lineno="220" />
+</body>
+</true>
+</if>
+</body>
+</loop>
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="226">
+<conditionalExpr>
+<methodInvoke name="editAccessMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp838" lineno="226" />
+<ConditionalStatement LHStype="" LHS="editAccessMap.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "editAccessMap.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;Size of Edit Access Map-Line No 148 &apos;+editAccessMap.size()+&apos;Keys&apos;+editAccessMap.keySet()" key="debug" lineno="227"/>
+<loop type="advancedfor" lineno="228">
+<methodInvoke name="editAccessMap.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp839" lineno="228" />
+<Iterator type="string" name="cc1" on="editAccessMap.keySet()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="230">
+<conditionalExpr>
+<methodInvoke name="#temp839.containsKey" methodtype="normalmethod" returntype="String" parameters="cc1" returnloc="#temp840" lineno="230" />
+<conditionalExpr>
+<methodInvoke name="#temp840.containsKey" methodtype="normalmethod" returntype="String" parameters="cc1" returnloc="#temp841" lineno="230" />
+<ConditionalStatement LHStype="variable" LHS="#temp840.cc1" RHStype="!bothAccessMap.containsKey(cc1)" RHS="!bothAccessMap.containsKey(cc1)" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "!createAccessMap.containsKey(cc1)&amp;&amp;!bothAccessMap.containsKey(cc1)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos; Inside if condition- before Edit Only Map insert -Line No 152 &apos;" key="debug" lineno="231"/>
+<methodInvoke name="editOnlyAccessMap.put" methodtype="normalmethod" returntype="String" parameters="cc1,1" returnloc="#temp842" lineno="232" />
+</body>
+</true>
+</if>
+</body>
+</loop>
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="242">
+<conditionalExpr>
+<methodInvoke name="createAccessMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp843" lineno="242" />
+<ConditionalStatement LHStype="" LHS="createAccessMap.size()" RHStype="" RHS="0" Operator="&gt;"/>
+<conditionalExpr>
+<methodInvoke name="#temp843.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp844" lineno="242" />
+<ConditionalStatement LHStype="" LHS="editAccessMap.size()" RHStype="" RHS="0" Operator="&gt;"/>
+<ConditionalStatement LHStype="methodinvoke" LHS="0" RHStype="editAccessMap.size()&gt;0" RHS="editAccessMap.size()&gt;0" Operator="AND"/>
+</conditionalExpr>
+<conditionalExpr>
+<methodInvoke name="#temp844.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp845" lineno="242" />
+<methodInvoke name="#temp845.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp846" lineno="242" />
+<ConditionalStatement LHStype="" LHS="createAccessMap.size()" RHStype="" RHS="editAccessMap.size()" Operator="&gt;="/>
+<ConditionalStatement LHStype="methodinvoke" LHS="#temp845" RHStype="createAccessMap.size()&gt;=editAccessMap.size()" RHS="createAccessMap.size()&gt;=editAccessMap.size()" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "createAccessMap.size()&gt;0&amp;&amp;editAccessMap.size()&gt;0&amp;&amp;createAccessMap.size()&gt;=editAccessMap.size()"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<loop type="advancedfor" lineno="244">
+<methodInvoke name="#temp846.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp847" lineno="244" />
+<Iterator type="string" name="cp" on="createAccessMap.keySet()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="245">
+<conditionalExpr>
+<methodInvoke name="#temp847.containsKey" methodtype="normalmethod" returntype="String" parameters="cp" returnloc="#temp848" lineno="245" />
+<conditionalExpr>
+<methodInvoke name="#temp848.containsKey" methodtype="normalmethod" returntype="String" parameters="cp" returnloc="#temp849" lineno="245" />
+<ConditionalStatement LHStype="variable" LHS="#temp848" RHStype="!bothAccessMap.containsKey(cp)" RHS="!bothAccessMap.containsKey(cp)" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "editAccessMap.containsKey(cp)&amp;&amp;!bothAccessMap.containsKey(cp)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="bothAccessMap.put" methodtype="normalmethod" returntype="String" parameters="cp,1" returnloc="#temp850" lineno="246" />
+<ExpressionStatement expression="&apos;Inside CreateModify Only Map - 01&apos;" key="debug" lineno="247"/>
+</body>
+</true>
+</if>
+</body>
+</loop>
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="252">
+<conditionalExpr>
+<methodInvoke name="editAccessMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp851" lineno="252" />
+<ConditionalStatement LHStype="" LHS="editAccessMap.size()" RHStype="" RHS="0" Operator="&gt;"/>
+<conditionalExpr>
+<methodInvoke name="#temp851.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp852" lineno="252" />
+<ConditionalStatement LHStype="" LHS="createAccessMap.size()" RHStype="" RHS="0" Operator="&gt;"/>
+<ConditionalStatement LHStype="methodinvoke" LHS="0" RHStype="createAccessMap.size()&gt;0" RHS="createAccessMap.size()&gt;0" Operator="AND"/>
+</conditionalExpr>
+<conditionalExpr>
+<methodInvoke name="#temp852.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp853" lineno="252" />
+<methodInvoke name="#temp853.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp854" lineno="252" />
+<ConditionalStatement LHStype="" LHS="editAccessMap.size()" RHStype="" RHS="createAccessMap.size()" Operator="&gt;"/>
+<ConditionalStatement LHStype="methodinvoke" LHS="#temp853" RHStype="editAccessMap.size()&gt;createAccessMap.size()" RHS="editAccessMap.size()&gt;createAccessMap.size()" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "editAccessMap.size()&gt;0&amp;&amp;createAccessMap.size()&gt;0&amp;&amp;editAccessMap.size()&gt;createAccessMap.size()"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<loop type="advancedfor" lineno="253">
+<methodInvoke name="#temp854.keySet" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp855" lineno="253" />
+<Iterator type="string" name="cp1" on="editAccessMap.keySet()">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="254">
+<conditionalExpr>
+<methodInvoke name="#temp855.containsKey" methodtype="normalmethod" returntype="String" parameters="cp1" returnloc="#temp856" lineno="254" />
+<conditionalExpr>
+<methodInvoke name="#temp856.containsKey" methodtype="normalmethod" returntype="String" parameters="cp1" returnloc="#temp857" lineno="254" />
+<ConditionalStatement LHStype="variable" LHS="#temp856" RHStype="!bothAccessMap.containsKey(cp1)" RHS="!bothAccessMap.containsKey(cp1)" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "createAccessMap.containsKey(cp1)&amp;&amp;!bothAccessMap.containsKey(cp1)"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="bothAccessMap.put" methodtype="normalmethod" returntype="String" parameters="cp1,1" returnloc="#temp858" lineno="255" />
+<ExpressionStatement expression="&apos;Inside CreateModify Only Map - 02&apos;" key="debug" lineno="256"/>
+</body>
+</true>
+</if>
+</body>
+</loop>
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="266">
+<conditionalExpr>
+<methodInvoke name="createOnlyAccessMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp859" lineno="266" />
+<ConditionalStatement LHStype="" LHS="createOnlyAccessMap.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "createOnlyAccessMap.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;Size of CreateOnly Map&apos;+createOnlyAccessMap.size()" key="debug" lineno="268"/>
+<VariableDeclaration>
+<methodInvoke name="AIES_ACCENTURE__User_Object_Access__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp860" lineno="270" />
+<varDeclaration name="uoa" scope="methodvar" location="batchObjectAccessPermissions" type="AIES_ACCENTURE__User_Object_Access__c" lineno="270" />
+<assignHeap name="uoa" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_ACCENTURE__User_Object_Access__c()" lineno="270" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="uoa.Name" scope="" type="" rhsType="methodinvoke" rhs="objectName" lineno="271" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Access_type__c" scope="" type="" rhsType="value" rhs="&apos;Create&apos;" lineno="272" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="createOnlyAccessMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp861" lineno="273" />
+<assignHeap name="uoa.AIES_ACCENTURE__of_Users_with_Access__c" scope="" type="" rhsType="methodinvoke" rhs="createOnlyAccessMap.size()" lineno="273" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Portfolio__c" scope="" type="" rhsType="variable" rhs="Util.Portfolio" lineno="274" />
+</AssignmentStatement>
+<methodInvoke name="lsUOA.add" methodtype="normalmethod" returntype="String" parameters="uoa" returnloc="#temp862" lineno="276" />
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="279">
+<conditionalExpr>
+<methodInvoke name="createOnlyAccessMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp863" lineno="279" />
+<ConditionalStatement LHStype="" LHS="createOnlyAccessMap.size()" RHStype="" RHS="0" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "createOnlyAccessMap.size()==0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;Size of CreateOnly Map- Expected=0 + Actual Results : &apos;+createOnlyAccessMap.size()" key="debug" lineno="281"/>
+<VariableDeclaration>
+<methodInvoke name="AIES_ACCENTURE__User_Object_Access__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp864" lineno="283" />
+<varDeclaration name="uoa" scope="methodvar" location="batchObjectAccessPermissions" type="AIES_ACCENTURE__User_Object_Access__c" lineno="283" />
+<assignHeap name="uoa" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_ACCENTURE__User_Object_Access__c()" lineno="283" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="uoa.Name" scope="" type="" rhsType="methodinvoke" rhs="objectName" lineno="284" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Access_type__c" scope="" type="" rhsType="value" rhs="&apos;Create&apos;" lineno="285" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__of_Users_with_Access__c" scope="" type="" rhsType="value" rhs="0" lineno="286" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Portfolio__c" scope="" type="" rhsType="variable" rhs="Util.Portfolio" lineno="287" />
+</AssignmentStatement>
+<methodInvoke name="lsUOA.add" methodtype="normalmethod" returntype="String" parameters="uoa" returnloc="#temp865" lineno="289" />
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="294">
+<conditionalExpr>
+<methodInvoke name="editOnlyAccessMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp866" lineno="294" />
+<ConditionalStatement LHStype="" LHS="editOnlyAccessMap.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "editOnlyAccessMap.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;Size of editOnly Map&apos;+editOnlyAccessMap.size()" key="debug" lineno="296"/>
+<VariableDeclaration>
+<methodInvoke name="AIES_ACCENTURE__User_Object_Access__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp867" lineno="298" />
+<varDeclaration name="uoa" scope="methodvar" location="batchObjectAccessPermissions" type="AIES_ACCENTURE__User_Object_Access__c" lineno="298" />
+<assignHeap name="uoa" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_ACCENTURE__User_Object_Access__c()" lineno="298" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="uoa.Name" scope="" type="" rhsType="methodinvoke" rhs="objectName" lineno="299" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Access_type__c" scope="" type="" rhsType="value" rhs="&apos;Modify&apos;" lineno="300" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="editOnlyAccessMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp868" lineno="301" />
+<assignHeap name="uoa.AIES_ACCENTURE__of_Users_with_Access__c" scope="" type="" rhsType="methodinvoke" rhs="editOnlyAccessMap.size()" lineno="301" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Portfolio__c" scope="" type="" rhsType="variable" rhs="Util.Portfolio" lineno="302" />
+</AssignmentStatement>
+<methodInvoke name="lsUOA.add" methodtype="normalmethod" returntype="String" parameters="uoa" returnloc="#temp869" lineno="304" />
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="307">
+<conditionalExpr>
+<methodInvoke name="editOnlyAccessMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp870" lineno="307" />
+<ConditionalStatement LHStype="" LHS="editOnlyAccessMap.size()" RHStype="" RHS="0" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "editOnlyAccessMap.size()==0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;Size of editOnly Map- Expected=0 + Actual Results :&apos;+editOnlyAccessMap.size()" key="debug" lineno="309"/>
+<VariableDeclaration>
+<methodInvoke name="AIES_ACCENTURE__User_Object_Access__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp871" lineno="311" />
+<varDeclaration name="uoa" scope="methodvar" location="batchObjectAccessPermissions" type="AIES_ACCENTURE__User_Object_Access__c" lineno="311" />
+<assignHeap name="uoa" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_ACCENTURE__User_Object_Access__c()" lineno="311" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="uoa.Name" scope="" type="" rhsType="methodinvoke" rhs="objectName" lineno="312" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Access_type__c" scope="" type="" rhsType="value" rhs="&apos;Modify&apos;" lineno="313" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__of_Users_with_Access__c" scope="" type="" rhsType="value" rhs="0" lineno="314" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Portfolio__c" scope="" type="" rhsType="variable" rhs="Util.Portfolio" lineno="315" />
+</AssignmentStatement>
+<methodInvoke name="lsUOA.add" methodtype="normalmethod" returntype="String" parameters="uoa" returnloc="#temp872" lineno="317" />
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="322">
+<conditionalExpr>
+<methodInvoke name="bothAccessMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp873" lineno="322" />
+<ConditionalStatement LHStype="" LHS="bothAccessMap.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "bothAccessMap.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="AIES_ACCENTURE__User_Object_Access__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp874" lineno="323" />
+<varDeclaration name="uoa" scope="methodvar" location="batchObjectAccessPermissions" type="AIES_ACCENTURE__User_Object_Access__c" lineno="323" />
+<assignHeap name="uoa" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_ACCENTURE__User_Object_Access__c()" lineno="323" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="uoa.Name" scope="" type="" rhsType="methodinvoke" rhs="objectName" lineno="324" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Access_type__c" scope="" type="" rhsType="value" rhs="&apos;CreateModify&apos;" lineno="325" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="bothAccessMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp875" lineno="326" />
+<assignHeap name="uoa.AIES_ACCENTURE__of_Users_with_Access__c" scope="" type="" rhsType="methodinvoke" rhs="bothAccessMap.size()" lineno="326" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Portfolio__c" scope="" type="" rhsType="variable" rhs="Util.Portfolio" lineno="327" />
+</AssignmentStatement>
+<methodInvoke name="lsUOA.add" methodtype="normalmethod" returntype="String" parameters="uoa" returnloc="#temp876" lineno="329" />
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="332">
+<conditionalExpr>
+<methodInvoke name="bothAccessMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp877" lineno="332" />
+<ConditionalStatement LHStype="" LHS="bothAccessMap.size()" RHStype="" RHS="0" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "bothAccessMap.size()==0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="AIES_ACCENTURE__User_Object_Access__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp878" lineno="333" />
+<varDeclaration name="uoa" scope="methodvar" location="batchObjectAccessPermissions" type="AIES_ACCENTURE__User_Object_Access__c" lineno="333" />
+<assignHeap name="uoa" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_ACCENTURE__User_Object_Access__c()" lineno="333" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="uoa.Name" scope="" type="" rhsType="methodinvoke" rhs="objectName" lineno="334" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Access_type__c" scope="" type="" rhsType="value" rhs="&apos;CreateModify&apos;" lineno="335" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__of_Users_with_Access__c" scope="" type="" rhsType="value" rhs="0" lineno="336" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Portfolio__c" scope="" type="" rhsType="variable" rhs="Util.Portfolio" lineno="337" />
+</AssignmentStatement>
+<methodInvoke name="lsUOA.add" methodtype="normalmethod" returntype="String" parameters="uoa" returnloc="#temp879" lineno="339" />
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="346">
+<conditionalExpr>
+<methodInvoke name="convertLeadAccessMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp880" lineno="346" />
+<ConditionalStatement LHStype="" LHS="convertLeadAccessMap.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "convertLeadAccessMap.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="AIES_ACCENTURE__User_Object_Access__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp881" lineno="347" />
+<varDeclaration name="uoa" scope="methodvar" location="batchObjectAccessPermissions" type="AIES_ACCENTURE__User_Object_Access__c" lineno="347" />
+<assignHeap name="uoa" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_ACCENTURE__User_Object_Access__c()" lineno="347" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="uoa.Name" scope="" type="" rhsType="methodinvoke" rhs="objectName" lineno="348" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Access_type__c" scope="" type="" rhsType="value" rhs="&apos;ConvertLeads&apos;" lineno="349" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="convertLeadAccessMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp882" lineno="350" />
+<assignHeap name="uoa.AIES_ACCENTURE__of_Users_with_Access__c" scope="" type="" rhsType="methodinvoke" rhs="convertLeadAccessMap.size()" lineno="350" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Portfolio__c" scope="" type="" rhsType="variable" rhs="Util.Portfolio" lineno="351" />
+</AssignmentStatement>
+<methodInvoke name="lsUOA.add" methodtype="normalmethod" returntype="String" parameters="uoa" returnloc="#temp883" lineno="353" />
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="356">
+<conditionalExpr>
+<methodInvoke name="convertLeadAccessMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp884" lineno="356" />
+<ConditionalStatement LHStype="" LHS="convertLeadAccessMap.size()" RHStype="" RHS="0" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "convertLeadAccessMap.size()==0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="AIES_ACCENTURE__User_Object_Access__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp885" lineno="357" />
+<varDeclaration name="uoa" scope="methodvar" location="batchObjectAccessPermissions" type="AIES_ACCENTURE__User_Object_Access__c" lineno="357" />
+<assignHeap name="uoa" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_ACCENTURE__User_Object_Access__c()" lineno="357" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="uoa.Name" scope="" type="" rhsType="methodinvoke" rhs="objectName" lineno="358" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Access_type__c" scope="" type="" rhsType="value" rhs="&apos;ConvertLeads&apos;" lineno="359" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__of_Users_with_Access__c" scope="" type="" rhsType="value" rhs="0" lineno="360" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Portfolio__c" scope="" type="" rhsType="variable" rhs="Util.Portfolio" lineno="361" />
+</AssignmentStatement>
+<methodInvoke name="lsUOA.add" methodtype="normalmethod" returntype="String" parameters="uoa" returnloc="#temp886" lineno="363" />
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="369">
+<conditionalExpr>
+<methodInvoke name="manageLeadAccessMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp887" lineno="369" />
+<ConditionalStatement LHStype="" LHS="manageLeadAccessMap.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "manageLeadAccessMap.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="AIES_ACCENTURE__User_Object_Access__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp888" lineno="370" />
+<varDeclaration name="uoa" scope="methodvar" location="batchObjectAccessPermissions" type="AIES_ACCENTURE__User_Object_Access__c" lineno="370" />
+<assignHeap name="uoa" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_ACCENTURE__User_Object_Access__c()" lineno="370" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="uoa.Name" scope="" type="" rhsType="methodinvoke" rhs="objectName" lineno="371" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Access_type__c" scope="" type="" rhsType="value" rhs="&apos;ManageLeads&apos;" lineno="372" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="manageLeadAccessMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp889" lineno="373" />
+<assignHeap name="uoa.AIES_ACCENTURE__of_Users_with_Access__c" scope="" type="" rhsType="methodinvoke" rhs="manageLeadAccessMap.size()" lineno="373" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Portfolio__c" scope="" type="" rhsType="variable" rhs="Util.Portfolio" lineno="374" />
+</AssignmentStatement>
+<methodInvoke name="lsUOA.add" methodtype="normalmethod" returntype="String" parameters="uoa" returnloc="#temp890" lineno="376" />
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="379">
+<conditionalExpr>
+<methodInvoke name="manageLeadAccessMap.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp891" lineno="379" />
+<ConditionalStatement LHStype="" LHS="manageLeadAccessMap.size()" RHStype="" RHS="0" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "manageLeadAccessMap.size()==0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="AIES_ACCENTURE__User_Object_Access__c" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp892" lineno="380" />
+<varDeclaration name="uoa" scope="methodvar" location="batchObjectAccessPermissions" type="AIES_ACCENTURE__User_Object_Access__c" lineno="380" />
+<assignHeap name="uoa" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newAIES_ACCENTURE__User_Object_Access__c()" lineno="380" />
+</VariableDeclaration>
+<AssignmentStatement>
+<assignHeap name="uoa.Name" scope="" type="" rhsType="methodinvoke" rhs="objectName" lineno="381" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Access_type__c" scope="" type="" rhsType="value" rhs="&apos;ManageLeads&apos;" lineno="382" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__of_Users_with_Access__c" scope="" type="" rhsType="value" rhs="0" lineno="383" />
+</AssignmentStatement>
+<AssignmentStatement>
+<assignHeap name="uoa.AIES_ACCENTURE__Portfolio__c" scope="" type="" rhsType="variable" rhs="Util.Portfolio" lineno="384" />
+</AssignmentStatement>
+<methodInvoke name="lsUOA.add" methodtype="normalmethod" returntype="String" parameters="uoa" returnloc="#temp893" lineno="386" />
+</body>
+</true>
+</if>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select id from AIES_ACCENTURE__User_Object_Access__c 
+                                                               where Name =: objectName 
+                                                               and AIES_ACCENTURE__Portfolio__c =: Util.Portfolio]" returnloc="#temp894" lineno="395" />
+<varDeclaration name="deleteData" scope="methodvar" location="batchObjectAccessPermissions" type="List&amp;lt;AIES_ACCENTURE__User_Object_Access__c&amp;gt;" lineno="395" />
+<assignHeap name="deleteData" scope="methodvar" type="List&amp;lt;AIES_ACCENTURE__User_Object_Access__c&amp;gt;" rhsType="query" rhs="[select id from AIES_ACCENTURE__User_Object_Access__c 
+                                                               where Name =: objectName 
+                                                               and AIES_ACCENTURE__Portfolio__c =: Util.Portfolio]" lineno="395" />
+</VariableDeclaration>
+<if type="simpleif" lineno="398">
+<conditionalExpr>
+<methodInvoke name="deleteData.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp895" lineno="398" />
+<ConditionalStatement LHStype="" LHS="deleteData.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "deleteData.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="lib.dml.Database.delete" methodtype="" returntype="" parameters="deleteData" returnloc="" lineno="399" />
+<ExpressionStatement expression="&apos;Deleted &apos;+deleteData.size()+&apos;records before Inserting new records&apos;" key="debug" lineno="400"/>
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="407">
+<conditionalExpr>
+<methodInvoke name="lsUOA.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp896" lineno="407" />
+<ConditionalStatement LHStype="" LHS="lsUOA.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "lsUOA.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="lib.dml.insert" methodtype="" returntype="" parameters="lsUOA" returnloc="" lineno="408" />
+<methodInvoke name="processingList.remove" methodtype="normalmethod" returntype="String" parameters="objectName" returnloc="#temp897" lineno="409" />
+<ExpressionStatement expression="&apos;Inserted&apos;+lsUOA.size()+&apos; Records in AIES_ACCENTURE__User_Object_Access__c&apos;" key="debug" lineno="410"/>
+</body>
+</true>
+</if>
+<if type="simpleif" lineno="416">
+<conditionalExpr>
+<methodInvoke name="processingList.isEmpty" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp898" lineno="416" />
+</conditionalExpr>
+<ifcondition expression= "!processingList.isEmpty()"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="batchObjectAccessPermissions" methodtype="constructormethod" returntype="newobject" parameters="processingList" returnloc="#temp899" lineno="418" />
+<methodInvoke name="lib.dml.Database.executebatch" methodtype="" returntype="" parameters="newbatchObjectAccessPermissions(processingList)" returnloc="" lineno="418" />
+</body>
+</true>
+</if>
+</body>
+<CatchStatement type="Exception" name="e" lineno="425">
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;error Message in Finish Method&apos;+e.getMessage()" key="debug" lineno="427"/>
+</body>
+</CatchStatement>
+</TryStatement>
+<methodendline lineno="430"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[10, 94, 210, 211, 212, 435]" multi="[1-9, 72-73, 75-78, 87-87, 93-93, 103-103, 190-190, 240-240, 262-262, 264-264, 292-292, 320-320, 343-343, 344-344, 366-366, 367-367, 390-390, 393-393, 402-402, 405-405, 414-414, 420-420, 422-422, 436-491, 492-558]" empty="[12, 16, 20, 24, 28, 32, 35, 36, 42, 46, 52, 56, 64, 71, 74, 79, 80, 84, 86, 88, 91, 92, 95, 99, 102, 104, 107, 121, 134, 139, 148, 153, 164, 170, 179, 185, 187, 191, 192, 194, 196, 198, 199, 201, 202, 207, 209, 213, 215, 221, 223, 229, 233, 235, 238, 239, 241, 243, 250, 258, 261, 263, 265, 267, 269, 275, 277, 280, 282, 288, 290, 293, 295, 297, 303, 305, 308, 310, 316, 318, 321, 328, 330, 338, 340, 342, 345, 352, 354, 362, 364, 368, 375, 377, 385, 387, 389, 391, 392, 394, 403, 404, 406, 411, 413, 415, 417, 421, 423, 429, 432, 433, 434, 437, 441, 445, 453, 455, 459, 460, 461, 481, 488, 489, 512, 514, 515, 526, 531, 535, 544, 547, 550, 556]" singlebrace="[62, 63, 66, 68, 70, 85, 90, 101, 106, 112, 126, 140, 154, 169, 184, 186, 188, 189, 197, 200, 204, 206, 222, 224, 225, 234, 236, 237, 248, 249, 251, 257, 259, 260, 278, 291, 306, 319, 331, 341, 355, 365, 378, 388, 401, 412, 419, 424, 426, 428, 430, 431, 443, 458, 462, 464, 466, 469, 471, 473, 476, 478, 480, 483, 485, 487, 490, 493, 495, 497, 500, 502, 504, 516, 518, 528, 529, 530, 532, 537, 546, 551, 553, 555, 557]"/>
+</stac>

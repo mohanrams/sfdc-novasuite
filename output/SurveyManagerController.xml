@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="SurveyManagerController.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="612 bytes">
+<class name="SurveyManagerController" sharing="with" implements="" isenum="false" lineno="1" modifiers="public">
+<classbody>
+<VariableDeclaration>
+<varDeclaration name="stdControl" scope="methodvar" location="SurveyManagerController" type="ApexPages.StandardController" lineno="2" modifiers="private" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="editCSS" scope="methodvar" location="SurveyManagerController" type="boolean" lineno="3" modifiers="public" />
+</VariableDeclaration>
+<method returntype="boolean" name="getEditCSS" parameters="" isTestMethod="false" lineno="5" throws="" modifiers="public">
+<body>
+<ReturnBlock>
+<return expression="editCSS" expressiontype="@alias" lineno="6" />
+</ReturnBlock>
+<methodendline lineno="7"/>
+</body>
+</method>
+<method returntype="" name="SurveyManagerController" parameters="stdController:ApexPages.StandardController" isTestMethod="false" lineno="9" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<assignHeap name="this.stdControl" scope="" type="" rhsType="variable" rhs="stdController" lineno="10" />
+</AssignmentStatement>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Profile.PermissionsAuthorApex from User where id=:Userinfo.getUserId()]" returnloc="#temp2156" lineno="12" />
+<varDeclaration name="res" scope="methodvar" location="SurveyManagerController" type="List&amp;lt;User&amp;gt;" lineno="12" />
+<assignHeap name="res" scope="methodvar" type="List&amp;lt;User&amp;gt;" rhsType="query" rhs="[select Profile.PermissionsAuthorApex from User where id=:Userinfo.getUserId()]" lineno="12" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="u" scope="methodvar" location="SurveyManagerController" type="User" lineno="13" />
+<assignHeap name="u" scope="methodvar" type="User" rhsType="value" rhs="res[0]" lineno="13" />
+</VariableDeclaration>
+<if type="simpleif" lineno="14">
+<conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "u.Profile.PermissionsAuthorApex"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="this.editCSS" scope="" type="" rhsType="value" rhs="true" lineno="15" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="16">
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="this.editCSS" scope="" type="" rhsType="value" rhs="false" lineno="17" />
+</AssignmentStatement>
+</body>
+</false>
+</if>
+<methodendline lineno="19"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[]" multi="[]" empty="[4, 8, 11]" singlebrace="[7, 18, 19, 20]"/>
+</stac>

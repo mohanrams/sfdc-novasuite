@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="processLoginHistory.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="667 bytes">
+<class name="processLoginHistory" sharing="default" implements="Database.batchable&lt;AggregateResult&gt;" isenum="false" lineno="1" modifiers="global">
+<classbody>
+<method returntype="Iterable&amp;lt;AggregateResult&amp;gt;" name="start" parameters="BC:Database.batchablecontext" isTestMethod="false" lineno="3" throws="" modifiers="global">
+<body>
+<ReturnBlock>
+<methodInvoke name="AggregateResultIterable" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1439" lineno="4" />
+<return expression="newAggregateResultIterable()" expressiontype="@newobject" lineno="8" />
+</ReturnBlock>
+<methodendline lineno="5"/>
+</body>
+</method>
+<method returntype="void" name="execute" parameters="BC:Database.batchablecontext,scope:List&amp;lt;sobject&amp;gt;" isTestMethod="false" lineno="7" throws="" modifiers="global">
+<body>
+<loop type="advancedfor" lineno="8">
+<Iterator type="sobject" name="s" on="scope">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<ExpressionStatement expression="&apos;----------&apos;+s" key="debug" lineno="9"/>
+</body>
+</loop>
+<methodendline lineno="11"/>
+</body>
+</method>
+<method returntype="void" name="finish" parameters="BC:Database.batchablecontext" isTestMethod="false" lineno="13" throws="" modifiers="global">
+<body>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Id, Status, NumberOfErrors, JobItemsProcessed,TotalJobItems,CreatedBy.Email from AsyncApexJob where Id = :BC.getJobId()]" returnloc="#temp1440" lineno="15" />
+<varDeclaration name="a" scope="methodvar" location="processLoginHistory" type="AsyncApexJob" lineno="14" />
+<assignHeap name="a" scope="methodvar" type="AsyncApexJob" rhsType="query" rhs="[select Id, Status, NumberOfErrors, JobItemsProcessed,TotalJobItems,CreatedBy.Email from AsyncApexJob where Id = :BC.getJobId()]" lineno="14" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;********: &apos;+a.Id" key="debug" lineno="16"/>
+<methodendline lineno="17"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[]" multi="[]" empty="[2, 6, 12]" singlebrace="[5, 10, 11, 17, 18]"/>
+</stac>

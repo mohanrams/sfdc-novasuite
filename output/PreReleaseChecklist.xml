@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="PreReleaseChecklist.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="8 KB">
+<class name="PreReleaseChecklist" sharing="default" implements="" isenum="false" lineno="1" modifiers="public">
+<classbody>
+<varDeclaration name="stdSixMonthResult" scope="instancevar" location="PreReleaseChecklist" type="MAP&amp;lt;string,string&amp;gt;" lineno="4" />
+<VariableProperties name="stdSixMonthResult">
+<getterMethod name="stdSixMonthResult" returntype="MAP&amp;lt;string,string&amp;gt;" modifiers="" lineno="4">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="stdSixMonthResult" modifiers="" lineno="4">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="countVFPage" scope="instancevar" location="PreReleaseChecklist" type="integer" lineno="6" />
+<VariableProperties name="countVFPage">
+<getterMethod name="countVFPage" returntype="integer" modifiers="" lineno="6">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="countVFPage" modifiers="" lineno="6">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="countApexClasses" scope="instancevar" location="PreReleaseChecklist" type="integer" lineno="7" />
+<VariableProperties name="countApexClasses">
+<getterMethod name="countApexClasses" returntype="integer" modifiers="" lineno="7">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="countApexClasses" modifiers="" lineno="7">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="countVFComponents" scope="instancevar" location="PreReleaseChecklist" type="integer" lineno="8" />
+<VariableProperties name="countVFComponents">
+<getterMethod name="countVFComponents" returntype="integer" modifiers="" lineno="8">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="countVFComponents" modifiers="" lineno="8">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="countActiveUsers" scope="instancevar" location="PreReleaseChecklist" type="integer" lineno="9" />
+<VariableProperties name="countActiveUsers">
+<getterMethod name="countActiveUsers" returntype="integer" modifiers="" lineno="9">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="countActiveUsers" modifiers="" lineno="9">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="countReports" scope="instancevar" location="PreReleaseChecklist" type="integer" lineno="10" />
+<VariableProperties name="countReports">
+<getterMethod name="countReports" returntype="integer" modifiers="" lineno="10">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="countReports" modifiers="" lineno="10">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="countDashboard" scope="instancevar" location="PreReleaseChecklist" type="integer" lineno="11" />
+<VariableProperties name="countDashboard">
+<getterMethod name="countDashboard" returntype="integer" modifiers="" lineno="11">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="countDashboard" modifiers="" lineno="11">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="countCustomObject" scope="instancevar" location="PreReleaseChecklist" type="integer" lineno="12" />
+<VariableProperties name="countCustomObject">
+<getterMethod name="countCustomObject" returntype="integer" modifiers="" lineno="12">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="countCustomObject" modifiers="" lineno="12">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="countSfdcUser" scope="instancevar" location="PreReleaseChecklist" type="integer" lineno="13" />
+<VariableProperties name="countSfdcUser">
+<getterMethod name="countSfdcUser" returntype="integer" modifiers="" lineno="13">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="countSfdcUser" modifiers="" lineno="13">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="countCommunityUser" scope="instancevar" location="PreReleaseChecklist" type="integer" lineno="14" />
+<VariableProperties name="countCommunityUser">
+<getterMethod name="countCommunityUser" returntype="integer" modifiers="" lineno="14">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="countCommunityUser" modifiers="" lineno="14">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="countForceUser" scope="instancevar" location="PreReleaseChecklist" type="integer" lineno="15" />
+<VariableProperties name="countForceUser">
+<getterMethod name="countForceUser" returntype="integer" modifiers="" lineno="15">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="countForceUser" modifiers="" lineno="15">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="countCharterUser" scope="instancevar" location="PreReleaseChecklist" type="integer" lineno="16" />
+<VariableProperties name="countCharterUser">
+<getterMethod name="countCharterUser" returntype="integer" modifiers="" lineno="16">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="countCharterUser" modifiers="" lineno="16">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="count_CustomObject" scope="instancevar" location="PreReleaseChecklist" type="integer" lineno="17" />
+<VariableProperties name="count_CustomObject">
+<getterMethod name="count_CustomObject" returntype="integer" modifiers="" lineno="17">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="count_CustomObject" modifiers="" lineno="17">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="contentMessage" scope="instancevar" location="PreReleaseChecklist" type="string" lineno="18" />
+<VariableProperties name="contentMessage">
+<getterMethod name="contentMessage" returntype="string" modifiers="" lineno="18">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="contentMessage" modifiers="" lineno="18">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="i" scope="instancevar" location="PreReleaseChecklist" type="integer" lineno="19" />
+<VariableProperties name="i">
+<getterMethod name="i" returntype="integer" modifiers="" lineno="19">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="i" modifiers="" lineno="19">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<VariableDeclaration>
+<varDeclaration name="batchCountAll" scope="methodvar" location="PreReleaseChecklist" type="integer" lineno="20" modifiers="public" />
+</VariableDeclaration>
+<varDeclaration name="orgName" scope="instancevar" location="PreReleaseChecklist" type="string" lineno="21" />
+<VariableProperties name="orgName">
+<getterMethod name="orgName" returntype="string" modifiers="" lineno="21">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="orgName" modifiers="" lineno="21">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="APIAccess" scope="instancevar" location="PreReleaseChecklist" type="boolean" lineno="22" />
+<VariableProperties name="APIAccess">
+<getterMethod name="APIAccess" returntype="boolean" modifiers="" lineno="22">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="APIAccess" modifiers="" lineno="22">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="ChatterFeedEnabled" scope="instancevar" location="PreReleaseChecklist" type="boolean" lineno="23" />
+<VariableProperties name="ChatterFeedEnabled">
+<getterMethod name="ChatterFeedEnabled" returntype="boolean" modifiers="" lineno="23">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="ChatterFeedEnabled" modifiers="" lineno="23">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<VariableDeclaration>
+<varDeclaration name="customObjectList" scope="methodvar" location="PreReleaseChecklist" type="SET&amp;lt;string&amp;gt;" lineno="25" modifiers="public" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="processedList" scope="methodvar" location="PreReleaseChecklist" type="LIST&amp;lt;string&amp;gt;" lineno="26" modifiers="public" />
+</VariableDeclaration>
+<varDeclaration name="finalOutputs" scope="instancevar" location="PreReleaseChecklist" type="MAP&amp;lt;string,string&amp;gt;" lineno="28" />
+<VariableProperties name="finalOutputs">
+<getterMethod name="finalOutputs" returntype="MAP&amp;lt;string,string&amp;gt;" modifiers="" lineno="28">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="finalOutputs" modifiers="" lineno="28">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="developmentListOutput" scope="instancevar" location="PreReleaseChecklist" type="MAP&amp;lt;string,string&amp;gt;" lineno="29" />
+<VariableProperties name="developmentListOutput">
+<getterMethod name="developmentListOutput" returntype="MAP&amp;lt;string,string&amp;gt;" modifiers="" lineno="29">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="developmentListOutput" modifiers="" lineno="29">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="userLicensesListOutput" scope="instancevar" location="PreReleaseChecklist" type="MAP&amp;lt;string,string&amp;gt;" lineno="30" />
+<VariableProperties name="userLicensesListOutput">
+<getterMethod name="userLicensesListOutput" returntype="MAP&amp;lt;string,string&amp;gt;" modifiers="" lineno="30">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="userLicensesListOutput" modifiers="" lineno="30">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="ObjectResults" scope="instancevar" location="PreReleaseChecklist" type="MAP&amp;lt;string,string&amp;gt;" lineno="31" />
+<VariableProperties name="ObjectResults">
+<getterMethod name="ObjectResults" returntype="MAP&amp;lt;string,string&amp;gt;" modifiers="" lineno="31">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="ObjectResults" modifiers="" lineno="31">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="objectRecordCunt" scope="instancevar" location="PreReleaseChecklist" type="MAP&amp;lt;string,string&amp;gt;" lineno="32" />
+<VariableProperties name="objectRecordCunt">
+<getterMethod name="objectRecordCunt" returntype="MAP&amp;lt;string,string&amp;gt;" modifiers="" lineno="32">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="objectRecordCunt" modifiers="" lineno="32">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<varDeclaration name="custObjectRecordCount" scope="instancevar" location="PreReleaseChecklist" type="MAP&amp;lt;string,integer&amp;gt;" lineno="33" />
+<VariableProperties name="custObjectRecordCount">
+<getterMethod name="custObjectRecordCount" returntype="MAP&amp;lt;string,integer&amp;gt;" modifiers="" lineno="33">
+<body>
+</body>
+</getterMethod>
+<setterMethod name="custObjectRecordCount" modifiers="" lineno="33">
+<body>
+</body>
+</setterMethod>
+</VariableProperties>
+<VariableDeclaration>
+<varDeclaration name="sobjectist" scope="methodvar" location="PreReleaseChecklist" type="List&amp;lt;string&amp;gt;" lineno="35" modifiers="public" />
+<assignHeap name="sobjectist" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;{&apos;Account&apos;,&apos;Contact&apos;,&apos;Case&apos;,&apos;Opportunity&apos;,&apos;Solution&apos;,&apos;Campaign&apos;,&apos;Asset&apos;,&apos;Contract&apos;,&apos;Lead&apos;,&apos;User&apos;}" lineno="35" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="stdObjectSixMonthList" scope="methodvar" location="PreReleaseChecklist" type="List&amp;lt;string&amp;gt;" lineno="36" modifiers="public" />
+<assignHeap name="stdObjectSixMonthList" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;{&apos;Case&apos;,&apos;Opportunity&apos;,&apos;Lead&apos;}" lineno="36" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="communityUserlicenses" scope="methodvar" location="PreReleaseChecklist" type="List&amp;lt;string&amp;gt;" lineno="38" modifiers="public" />
+<assignHeap name="communityUserlicenses" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;{&apos;SSP&apos;,&apos;POWER_SSP&apos;,&apos;PID_Customer_Portal_Standard&apos;,&apos;PID_Customer_Portal_Basic&apos;,&apos;High_Volume_Customer_Portal_User&apos;,&apos;PID_Partner_Community&apos;,&apos;PID_Customer_Community_Login&apos;,&apos;PID_Partner_Community_Login&apos;,&apos;PID_Customer_Community&apos;}" lineno="38" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="salesUserlicenses" scope="methodvar" location="PreReleaseChecklist" type="List&amp;lt;string&amp;gt;" lineno="41" modifiers="public" />
+<assignHeap name="salesUserlicenses" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;{&apos;SFDC&apos;}" lineno="41" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="charterUserlicenses" scope="methodvar" location="PreReleaseChecklist" type="List&amp;lt;string&amp;gt;" lineno="42" modifiers="public" />
+<assignHeap name="charterUserlicenses" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;{&apos;CSN_External_User&apos;,&apos;PID_CHATTER&apos;,&apos;CSN_User&apos;}" lineno="42" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="forceUserlicenses" scope="methodvar" location="PreReleaseChecklist" type="List&amp;lt;string&amp;gt;" lineno="43" modifiers="public" />
+<assignHeap name="forceUserlicenses" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;{&apos;FDC_ONE&apos;}" lineno="43" />
+</VariableDeclaration>
+<method returntype="PageReference" name="generateTableData" parameters="" isTestMethod="false" lineno="45" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<methodInvoke name="MAP&lt;string,string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1308" lineno="46" />
+<assignHeap name="objectRecordCunt" scope="" type="newobject" rhsType="constructorInvoke" rhs="newMAP&lt;string,string&gt;()" lineno="46" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select count() from Case]" returnloc="#temp1309" lineno="48" />
+<assignHeap name="batchCountAll" scope="" type="" rhsType="soqlquery" rhs="[select count() from Case]" lineno="48" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select count() from ApexPage]" returnloc="#temp1310" lineno="49" />
+<assignHeap name="countVFPage" scope="" type="" rhsType="soqlquery" rhs="[select count() from ApexPage]" lineno="49" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select count() from ApexClass]" returnloc="#temp1311" lineno="50" />
+<assignHeap name="countApexClasses" scope="" type="" rhsType="soqlquery" rhs="[select count() from ApexClass]" lineno="50" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select count() from ApexComponent]" returnloc="#temp1312" lineno="51" />
+<assignHeap name="countVFComponents" scope="" type="" rhsType="soqlquery" rhs="[select count() from ApexComponent]" lineno="51" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select count() from User where IsActive = true]" returnloc="#temp1313" lineno="52" />
+<assignHeap name="countActiveUsers" scope="" type="" rhsType="soqlquery" rhs="[select count() from User where IsActive = true]" lineno="52" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select count() from Report]" returnloc="#temp1314" lineno="53" />
+<assignHeap name="countReports" scope="" type="" rhsType="soqlquery" rhs="[select count() from Report]" lineno="53" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select count() from Dashboard]" returnloc="#temp1315" lineno="54" />
+<assignHeap name="countDashboard" scope="" type="" rhsType="soqlquery" rhs="[select count() from Dashboard]" lineno="54" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="getOrganizationName" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1316" lineno="56" />
+<assignHeap name="orgName" scope="" type="" rhsType="methodinvoke" rhs="getOrganizationName()" lineno="56" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="customObjectcount" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1317" lineno="57" />
+<assignHeap name="countCustomObject" scope="" type="" rhsType="methodinvoke" rhs="customObjectcount()" lineno="57" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="APIAccessCheck" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1318" lineno="58" />
+<assignHeap name="APIAccess" scope="" type="" rhsType="methodinvoke" rhs="APIAccessCheck()" lineno="58" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="" methodtype="normalmethod" returntype="String" parameters=".User.isFeedEnabled(" returnloc="#temp1319" lineno="59" />
+<assignHeap name="ChatterFeedEnabled" scope="" type="" rhsType="methodinvoke" rhs="Schema.SObjectType.User.isFeedEnabled()" lineno="59" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="getCntLicenseUser" methodtype="normalmethod" returntype="String" parameters="salesUserlicenses" returnloc="#temp1320" lineno="60" />
+<assignHeap name="countSfdcUser" scope="" type="" rhsType="methodinvoke" rhs="getCntLicenseUser(salesUserlicenses)" lineno="60" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="getCntLicenseUser" methodtype="normalmethod" returntype="String" parameters="communityUserlicenses" returnloc="#temp1321" lineno="61" />
+<assignHeap name="countCommunityUser" scope="" type="" rhsType="methodinvoke" rhs="getCntLicenseUser(communityUserlicenses)" lineno="61" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="getCntLicenseUser" methodtype="normalmethod" returntype="String" parameters="charterUserlicenses" returnloc="#temp1322" lineno="62" />
+<assignHeap name="countCharterUser" scope="" type="" rhsType="methodinvoke" rhs="getCntLicenseUser(charterUserlicenses)" lineno="62" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="getCntLicenseUser" methodtype="normalmethod" returntype="String" parameters="forceUserlicenses" returnloc="#temp1323" lineno="63" />
+<assignHeap name="countForceUser" scope="" type="" rhsType="methodinvoke" rhs="getCntLicenseUser(forceUserlicenses)" lineno="63" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="getCustomSettingValues" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1324" lineno="64" />
+<assignHeap name="custObjectRecordCount" scope="" type="" rhsType="methodinvoke" rhs="getCustomSettingValues()" lineno="64" />
+</AssignmentStatement>
+<loop type="advancedfor" lineno="68">
+<Iterator type="string" name="stdobj" on="sobjectist">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<VariableDeclaration>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="stdobj" returnloc="#temp1325" lineno="70" />
+<varDeclaration name="query1" scope="methodvar" location="PreReleaseChecklist" type="string" lineno="70" />
+<assignHeap name="query1" scope="methodvar" type="string" rhsType="variable" rhs="&apos;select count() from &apos;+stdobj" lineno="70" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.dml.Database.countquery" methodtype="" returntype="" parameters="query1" returnloc="" lineno="71" />
+<varDeclaration name="s1" scope="methodvar" location="PreReleaseChecklist" type="integer" lineno="71" />
+<assignHeap name="s1" scope="methodvar" type="integer" rhsType="variable" rhs="Database.countquery(query1)" lineno="71" />
+</VariableDeclaration>
+<ExpressionStatement expression="&apos;Object:&apos;+stdobj+&apos;Count&apos;+s1" key="debug" lineno="72"/>
+<methodInvoke name="string.ValueOf" methodtype="normalmethod" returntype="String" parameters="s1" returnloc="#temp1326" lineno="74" />
+<methodInvoke name="objectRecordCunt.put" methodtype="normalmethod" returntype="String" parameters="stdobj,string.ValueOf(s1)" returnloc="#temp1327" lineno="74" />
+</body>
+</loop>
+<AssignmentStatement>
+<methodInvoke name="MAP&lt;string,string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1328" lineno="98" />
+<assignHeap name="developmentListOutput" scope="" type="newobject" rhsType="constructorInvoke" rhs="newMAP&lt;string,string&gt;()" lineno="98" />
+</AssignmentStatement>
+<methodInvoke name="string.valueOF" methodtype="normalmethod" returntype="String" parameters="countApexClasses" returnloc="#temp1329" lineno="100" />
+<methodInvoke name="developmentListOutput.put" methodtype="normalmethod" returntype="String" parameters="&apos;Apex Classes&apos;,string.valueOF(countApexClasses)" returnloc="#temp1330" lineno="100" />
+<methodInvoke name="string.valueOF" methodtype="normalmethod" returntype="String" parameters="countVFComponents" returnloc="#temp1331" lineno="101" />
+<methodInvoke name="developmentListOutput.put" methodtype="normalmethod" returntype="String" parameters="&apos;VisualForce Components&apos;,string.valueOF(countVFComponents)" returnloc="#temp1332" lineno="101" />
+<methodInvoke name="string.valueOF" methodtype="normalmethod" returntype="String" parameters="countVFPage" returnloc="#temp1333" lineno="102" />
+<methodInvoke name="developmentListOutput.put" methodtype="normalmethod" returntype="String" parameters="&apos;VisualForce Page&apos;,string.valueOF(countVFPage)" returnloc="#temp1334" lineno="102" />
+<AssignmentStatement>
+<methodInvoke name="getSixMonthCount" methodtype="normalmethod" returntype="String" parameters="stdObjectSixMonthList" returnloc="#temp1335" lineno="104" />
+<assignHeap name="stdSixMonthResult" scope="" type="" rhsType="methodinvoke" rhs="getSixMonthCount(stdObjectSixMonthList)" lineno="104" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="MAP&lt;string,string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1336" lineno="106" />
+<assignHeap name="userLicensesListOutput" scope="" type="newobject" rhsType="constructorInvoke" rhs="newMAP&lt;string,string&gt;()" lineno="106" />
+</AssignmentStatement>
+<methodInvoke name="string.valueOf" methodtype="normalmethod" returntype="String" parameters="countSfdcUser" returnloc="#temp1337" lineno="107" />
+<methodInvoke name="userLicensesListOutput.put" methodtype="normalmethod" returntype="String" parameters="&apos;SFDC Licenses USER&apos;,string.valueOf(countSfdcUser)" returnloc="#temp1338" lineno="107" />
+<methodInvoke name="string.valueOf" methodtype="normalmethod" returntype="String" parameters="countCommunityUser" returnloc="#temp1339" lineno="108" />
+<methodInvoke name="userLicensesListOutput.put" methodtype="normalmethod" returntype="String" parameters="&apos;Community Licenses USER&apos;,string.valueOf(countCommunityUser)" returnloc="#temp1340" lineno="108" />
+<methodInvoke name="string.valueOf" methodtype="normalmethod" returntype="String" parameters="countCharterUser" returnloc="#temp1341" lineno="109" />
+<methodInvoke name="userLicensesListOutput.put" methodtype="normalmethod" returntype="String" parameters="&apos;Charter Licenses USER&apos;,string.valueOf(countCharterUser)" returnloc="#temp1342" lineno="109" />
+<methodInvoke name="string.valueOf" methodtype="normalmethod" returntype="String" parameters="countForceUser" returnloc="#temp1343" lineno="110" />
+<methodInvoke name="userLicensesListOutput.put" methodtype="normalmethod" returntype="String" parameters="&apos;Force Licenses USER&apos;,string.valueOf(countForceUser)" returnloc="#temp1344" lineno="110" />
+<AssignmentStatement>
+<methodInvoke name="MAP&lt;string,string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1345" lineno="112" />
+<assignHeap name="finalOutputs" scope="" type="newobject" rhsType="constructorInvoke" rhs="newMAP&lt;string,string&gt;()" lineno="112" />
+</AssignmentStatement>
+<methodInvoke name="string.valueOF" methodtype="normalmethod" returntype="String" parameters="countActiveUsers" returnloc="#temp1346" lineno="113" />
+<methodInvoke name="finalOutputs.put" methodtype="normalmethod" returntype="String" parameters="&apos;Active Users&apos;,string.valueOF(countActiveUsers)" returnloc="#temp1347" lineno="113" />
+<methodInvoke name="string.valueOF" methodtype="normalmethod" returntype="String" parameters="APIAccess" returnloc="#temp1348" lineno="114" />
+<methodInvoke name="finalOutputs.put" methodtype="normalmethod" returntype="String" parameters="&apos;API Access Enabled to system Admin&apos;,string.valueOF(APIAccess)" returnloc="#temp1349" lineno="114" />
+<methodInvoke name="string.valueOF" methodtype="normalmethod" returntype="String" parameters="ChatterFeedEnabled" returnloc="#temp1350" lineno="115" />
+<methodInvoke name="finalOutputs.put" methodtype="normalmethod" returntype="String" parameters="&apos;Chatter Feed Enabled&apos;,string.valueOF(ChatterFeedEnabled)" returnloc="#temp1351" lineno="115" />
+<methodInvoke name="string.valueOF" methodtype="normalmethod" returntype="String" parameters="countCustomObject" returnloc="#temp1352" lineno="116" />
+<methodInvoke name="finalOutputs.put" methodtype="normalmethod" returntype="String" parameters="&apos;Custom Object&apos;,string.valueOF(countCustomObject)" returnloc="#temp1353" lineno="116" />
+<methodInvoke name="string.valueOF" methodtype="normalmethod" returntype="String" parameters="countReports" returnloc="#temp1354" lineno="118" />
+<methodInvoke name="finalOutputs.put" methodtype="normalmethod" returntype="String" parameters="&apos;Reports&apos;,string.valueOF(countReports)" returnloc="#temp1355" lineno="118" />
+<methodInvoke name="string.valueOF" methodtype="normalmethod" returntype="String" parameters="countDashboard" returnloc="#temp1356" lineno="119" />
+<methodInvoke name="finalOutputs.put" methodtype="normalmethod" returntype="String" parameters="&apos;Dashboards&apos;,string.valueOF(countDashboard)" returnloc="#temp1357" lineno="119" />
+<ReturnBlock>
+<return expression="null" expressiontype="@value" lineno="121" />
+</ReturnBlock>
+<methodendline lineno="123"/>
+</body>
+</method>
+<method returntype="string" name="getOrganizationName" parameters="" isTestMethod="false" lineno="125" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Name from Organization limit 1]" returnloc="#temp1358" lineno="126" />
+<varDeclaration name="orgName" scope="methodvar" location="PreReleaseChecklist" type="Organization" lineno="126" />
+<assignHeap name="orgName" scope="methodvar" type="Organization" rhsType="query" rhs="[select Name from Organization limit 1]" lineno="126" />
+</VariableDeclaration>
+<ReturnBlock>
+<methodInvoke name="string.valueOf" methodtype="normalmethod" returntype="String" parameters="orgName.Name" returnloc="#temp1359" lineno="127" />
+<return expression="string.valueOf(orgName.Name)" expressiontype="@alias" lineno="127" />
+</ReturnBlock>
+<methodendline lineno="128"/>
+</body>
+</method>
+<method returntype="PageReference" name="generateEXCEL" parameters="" isTestMethod="false" lineno="129" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<assignHeap name="contentMessage" scope="" type="" rhsType="methodinvoke" rhs="&apos;application/vnd.ms-excel#ASD_Automated_PreRelease_CheckList_Report.xls&apos;" lineno="131" />
+</AssignmentStatement>
+<ReturnBlock>
+<return expression="null" expressiontype="@value" lineno="133" />
+</ReturnBlock>
+<methodendline lineno="134"/>
+</body>
+</method>
+<method returntype="integer" name="customObjectcount" parameters="" isTestMethod="false" lineno="136" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="Schema.getGlobalDescribe" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1360" lineno="138" />
+<methodInvoke name="Schema.getGlobalDescribe(.Values" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1361" lineno="138" />
+<varDeclaration name="gd" scope="methodvar" location="PreReleaseChecklist" type="List&amp;lt;Schema.SObjectType&amp;gt;" lineno="138" />
+<assignHeap name="gd" scope="methodvar" type="List&amp;lt;Schema.SObjectType&amp;gt;" rhsType="methodinvoke" rhs="Schema.getGlobalDescribe().Values()" lineno="138" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="List&lt;string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1362" lineno="139" />
+<varDeclaration name="list_CustomObject_Count" scope="methodvar" location="PreReleaseChecklist" type="List&amp;lt;string&amp;gt;" lineno="139" />
+<assignHeap name="list_CustomObject_Count" scope="methodvar" type="newobject" rhsType="constructorInvoke" rhs="newList&lt;string&gt;()" lineno="139" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="141">
+<Iterator type="Schema.SObjectType" name="f" on="gd">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="143">
+<conditionalExpr>
+<methodInvoke name="#temp1362.getDescribe" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1363" lineno="143" />
+<methodInvoke name="#temp1363.isCustom" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1364" lineno="143" />
+<conditionalExpr>
+<methodInvoke name="#temp1364.getDescribe" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1365" lineno="143" />
+<methodInvoke name="#temp1365.isCustomSetting" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1366" lineno="143" />
+<ConditionalStatement LHStype="methodinvoke" LHS="#temp1365.isCustomSetting(" RHStype="!f.getDescribe().isCustomSetting()" RHS="!f.getDescribe().isCustomSetting()" Operator="AND"/>
+</conditionalExpr>
+</conditionalExpr>
+<ifcondition expression= "f.getDescribe().isCustom()&amp;&amp;!f.getDescribe().isCustomSetting()"/>
+<true>
+<body>
+<methodInvoke name="f.getDescribe" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1367" lineno="144" />
+<methodInvoke name="f.getDescribe(.getName" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1368" lineno="144" />
+<methodInvoke name="list_CustomObject_Count.add" methodtype="normalmethod" returntype="String" parameters="f.getDescribe().getName()" returnloc="#temp1369" lineno="144" />
+</body>
+</true>
+</if>
+</body>
+</loop>
+<AssignmentStatement>
+<methodInvoke name="list_CustomObject_Count.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1370" lineno="146" />
+<assignHeap name="countCustomObject" scope="" type="" rhsType="methodinvoke" rhs="list_CustomObject_Count.size()" lineno="146" />
+</AssignmentStatement>
+<ReturnBlock>
+<return expression="countCustomObject" expressiontype="@alias" lineno="147" />
+</ReturnBlock>
+<methodendline lineno="148"/>
+</body>
+</method>
+<method returntype="boolean" name="APIAccessCheck" parameters="" isTestMethod="false" lineno="150" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select PermissionsApiEnabled from Profile where name=&apos;system Administrator&apos; limit 1]" returnloc="#temp1371" lineno="152" />
+<varDeclaration name="pList" scope="methodvar" location="PreReleaseChecklist" type="List&amp;lt;Profile&amp;gt;" lineno="152" />
+<assignHeap name="pList" scope="methodvar" type="List&amp;lt;Profile&amp;gt;" rhsType="query" rhs="[select PermissionsApiEnabled from Profile where name=&apos;system Administrator&apos; limit 1]" lineno="152" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="apivalue" scope="methodvar" location="PreReleaseChecklist" type="boolean" lineno="153" />
+</VariableDeclaration>
+<loop type="advancedfor" lineno="155">
+<Iterator type="Profile" name="p" on="pList">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<if type="simpleif" lineno="157">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="p.PermissionsApiEnabled" RHStype="" RHS="true" Operator="=="/>
+</conditionalExpr>
+<ifcondition expression= "p.PermissionsApiEnabled==true"/>
+<true>
+<body>
+<AssignmentStatement>
+<assignHeap name="apivalue" scope="" type="" rhsType="value" rhs="true" lineno="159" />
+</AssignmentStatement>
+</body>
+</true>
+</if>
+</body>
+</loop>
+<ReturnBlock>
+<return expression="apivalue" expressiontype="@alias" lineno="161" />
+</ReturnBlock>
+<methodendline lineno="162"/>
+</body>
+</method>
+<method returntype="integer" name="getCntLicenseUser" parameters="licenseKeyName:List&amp;lt;string&amp;gt;" isTestMethod="false" lineno="164" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<varDeclaration name="cntSfdcUser" scope="methodvar" location="PreReleaseChecklist" type="integer" lineno="166" />
+</VariableDeclaration>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Id from profile where UserLicenseid in (select Id from UserLicense where LicenseDefinitionKey in: licenseKeyName)]" returnloc="#temp1372" lineno="168" />
+<varDeclaration name="listSfdcUser" scope="methodvar" location="PreReleaseChecklist" type="List&amp;lt;Profile&amp;gt;" lineno="168" />
+<assignHeap name="listSfdcUser" scope="methodvar" type="List&amp;lt;Profile&amp;gt;" rhsType="query" rhs="[select Id from profile where UserLicenseid in (select Id from UserLicense where LicenseDefinitionKey in: licenseKeyName)]" lineno="168" />
+</VariableDeclaration>
+<if type="simpleif" lineno="169">
+<conditionalExpr>
+<methodInvoke name="listSfdcUser.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1373" lineno="169" />
+<ConditionalStatement LHStype="" LHS="listSfdcUser.size()" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "listSfdcUser.size()&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select count() from User where ProfileId in: listSfdcUser]" returnloc="#temp1374" lineno="170" />
+<assignHeap name="cntSfdcUser" scope="" type="" rhsType="soqlquery" rhs="[select count() from User where ProfileId in: listSfdcUser]" lineno="170" />
+</AssignmentStatement>
+</body>
+</true>
+<false type="" lineno="172">
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<assignHeap name="cntSfdcUser" scope="" type="" rhsType="value" rhs="0" lineno="173" />
+</AssignmentStatement>
+</body>
+</false>
+</if>
+<ReturnBlock>
+<return expression="cntSfdcUser" expressiontype="@alias" lineno="175" />
+</ReturnBlock>
+<methodendline lineno="176"/>
+</body>
+</method>
+<method returntype="Map&amp;lt;string,integer&amp;gt;" name="getCustomSettingValues" parameters="" isTestMethod="false" lineno="178" throws="" modifiers="public">
+<body>
+<AssignmentStatement>
+<assignHeap name="i" scope="" type="" rhsType="value" rhs="0" lineno="179" />
+</AssignmentStatement>
+<AssignmentStatement>
+<methodInvoke name="MAP&lt;string,integer&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1375" lineno="180" />
+<assignHeap name="custObjectRecordCount" scope="" type="newobject" rhsType="constructorInvoke" rhs="newMAP&lt;string,integer&gt;()" lineno="180" />
+</AssignmentStatement>
+<VariableDeclaration>
+<methodInvoke name="lib.soql" methodtype="soqlmethod" returntype="String" parameters="[select Object_Name__c,Record_Count__c from PreReleaseReport__c]" returnloc="#temp1376" lineno="182" />
+<varDeclaration name="lst_CustomObject" scope="methodvar" location="PreReleaseChecklist" type="List&amp;lt;PreReleaseReport__c&amp;gt;" lineno="182" />
+<assignHeap name="lst_CustomObject" scope="methodvar" type="List&amp;lt;PreReleaseReport__c&amp;gt;" rhsType="query" rhs="[select Object_Name__c,Record_Count__c from PreReleaseReport__c]" lineno="182" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="lst_CustomObject.size" methodtype="normalmethod" returntype="String" parameters="" returnloc="#temp1377" lineno="184" />
+<assignHeap name="count_CustomObject" scope="" type="" rhsType="methodinvoke" rhs="lst_CustomObject.size()" lineno="184" />
+</AssignmentStatement>
+<loop type="advancedfor" lineno="186">
+<Iterator type="PreReleaseReport__c" name="p" on="lst_CustomObject">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="integer.valueOf" methodtype="normalmethod" returntype="String" parameters="p.Record_Count__c" returnloc="#temp1378" lineno="187" />
+<methodInvoke name="custObjectRecordCount.put" methodtype="normalmethod" returntype="String" parameters="p.Object_Name__c,integer.valueOf(p.Record_Count__c)" returnloc="#temp1379" lineno="187" />
+<AssignmentStatement>
+<methodInvoke name="integer.valueOf" methodtype="normalmethod" returntype="String" parameters="p.Record_Count__c" returnloc="#temp1380" lineno="188" />
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="#temp1380" returnloc="#temp1381" lineno="188" />
+<assignHeap name="i" scope="" type="" rhsType="stradd" rhs="i+integer.valueOf(p.Record_Count__c)" lineno="188" />
+</AssignmentStatement>
+</body>
+</loop>
+<ReturnBlock>
+<return expression="custObjectRecordCount" expressiontype="@alias" lineno="191" />
+</ReturnBlock>
+<methodendline lineno="192"/>
+</body>
+</method>
+<method returntype="Map&amp;lt;string,string&amp;gt;" name="getSixMonthCount" parameters="lstStdObjectName:List&amp;lt;string&amp;gt;" isTestMethod="false" lineno="193" throws="" modifiers="public">
+<body>
+<VariableDeclaration>
+<varDeclaration name="query" scope="methodvar" location="PreReleaseChecklist" type="string" lineno="194" />
+<assignHeap name="query" scope="methodvar" type="string" rhsType="value" rhs="&apos;&apos;" lineno="194" />
+</VariableDeclaration>
+<AssignmentStatement>
+<methodInvoke name="MAP&lt;string,string&gt;" methodtype="constructormethod" returntype="newobject" parameters="" returnloc="#temp1382" lineno="195" />
+<assignHeap name="stdSixMonthResult" scope="" type="newobject" rhsType="constructorInvoke" rhs="newMAP&lt;string,string&gt;()" lineno="195" />
+</AssignmentStatement>
+<loop type="advancedfor" lineno="196">
+<Iterator type="string" name="s" on="lstStdObjectName">
+</Iterator>
+<body>
+<curlybrace exists="true"/>
+<AssignmentStatement>
+<methodInvoke name="lib.stradd" methodtype="normalmethod" returntype="String" parameters="&apos; where CreatedDate &gt;= LAST_N_DAYS:180 AND createdDate&lt;= LAST_N_DAYS:30 limit 1&apos;" returnloc="#temp1383" lineno="199" />
+<assignHeap name="query" scope="" type="" rhsType="stradd" rhs="&apos;select count() from &apos;+s+&apos; where CreatedDate &gt;= LAST_N_DAYS:180 AND createdDate&lt;= LAST_N_DAYS:30 limit 1&apos;" lineno="199" />
+</AssignmentStatement>
+<ExpressionStatement expression="&apos;Six Months Query&apos;+query" key="debug" lineno="200"/>
+<VariableDeclaration>
+<methodInvoke name="lib.dml.Database.countquery" methodtype="" returntype="" parameters="query" returnloc="" lineno="202" />
+<varDeclaration name="cnt" scope="methodvar" location="PreReleaseChecklist" type="integer" lineno="202" />
+<assignHeap name="cnt" scope="methodvar" type="integer" rhsType="variable" rhs="Database.countquery(query)" lineno="202" />
+</VariableDeclaration>
+<if type="simpleif" lineno="203">
+<conditionalExpr>
+<ConditionalStatement LHStype="" LHS="cnt" RHStype="" RHS="0" Operator="&gt;"/>
+</conditionalExpr>
+<ifcondition expression= "cnt&gt;0"/>
+<true>
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="stdSixMonthResult.put" methodtype="normalmethod" returntype="String" parameters="s,&apos;Yes&apos;" returnloc="#temp1384" lineno="206" />
+</body>
+</true>
+<false type="" lineno="209">
+<body>
+<curlybrace exists="true"/>
+<methodInvoke name="stdSixMonthResult.put" methodtype="normalmethod" returntype="String" parameters="s,&apos;No&apos;" returnloc="#temp1385" lineno="211" />
+</body>
+</false>
+</if>
+</body>
+</loop>
+<ReturnBlock>
+<return expression="stdSixMonthResult" expressiontype="@alias" lineno="214" />
+</ReturnBlock>
+<methodendline lineno="216"/>
+</body>
+</method>
+</classbody>
+</class>
+<comments single="[132, 201, 205, 210]" multi="[66-66, 77-77, 78-95, 96-96]" empty="[2, 3, 5, 24, 27, 34, 37, 40, 44, 47, 55, 65, 67, 69, 73, 76, 81, 94, 97, 99, 103, 105, 111, 117, 120, 122, 124, 130, 135, 137, 140, 149, 151, 154, 156, 158, 163, 165, 167, 177, 181, 183, 185, 190, 197, 198, 208, 215, 217]" singlebrace="[75, 83, 88, 91, 92, 93, 123, 128, 134, 142, 145, 148, 160, 162, 171, 174, 176, 189, 192, 204, 207, 212, 213, 216, 218]"/>
+</stac>

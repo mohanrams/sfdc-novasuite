@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stac version="Version 0.5.2" filename="Dummy3.cls" filepath="C:\Users\dhivya.sridhar\.jenkins\jobs\Testingbatchjenkins\workspace\NovaCopAutomation\SfSourceCode\classes" filesize="73 bytes">
+<class name="Dummy3" sharing="default" implements="" isenum="false" lineno="1" modifiers="public">
+<classbody>
+<VariableDeclaration>
+<varDeclaration name="x" scope="methodvar" location="Dummy3" type="integer" lineno="2" />
+<assignHeap name="x" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="2" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="y" scope="methodvar" location="Dummy3" type="integer" lineno="3" />
+<assignHeap name="y" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="3" />
+</VariableDeclaration>
+<VariableDeclaration>
+<varDeclaration name="z" scope="methodvar" location="Dummy3" type="integer" lineno="4" />
+<assignHeap name="z" scope="methodvar" type="integer" rhsType="value" rhs="0" lineno="4" />
+</VariableDeclaration>
+</classbody>
+</class>
+<comments single="[]" multi="[]" empty="[5]" singlebrace="[6]"/>
+</stac>
